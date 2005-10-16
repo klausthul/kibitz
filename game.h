@@ -67,8 +67,13 @@ enum CASTLE_RIGHTS {
 - (void) doMove: (ChessMove *) move;
 - (void) undoMove;
 - (void) goForeward;
+- (IBAction) goForeward:(id) sender;
 - (void) goBackward;
+- (IBAction) goBackward:(id) sender;
 - (void) goEnd;
+- (IBAction) goEnd:(id) sender;
+- (void) goStart;
+- (IBAction) goStart:(id) sender;
 - (void) printBoard;
 - (void) printMoveList;
 - (void) printGame;

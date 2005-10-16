@@ -105,7 +105,7 @@
 		break;
 	}
 	to_move = BLACK - to_move;
-	return [store autorelease];
+	return store;
 }
 
 - (void) undoMove: (ChessMoveStore *) move
@@ -254,6 +254,36 @@
 		[self goForeward];
 }
 
+- (void) goStart
+{
+	while (cur_move > 0)
+		[self goBackward];
+}
+
+- (IBAction) goForeward: (id) sender
+{
+	[self goForeward];
+	[self printGame];
+}
+
+- (IBAction) goBackward: (id) sender
+{
+	[self goBackward];
+	[self printGame];
+}
+
+- (IBAction) goStart: (id) sender
+{
+	[self goStart];
+	[self printGame];
+}
+
+- (IBAction) goEnd: (id) sender
+{
+	[self goEnd];
+	[self printGame];
+}
+
 - (void) printBoard
 {
 	[board printBoard];
@@ -276,4 +306,12 @@
 	printf("At %d of %d.\n", cur_move, num_half_moves);
 }
 
+- (void) awakeFromNib
+{
+	FILE *f = fopen("/users/kthul/Desktop/test.game", "r");
+	char s[256];
+	
+	while(fgets(s, 255, f) != NULL)
+		[self doMove: [ChessMove fromString: s]];
+}
 @end

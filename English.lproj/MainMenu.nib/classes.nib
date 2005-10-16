@@ -1,4 +1,15 @@
 {
-    IBClasses = ({CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }); 
+    IBClasses = (
+        {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ChessMove; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ChessMoveStore; LANGUAGE = ObjC; SUPERCLASS = ChessMove; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {goBackward = id; goEnd = id; goForeward = id; goStart = id; }; 
+            CLASS = Game; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
     IBVersion = 1; 
 }
