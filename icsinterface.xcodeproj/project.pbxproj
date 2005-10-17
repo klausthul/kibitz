@@ -12,6 +12,8 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		CEA0CBE109015EAC00BF913A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* game.m */; };
+		CEA8303609028C85003FFFDB /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
+		CEA8305909029C98003FFFDB /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8305809029C98003FFFDB /* AppController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -54,6 +56,10 @@
 		8D1107320486CEB800E47090 /* icsinterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icsinterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA0CBDF09015EAC00BF913A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		CEA0CBE009015EAC00BF913A /* game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = game.m; sourceTree = "<group>"; };
+		CEA8303409028C85003FFFDB /* ChessView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessView.h; sourceTree = "<group>"; };
+		CEA8303509028C85003FFFDB /* ChessView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessView.m; sourceTree = "<group>"; };
+		CEA8305709029C98003FFFDB /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		CEA8305809029C98003FFFDB /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,10 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				CEA0CBDF09015EAC00BF913A /* game.h */,
 				CEA0CBE009015EAC00BF913A /* game.m */,
+				CEA8303409028C85003FFFDB /* ChessView.h */,
+				CEA8303509028C85003FFFDB /* ChessView.m */,
+				CEA8305709029C98003FFFDB /* AppController.h */,
+				CEA8305809029C98003FFFDB /* AppController.m */,
 			);
 			name = icsinterface;
 			sourceTree = "<group>";
@@ -215,6 +225,8 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				CEA0CBE109015EAC00BF913A /* game.m in Sources */,
+				CEA8303609028C85003FFFDB /* ChessView.m in Sources */,
+				CEA8305909029C98003FFFDB /* AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

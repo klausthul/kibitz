@@ -172,7 +172,15 @@
 	return [m autorelease];
 }
 
-- (void) printMove {
+- (NSString *) asCoordinates
+{
+	char buffer[256];
+	sprintf(buffer, "%c%c-%c%c%c\n", from % 8 + 'a', from / 8 + '1', to % 8 + 'a', to / 8 + '1', "  KBRQ"[promotion]);
+	return [NSString stringWithUTF8String: buffer];
+}
+
+- (void) printMove 
+{
 	printf("%c%c-%c%c%c\n", from % 8 + 'a', from / 8 + '1', to % 8 + 'a', to / 8 + '1', "  KBRQ"[promotion]);
 }
 
@@ -236,10 +244,18 @@
 	}
 }
 
-- (void) goForeward
+- (int) goForeward
 {
-	if (cur_move < num_half_moves)
+	if (cur_move < num_half_moves) {
 		[board doMove: [move_list objectAtIndex: cur_move++]];
+		if (cur_move == num_half_moves - 1) {
+			[tableView deselectAll: self];
+			return 0;
+		} else
+			return 1;
+	} else {
+		return -1;
+	}
 }
 
 - (void) goBackward
@@ -250,13 +266,26 @@
 
 - (void) goEnd
 {
-	while (cur_move < num_half_moves)
-		[self goForeward];
+	while ([self goForeward] == 1)
+		;
 }
 
 - (void) goStart
 {
 	while (cur_move > 0)
+		[self goBackward];
+	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
+}
+
+- (void) goMove: (int) n
+{
+	if (n >= num_half_moves)
+		n = num_half_moves - 1; 
+	if (n < 0)
+		n = 0;
+	while (cur_move < n)
+		[self goForeward];
+	while (cur_move > n)
 		[self goBackward];
 }
 
@@ -264,24 +293,28 @@
 {
 	[self goForeward];
 	[self printGame];
+	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
 - (IBAction) goBackward: (id) sender
 {
 	[self goBackward];
 	[self printGame];
+	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
 - (IBAction) goStart: (id) sender
 {
 	[self goStart];
 	[self printGame];
+	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
 - (IBAction) goEnd: (id) sender
 {
 	[self goEnd];
 	[self printGame];
+	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
 - (void) printBoard
@@ -313,5 +346,33 @@
 	
 	while(fgets(s, 255, f) != NULL)
 		[self doMove: [ChessMove fromString: s]];
+	[tableView reloadData];
 }
+
+- (int) numberOfRowsInTableView: (NSTableView *) aTableView
+{
+	return (num_half_moves + 1)/2;
+}
+
+- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
+{
+	NSString *x = [aTableColumn identifier];
+	int i = -1;
+	if ([x compare: @"2"] == 0)
+		i = rowIndex * 2;
+	else if ([x compare: @"3"] == 0)
+		i = rowIndex * 2 + 1;
+	if ((i >= 0) && (i < num_half_moves))
+		return [[move_list objectAtIndex: i] asCoordinates];
+	if ([x compare: @"1"] == 0)
+		return [NSNumber numberWithInt: rowIndex + 1];
+	return @"...";
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+	[self goMove: [tableView selectedRow] * 2];
+	[self printBoard];
+}
+
 @end

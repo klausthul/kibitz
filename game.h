@@ -32,6 +32,7 @@ enum CASTLE_RIGHTS {
 
 + (ChessMove *) fromString: (const char *) s;
 - (void) printMove;
+- (NSString *) asCoordinates;
 @end
 
 @interface Board : NSObject {
@@ -60,13 +61,14 @@ enum CASTLE_RIGHTS {
 @interface Game : NSObject {
 	Board *board;
 	NSMutableArray *move_list;
+	IBOutlet NSTableView *tableView;
 	int cur_move, num_half_moves;
 }
 
 - (Game *) init;
 - (void) doMove: (ChessMove *) move;
 - (void) undoMove;
-- (void) goForeward;
+- (int) goForeward;
 - (IBAction) goForeward:(id) sender;
 - (void) goBackward;
 - (IBAction) goBackward:(id) sender;
@@ -77,5 +79,7 @@ enum CASTLE_RIGHTS {
 - (void) printBoard;
 - (void) printMoveList;
 - (void) printGame;
+- (int) numberOfRowsInTableView: (NSTableView *) aTableView;
+- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 
 @end
