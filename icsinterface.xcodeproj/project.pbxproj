@@ -11,6 +11,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CE439180090536440025B94D /* 100_0407.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CE43917F090536440025B94D /* 100_0407.JPG */; };
 		CEA0CBE109015EAC00BF913A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* game.m */; };
 		CEA8303609028C85003FFFDB /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
 		CEA8305909029C98003FFFDB /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8305809029C98003FFFDB /* AppController.m */; };
@@ -54,6 +55,7 @@
 		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* icsinterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icsinterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE43917F090536440025B94D /* 100_0407.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 100_0407.JPG; path = "../Pictures/iPhoto Library/2003/04/11/100_0407.JPG"; sourceTree = SOURCE_ROOT; };
 		CEA0CBDF09015EAC00BF913A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		CEA0CBE009015EAC00BF913A /* game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = game.m; sourceTree = "<group>"; };
 		CEA8303409028C85003FFFDB /* ChessView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessView.h; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				CE43917F090536440025B94D /* 100_0407.JPG */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				CE439180090536440025B94D /* 100_0407.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

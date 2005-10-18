@@ -9,13 +9,18 @@
         {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessMove; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessMoveStore; LANGUAGE = ObjC; SUPERCLASS = ChessMove; }, 
-        {CLASS = ChessView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            CLASS = ChessView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {game = Game; }; 
+            SUPERCLASS = NSView; 
+        }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
             ACTIONS = {goBackward = id; goEnd = id; goForeward = id; goStart = id; }; 
             CLASS = Game; 
             LANGUAGE = ObjC; 
-            OUTLETS = {tableView = NSTableView; }; 
+            OUTLETS = {chessView = ChessView; tableView = NSTableView; }; 
             SUPERCLASS = NSObject; 
         }
     ); 

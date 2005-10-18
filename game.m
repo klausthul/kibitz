@@ -150,6 +150,11 @@
 	to_move = BLACK - to_move;
 }
 
+- (int) pieceLine: (int) l row: (int) r
+{
+	return fields[l + 8*r - 9];
+}
+
 @end
 
 @implementation ChessMove
@@ -248,8 +253,9 @@
 {
 	if (cur_move < num_half_moves) {
 		[board doMove: [move_list objectAtIndex: cur_move++]];
+		[chessView setNeedsDisplay:YES];
 		if (cur_move == num_half_moves - 1) {
-			[tableView deselectAll: self];
+//			[tableView deselectAll: self];
 			return 0;
 		} else
 			return 1;
@@ -262,6 +268,7 @@
 {
 	if (cur_move > 0)
 		[board undoMove: [move_list objectAtIndex: --cur_move]];
+	[chessView setNeedsDisplay:YES];
 }
 
 - (void) goEnd
@@ -292,28 +299,24 @@
 - (IBAction) goForeward: (id) sender
 {
 	[self goForeward];
-	[self printGame];
 	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
 - (IBAction) goBackward: (id) sender
 {
 	[self goBackward];
-	[self printGame];
 	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
 - (IBAction) goStart: (id) sender
 {
 	[self goStart];
-	[self printGame];
 	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
 - (IBAction) goEnd: (id) sender
 {
 	[self goEnd];
-	[self printGame];
 	[tableView selectRow: cur_move / 2 byExtendingSelection: FALSE];
 }
 
@@ -372,7 +375,11 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
 	[self goMove: [tableView selectedRow] * 2];
-	[self printBoard];
+}
+
+- (int) pieceLine: (int) l row: (int) r
+{
+	return [board pieceLine: l row: r];
 }
 
 @end

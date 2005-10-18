@@ -8,7 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class Game;
 @class ChessMoveStore;
+@class ChessView;
+
+#import "ChessView.h"
+
+
 
 enum PIECE {
 	PAWN = 1, KNIGHT = 2, BISHOP = 3, ROOK = 4, QUEEN = 5, KING = 6
@@ -42,6 +48,7 @@ enum CASTLE_RIGHTS {
 	int en_passant; 
 };
 
+- (int) pieceLine: (int) l row: (int) r;
 - (void) startPosition;
 - (void) printBoard;
 - (ChessMoveStore *) doMove: (ChessMove *) move;
@@ -62,9 +69,11 @@ enum CASTLE_RIGHTS {
 	Board *board;
 	NSMutableArray *move_list;
 	IBOutlet NSTableView *tableView;
+	IBOutlet ChessView *chessView;
 	int cur_move, num_half_moves;
 }
 
+- (int) pieceLine: (int) l row: (int) r;
 - (Game *) init;
 - (void) doMove: (ChessMove *) move;
 - (void) undoMove;
