@@ -5,8 +5,10 @@
 
 @interface ChessView : NSView
 {
-	    IBOutlet Game *game;
-		NSImage *pieces[16];
+	IBOutlet Game *game;
+	NSImage *pieces[16];
+	ChessField fromMouse;
+	ChessField toMouse;
 }
 
 @end

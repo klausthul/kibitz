@@ -12,9 +12,13 @@
 @class ChessMoveStore;
 @class ChessView;
 
+struct _ChessField{
+	int row;
+	int line;
+};
+typedef struct _ChessField ChessField;
+
 #import "ChessView.h"
-
-
 
 enum PIECE {
 	PAWN = 1, KNIGHT = 2, BISHOP = 3, ROOK = 4, QUEEN = 5, KING = 6
@@ -34,9 +38,10 @@ enum CASTLE_RIGHTS {
 @interface ChessMove : NSObject {
   @public
 	char from, to, promotion;
-};
+}
 
 + (ChessMove *) fromString: (const char *) s;
++ (ChessMove *) fromFieldsfrom: (ChessField) from to: (ChessField) to; 
 - (void) printMove;
 - (NSString *) asCoordinates;
 @end
@@ -46,7 +51,7 @@ enum CASTLE_RIGHTS {
 	enum CASTLE_RIGHTS castle_rights;
 	enum COLOR to_move;
 	int en_passant; 
-};
+}
 
 - (int) pieceLine: (int) l row: (int) r;
 - (void) startPosition;

@@ -177,6 +177,16 @@
 	return [m autorelease];
 }
 
++ (ChessMove *) fromFieldsfrom: (ChessField) from to: (ChessField) to 
+{
+	ChessMove *m = [[ChessMove alloc] init];
+	
+	m->from = from.line + from.row * 8 - 9;
+	m->to = to.line + to.row * 8 - 9;
+	m->promotion = 0;
+	return [m autorelease];
+}
+
 - (NSString *) asCoordinates
 {
 	char buffer[256];
@@ -237,6 +247,8 @@
 	cms = [board doMove: move];
 	cur_move++;
 	[move_list insertObject: cms atIndex: num_half_moves++];
+	[tableView reloadData];
+	[chessView setNeedsDisplay:YES];
 }
 
 - (void) undoMove
@@ -247,6 +259,8 @@
 		--cur_move;
 		[move_list removeObjectAtIndex: --num_half_moves];
 	}
+	[tableView reloadData];
+	[chessView setNeedsDisplay:YES];
 }
 
 - (int) goForeward
@@ -341,7 +355,7 @@
 	[self printBoard];
 	printf("At %d of %d.\n", cur_move, num_half_moves);
 }
-
+/*
 - (void) awakeFromNib
 {
 	FILE *f = fopen("/users/kthul/Desktop/test.game", "r");
@@ -351,7 +365,7 @@
 		[self doMove: [ChessMove fromString: s]];
 	[tableView reloadData];
 }
-
+*/
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView
 {
 	return (num_half_moves + 1)/2;

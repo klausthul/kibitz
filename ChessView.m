@@ -1,4 +1,5 @@
 #import "ChessView.h"
+#import "game.h"
 
 @implementation ChessView
 
@@ -35,13 +36,7 @@
 			if (c == 1)
 				[NSBezierPath fillRect: cur_field];
 			if ((p = [game pieceLine:j+1 row:i+1]) != 0) {
-//				if (GETCOLOR(p))
-//					[[NSColor redColor] set];
-//				else
-//					[[NSColor greenColor] set];
-//				[NSBezierPath fillRect: cur_field];
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:0.5];
-//				[[NSColor blackColor] set];
 			}
 			cur_field.origin.x += size_x;
 			n++;
@@ -54,7 +49,7 @@
 
 - (ChessView *) awakeFromNib 
 {
-	pieces[1] = [[[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wp.BMP"] retain];
+	pieces[1] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wp.BMP"];
 	pieces[2] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wn.BMP"];
 	pieces[3] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wb.BMP"];
 	pieces[4] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wr.BMP"];
@@ -68,4 +63,28 @@
 	pieces[14] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/bk.BMP"];
 	return self;
 }
+
+- (ChessField) getField: (NSEvent *) theEvent
+{
+	ChessField f;
+	NSPoint p = [self convertPoint:[theEvent locationInWindow] fromView: nil];
+	NSRect bounds = [self bounds];
+	f.line = ceilf(p.x / bounds.size.width * 8);
+	f.row = ceilf(p.y / bounds.size.height * 8);
+	printf("%f %f\n", p.x, p.y);
+	return f;	
+}
+
+- (void) mouseDown: (NSEvent *) theEvent
+{
+	fromMouse = [self getField: theEvent];
+	printf("%d %d\n", fromMouse.line, fromMouse.row);
+}
+
+- (void) mouseUp: (NSEvent *) theEvent
+{
+	toMouse = [self getField: theEvent];
+	[game doMove: [ChessMove fromFieldsfrom: fromMouse to: toMouse]];
+}
+
 @end
