@@ -76,9 +76,11 @@ enum CASTLE_RIGHTS {
 	NSMutableArray *move_list;
 	IBOutlet NSTableView *tableView;
 	IBOutlet ChessView *chessView;
+	IBOutlet NSTextField *upperClock, *lowerClock;
 	int cur_move, num_half_moves;
 }
 
++ (NSString *) stringWithClock: (int) seconds;
 - (int) pieceLine: (int) l row: (int) r;
 - (Game *) init;
 - (void) doMove: (ChessMove *) move;
@@ -97,5 +99,6 @@ enum CASTLE_RIGHTS {
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView;
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (void) setBoardFromString: (char *) s flip: (int) flip;
+- (void) setClocksWhite: (int) white Black: (int) black;
 
 @end

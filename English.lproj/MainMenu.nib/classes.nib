@@ -5,9 +5,11 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 game = Game; 
+                lowerClock = NSTextField; 
                 mainWindow = NSWindow; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
+                upperClock = NSTextField; 
             }; 
             SUPERCLASS = NSObject; 
         }, 
@@ -25,7 +27,12 @@
             ACTIONS = {goBackward = id; goEnd = id; goForeward = id; goStart = id; }; 
             CLASS = Game; 
             LANGUAGE = ObjC; 
-            OUTLETS = {chessView = ChessView; tableView = NSTableView; }; 
+            OUTLETS = {
+                chessView = ChessView; 
+                lowerClock = NSTextField; 
+                tableView = NSTableView; 
+                upperClock = NSTextField; 
+            }; 
             SUPERCLASS = NSObject; 
         }
     ); 

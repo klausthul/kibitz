@@ -20,6 +20,7 @@
 
 - (void) processServerOutput
 {
+	printf("processing: %s\n", lineBuf);
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity: 40];
 		char *cp1, *cp2;
@@ -32,11 +33,14 @@
 				cp2 = cp1 + 1;
 			}
 		}
-		printf("processing: %s\n", lineBuf);
 		for (i = 0; i < [a count]; i++)
 			printf("%d: %s\n", i, [[a objectAtIndex:i] UTF8String]);
-		flip = atoi([[a objectAtIndex: 30] UTF8String]);
+//		flip = atoi([[a objectAtIndex: 30] UTF8String]);
 		[game setBoardFromString: lineBuf + 5 flip: flip];
+		[game setClocksWhite: atoi([[a objectAtIndex:24] UTF8String]) Black: atoi([[a objectAtIndex:25] UTF8String])];
+	} else {
+		[self addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
+		[self addToServerOutput:@"\n"];
 	}
 }
 
@@ -47,27 +51,38 @@
 	
 	switch(event) {
 	  case NSStreamEventHasBytesAvailable: {
-		unsigned char buf[1024];
+		unsigned char buf[2048];
 		unsigned int len = 0;
-		while (len = [(NSInputStream *) stream read:buf maxLength:1023]) {
-			buf[len] = 0;
-			[self addToServerOutput:[NSString stringWithUTF8String:(char *) buf]];
+		while (len = [(NSInputStream *) stream read:buf maxLength: 2048]) {
+			printf("LEN = %d, lastChar = %d\n", len, lastChar);
 			for (i = 0; i < len; i++) {
+				if (isalnum(buf[i]))
+					printf("%d: %c %d\n", i, buf[i], lastChar);
+				else
+					printf("%d: %d %d\n", i, buf[i], lastChar);
 				switch (c = buf[i]) {
-				  case '\n':
+				  case 10: 
 					lineBuf[lastChar] = 0;
-					[self processServerOutput];
 					lastChar = 0;
+					[self processServerOutput];
+					printf("Welcome back!\n");
 					break;
-				  case '\r':
+				  case 13:
 					break;
 				  default:
 					lineBuf[lastChar++] = c;
 					break;
 				}
 			}
-			if (len < 1023) // !!! dirty code
+			if (len < 2048) { // !!! dirty code
+				if (lastChar > 0) {
+					lineBuf[lastChar] = 0;
+					lastChar = 0;
+					[self processServerOutput];
+					printf("Welcome back!\n");
+				}
 				break;
+			}
 		}
 		break;
 	  }
@@ -122,8 +137,9 @@
 	NSString *input = [serverInput stringValue];
 	const char *s = [input UTF8String];
 	NSLog([serverInput stringValue]);
-	[serverOS write:(unsigned char *) s maxLength:strlen(s)];
-	[serverOS write:(unsigned char *) "\n" maxLength:1];
+	if (strlen(s) > 0)
+		[serverOS write:(unsigned char *) s maxLength:strlen(s)];
+	[serverOS write:(unsigned char *) "\n\r" maxLength:2];
 }
 
 - (void) userMoveFrom: (ChessField) from to: (ChessField) to

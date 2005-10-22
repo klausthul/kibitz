@@ -7,7 +7,6 @@
 {
 	IBOutlet Game *game;
 	IBOutlet AppController *appController;
-	
 	NSImage *pieces[16];
 	ChessField fromMouse;
 	ChessField toMouse;

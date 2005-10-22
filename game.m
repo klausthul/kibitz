@@ -432,4 +432,33 @@ int pieceFromChar(char c)
 	[chessView setNeedsDisplay:YES];
 }
 
+- (void) setClocksWhite: (int) white Black: (int) black
+{
+	[upperClock setStringValue:[Game stringWithClock: white]];
+	[upperClock setNeedsDisplay:YES];
+	[lowerClock setStringValue:[Game stringWithClock: black]];
+	[lowerClock setNeedsDisplay:YES];
+}
+
++ (NSString *) stringWithClock: (int) seconds
+{
+	int minutes, hours;
+	char string[10];
+	minutes = seconds / 60;
+	seconds -= minutes * 60;
+	hours = minutes / 60;
+	minutes -= hours * 60;
+	string[0] = hours % 10 + '0';
+	string[1] = ':';
+	string[2] = minutes / 10 + '0';
+	string[3] = minutes % 10 + '0';
+	string[4] = ':';
+	string[5] = seconds / 10 + '0';
+	string[6] = seconds % 10 + '0';
+	string[7] = '.';
+	string[8] = '0';
+	string[9] = 0;
+	return [NSString stringWithCString: string];
+}
+
 @end
