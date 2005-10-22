@@ -9,6 +9,18 @@
 #import <ctype.h>
 #import "game.h"
 
+int pieceFromChar(char c)
+{
+	const char *pieces = "-pnbrqk  PNBRQK";
+	int p;
+	
+	for (p = 0; pieces[p]; p++) {
+		if (pieces[p] == c)
+			return p;
+	} 
+	return 0; 
+}
+
 @implementation Board
 
 - (void) startPosition
@@ -153,6 +165,24 @@
 - (int) pieceLine: (int) l row: (int) r
 {
 	return fields[l + 8*r - 9];
+}
+
+- (void) setBoardFromString: (char *) s flip: (int) flip
+{
+	int i, j;
+	unsigned char *p = (flip == 0) ? fields : fields + 63;
+	int step = (flip == 0) ? 1 : -1;
+	
+	for (i = 0; i < 8; i++) {
+		for (j = 0; j < 8; j++) {
+			*p = pieceFromChar(*s);
+			if (*(++s) == 0)
+				return;
+			p += step;
+		}
+		if (*(++s) == 0)
+			return;
+	}
 }
 
 @end
@@ -394,6 +424,12 @@
 - (int) pieceLine: (int) l row: (int) r
 {
 	return [board pieceLine: l row: r];
+}
+
+- (void) setBoardFromString: (char *) s flip: flip
+{
+	[board setBoardFromString: s flip: (int) flip];
+	[chessView setNeedsDisplay:YES];
 }
 
 @end

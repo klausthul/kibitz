@@ -11,6 +11,7 @@
 @class Game;
 @class ChessMoveStore;
 @class ChessView;
+@class AppController;
 
 struct _ChessField{
 	int row;
@@ -95,5 +96,6 @@ enum CASTLE_RIGHTS {
 - (void) printGame;
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView;
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
+- (void) setBoardFromString: (char *) s flip: (int) flip;
 
 @end

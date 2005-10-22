@@ -1,5 +1,6 @@
 #import "ChessView.h"
 #import "game.h"
+#import "AppController.h"
 
 @implementation ChessView
 
@@ -84,7 +85,8 @@
 - (void) mouseUp: (NSEvent *) theEvent
 {
 	toMouse = [self getField: theEvent];
-	[game doMove: [ChessMove fromFieldsfrom: fromMouse to: toMouse]];
+//	[game doMove: [ChessMove fromFieldsfrom: fromMouse to: toMouse]];
+	[appController userMoveFrom: fromMouse to: toMouse];
 }
 
 @end

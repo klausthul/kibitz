@@ -3,7 +3,12 @@
         {
             CLASS = AppController; 
             LANGUAGE = ObjC; 
-            OUTLETS = {mainWindow = NSWindow; }; 
+            OUTLETS = {
+                game = Game; 
+                mainWindow = NSWindow; 
+                serverInput = NSTextField; 
+                serverOutput = NSTextView; 
+            }; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
@@ -12,7 +17,7 @@
         {
             CLASS = ChessView; 
             LANGUAGE = ObjC; 
-            OUTLETS = {game = Game; }; 
+            OUTLETS = {appController = AppController; game = Game; }; 
             SUPERCLASS = NSView; 
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
