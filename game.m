@@ -11,7 +11,7 @@
 
 int pieceFromChar(char c)
 {
-	const char *pieces = "-pnbrqk  PNBRQK";
+	const char *pieces = "-PNBRQK  pnbrqk";
 	int p;
 	
 	for (p = 0; pieces[p]; p++) {
@@ -170,15 +170,15 @@ int pieceFromChar(char c)
 - (void) setBoardFromString: (char *) s flip: (int) flip
 {
 	int i, j;
-	unsigned char *p = (flip == 0) ? fields : fields + 63;
-	int step = (flip == 0) ? 1 : -1;
+//	unsigned char *p = (flip == 0) ? fields : fields + 63;
+//	unsigned char *p = (flip == 0) ? fields : fields + 63;
+//	int step = (flip == 0) ? 1 : -1;
 	
 	for (i = 0; i < 8; i++) {
 		for (j = 0; j < 8; j++) {
-			*p = pieceFromChar(*s);
+			fields[(7-i)*8 + j] = pieceFromChar(*s);
 			if (*(++s) == 0)
 				return;
-			p += step;
 		}
 		if (*(++s) == 0)
 			return;
