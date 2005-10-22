@@ -11,7 +11,6 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CE439180090536440025B94D /* 100_0407.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CE43917F090536440025B94D /* 100_0407.JPG */; };
 		CEA0CBE109015EAC00BF913A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* game.m */; };
 		CEA8303609028C85003FFFDB /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
 		CEA8305909029C98003FFFDB /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8305809029C98003FFFDB /* AppController.m */; };
@@ -216,7 +215,6 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				CE439180090536440025B94D /* 100_0407.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +259,8 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -270,6 +270,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_STYLE = DYNAMIC;
 				PREBINDING = NO;
 				PRODUCT_NAME = icsinterface;
 				WRAPPER_EXTENSION = app;
@@ -281,6 +282,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -289,6 +292,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_STYLE = DYNAMIC;
 				PREBINDING = NO;
 				PRODUCT_NAME = icsinterface;
 				WRAPPER_EXTENSION = app;
@@ -299,6 +303,8 @@
 		CEA0CBD809015E9A00BF913A /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = icsinterface_Prefix.pch;
@@ -306,6 +312,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_STYLE = DYNAMIC;
 				PRODUCT_NAME = icsinterface;
 				WRAPPER_EXTENSION = app;
 			};

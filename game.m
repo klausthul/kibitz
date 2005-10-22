@@ -426,7 +426,7 @@ int pieceFromChar(char c)
 	return [board pieceLine: l row: r];
 }
 
-- (void) setBoardFromString: (char *) s flip: flip
+- (void) setBoardFromString: (char *) s flip: (int) flip
 {
 	[board setBoardFromString: s flip: (int) flip];
 	[chessView setNeedsDisplay:YES];
