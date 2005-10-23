@@ -56,10 +56,6 @@
 		while (len = [(NSInputStream *) stream read:buf maxLength: 2048]) {
 			printf("LEN = %d, lastChar = %d\n", len, lastChar);
 			for (i = 0; i < len; i++) {
-				if (isalnum(buf[i]))
-					printf("%d: %c %d\n", i, buf[i], lastChar);
-				else
-					printf("%d: %d %d\n", i, buf[i], lastChar);
 				switch (c = buf[i]) {
 				  case 10: 
 					lineBuf[lastChar] = 0;
@@ -110,7 +106,8 @@
 - (void) awakeFromNib
 {
 //	NSHost *host = [NSHost hostWithName: @"69.36.243.188"];
-	NSHost *host = [NSHost hostWithName: @"chess.unix-ag.uni-kl.de"];
+	NSHost *host = [NSHost hostWithName: @"chess.kemsu.ru"];	
+//	NSHost *host = [NSHost hostWithName: @"chess.unix-ag.uni-kl.de"];
 	NSLog([host address]);
 	
 	[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
@@ -145,15 +142,31 @@
 - (void) userMoveFrom: (ChessField) from to: (ChessField) to
 {
 	unsigned char m[8];
-	m[0] = from.line + 'a' - 1;
-	m[1] = from.row + '1' - 1;
-	m[2] = '-';
-	m[3] = to.line  + 'a' - 1;
-	m[4] = to.row + '1' - 1;
-	m[5] = '\n';
-	m[6] = 0;
-	printf("USERMOVE: %s\n", m);
-	[serverOS write:(unsigned char *) m maxLength:6];
+	move[0] = from.line + 'a' - 1;
+	move[1] = from.row + '1' - 1;
+	move[2] = '-';
+	move[3] = to.line  + 'a' - 1;
+	move[4] = to.row + '1' - 1;
+	move[5] = '\n';
+	move[6] = 0;
+	if ([game moveValidationFrom: from to: to] == REQUIRES_PROMOTION) {
+		printf("PROMOTION!!!\n", m);
+		[NSApp beginSheet:promotionPiece modalForWindow:mainWindow modalDelegate:self didEndSelector:NULL contextInfo:NULL];
+	} else {
+		printf("USERMOVE: %s\n", move);
+		[serverOS write:(unsigned char *) move maxLength:6 ];
+	}
 } 
 
+- (IBAction) selectedPromotionPiece: (id) sender
+{
+	[promotionPiece orderOut:sender];
+	move[5] = '=';
+	move[6] = " QRNB"[[(NSButton *) sender tag]];
+	move[7] = '\n';
+	move[8] = 0;
+	[NSApp endSheet:promotionPiece returnCode: 1];
+	printf("USERMOVE: %s\n", move);
+	[serverOS write:(unsigned char *) move maxLength:8 ];
+}
 @end

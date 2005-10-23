@@ -13,11 +13,15 @@
 @class ChessView;
 @class AppController;
 
-struct _ChessField{
+struct _ChessField {
 	int row;
 	int line;
 };
 typedef struct _ChessField ChessField;
+
+typedef enum {
+	INVALID, VALID, REQUIRES_PROMOTION
+} ValidationResult;
 
 #import "ChessView.h"
 
@@ -59,7 +63,7 @@ enum CASTLE_RIGHTS {
 - (void) printBoard;
 - (ChessMoveStore *) doMove: (ChessMove *) move;
 - (void) undoMove: (ChessMoveStore *) move;
-
+- (unsigned char) pieceOnField: (ChessField) field;
 @end
 
 @interface ChessMoveStore : ChessMove {
@@ -100,5 +104,6 @@ enum CASTLE_RIGHTS {
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (void) setBoardFromString: (char *) s flip: (int) flip;
 - (void) setClocksWhite: (int) white Black: (int) black;
+- (ValidationResult) moveValidationFrom: (ChessField) from to: (ChessField) to;
 
 @end

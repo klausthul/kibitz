@@ -1,15 +1,15 @@
 {
     IBClasses = (
         {
+            ACTIONS = {selectedPromotionPiece = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
                 game = Game; 
-                lowerClock = NSTextField; 
                 mainWindow = NSWindow; 
+                promotionPiece = NSWindow; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
-                upperClock = NSTextField; 
             }; 
             SUPERCLASS = NSObject; 
         }, 

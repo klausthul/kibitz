@@ -185,6 +185,11 @@ int pieceFromChar(char c)
 	}
 }
 
+- (unsigned char) pieceOnField: (ChessField) field
+{
+	return fields[field.row * 8 + field.line - 9];
+}
+
 @end
 
 @implementation ChessMove
@@ -459,6 +464,13 @@ int pieceFromChar(char c)
 	string[8] = '0';
 	string[9] = 0;
 	return [NSString stringWithCString: string];
+}
+
+- (ValidationResult) moveValidationFrom: (ChessField) from to: (ChessField) to
+{
+	if (((to.row == 1) || (to.row == 8)) && GETPIECE([board pieceOnField:from]) == PAWN)
+		return REQUIRES_PROMOTION;
+	return VALID;
 }
 
 @end
