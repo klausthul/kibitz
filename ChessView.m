@@ -48,21 +48,18 @@
 	}
 }
 
-- (ChessView *) awakeFromNib 
+- (void) awakeFromNib 
 {
-	pieces[1] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wp.BMP"];
-	pieces[2] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wn.BMP"];
-	pieces[3] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wb.BMP"];
-	pieces[4] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wr.BMP"];
-	pieces[5] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wq.BMP"];
-	pieces[6] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/wk.BMP"];
-	pieces[9] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/bp.BMP"];
-	pieces[10] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/bn.BMP"];
-	pieces[11] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/bb.BMP"];
-	pieces[12] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/br.BMP"];
-	pieces[13] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/bq.BMP"];
-	pieces[14] = [[NSImage alloc] initByReferencingFile:@"/users/kthul/pieces/bk.BMP"];
-	return self;
+	NSBundle *b = [NSBundle mainBundle];
+	NSString *names[] = { nil, @"wp", @"wn", @"wb", @"wr", @"wq", @"wk", nil, nil, @"bp", @"bn", @"bb", @"br", @"bq", @"bk", nil, nil };
+	int i;
+	
+	for (i = 0; i < 16; i++) {
+		if (names[i] == nil)
+			pieces[i] = nil;
+		else
+			pieces[i] = [[NSImage alloc] initByReferencingFile:[b pathForImageResource:names[i]]];
+	}
 }
 
 - (ChessField) getField: (NSEvent *) theEvent

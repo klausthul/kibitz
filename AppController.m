@@ -109,8 +109,8 @@
 
 - (void) awakeFromNib
 {
-	NSHost *host = [NSHost hostWithName: @"69.36.243.188"];
-//	NSHost *host = [NSHost hostWithName: @"chess.unix-ag.uni-kl.de"];
+//	NSHost *host = [NSHost hostWithName: @"69.36.243.188"];
+	NSHost *host = [NSHost hostWithName: @"chess.unix-ag.uni-kl.de"];
 	NSLog([host address]);
 	
 	[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
