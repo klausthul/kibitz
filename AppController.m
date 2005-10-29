@@ -1,4 +1,6 @@
+#import "ChessServer.h"
 #import "AppController.h"
+
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 
 @implementation AppController
@@ -20,7 +22,6 @@
 
 - (void) processServerOutput
 {
-	printf("processing: %s\n", lineBuf);
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity: 40];
 		char *cp1, *cp2;
@@ -38,6 +39,17 @@
 //		flip = atoi([[a objectAtIndex: 30] UTF8String]);
 		[game setBoardFromString: lineBuf + 5 flip: flip];
 		[game setClocksWhite: atoi([[a objectAtIndex:24] UTF8String]) Black: atoi([[a objectAtIndex:25] UTF8String])];
+	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
+		int num = 0;
+		sscanf(lineBuf + 3, " %d", &num);
+		printf("processing: %s\n", lineBuf);
+		printf("  num = %d\n", num);
+		[seekGraph newSeekFromServer: num description: lineBuf + 4];
+	} else if (strncmp(lineBuf,"<sr>", 4) == 0) {
+		int num = 0;
+		printf("processing: %s\n", lineBuf);
+		sscanf(lineBuf + 4, " %d", &num);
+		[seekGraph removeSeekFromServer: num];
 	} else {
 		[self addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
 		[self addToServerOutput:@"\n"];
@@ -61,7 +73,6 @@
 					lineBuf[lastChar] = 0;
 					lastChar = 0;
 					[self processServerOutput];
-					printf("Welcome back!\n");
 					break;
 				  case 13:
 					break;
@@ -75,7 +86,6 @@
 					lineBuf[lastChar] = 0;
 					lastChar = 0;
 					[self processServerOutput];
-					printf("Welcome back!\n");
 				}
 				break;
 			}
@@ -103,10 +113,38 @@
 {
 }
 
+- (IBAction) selectServer: (id) sender
+{
+	[NSApp beginSheet:serverSelect modalForWindow:mainWindow modalDelegate:self didEndSelector:NULL contextInfo:NULL];
+}
+
+- (IBAction) finishServerSelection: (id) sender
+{
+	printf("Finish ServerSelect\n");
+	[serverSelect orderOut:sender];
+	if ([(NSButton *) sender tag] == 2) {
+		ChessServer *cs = [chessServerList currentServer];
+		
+		NSHost *host = [NSHost hostWithName: cs->serverAddress];
+		[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
+		[serverIS retain];
+		[serverOS retain];
+		[serverIS setDelegate:self];
+		[serverOS setDelegate:self];
+		[serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+		[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+		[serverIS open];
+		[serverOS open];
+	}
+	[NSApp endSheet:serverSelect returnCode: 1];
+}
+
 - (void) awakeFromNib
 {
-//	NSHost *host = [NSHost hostWithName: @"69.36.243.188"];
-	NSHost *host = [NSHost hostWithName: @"chess.kemsu.ru"];	
+//	[self selectServer];
+	/*
+	NSHost *host = [NSHost hostWithAddress: @"69.36.243.188"];
+//	NSHost *host = [NSHost hostWithName: @"chess.kemsu.ru"];	
 //	NSHost *host = [NSHost hostWithName: @"chess.unix-ag.uni-kl.de"];
 	NSLog([host address]);
 	
@@ -119,6 +157,7 @@
 	[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 	[serverIS open];
 	[serverOS open];
+	*/
 	lastChar = 0;
 }
 
@@ -141,7 +180,6 @@
 
 - (void) userMoveFrom: (ChessField) from to: (ChessField) to
 {
-	unsigned char m[8];
 	move[0] = from.line + 'a' - 1;
 	move[1] = from.row + '1' - 1;
 	move[2] = '-';
@@ -150,10 +188,8 @@
 	move[5] = '\n';
 	move[6] = 0;
 	if ([game moveValidationFrom: from to: to] == REQUIRES_PROMOTION) {
-		printf("PROMOTION!!!\n", m);
 		[NSApp beginSheet:promotionPiece modalForWindow:mainWindow modalDelegate:self didEndSelector:NULL contextInfo:NULL];
 	} else {
-		printf("USERMOVE: %s\n", move);
 		[serverOS write:(unsigned char *) move maxLength:6 ];
 	}
 } 

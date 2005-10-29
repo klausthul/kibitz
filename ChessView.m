@@ -1,5 +1,6 @@
 #import "ChessView.h"
 #import "game.h"
+#import "ChessServer.h"
 #import "AppController.h"
 
 @implementation ChessView
@@ -87,3 +88,5 @@
 }
 
 @end
+
+

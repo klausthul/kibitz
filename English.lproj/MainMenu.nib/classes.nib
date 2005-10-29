@@ -1,21 +1,40 @@
 {
     IBClasses = (
         {
-            ACTIONS = {selectedPromotionPiece = id; }; 
+            ACTIONS = {finishServerSelection = id; selectServer = id; selectedPromotionPiece = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                chessServerList = ChessServerList; 
                 game = Game; 
                 mainWindow = NSWindow; 
                 promotionPiece = NSWindow; 
+                seekGraph = SeekGraph; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
+                serverSelect = NSWindow; 
             }; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessMove; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessMoveStore; LANGUAGE = ObjC; SUPERCLASS = ChessMove; }, 
+        {CLASS = ChessServer; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {userAddNewServer = id; userDeleteCurrentServer = id; }; 
+            CLASS = ChessServerList; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                serverAddress = NSTextField; 
+                serverInitialization = NSTextField; 
+                serverList = NSTableView; 
+                serverName = NSTextField; 
+                serverPassword = NSTextField; 
+                serverPort = NSTextField; 
+                serverUserName = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
         {
             CLASS = ChessView; 
             LANGUAGE = ObjC; 
@@ -34,7 +53,10 @@
                 upperClock = NSTextField; 
             }; 
             SUPERCLASS = NSObject; 
-        }
+        }, 
+        {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = SeekGraph; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
     ); 
     IBVersion = 1; 
 }

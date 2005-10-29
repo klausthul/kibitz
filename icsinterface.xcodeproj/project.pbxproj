@@ -23,9 +23,11 @@
 		CE3C77F8090B27EE0098D1B0 /* wp.bmp in Resources */ = {isa = PBXBuildFile; fileRef = CE3C77F7090B27EE0098D1B0 /* wp.bmp */; };
 		CE3C77FA090B27F30098D1B0 /* wq.bmp in Resources */ = {isa = PBXBuildFile; fileRef = CE3C77F9090B27F30098D1B0 /* wq.bmp */; };
 		CE3C77FC090B27F80098D1B0 /* wr.bmp in Resources */ = {isa = PBXBuildFile; fileRef = CE3C77FB090B27F80098D1B0 /* wr.bmp */; };
+		CE8D9BC8090B96B000864136 /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9BC7090B96B000864136 /* Seek.m */; };
 		CEA0CBE109015EAC00BF913A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* game.m */; };
 		CEA8303609028C85003FFFDB /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
 		CEA8305909029C98003FFFDB /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8305809029C98003FFFDB /* AppController.m */; };
+		CEAE437B090B4B8F00B56E1C /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAE437A090B4B8F00B56E1C /* ChessServer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -66,18 +68,6 @@
 		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* icsinterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icsinterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE3C77BF090B22040098D1B0 /* bb.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bb.bmp; path = ../pieces/bb.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77C1090B22100098D1B0 /* bk.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bk.bmp; path = ../pieces/bk.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77C3090B22200098D1B0 /* bn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bn.bmp; path = ../pieces/bn.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77C5090B22250098D1B0 /* bp.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bp.bmp; path = ../pieces/bp.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77C7090B22290098D1B0 /* bq.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bq.bmp; path = ../pieces/bq.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77C9090B222E0098D1B0 /* br.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = br.bmp; path = ../pieces/br.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77CB090B22320098D1B0 /* wb.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wb.bmp; path = ../pieces/wb.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77CD090B22360098D1B0 /* wk.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wk.bmp; path = ../pieces/wk.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77CF090B223B0098D1B0 /* wn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wn.bmp; path = ../pieces/wn.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77D1090B22400098D1B0 /* wp.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wp.bmp; path = ../pieces/wp.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77D3090B22450098D1B0 /* wq.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wq.bmp; path = ../pieces/wq.bmp; sourceTree = SOURCE_ROOT; };
-		CE3C77D5090B224A0098D1B0 /* wr.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wr.bmp; path = ../pieces/wr.bmp; sourceTree = SOURCE_ROOT; };
 		CE3C77E5090B27C90098D1B0 /* bb.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bb.bmp; path = pieces/bb.bmp; sourceTree = "<group>"; };
 		CE3C77E7090B27CE0098D1B0 /* bk.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bk.bmp; path = pieces/bk.bmp; sourceTree = "<group>"; };
 		CE3C77E9090B27D10098D1B0 /* bn.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bn.bmp; path = pieces/bn.bmp; sourceTree = "<group>"; };
@@ -90,13 +80,16 @@
 		CE3C77F7090B27EE0098D1B0 /* wp.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wp.bmp; path = pieces/wp.bmp; sourceTree = "<group>"; };
 		CE3C77F9090B27F30098D1B0 /* wq.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wq.bmp; path = pieces/wq.bmp; sourceTree = "<group>"; };
 		CE3C77FB090B27F80098D1B0 /* wr.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = wr.bmp; path = pieces/wr.bmp; sourceTree = "<group>"; };
-		CE43917F090536440025B94D /* 100_0407.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 100_0407.JPG; path = "../Pictures/iPhoto Library/2003/04/11/100_0407.JPG"; sourceTree = SOURCE_ROOT; };
+		CE8D9BC6090B96B000864136 /* Seek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seek.h; sourceTree = "<group>"; };
+		CE8D9BC7090B96B000864136 /* Seek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seek.m; sourceTree = "<group>"; };
 		CEA0CBDF09015EAC00BF913A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		CEA0CBE009015EAC00BF913A /* game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = game.m; sourceTree = "<group>"; };
 		CEA8303409028C85003FFFDB /* ChessView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessView.h; sourceTree = "<group>"; };
 		CEA8303509028C85003FFFDB /* ChessView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessView.m; sourceTree = "<group>"; };
 		CEA8305709029C98003FFFDB /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		CEA8305809029C98003FFFDB /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		CEAE4379090B4B8F00B56E1C /* ChessServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServer.h; sourceTree = "<group>"; };
+		CEAE437A090B4B8F00B56E1C /* ChessServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +151,10 @@
 				CEA8303509028C85003FFFDB /* ChessView.m */,
 				CEA8305709029C98003FFFDB /* AppController.h */,
 				CEA8305809029C98003FFFDB /* AppController.m */,
+				CEAE4379090B4B8F00B56E1C /* ChessServer.h */,
+				CE8D9BC6090B96B000864136 /* Seek.h */,
+				CE8D9BC7090B96B000864136 /* Seek.m */,
+				CEAE437A090B4B8F00B56E1C /* ChessServer.m */,
 			);
 			name = icsinterface;
 			sourceTree = "<group>";
@@ -177,19 +174,6 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
-				CE43917F090536440025B94D /* 100_0407.JPG */,
-				CE3C77BF090B22040098D1B0 /* bb.bmp */,
-				CE3C77C1090B22100098D1B0 /* bk.bmp */,
-				CE3C77C3090B22200098D1B0 /* bn.bmp */,
-				CE3C77C5090B22250098D1B0 /* bp.bmp */,
-				CE3C77C7090B22290098D1B0 /* bq.bmp */,
-				CE3C77C9090B222E0098D1B0 /* br.bmp */,
-				CE3C77CB090B22320098D1B0 /* wb.bmp */,
-				CE3C77CD090B22360098D1B0 /* wk.bmp */,
-				CE3C77CF090B223B0098D1B0 /* wn.bmp */,
-				CE3C77D1090B22400098D1B0 /* wp.bmp */,
-				CE3C77D3090B22450098D1B0 /* wq.bmp */,
-				CE3C77D5090B224A0098D1B0 /* wr.bmp */,
 				CE3C77E5090B27C90098D1B0 /* bb.bmp */,
 				CE3C77E7090B27CE0098D1B0 /* bk.bmp */,
 				CE3C77E9090B27D10098D1B0 /* bn.bmp */,
@@ -301,6 +285,8 @@
 				CEA0CBE109015EAC00BF913A /* game.m in Sources */,
 				CEA8303609028C85003FFFDB /* ChessView.m in Sources */,
 				CEA8305909029C98003FFFDB /* AppController.m in Sources */,
+				CEAE437B090B4B8F00B56E1C /* ChessServer.m in Sources */,
+				CE8D9BC8090B96B000864136 /* Seek.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
