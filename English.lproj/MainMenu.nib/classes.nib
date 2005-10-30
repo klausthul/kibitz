@@ -1,14 +1,20 @@
 {
     IBClasses = (
         {
-            ACTIONS = {finishServerSelection = id; selectServer = id; selectedPromotionPiece = id; }; 
+            ACTIONS = {
+                finishServerSelection = id; 
+                selectServer = id; 
+                selectedPromotionPiece = id; 
+                toggleSeekDrawer = id; 
+            }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
-                chessServerList = ChessServerList; 
+                chessServerListControl = ChessServerListControl; 
                 game = Game; 
                 mainWindow = NSWindow; 
                 promotionPiece = NSWindow; 
+                seekDrawer = NSDrawer; 
                 seekGraph = SeekGraph; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
@@ -20,9 +26,10 @@
         {CLASS = ChessMove; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessMoveStore; LANGUAGE = ObjC; SUPERCLASS = ChessMove; }, 
         {CLASS = ChessServer; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ChessServerList; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {userAddNewServer = id; userDeleteCurrentServer = id; }; 
-            CLASS = ChessServerList; 
+            ACTIONS = {updateDefaults = id; userAddNewServer = id; userDeleteCurrentServer = id; }; 
+            CLASS = ChessServerListControl; 
             LANGUAGE = ObjC; 
             OUTLETS = {
                 serverAddress = NSTextField; 
@@ -56,7 +63,12 @@
         }, 
         {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
         {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
-        {CLASS = SeekGraph; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+        {
+            CLASS = SeekGraph; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {seekTable = NSTableView; }; 
+            SUPERCLASS = NSObject; 
+        }
     ); 
     IBVersion = 1; 
 }

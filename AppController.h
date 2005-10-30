@@ -2,7 +2,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import "game.h"
+#import "ChessServer.h"
 #import "Seek.h"
+@class ChessServerListControl;
 
 @interface AppController : NSObject
 {
@@ -13,7 +15,8 @@
 	IBOutlet NSWindow *promotionPiece;
 	IBOutlet NSWindow *serverSelect;
 	IBOutlet SeekGraph *seekGraph;
-	IBOutlet ChessServerList *chessServerList;
+	IBOutlet ChessServerListControl *chessServerListControl;
+	IBOutlet NSDrawer *seekDrawer;
 	NSInputStream *serverIS;
 	NSOutputStream *serverOS;
 	char lineBuf[4096];
@@ -27,5 +30,7 @@
 - (IBAction) selectedPromotionPiece: (id) sender;
 - (IBAction) selectServer: (id) sender;
 - (IBAction) finishServerSelection: (id) sender;
- 
+- (IBAction) toggleSeekDrawer: (id) sender;
++ (void) initialize;
+
 @end

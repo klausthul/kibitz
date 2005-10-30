@@ -1,15 +1,9 @@
-//
 //  ChessServer.h
-//  icsinterface
-//
-//  Created by Thul Klaus on 10/23/05.
-//  Copyright 2005 __MyCompanyName__. All rights reserved.
-//
 
 #import <Cocoa/Cocoa.h>
+#import "AppController.h"
 
-
-@interface ChessServer : NSObject {
+@interface ChessServer : NSObject <NSCoding> {
 	@public
 	NSString *serverName;
 	NSString *serverAddress;
@@ -24,18 +18,30 @@
 
 @end
 
-@interface ChessServerList : NSObject {
+@interface ChessServerList : NSObject <NSCoding> {
 	NSMutableArray *servers;
-	IBOutlet NSTableView *serverList;
-	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;
-	IBOutlet NSTextField *serverInitialization;
 }
 
 - (ChessServerList *) init;
 - (void) dealloc;
 - (ChessServer *) addNewServer;
+- (void) removeServerAtIndex: (int) i;
+- (int) numServers;
+- (void) addNewServerName: (NSString *) name Address: (NSString *) address port: (int) port userName: (NSString *) userName userPassword: (NSString *) userPassword 
+ initCommands: (NSString *) initCommands;
+@end
+
+@interface ChessServerListControl : NSObject {
+	ChessServerList *chessServerList;
+	IBOutlet NSTableView *serverList;
+	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;
+	IBOutlet NSTextField *serverInitialization;
+}
+
 - (IBAction) userAddNewServer: (id) sender;
 - (IBAction) userDeleteCurrentServer: (id) sender;
 - (ChessServer *) currentServer;
+- (void) awakeFromNib;
+- (IBAction) updateDefaults: (id) sender;
 
 @end

@@ -20,6 +20,29 @@
 	return serverName;
 }
 
+- (id) initWithCoder: (NSCoder *) coder
+{
+	if (self = [super init]) {
+		[self setServerName: [coder decodeObjectForKey: @"serverName"]];
+		serverAddress = [[coder decodeObjectForKey: @"serverAddress"] retain];
+		serverPort = [[coder decodeObjectForKey: @"serverPort"] retain];
+		userName = [[coder decodeObjectForKey: @"userName"] retain];
+		userPassword = [[coder decodeObjectForKey: @"userPassword"] retain];
+		initCommands = [[coder decodeObjectForKey: @"initCommands"] retain];
+	}
+	return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) coder
+{
+	[coder encodeObject: [self serverName] forKey: @"serverName"];
+	[coder encodeObject: serverAddress forKey: @"serverAddress"];
+	[coder encodeObject: serverPort forKey: @"serverPort"];
+	[coder encodeObject: userName forKey: @"userName"];
+	[coder encodeObject: userPassword forKey: @"userPassword"];
+	[coder encodeObject: initCommands forKey: @"initCommands"];
+}
+
 @end
 
 @implementation ChessServerList
@@ -45,9 +68,52 @@
 	return cs;
 }
 
+- (void) removeServerAtIndex: (int) i
+{
+	[servers removeObjectAtIndex:i];
+}
+
+- (int) numServers
+{
+	return [servers count];
+}
+
+- (ChessServer *) serverAtIndex: (int) i
+{
+	return [servers objectAtIndex:i];
+}
+
+- (void) addNewServerName: (NSString *) name Address: (NSString *) address port: (int) port userName: (NSString *) userName userPassword: (NSString *) userPassword 
+ initCommands: (NSString *) initCommands {
+	ChessServer *s = [self addNewServer];
+	s->serverName = [name retain];
+	s->serverAddress = [address retain];
+	s->serverPort = [[NSNumber numberWithInt:port] retain];
+	s->userName = [userName retain];
+	s->userPassword = [userPassword retain];
+	s->initCommands = [initCommands retain];
+}
+
+- (id) initWithCoder: (NSCoder *) coder
+{
+	if (self = [super init])
+		servers = [[coder decodeObjectForKey:@"Servers"] retain];
+	return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) coder
+{
+	[coder encodeObject:servers forKey:@"Servers"];
+}
+
+@end
+
+
+@implementation ChessServerListControl
+
 - (IBAction) userAddNewServer: (id) sender
 {
-	[self addNewServer];
+	[chessServerList addNewServer];
 	[serverList reloadData];
 }
 
@@ -55,24 +121,24 @@
 {
 	int i = [serverList selectedRow];
 	if (i != -1)
-		[servers removeObjectAtIndex:i];
+		[chessServerList removeServerAtIndex:i];
 	[serverList reloadData];
 }
 
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView
 {
-	return [servers count];
+	return [chessServerList numServers];
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
 {
-	NSString *name = [[servers objectAtIndex:rowIndex] serverName];
+	NSString *name = [[chessServerList serverAtIndex:rowIndex] serverName];
 	return (name != nil) ? name : @"<undefined>";
 }
 
 - (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
 {
-	[[servers objectAtIndex:rowIndex] setServerName: anObject];
+	[[chessServerList serverAtIndex:rowIndex] setServerName: anObject];
 }
 
 - (void) tableViewSelectionDidChange:(NSNotification *)aNotification
@@ -87,7 +153,7 @@
 		[serverPort setEnabled: NO];
 		[serverInitialization setEnabled: NO];
 	} else {
-		s = [servers objectAtIndex: n];
+		s = [chessServerList serverAtIndex: n];
 		[serverName bind:@"value" toObject:s withKeyPath:@"serverName" options:nil];
 		[serverAddress bind:@"value" toObject:s withKeyPath:@"serverAddress" options:nil];
 		[serverUserName bind:@"value" toObject:s withKeyPath:@"userName" options:nil];
@@ -109,7 +175,22 @@
 	if (n < 0)
 		return nil;
 	else
-		return [servers objectAtIndex: n];
+		return [chessServerList serverAtIndex: n];
+}
+
+- (void) awakeFromNib
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *test = [defaults objectForKey:@"Test"];
+	NSLog(test);
+	chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
+	[chessServerList retain];
+}
+
+- (IBAction) updateDefaults: (id) sender
+{
+	NSDate *serverData = [NSKeyedArchiver archivedDataWithRootObject:chessServerList];
+	[[NSUserDefaults standardUserDefaults] setObject:serverData forKey:@"ICSChessServers"];
 }
 @end
 

@@ -1,4 +1,3 @@
-#import "ChessServer.h"
 #import "AppController.h"
 
 #define min(a, b) (((a) < (b)) ? (a) : (b))
@@ -123,7 +122,7 @@
 	printf("Finish ServerSelect\n");
 	[serverSelect orderOut:sender];
 	if ([(NSButton *) sender tag] == 2) {
-		ChessServer *cs = [chessServerList currentServer];
+		ChessServer *cs = [chessServerListControl currentServer];
 		
 		NSHost *host = [NSHost hostWithName: cs->serverAddress];
 		[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
@@ -205,4 +204,23 @@
 	printf("USERMOVE: %s\n", move);
 	[serverOS write:(unsigned char *) move maxLength:8 ];
 }
+
+- (IBAction) toggleSeekDrawer: (id) sender
+{
+	[seekDrawer toggle:sender];
+}
+
++ (void) initialize
+{
+	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
+	ChessServerList *defaultServers = [[ChessServerList alloc] init];
+	NSData *serverData;
+	[defaultServers addNewServerName: @"Free Internet Chess Server (FICS)" Address: @"69.36.243.188" port: 5000 userName: nil userPassword: nil 
+	 initCommands: @"iset seekremove 1\niset seekinfo 1\n"];
+	[defaultValues setObject:@"Hallo\n" forKey:@"Test"];
+	serverData = [NSKeyedArchiver archivedDataWithRootObject:defaultServers];
+	[defaultValues setObject:serverData forKey:@"ICSChessServers"];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+}
+
 @end
