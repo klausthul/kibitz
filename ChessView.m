@@ -26,7 +26,7 @@
 	imagerect.origin = NSZeroPoint;
 	[[NSColor whiteColor] set];
 	[NSBezierPath fillRect: bounds];	
-	[[NSColor blackColor] set];
+	[[NSColor brownColor] set];
 	cur_field.size.width = size_x;
 	cur_field.size.height = size_y;
 	cur_field.origin.y = 0;
@@ -38,7 +38,7 @@
 			if (c == 1)
 				[NSBezierPath fillRect: cur_field];
 			if ((p = [game pieceLine:j+1 row:i+1]) != 0) {
-				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:0.5];
+				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
 			}
 			cur_field.origin.x += size_x;
 			n++;
