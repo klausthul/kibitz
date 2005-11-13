@@ -5,6 +5,7 @@
 #import "ChessServer.h"
 #import "Seek.h"
 @class ChessServerListControl;
+@class ChessServer;
 
 @interface AppController : NSObject
 {
@@ -22,6 +23,8 @@
 	char lineBuf[4096];
 	char move[10];
 	int lastChar;
+	ChessServer *currentServer;
+	bool sendNamePassword, sendInit;
 }
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize;

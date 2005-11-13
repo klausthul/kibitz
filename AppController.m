@@ -21,6 +21,7 @@
 
 - (void) processServerOutput
 {
+	printf("**%s\n", lineBuf);
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity: 40];
 		char *cp1, *cp2;
@@ -49,6 +50,29 @@
 		printf("processing: %s\n", lineBuf);
 		sscanf(lineBuf + 4, " %d", &num);
 		[seekGraph removeSeekFromServer: num];
+	} else if (strncmp(lineBuf,"login:", 6) == 0) {
+		printf("SERVER asking for login!!\n");
+		if (currentServer != nil && sendNamePassword == YES) {
+			const char *s;
+			sendNamePassword = NO;
+			if (currentServer->userName && currentServer->userPassword) {
+				s = [currentServer->userName UTF8String];
+				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+				[serverOS write:(unsigned const char *) "\n" maxLength:1];
+				s = [currentServer->userPassword UTF8String];
+				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+				[serverOS write:(unsigned const char *) "\n" maxLength:1];
+			}
+		}
+	} else if (strncmp(lineBuf,"fics%", 5) == 0) {
+		if (sendInit) {
+			const char *s;
+			sendInit = NO;
+			if (s = [currentServer->initCommands UTF8String]) {
+				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+				[serverOS write:(unsigned const char *) "\n" maxLength:1];
+			}
+		}
 	} else {
 		[self addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
 		[self addToServerOutput:@"\n"];
@@ -122,9 +146,8 @@
 	printf("Finish ServerSelect\n");
 	[serverSelect orderOut:sender];
 	if ([(NSButton *) sender tag] == 2) {
-		ChessServer *cs = [chessServerListControl currentServer];
-		
-		NSHost *host = [NSHost hostWithName: cs->serverAddress];
+		currentServer = [chessServerListControl currentServer];
+		NSHost *host = [NSHost hostWithName: currentServer->serverAddress];
 		[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
 		[serverIS retain];
 		[serverOS retain];
@@ -134,6 +157,8 @@
 		[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 		[serverIS open];
 		[serverOS open];
+		sendNamePassword = YES;
+		sendInit = YES;
 	}
 	[NSApp endSheet:serverSelect returnCode: 1];
 }
