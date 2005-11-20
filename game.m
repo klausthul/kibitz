@@ -437,11 +437,31 @@ int pieceFromChar(char c)
 	[chessView setNeedsDisplay:YES];
 }
 
-- (void) setClocksWhite: (int) white Black: (int) black
+- (void) setClocksWhite: (int) white black: (int) black running: (enum RunningClock) running
 {
-	[upperClock setStringValue:[Game stringWithClock: white]];
+	timeWhite = white;
+	timeBlack = black;
+	lastTimeUpdate = time(NULL);
+	[self updateClocks];
+	runningClock = running;
+}
+
+- (void) updateClocks
+{
+	int tw = timeWhite, tb = timeBlack;
+	
+	if (runningClock == WHITE_CLOCK_RUNS) {
+		tw -= (int) difftime(time(NULL), lastTimeUpdate);
+		if (tw < 0)
+			tw = 0;
+	} else if (runningClock == BLACK_CLOCK_RUNS) {
+		tb -= (int) difftime(time(NULL), lastTimeUpdate);
+		if (tb < 0)
+			tb = 0;
+	}
+	[upperClock setStringValue:[Game stringWithClock: tb]];
 	[upperClock setNeedsDisplay:YES];
-	[lowerClock setStringValue:[Game stringWithClock: black]];
+	[lowerClock setStringValue:[Game stringWithClock: tw]];
 	[lowerClock setNeedsDisplay:YES];
 }
 

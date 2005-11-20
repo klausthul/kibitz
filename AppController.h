@@ -25,6 +25,7 @@
 	int lastChar;
 	ChessServer *currentServer;
 	bool sendNamePassword, sendInit;
+	NSTimer *timer;
 }
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize;
@@ -34,6 +35,7 @@
 - (IBAction) selectServer: (id) sender;
 - (IBAction) finishServerSelection: (id) sender;
 - (IBAction) toggleSeekDrawer: (id) sender;
+- (void) updateClock: (NSTimer *) aTimer;
 + (void) initialize;
 
 @end

@@ -26,6 +26,7 @@
 		NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity: 40];
 		char *cp1, *cp2;
 		int i, flip;
+		enum RunningClock rc;
 		
 		[a autorelease];
 		for (cp1 = cp2 = lineBuf; *cp1; cp1++) {
@@ -37,8 +38,18 @@
 		for (i = 0; i < [a count]; i++)
 			printf("%d: %s\n", i, [[a objectAtIndex:i] UTF8String]);
 //		flip = atoi([[a objectAtIndex: 30] UTF8String]);
+		switch ([[a objectAtIndex:9] UTF8String][0]) {
+		  case 'b': case 'B':
+		    rc = BLACK_CLOCK_RUNS;
+			break;
+		  case 'w': case 'W':
+		    rc = WHITE_CLOCK_RUNS;
+			break;
+		  default:
+			rc = NO_CLOCK_RUNS;
+		}
 		[game setBoardFromString: lineBuf + 5 flip: flip];
-		[game setClocksWhite: atoi([[a objectAtIndex:24] UTF8String]) Black: atoi([[a objectAtIndex:25] UTF8String])];
+		[game setClocksWhite: atoi([[a objectAtIndex:24] UTF8String]) black: atoi([[a objectAtIndex:25] UTF8String]) running: rc];
 	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
 		int num = 0;
 		sscanf(lineBuf + 3, " %d", &num);
@@ -165,24 +176,8 @@
 
 - (void) awakeFromNib
 {
-//	[self selectServer];
-	/*
-	NSHost *host = [NSHost hostWithAddress: @"69.36.243.188"];
-//	NSHost *host = [NSHost hostWithName: @"chess.kemsu.ru"];	
-//	NSHost *host = [NSHost hostWithName: @"chess.unix-ag.uni-kl.de"];
-	NSLog([host address]);
-	
-	[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
-	[serverIS retain];
-	[serverOS retain];
-	[serverIS setDelegate:self];
-	[serverOS setDelegate:self];
-	[serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-	[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-	[serverIS open];
-	[serverOS open];
-	*/
 	lastChar = 0;
+	timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
 }
 
 - (void) dealloc
@@ -246,6 +241,11 @@
 	serverData = [NSKeyedArchiver archivedDataWithRootObject:defaultServers];
 	[defaultValues setObject:serverData forKey:@"ICSChessServers"];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+}
+
+- (void) updateClock: (NSTimer *) aTimer
+{
+	[game updateClocks];
 }
 
 @end

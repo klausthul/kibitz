@@ -40,6 +40,12 @@ enum CASTLE_RIGHTS {
 	WHITE_LONG = 1, WHITE_SHORT = 2, BLACK_LONG = 4, BLACK_SHORT = 8
 };
 
+enum RunningClock { 
+	NO_CLOCK_RUNS = 0,
+	WHITE_CLOCK_RUNS = 1, 
+	BLACK_CLOCK_RUNS = 2 
+};
+
 @interface ChessMove : NSObject {
   @public
 	char from, to, promotion;
@@ -82,6 +88,9 @@ enum CASTLE_RIGHTS {
 	IBOutlet ChessView *chessView;
 	IBOutlet NSTextField *upperClock, *lowerClock;
 	int cur_move, num_half_moves;
+	int timeWhite, timeBlack;
+	time_t lastTimeUpdate;
+	enum RunningClock runningClock;
 }
 
 + (NSString *) stringWithClock: (int) seconds;
@@ -103,7 +112,8 @@ enum CASTLE_RIGHTS {
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView;
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (void) setBoardFromString: (char *) s flip: (int) flip;
-- (void) setClocksWhite: (int) white Black: (int) black;
+- (void) setClocksWhite: (int) white black: (int) black running: (enum RunningClock) running;
 - (ValidationResult) moveValidationFrom: (ChessField) from to: (ChessField) to;
+- (void) updateClocks;
 
 @end
