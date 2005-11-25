@@ -1,11 +1,12 @@
-/* AppController */
-
 #import <Cocoa/Cocoa.h>
-#import "game.h"
-#import "ChessServer.h"
-#import "Seek.h"
-@class ChessServerListControl;
-@class ChessServer;
+#import "Game.h"
+#import "ChessServerListControl.h"
+#import "SeekGraph.h"
+#import "ChessView.h"
+
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+
+@class Game;
 
 @interface AppController : NSObject
 {

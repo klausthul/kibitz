@@ -12,7 +12,13 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		CE8D9BC8090B96B000864136 /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9BC7090B96B000864136 /* Seek.m */; };
-		CEA0CBE109015EAC00BF913A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* game.m */; };
+		CE9CFDDE0937565D00724529 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDDD0937565D00724529 /* Board.m */; };
+		CE9CFDE3093756DF00724529 /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDE2093756DF00724529 /* ChessMove.m */; };
+		CE9CFDE8093756F000724529 /* ChessMoveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDE7093756F000724529 /* ChessMoveStore.m */; };
+		CE9CFDED093758CF00724529 /* ChessServerList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDEC093758CF00724529 /* ChessServerList.m */; };
+		CE9CFDF2093758E100724529 /* ChessServerListControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDF1093758E100724529 /* ChessServerListControl.m */; };
+		CE9CFDF7093759BC00724529 /* SeekGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDF6093759BC00724529 /* SeekGraph.m */; };
+		CEA0CBE109015EAC00BF913A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* Game.m */; };
 		CEA8303609028C85003FFFDB /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
 		CEA8305909029C98003FFFDB /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8305809029C98003FFFDB /* AppController.m */; };
 		CEAE437B090B4B8F00B56E1C /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAE437A090B4B8F00B56E1C /* ChessServer.m */; };
@@ -70,8 +76,21 @@
 		8D1107320486CEB800E47090 /* icsinterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icsinterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8D9BC6090B96B000864136 /* Seek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seek.h; sourceTree = "<group>"; };
 		CE8D9BC7090B96B000864136 /* Seek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seek.m; sourceTree = "<group>"; };
-		CEA0CBDF09015EAC00BF913A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
-		CEA0CBE009015EAC00BF913A /* game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = game.m; sourceTree = "<group>"; };
+		CE9CFDDC0937565D00724529 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		CE9CFDDD0937565D00724529 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		CE9CFDE1093756DF00724529 /* ChessMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessMove.h; sourceTree = "<group>"; };
+		CE9CFDE2093756DF00724529 /* ChessMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessMove.m; sourceTree = "<group>"; };
+		CE9CFDE6093756F000724529 /* ChessMoveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessMoveStore.h; sourceTree = "<group>"; };
+		CE9CFDE7093756F000724529 /* ChessMoveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessMoveStore.m; sourceTree = "<group>"; };
+		CE9CFDEB093758CF00724529 /* ChessServerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServerList.h; sourceTree = "<group>"; };
+		CE9CFDEC093758CF00724529 /* ChessServerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServerList.m; sourceTree = "<group>"; };
+		CE9CFDF0093758E100724529 /* ChessServerListControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServerListControl.h; sourceTree = "<group>"; };
+		CE9CFDF1093758E100724529 /* ChessServerListControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServerListControl.m; sourceTree = "<group>"; };
+		CE9CFDF5093759BC00724529 /* SeekGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeekGraph.h; sourceTree = "<group>"; };
+		CE9CFDF6093759BC00724529 /* SeekGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekGraph.m; sourceTree = "<group>"; };
+		CE9CFE1C09375DBC00724529 /* ChessField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessField.h; sourceTree = "<group>"; };
+		CEA0CBDF09015EAC00BF913A /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		CEA0CBE009015EAC00BF913A /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		CEA8303409028C85003FFFDB /* ChessView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessView.h; sourceTree = "<group>"; };
 		CEA8303509028C85003FFFDB /* ChessView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessView.m; sourceTree = "<group>"; };
 		CEA8305709029C98003FFFDB /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
@@ -140,13 +159,26 @@
 		29B97314FDCFA39411CA2CEA /* icsinterface */ = {
 			isa = PBXGroup;
 			children = (
+				CE9CFE1C09375DBC00724529 /* ChessField.h */,
+				CE9CFDF5093759BC00724529 /* SeekGraph.h */,
+				CE9CFDF6093759BC00724529 /* SeekGraph.m */,
+				CE9CFDEB093758CF00724529 /* ChessServerList.h */,
+				CE9CFDEC093758CF00724529 /* ChessServerList.m */,
+				CE9CFDF0093758E100724529 /* ChessServerListControl.h */,
+				CE9CFDF1093758E100724529 /* ChessServerListControl.m */,
+				CE9CFDE1093756DF00724529 /* ChessMove.h */,
+				CE9CFDE2093756DF00724529 /* ChessMove.m */,
+				CE9CFDE6093756F000724529 /* ChessMoveStore.h */,
+				CE9CFDE7093756F000724529 /* ChessMoveStore.m */,
+				CE9CFDDC0937565D00724529 /* Board.h */,
+				CE9CFDDD0937565D00724529 /* Board.m */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				CEA0CBDF09015EAC00BF913A /* game.h */,
-				CEA0CBE009015EAC00BF913A /* game.m */,
+				CEA0CBDF09015EAC00BF913A /* Game.h */,
+				CEA0CBE009015EAC00BF913A /* Game.m */,
 				CEA8303409028C85003FFFDB /* ChessView.h */,
 				CEA8303509028C85003FFFDB /* ChessView.m */,
 				CEA8305709029C98003FFFDB /* AppController.h */,
@@ -282,11 +314,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				CEA0CBE109015EAC00BF913A /* game.m in Sources */,
+				CEA0CBE109015EAC00BF913A /* Game.m in Sources */,
 				CEA8303609028C85003FFFDB /* ChessView.m in Sources */,
 				CEA8305909029C98003FFFDB /* AppController.m in Sources */,
 				CEAE437B090B4B8F00B56E1C /* ChessServer.m in Sources */,
 				CE8D9BC8090B96B000864136 /* Seek.m in Sources */,
+				CE9CFDDE0937565D00724529 /* Board.m in Sources */,
+				CE9CFDE3093756DF00724529 /* ChessMove.m in Sources */,
+				CE9CFDE8093756F000724529 /* ChessMoveStore.m in Sources */,
+				CE9CFDED093758CF00724529 /* ChessServerList.m in Sources */,
+				CE9CFDF2093758E100724529 /* ChessServerListControl.m in Sources */,
+				CE9CFDF7093759BC00724529 /* SeekGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

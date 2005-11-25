@@ -1,11 +1,3 @@
-//
-//  Seek.h
-//  icsinterface
-//
-//  Created by Thul Klaus on 10/23/05.
-//  Copyright 2005 __MyCompanyName__. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
 
 enum {
@@ -41,15 +33,3 @@ enum {
 
 @end
 
-@interface SeekGraph : NSObject {
-	NSMutableDictionary *seeks;
-	IBOutlet NSTableView *seekTable;
-}
-
-- (void) newSeekFromServer: (int) num description: (const char *) seekInfo;
-- (void) removeSeekFromServer: (int) num;
-- (SeekGraph *) init;
-- (int) numberOfRowsInTableView: (NSTableView *) aTableView;
-- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
-
-@end

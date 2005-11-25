@@ -1,7 +1,5 @@
 #import "AppController.h"
 
-#define min(a, b) (((a) < (b)) ? (a) : (b))
-
 @implementation AppController
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize
