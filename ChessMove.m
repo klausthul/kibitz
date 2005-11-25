@@ -1,4 +1,5 @@
 #import "ChessMove.h"
+#import "Board.h"
 
 @implementation ChessMove
 

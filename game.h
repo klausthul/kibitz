@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "Board.h"
 #import "ChessView.h"
+@class ChessView;
 
 enum RunningClock { 
 	NO_CLOCK_RUNS = 0,

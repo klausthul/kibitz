@@ -1,5 +1,6 @@
 #import <ctype.h>
-#import "game.h"
+#import "Game.h"
+#import "Board.h"
 
 int pieceFromChar(char c)
 {

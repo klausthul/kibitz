@@ -32,4 +32,6 @@ enum CASTLE_RIGHTS {
 - (ChessMoveStore *) doMove: (ChessMove *) move;
 - (void) undoMove: (ChessMoveStore *) move;
 - (unsigned char) pieceOnField: (ChessField) field;
+- (void) setBoardFromString: (char *) s flip: (int) flip;
+
 @end

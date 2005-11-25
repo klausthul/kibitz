@@ -258,7 +258,6 @@
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
-								<string>E2644B35053B69B200211256</string>
 								<string>1CC0EA4004350EF90041110B</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
@@ -268,7 +267,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 35}, {175, 705}}</string>
+							<string>{{0, 0}, {175, 705}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -303,7 +302,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>game.h</string>
+								<string>Game.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -311,11 +310,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>game.h</string>
+										<string>Game.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CE9C00030937645400724529</string>
+										<string>CE3D2E1509376B0E002A1ABC</string>
 										<key>history</key>
 										<array>
 											<string>CE72470F091469D50005DB27</string>
@@ -330,15 +329,17 @@
 											<string>CE9CFFAA093761C000724529</string>
 											<string>CE9CFFAB093761C000724529</string>
 											<string>CE9CFFAC093761C000724529</string>
-											<string>CE9CFFAD093761C000724529</string>
 											<string>CE9CFFAE093761C000724529</string>
 											<string>CE9CFFAF093761C000724529</string>
-											<string>CE9CFFB0093761C000724529</string>
-											<string>CE9CFFB1093761C000724529</string>
 											<string>CE9CFFB3093761C000724529</string>
 											<string>CE9CFFFD0937645400724529</string>
 											<string>CE9CFFFE0937645400724529</string>
-											<string>CE9CFFFF0937645400724529</string>
+											<string>CE3D2E0209376B0E002A1ABC</string>
+											<string>CE3D2E0309376B0E002A1ABC</string>
+											<string>CE3D2E0409376B0E002A1ABC</string>
+											<string>CE3D2E0509376B0E002A1ABC</string>
+											<string>CE3D2E0609376B0E002A1ABC</string>
+											<string>CE3D2E0709376B0E002A1ABC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -358,37 +359,24 @@
 											<string>CE7247C20914C9DB0005DB27</string>
 											<string>CED33C1D091E371C005B773B</string>
 											<string>CED33C2A091E38B6005B773B</string>
-											<string>CE9CFFB5093761C000724529</string>
-											<string>CE9CFFB6093761C000724529</string>
 											<string>CE9CFFB7093761C000724529</string>
-											<string>CE9CFFB8093761C000724529</string>
-											<string>CE9CFFB9093761C000724529</string>
-											<string>CE9CFFBA093761C000724529</string>
-											<string>CE9CFFBB093761C000724529</string>
-											<string>CE9CFFBC093761C000724529</string>
-											<string>CE9CFFBD093761C000724529</string>
-											<string>CE9CFFBE093761C000724529</string>
-											<string>CE9CFFBF093761C000724529</string>
-											<string>CE9CFFC0093761C000724529</string>
-											<string>CE9CFFC1093761C000724529</string>
-											<string>CE9CFFC2093761C000724529</string>
-											<string>CE9CFFC3093761C000724529</string>
 											<string>CE9CFFC4093761C000724529</string>
 											<string>CE9CFFC5093761C000724529</string>
-											<string>CE9CFFC6093761C000724529</string>
 											<string>CE9CFFC7093761C000724529</string>
-											<string>CE9CFFC8093761C000724529</string>
-											<string>CE9CFFC9093761C000724529</string>
-											<string>CE9CFFCA093761C000724529</string>
-											<string>CE9CFFCB093761C000724529</string>
-											<string>CE9CFFCC093761C000724529</string>
-											<string>CE9CFFCD093761C000724529</string>
-											<string>CE9CFFCE093761C000724529</string>
-											<string>CE9CFFCF093761C000724529</string>
-											<string>CE9CFFD0093761C000724529</string>
-											<string>CE9C00000937645400724529</string>
 											<string>CE9C00010937645400724529</string>
-											<string>CE9C00020937645400724529</string>
+											<string>CE3D2E0809376B0E002A1ABC</string>
+											<string>CE3D2E0909376B0E002A1ABC</string>
+											<string>CE3D2E0A09376B0E002A1ABC</string>
+											<string>CE3D2E0B09376B0E002A1ABC</string>
+											<string>CE3D2E0C09376B0E002A1ABC</string>
+											<string>CE3D2E0D09376B0E002A1ABC</string>
+											<string>CE3D2E0E09376B0E002A1ABC</string>
+											<string>CE3D2E0F09376B0E002A1ABC</string>
+											<string>CE3D2E1009376B0E002A1ABC</string>
+											<string>CE3D2E1109376B0E002A1ABC</string>
+											<string>CE3D2E1209376B0E002A1ABC</string>
+											<string>CE3D2E1309376B0E002A1ABC</string>
+											<string>CE3D2E1409376B0E002A1ABC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -415,7 +403,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>game.h</string>
+								<string>ChessServerListControl.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -423,11 +411,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>game.h</string>
+										<string>ChessServerListControl.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CE9C00040937645400724529</string>
+										<string>CE3D2E3809376B0E002A1ABC</string>
 										<key>history</key>
 										<array>
 											<string>CEA5CC8D0913CFA700E17422</string>
@@ -435,29 +423,29 @@
 											<string>CE9CFE3809375EA400724529</string>
 											<string>CE9CFE3909375EA400724529</string>
 											<string>CE9CFE3B09375EA400724529</string>
-											<string>CE9CFE3D09375EA400724529</string>
-											<string>CE9CFE3E09375EA400724529</string>
-											<string>CE9CFE3F09375EA400724529</string>
-											<string>CE9CFE4009375EA400724529</string>
 											<string>CE9CFE4109375EA400724529</string>
 											<string>CE9CFE4409375EA400724529</string>
 											<string>CE9CFE4509375EA400724529</string>
 											<string>CE9CFE4609375EA400724529</string>
 											<string>CE9CFE4709375EA400724529</string>
-											<string>CE9CFE4809375EA400724529</string>
-											<string>CE9CFE4A09375EA400724529</string>
-											<string>CE9CFE4B09375EA400724529</string>
 											<string>CE9CFE4C09375EA400724529</string>
-											<string>CE9CFE5009375EA400724529</string>
-											<string>CE9CFE5109375EA400724529</string>
-											<string>CE9CFE5209375EA400724529</string>
 											<string>CE9CFFD2093761C000724529</string>
-											<string>CE9CFFD3093761C000724529</string>
 											<string>CE9CFFD4093761C000724529</string>
-											<string>CE9CFFD5093761C000724529</string>
 											<string>CE9CFFD6093761C000724529</string>
-											<string>CE9CFFD7093761C000724529</string>
-											<string>CE9CFFD8093761C000724529</string>
+											<string>CE3D2E1609376B0E002A1ABC</string>
+											<string>CE3D2E1709376B0E002A1ABC</string>
+											<string>CE3D2E1809376B0E002A1ABC</string>
+											<string>CE3D2E1909376B0E002A1ABC</string>
+											<string>CE3D2E1A09376B0E002A1ABC</string>
+											<string>CE3D2E1B09376B0E002A1ABC</string>
+											<string>CE3D2E1C09376B0E002A1ABC</string>
+											<string>CE3D2E1D09376B0E002A1ABC</string>
+											<string>CE3D2E1E09376B0E002A1ABC</string>
+											<string>CE3D2E1F09376B0E002A1ABC</string>
+											<string>CE3D2E2009376B0E002A1ABC</string>
+											<string>CE3D2E2109376B0E002A1ABC</string>
+											<string>CE3D2E2209376B0E002A1ABC</string>
+											<string>CE3D2E2309376B0E002A1ABC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -486,14 +474,26 @@
 											<string>CE9CFE8E09375EA400724529</string>
 											<string>CE9CFE9009375EA400724529</string>
 											<string>CE9CFFD9093761C000724529</string>
-											<string>CE9CFFDA093761C000724529</string>
-											<string>CE9CFFDB093761C000724529</string>
-											<string>CE9CFFDC093761C000724529</string>
-											<string>CE9CFFDD093761C000724529</string>
-											<string>CE9CFFDE093761C000724529</string>
-											<string>CE9CFFDF093761C000724529</string>
-											<string>CE9CFFE0093761C000724529</string>
-											<string>CE9CFFE1093761C000724529</string>
+											<string>CE3D2E2409376B0E002A1ABC</string>
+											<string>CE3D2E2509376B0E002A1ABC</string>
+											<string>CE3D2E2609376B0E002A1ABC</string>
+											<string>CE3D2E2709376B0E002A1ABC</string>
+											<string>CE3D2E2809376B0E002A1ABC</string>
+											<string>CE3D2E2909376B0E002A1ABC</string>
+											<string>CE3D2E2A09376B0E002A1ABC</string>
+											<string>CE3D2E2B09376B0E002A1ABC</string>
+											<string>CE3D2E2C09376B0E002A1ABC</string>
+											<string>CE3D2E2D09376B0E002A1ABC</string>
+											<string>CE3D2E2E09376B0E002A1ABC</string>
+											<string>CE3D2E2F09376B0E002A1ABC</string>
+											<string>CE3D2E3009376B0E002A1ABC</string>
+											<string>CE3D2E3109376B0E002A1ABC</string>
+											<string>CE3D2E3209376B0E002A1ABC</string>
+											<string>CE3D2E3309376B0E002A1ABC</string>
+											<string>CE3D2E3409376B0E002A1ABC</string>
+											<string>CE3D2E3509376B0E002A1ABC</string>
+											<string>CE3D2E3609376B0E002A1ABC</string>
+											<string>CE3D2E3709376B0E002A1ABC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -554,9 +554,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CE9CFEFF09375EBB00724529</string>
+				<string>CE3D2E3909376B0E002A1ABC</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CE9CFF0009375EBB00724529</string>
+				<string>CE3D2E3A09376B0E002A1ABC</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
@@ -692,7 +692,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>CE3AC19D0901FF4300DD3768</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -773,7 +773,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CE3AC19D0901FF4300DD3768</string>
-				<string>CE9CFF0109375EBB00724529</string>
+				<string>CE3D2E3B09376B0E002A1ABC</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -1135,9 +1135,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>CEFEB1320930B3C9002C23F0</string>
+				<string>CE3D2E3C09376B0E002A1ABC</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>CEFEB1330930B3C9002C23F0</string>
+				<string>CE3D2E3D09376B0E002A1ABC</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
@@ -1146,7 +1146,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

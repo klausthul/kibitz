@@ -14,3 +14,6 @@
 	cms->castle_rights = cr;
 	return [cms autorelease];
 }
+
+@end
+

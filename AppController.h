@@ -6,7 +6,7 @@
 
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 
-@class Game;
+@class Game, ChessServer, ChessServerListControl;
 
 @interface AppController : NSObject
 {

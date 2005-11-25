@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "Seek.h"
 
 @interface SeekGraph : NSObject {
 	NSMutableDictionary *seeks;

@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import <ChessServer.h>
+@class ChessServer;
 
 @interface ChessServerList : NSObject <NSCoding> {
 	NSMutableArray *servers;
@@ -12,4 +13,5 @@
 - (int) numServers;
 - (void) addNewServerName: (NSString *) name Address: (NSString *) address port: (int) port userName: (NSString *) userName userPassword: (NSString *) userPassword 
  initCommands: (NSString *) initCommands;
+- (ChessServer *) serverAtIndex: (int) i;
 @end

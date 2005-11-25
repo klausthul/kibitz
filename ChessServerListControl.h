@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import <ChessServerList.h>
+@class ChessServer, ChessServerList;
 
 @interface ChessServerListControl : NSObject {
 	ChessServerList *chessServerList;
