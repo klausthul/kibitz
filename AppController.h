@@ -1,3 +1,6 @@
+// iscinterface
+// $Id$
+
 #import <Cocoa/Cocoa.h>
 #import "Game.h"
 #import "ChessServerListControl.h"
