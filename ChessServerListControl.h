@@ -2,7 +2,7 @@
 #import <ChessServerList.h>
 @class ChessServer, ChessServerList;
 
-@interface ChessServerListControl : NSObject {
+@interface ChessServerListControl : NSWindowController {
 	ChessServerList *chessServerList;
 	IBOutlet NSTableView *serverList;
 	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;
@@ -12,8 +12,9 @@
 - (IBAction) userAddNewServer: (id) sender;
 - (IBAction) userDeleteCurrentServer: (id) sender;
 - (ChessServer *) currentServer;
-- (void) awakeFromNib;
 - (IBAction) updateDefaults: (id) sender;
+- (id) init;
+- (void) show;
 
 @end
 

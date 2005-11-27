@@ -1,0 +1,26 @@
+{
+    IBClasses = (
+        {
+            CLASS = ChessView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {appController = AppController; game = Game; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = GameWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                chessServerListControl = ChessServerListControl; 
+                mainWindow = NSWindow; 
+                promotionPiece = NSWindow; 
+                seekDrawer = NSDrawer; 
+                serverInput = NSTextField; 
+                serverOutput = NSTextView; 
+                serverSelect = NSWindow; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

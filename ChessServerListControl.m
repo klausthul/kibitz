@@ -69,19 +69,32 @@
 		return [chessServerList serverAtIndex: n];
 }
 
-- (void) awakeFromNib
+- (id) init
 {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *test = [defaults objectForKey:@"Test"];
-	NSLog(test);
-	chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
-	[chessServerList retain];
+	if ((self = [super initWithWindowNibFile: @"ServerSelector"]) != nil) {
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
+		[chessServerList retain];
+	}
+	return self;
 }
 
 - (IBAction) updateDefaults: (id) sender
 {
 	NSDate *serverData = [NSKeyedArchiver archivedDataWithRootObject:chessServerList];
 	[[NSUserDefaults standardUserDefaults] setObject:serverData forKey:@"ICSChessServers"];
+}
+
+- (IBAction) finishServerSelection: (id) sender
+{
+	printf("Finish ServerSelect\n");
+	[serverSelect orderOut:sender];
+	if ([(NSButton *) sender tag] == 2) {
+		if (chessServerConnection != nil)
+			[chessServerConnection release];
+		chessServerConnection = [[ChessServerConnection alloc] initWithChessServer: [chessServerListControl currentServer]]; 
+	}
+	[NSApp endSheet:serverSelect returnCode: 1];
 }
 @end
 

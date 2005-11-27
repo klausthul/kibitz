@@ -16,9 +16,6 @@ typedef enum {
 @interface Game : NSObject {
 	Board *board;
 	NSMutableArray *move_list;
-	IBOutlet NSTableView *tableView;
-	IBOutlet ChessView *chessView;
-	IBOutlet NSTextField *upperClock, *lowerClock;
 	int cur_move, num_half_moves;
 	int timeWhite, timeBlack;
 	time_t lastTimeUpdate;

@@ -11,6 +11,10 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CE7D606C093945EC00AC6D87 /* ChessServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D606B093945EC00AC6D87 /* ChessServerConnection.m */; };
+		CE7D60CC0939942600AC6D87 /* GameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */; };
+		CE7D60D709399D0000AC6D87 /* GameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60D609399D0000AC6D87 /* GameWindow.nib */; };
+		CE7D60FC0939A15A00AC6D87 /* ServerSelector.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */; };
 		CE8D9BC8090B96B000864136 /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9BC7090B96B000864136 /* Seek.m */; };
 		CE9CFDDE0937565D00724529 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDDD0937565D00724529 /* Board.m */; };
 		CE9CFDE3093756DF00724529 /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDE2093756DF00724529 /* ChessMove.m */; };
@@ -74,6 +78,12 @@
 		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* icsinterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icsinterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7D606A093945EC00AC6D87 /* ChessServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServerConnection.h; sourceTree = "<group>"; };
+		CE7D606B093945EC00AC6D87 /* ChessServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServerConnection.m; sourceTree = "<group>"; };
+		CE7D60CA0939942600AC6D87 /* GameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWindowController.h; sourceTree = "<group>"; };
+		CE7D60CB0939942600AC6D87 /* GameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWindowController.m; sourceTree = "<group>"; };
+		CE7D60D609399D0000AC6D87 /* GameWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = GameWindow.nib; sourceTree = "<group>"; };
+		CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ServerSelector.nib; sourceTree = "<group>"; };
 		CE8D9BC6090B96B000864136 /* Seek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seek.h; sourceTree = "<group>"; };
 		CE8D9BC7090B96B000864136 /* Seek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seek.m; sourceTree = "<group>"; };
 		CE9CFDDC0937565D00724529 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
@@ -126,6 +136,31 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CE9CFE1C09375DBC00724529 /* ChessField.h */,
+				CE9CFDF5093759BC00724529 /* SeekGraph.h */,
+				CE9CFDF6093759BC00724529 /* SeekGraph.m */,
+				CE9CFDEB093758CF00724529 /* ChessServerList.h */,
+				CE9CFDEC093758CF00724529 /* ChessServerList.m */,
+				CE9CFDF0093758E100724529 /* ChessServerListControl.h */,
+				CE9CFDF1093758E100724529 /* ChessServerListControl.m */,
+				CE9CFDE1093756DF00724529 /* ChessMove.h */,
+				CE9CFDE2093756DF00724529 /* ChessMove.m */,
+				CE9CFDE6093756F000724529 /* ChessMoveStore.h */,
+				CE9CFDE7093756F000724529 /* ChessMoveStore.m */,
+				CE9CFDDC0937565D00724529 /* Board.h */,
+				CE9CFDDD0937565D00724529 /* Board.m */,
+				CEA0CBDF09015EAC00BF913A /* Game.h */,
+				CEA0CBE009015EAC00BF913A /* Game.m */,
+				CEA8303409028C85003FFFDB /* ChessView.h */,
+				CEA8303509028C85003FFFDB /* ChessView.m */,
+				CEA8305709029C98003FFFDB /* AppController.h */,
+				CEA8305809029C98003FFFDB /* AppController.m */,
+				CEAE4379090B4B8F00B56E1C /* ChessServer.h */,
+				CE8D9BC6090B96B000864136 /* Seek.h */,
+				CE8D9BC7090B96B000864136 /* Seek.m */,
+				CEAE437A090B4B8F00B56E1C /* ChessServer.m */,
+				CE7D606A093945EC00AC6D87 /* ChessServerConnection.h */,
+				CE7D606B093945EC00AC6D87 /* ChessServerConnection.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -159,34 +194,11 @@
 		29B97314FDCFA39411CA2CEA /* icsinterface */ = {
 			isa = PBXGroup;
 			children = (
-				CE9CFE1C09375DBC00724529 /* ChessField.h */,
-				CE9CFDF5093759BC00724529 /* SeekGraph.h */,
-				CE9CFDF6093759BC00724529 /* SeekGraph.m */,
-				CE9CFDEB093758CF00724529 /* ChessServerList.h */,
-				CE9CFDEC093758CF00724529 /* ChessServerList.m */,
-				CE9CFDF0093758E100724529 /* ChessServerListControl.h */,
-				CE9CFDF1093758E100724529 /* ChessServerListControl.m */,
-				CE9CFDE1093756DF00724529 /* ChessMove.h */,
-				CE9CFDE2093756DF00724529 /* ChessMove.m */,
-				CE9CFDE6093756F000724529 /* ChessMoveStore.h */,
-				CE9CFDE7093756F000724529 /* ChessMoveStore.m */,
-				CE9CFDDC0937565D00724529 /* Board.h */,
-				CE9CFDDD0937565D00724529 /* Board.m */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				CEA0CBDF09015EAC00BF913A /* Game.h */,
-				CEA0CBE009015EAC00BF913A /* Game.m */,
-				CEA8303409028C85003FFFDB /* ChessView.h */,
-				CEA8303509028C85003FFFDB /* ChessView.m */,
-				CEA8305709029C98003FFFDB /* AppController.h */,
-				CEA8305809029C98003FFFDB /* AppController.m */,
-				CEAE4379090B4B8F00B56E1C /* ChessServer.h */,
-				CE8D9BC6090B96B000864136 /* Seek.h */,
-				CE8D9BC7090B96B000864136 /* Seek.m */,
-				CEAE437A090B4B8F00B56E1C /* ChessServer.m */,
 			);
 			name = icsinterface;
 			sourceTree = "<group>";
@@ -203,7 +215,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE7D60D609399D0000AC6D87 /* GameWindow.nib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
+				CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				CED33BF4091E36E0005B773B /* bb.tiff */,
@@ -218,6 +232,8 @@
 				CED33BFF091E36EF005B773B /* wp.tiff */,
 				CED33C00091E36EF005B773B /* wq.tiff */,
 				CED33C01091E36EF005B773B /* wr.tiff */,
+				CE7D60CA0939942600AC6D87 /* GameWindowController.h */,
+				CE7D60CB0939942600AC6D87 /* GameWindowController.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -303,6 +319,8 @@
 				CED33C0A091E36EF005B773B /* wp.tiff in Resources */,
 				CED33C0B091E36EF005B773B /* wq.tiff in Resources */,
 				CED33C0C091E36EF005B773B /* wr.tiff in Resources */,
+				CE7D60D709399D0000AC6D87 /* GameWindow.nib in Resources */,
+				CE7D60FC0939A15A00AC6D87 /* ServerSelector.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +343,8 @@
 				CE9CFDED093758CF00724529 /* ChessServerList.m in Sources */,
 				CE9CFDF2093758E100724529 /* ChessServerListControl.m in Sources */,
 				CE9CFDF7093759BC00724529 /* SeekGraph.m in Sources */,
+				CE7D606C093945EC00AC6D87 /* ChessServerConnection.m in Sources */,
+				CE7D60CC0939942600AC6D87 /* GameWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

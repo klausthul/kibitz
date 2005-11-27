@@ -11,11 +11,9 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 chessServerListControl = ChessServerListControl; 
-                game = Game; 
                 mainWindow = NSWindow; 
                 promotionPiece = NSWindow; 
                 seekDrawer = NSDrawer; 
-                seekGraph = SeekGraph; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
                 serverSelect = NSWindow; 
