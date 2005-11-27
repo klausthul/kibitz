@@ -14,7 +14,9 @@
 - (ChessServer *) currentServer;
 - (IBAction) updateDefaults: (id) sender;
 - (id) init;
-- (void) show;
+- (void) show: (id) sender;
+- (IBAction) buttonSelect: (id) sender;
+- (IBAction) buttonCancel: (id) sender;
 
 @end
 

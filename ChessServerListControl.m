@@ -71,7 +71,7 @@
 
 - (id) init
 {
-	if ((self = [super initWithWindowNibFile: @"ServerSelector"]) != nil) {
+	if ((self = [super initWithWindowNibName: @"ServerSelector"]) != nil) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
 		[chessServerList retain];
@@ -81,21 +81,30 @@
 
 - (IBAction) updateDefaults: (id) sender
 {
-	NSDate *serverData = [NSKeyedArchiver archivedDataWithRootObject:chessServerList];
+	NSData *serverData = [NSKeyedArchiver archivedDataWithRootObject:chessServerList];
 	[[NSUserDefaults standardUserDefaults] setObject:serverData forKey:@"ICSChessServers"];
 }
 
-- (IBAction) finishServerSelection: (id) sender
+- (IBAction) buttonSelect: (id) sender
 {
-	printf("Finish ServerSelect\n");
-	[serverSelect orderOut:sender];
-	if ([(NSButton *) sender tag] == 2) {
-		if (chessServerConnection != nil)
-			[chessServerConnection release];
-		chessServerConnection = [[ChessServerConnection alloc] initWithChessServer: [chessServerListControl currentServer]]; 
-	}
-	[NSApp endSheet:serverSelect returnCode: 1];
+//	if (chessServerConnection != nil)
+//		[chessServerConnection release];
+//	chessServerConnection = [[ChessServerConnection alloc] initWithChessServer: [chessServerListControl currentServer]]; 
 }
+
+- (IBAction) buttonCancel: (id) sender
+{
+	printf("Close\n");
+	printf("%d", [super window]);
+	[self close];
+}
+
+- (void) show: (id) sender
+{
+	[self showWindow: sender];
+	[[self window] makeKeyAndOrderFront: sender];
+}
+
 @end
 
 

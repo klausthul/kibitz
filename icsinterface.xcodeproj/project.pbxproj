@@ -9,35 +9,30 @@
 /* Begin PBXBuildFile section */
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CE7D606C093945EC00AC6D87 /* ChessServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D606B093945EC00AC6D87 /* ChessServerConnection.m */; };
-		CE7D60CC0939942600AC6D87 /* GameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */; };
-		CE7D60D709399D0000AC6D87 /* GameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60D609399D0000AC6D87 /* GameWindow.nib */; };
-		CE7D60FC0939A15A00AC6D87 /* ServerSelector.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */; };
-		CE8D9BC8090B96B000864136 /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9BC7090B96B000864136 /* Seek.m */; };
-		CE9CFDDE0937565D00724529 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDDD0937565D00724529 /* Board.m */; };
-		CE9CFDE3093756DF00724529 /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDE2093756DF00724529 /* ChessMove.m */; };
-		CE9CFDE8093756F000724529 /* ChessMoveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDE7093756F000724529 /* ChessMoveStore.m */; };
-		CE9CFDED093758CF00724529 /* ChessServerList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDEC093758CF00724529 /* ChessServerList.m */; };
-		CE9CFDF2093758E100724529 /* ChessServerListControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDF1093758E100724529 /* ChessServerListControl.m */; };
-		CE9CFDF7093759BC00724529 /* SeekGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDF6093759BC00724529 /* SeekGraph.m */; };
-		CEA0CBE109015EAC00BF913A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* Game.m */; };
-		CEA8303609028C85003FFFDB /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
-		CEA8305909029C98003FFFDB /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8305809029C98003FFFDB /* AppController.m */; };
-		CEAE437B090B4B8F00B56E1C /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAE437A090B4B8F00B56E1C /* ChessServer.m */; };
-		CED33BF5091E36E0005B773B /* bb.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF4091E36E0005B773B /* bb.tiff */; };
-		CED33C02091E36EF005B773B /* bk.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF7091E36EF005B773B /* bk.tiff */; };
-		CED33C03091E36EF005B773B /* bn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF8091E36EF005B773B /* bn.tiff */; };
-		CED33C04091E36EF005B773B /* bp.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF9091E36EF005B773B /* bp.tiff */; };
-		CED33C05091E36EF005B773B /* bq.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFA091E36EF005B773B /* bq.tiff */; };
-		CED33C06091E36EF005B773B /* br.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFB091E36EF005B773B /* br.tiff */; };
-		CED33C07091E36EF005B773B /* wb.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFC091E36EF005B773B /* wb.tiff */; };
-		CED33C08091E36EF005B773B /* wk.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFD091E36EF005B773B /* wk.tiff */; };
-		CED33C09091E36EF005B773B /* wn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFE091E36EF005B773B /* wn.tiff */; };
-		CED33C0A091E36EF005B773B /* wp.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFF091E36EF005B773B /* wp.tiff */; };
-		CED33C0B091E36EF005B773B /* wq.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33C00091E36EF005B773B /* wq.tiff */; };
-		CED33C0C091E36EF005B773B /* wr.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33C01091E36EF005B773B /* wr.tiff */; };
+		CE20913C0939AF98008697DE /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8305809029C98003FFFDB /* AppController.m */; };
+		CE2091500939AFED008697DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		CE2091520939B008008697DE /* wr.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33C01091E36EF005B773B /* wr.tiff */; };
+		CE2091530939B009008697DE /* wq.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33C00091E36EF005B773B /* wq.tiff */; };
+		CE2091540939B00A008697DE /* wp.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFF091E36EF005B773B /* wp.tiff */; };
+		CE2091550939B00B008697DE /* wn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFE091E36EF005B773B /* wn.tiff */; };
+		CE2091560939B00B008697DE /* wk.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFD091E36EF005B773B /* wk.tiff */; };
+		CE2091570939B00C008697DE /* wb.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFC091E36EF005B773B /* wb.tiff */; };
+		CE2091580939B014008697DE /* br.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFB091E36EF005B773B /* br.tiff */; };
+		CE2091590939B015008697DE /* bq.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BFA091E36EF005B773B /* bq.tiff */; };
+		CE20915A0939B015008697DE /* bp.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF9091E36EF005B773B /* bp.tiff */; };
+		CE20915B0939B016008697DE /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDDD0937565D00724529 /* Board.m */; };
+		CE20915C0939B019008697DE /* bn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF8091E36EF005B773B /* bn.tiff */; };
+		CE20915D0939B019008697DE /* bk.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF7091E36EF005B773B /* bk.tiff */; };
+		CE20915E0939B01A008697DE /* bb.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33BF4091E36E0005B773B /* bb.tiff */; };
+		CE2091600939B039008697DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
+		CE2091610939B03A008697DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CE2091620939B041008697DE /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
+		CE2091740939B16A008697DE /* ChessServerListControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDF1093758E100724529 /* ChessServerListControl.m */; };
+		CE2091750939B16C008697DE /* ChessServerList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDEC093758CF00724529 /* ChessServerList.m */; };
+		CE2091760939B17D008697DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E42FB307B3F0F600E4EEF1 /* CoreData.framework */; };
+		CE2091770939B185008697DE /* ServerSelector.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */; };
+		CE20923F0939B71F008697DE /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAE437A090B4B8F00B56E1C /* ChessServer.m */; };
+		CE2092D20939C5C6008697DE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D1107310486CEB800E47090 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -126,7 +121,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				CE2091600939B039008697DE /* Foundation.framework in Frameworks */,
+				CE2091610939B03A008697DE /* Cocoa.framework in Frameworks */,
+				CE2091620939B041008697DE /* AppKit.framework in Frameworks */,
+				CE2091760939B17D008697DE /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,20 +305,20 @@
 			files = (
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				CED33BF5091E36E0005B773B /* bb.tiff in Resources */,
-				CED33C02091E36EF005B773B /* bk.tiff in Resources */,
-				CED33C03091E36EF005B773B /* bn.tiff in Resources */,
-				CED33C04091E36EF005B773B /* bp.tiff in Resources */,
-				CED33C05091E36EF005B773B /* bq.tiff in Resources */,
-				CED33C06091E36EF005B773B /* br.tiff in Resources */,
-				CED33C07091E36EF005B773B /* wb.tiff in Resources */,
-				CED33C08091E36EF005B773B /* wk.tiff in Resources */,
-				CED33C09091E36EF005B773B /* wn.tiff in Resources */,
-				CED33C0A091E36EF005B773B /* wp.tiff in Resources */,
-				CED33C0B091E36EF005B773B /* wq.tiff in Resources */,
-				CED33C0C091E36EF005B773B /* wr.tiff in Resources */,
-				CE7D60D709399D0000AC6D87 /* GameWindow.nib in Resources */,
-				CE7D60FC0939A15A00AC6D87 /* ServerSelector.nib in Resources */,
+				CE2091520939B008008697DE /* wr.tiff in Resources */,
+				CE2091530939B009008697DE /* wq.tiff in Resources */,
+				CE2091540939B00A008697DE /* wp.tiff in Resources */,
+				CE2091550939B00B008697DE /* wn.tiff in Resources */,
+				CE2091560939B00B008697DE /* wk.tiff in Resources */,
+				CE2091570939B00C008697DE /* wb.tiff in Resources */,
+				CE2091580939B014008697DE /* br.tiff in Resources */,
+				CE2091590939B015008697DE /* bq.tiff in Resources */,
+				CE20915A0939B015008697DE /* bp.tiff in Resources */,
+				CE20915C0939B019008697DE /* bn.tiff in Resources */,
+				CE20915D0939B019008697DE /* bk.tiff in Resources */,
+				CE20915E0939B01A008697DE /* bb.tiff in Resources */,
+				CE2091770939B185008697DE /* ServerSelector.nib in Resources */,
+				CE2092D20939C5C6008697DE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,20 +329,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				CEA0CBE109015EAC00BF913A /* Game.m in Sources */,
-				CEA8303609028C85003FFFDB /* ChessView.m in Sources */,
-				CEA8305909029C98003FFFDB /* AppController.m in Sources */,
-				CEAE437B090B4B8F00B56E1C /* ChessServer.m in Sources */,
-				CE8D9BC8090B96B000864136 /* Seek.m in Sources */,
-				CE9CFDDE0937565D00724529 /* Board.m in Sources */,
-				CE9CFDE3093756DF00724529 /* ChessMove.m in Sources */,
-				CE9CFDE8093756F000724529 /* ChessMoveStore.m in Sources */,
-				CE9CFDED093758CF00724529 /* ChessServerList.m in Sources */,
-				CE9CFDF2093758E100724529 /* ChessServerListControl.m in Sources */,
-				CE9CFDF7093759BC00724529 /* SeekGraph.m in Sources */,
-				CE7D606C093945EC00AC6D87 /* ChessServerConnection.m in Sources */,
-				CE7D60CC0939942600AC6D87 /* GameWindowController.m in Sources */,
+				CE20913C0939AF98008697DE /* AppController.m in Sources */,
+				CE2091500939AFED008697DE /* main.m in Sources */,
+				CE20915B0939B016008697DE /* Board.m in Sources */,
+				CE2091740939B16A008697DE /* ChessServerListControl.m in Sources */,
+				CE2091750939B16C008697DE /* ChessServerList.m in Sources */,
+				CE20923F0939B71F008697DE /* ChessServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

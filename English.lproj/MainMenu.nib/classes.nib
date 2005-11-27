@@ -1,23 +1,9 @@
 {
     IBClasses = (
         {
-            ACTIONS = {
-                finishServerSelection = id; 
-                selectServer = id; 
-                selectedPromotionPiece = id; 
-                toggleSeekDrawer = id; 
-            }; 
+            ACTIONS = {selectServer = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
-            OUTLETS = {
-                chessServerListControl = ChessServerListControl; 
-                mainWindow = NSWindow; 
-                promotionPiece = NSWindow; 
-                seekDrawer = NSDrawer; 
-                serverInput = NSTextField; 
-                serverOutput = NSTextView; 
-                serverSelect = NSWindow; 
-            }; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 

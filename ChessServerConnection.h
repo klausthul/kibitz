@@ -4,7 +4,8 @@
 #import <Cocoa/Cocoa.h>
 #import "Game.h"
 #import "SeekGraph.h"
-@class Game;
+#import "ChessServer.h"
+@class Game, ChessServer;
 
 @interface ChessServerConnection : NSObject {
 	Game *game;
