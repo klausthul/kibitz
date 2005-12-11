@@ -3,20 +3,21 @@
 
 #import "global.h"
 #import "Game.h"
-#import "SeekGraph.h"
+#import "Seek.h"
 #import "ChessServer.h"
+#import "GameWindowController.h"
 
 @interface ChessServerConnection : NSObject {
 	id errorHandler;
-	id serverMainWindow;
+	GameWindowController *serverMainWindow;
 	Game *game;
-	SeekGraph *seekGraph;
 	NSInputStream *serverIS;
 	NSOutputStream *serverOS;
 	char lineBuf[4096];
 	int lastChar;
 	ChessServer *currentServer;
 	bool sendNamePassword, sendInit;
+	NSMutableDictionary *seeks;
 }
 
 - (void) processServerOutput;
@@ -25,11 +26,10 @@
 - (id) init;
 - (void) dealloc;
 - (void) setErrorHandler: (id) eh;
-
-@end
-
-@interface NSObject(ChessServerConnectionErrorHandler)
-
-- (void) handleStreamError: (NSError *) theError;
+- (void) write: (unsigned char *) data maxLength: (int) i;
+- (void) newSeekFromServer: (int) num description: (const char *) seekInfo;
+- (void) removeSeekFromServer: (int) num;
+- (int) numSeeks;
+- (id) dataForSeekTable: (NSString *) x row:(int)rowIndex;
 
 @end

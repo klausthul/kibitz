@@ -7,9 +7,8 @@
 
 - (ChessServerList *) init
 {
-//	[super init];
-	servers = [NSMutableArray arrayWithCapacity:30];
-	[servers retain];
+	if (self = [super init])
+		servers = [[NSMutableArray arrayWithCapacity:30] retain];
 	return self;
 }
 
@@ -23,7 +22,7 @@
 {
 	ChessServer *cs = [[ChessServer alloc] init];
 	[servers addObject: cs];
-	return cs;
+	return [cs autorelease];
 }
 
 - (void) removeServerAtIndex: (int) i
@@ -44,12 +43,12 @@
 - (void) addNewServerName: (NSString *) name Address: (NSString *) address port: (int) port userName: (NSString *) userName userPassword: (NSString *) userPassword 
  initCommands: (NSString *) initCommands {
 	ChessServer *s = [self addNewServer];
-	s->serverName = [name retain];
-	s->serverAddress = [address retain];
-	s->serverPort = [[NSNumber numberWithInt:port] retain];
-	s->userName = [userName retain];
-	s->userPassword = [userPassword retain];
-	s->initCommands = [initCommands retain];
+	[s setServerName: name];
+	[s setServerAddress: address];
+	[s setServerPort: [NSNumber numberWithInt:port]];
+	[s setUserName: userName];
+	[s setUserPassword: userPassword];
+	[s setInitCommands: initCommands];
 }
 
 - (id) initWithCoder: (NSCoder *) coder

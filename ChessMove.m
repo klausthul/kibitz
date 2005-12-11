@@ -6,6 +6,30 @@
 
 @implementation ChessMove
 
++ (ChessMove *) moveFromStyle12: (NSArray *) data
+{
+	ChessMove *cm = [[ChessMove alloc] init];
+	if (cm != nil) {
+		cm->movePrint = [[data objectAtIndex: 29] retain];
+		cm->timeUsed = [[data objectAtIndex: 28] retain];
+		cm->positionAfter = [[Board boardFromStyle12: data] retain];
+	}
+	return [cm autorelease];
+}
+
+- (void) print
+{
+	[positionAfter print];
+	NSLog(movePrint);
+	NSLog(timeUsed);
+}
+
+- (Board *) positionAfter
+{
+	return [[positionAfter retain] autorelease];
+}
+
+/*
 + (ChessMove *) fromString: (const char *) s {
 	int p, i;
 	ChessMove *m = [[ChessMove alloc] init];
@@ -24,7 +48,7 @@
 	return [m autorelease];
 }
 
-+ (ChessMove *) fromFieldsfrom: (ChessField) from to: (ChessField) to 
++ (ChessMove *) fromFieldsfrom: (struct ChessField) from to: (struct ChessField) to 
 {
 	ChessMove *m = [[ChessMove alloc] init];
 	
@@ -45,5 +69,6 @@
 {
 	printf("%c%c-%c%c%c\n", from % 8 + 'a', from / 8 + '1', to % 8 + 'a', to / 8 + '1', "  KBRQ"[promotion]);
 }
+*/
 
 @end

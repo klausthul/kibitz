@@ -15,29 +15,30 @@
 @class ChessServer;
 @class Seek;
 @class ChessServerConnection;
+@class GameWindowController;
 
-typedef struct {
+struct ChessField {
 	int row, line;
-} ChessField;
+};
 
-enum PIECE {
+enum Piece {
 	PAWN = 1, KNIGHT = 2, BISHOP = 3, ROOK = 4, QUEEN = 5, KING = 6
 };
 
-enum COLOR {
+enum Color {
 	BLACK = 8, WHITE = 0
 };
 
 #define GETPIECE(x) ((x) & 7)
 #define GETCOLOR(x) ((x) & 8)
 
-enum CASTLE_RIGHTS {
+enum CastleRights {
 	WHITE_LONG = 1, WHITE_SHORT = 2, BLACK_LONG = 4, BLACK_SHORT = 8
 };
 
-#define min(a, b) (((a) < (b)) ? (a) : (b))
+// #define MIN(a, b) (((a) < (b)) ? (a) : (b))
 
-enum {
+enum PlayerType {
 	UNREGISTERED = 1,
 	COMPUTER = 2,
 	GM = 4,
@@ -54,6 +55,6 @@ enum RunningClock {
 	BLACK_CLOCK_RUNS = 2 
 };
 
-typedef enum {
+enum ValidationResult {
 	INVALID, VALID, REQUIRES_PROMOTION
-} ValidationResult;
+};

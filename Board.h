@@ -3,21 +3,19 @@
 
 #import "global.h"
 #import "ChessMove.h"
-#import "ChessMoveStore.h"
 
 @interface Board : NSObject {
 	unsigned char fields[64];
-	enum CASTLE_RIGHTS castle_rights;
-	enum COLOR to_move;
-	int en_passant; 
+	enum CastleRights castleRights;
+	enum Color sideToMove;
+	int enPassantLine, moveCounter50Rule, whiteMaterial, blackMaterial, nextMoveNumber, 
+	 whiteRemainingTime, blackRemainingTime; 
 }
 
++ (Board *) boardFromStyle12: (NSArray *) data; 
 - (int) pieceLine: (int) l row: (int) r;
 - (void) startPosition;
-- (void) printBoard;
-- (ChessMoveStore *) doMove: (ChessMove *) move;
-- (void) undoMove: (ChessMoveStore *) move;
-- (unsigned char) pieceOnField: (ChessField) field;
-- (void) setBoardFromString: (char *) s flip: (int) flip;
+- (void) print;
+- (unsigned char) pieceOnField: (struct ChessField) field;
 
 @end

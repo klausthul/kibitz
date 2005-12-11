@@ -7,11 +7,11 @@
 
 @interface ChessView : NSView
 {
-	IBOutlet Game *game;
-	IBOutlet AppController *appController;
+	Board *showBoard;
 	NSImage *pieces[16];
-	ChessField fromMouse;
-	ChessField toMouse;
+	struct ChessField fromMouse, toMouse;
 }
+
+- (void) setShowBoard: (Board *) board;
 
 @end

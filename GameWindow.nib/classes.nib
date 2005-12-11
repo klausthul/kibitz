@@ -12,12 +12,11 @@
             CLASS = GameWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
-                chessServerListControl = ChessServerListControl; 
                 chessView = ChessView; 
                 lowerClock = NSTextField; 
-                mainWindow = NSWindow; 
                 promotionPiece = NSWindow; 
                 seekDrawer = NSDrawer; 
+                seekTable = NSTableView; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
                 tableView = NSTableView; 

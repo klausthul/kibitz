@@ -7,6 +7,7 @@
 
 - (void) setServerName: (NSString *) n
 {
+	[serverName release];
 	serverName = [n retain];
 }
 
@@ -15,15 +16,70 @@
 	return serverName;
 }
 
+- (void) setServerAddress: (NSString *) s
+{
+	[serverAddress release];
+	serverAddress = [s retain];
+}
+
+- (void) setServerPort: (NSNumber *) i
+{
+	[userName release];
+	userName = [i retain];
+}
+
+- (void) setUserName: (NSString *) s
+{
+	[userName release];
+	userName = [s retain];
+}
+
+- (void) setUserPassword: (NSString *) s
+{
+	[userPassword release];
+	userPassword = [s retain];
+}
+
+- (void) setInitCommands: (NSString *) s
+{
+	[initCommands release];
+	initCommands = [s retain];
+}
+
+- (NSString *) serverAddress
+{
+	return [[serverAddress retain] autorelease];
+}
+
+- (NSNumber *) serverPort
+{
+	return [[serverPort retain] autorelease];
+}
+
+- (NSString *) userName;
+{
+	return [[userName retain] autorelease];
+}
+
+- (NSString *) userPassword
+{
+	return [[userPassword retain] autorelease];
+}
+
+- (NSString *) initCommands
+{
+	return [[initCommands retain] autorelease];
+}
+
 - (id) initWithCoder: (NSCoder *) coder
 {
 	if (self = [super init]) {
 		[self setServerName: [coder decodeObjectForKey: @"serverName"]];
-		serverAddress = [[coder decodeObjectForKey: @"serverAddress"] retain];
-		serverPort = [[coder decodeObjectForKey: @"serverPort"] retain];
-		userName = [[coder decodeObjectForKey: @"userName"] retain];
-		userPassword = [[coder decodeObjectForKey: @"userPassword"] retain];
-		initCommands = [[coder decodeObjectForKey: @"initCommands"] retain];
+		[self setServerAddress: [coder decodeObjectForKey: @"serverAddress"]];
+		[self setServerPort: [coder decodeObjectForKey: @"serverPort"]];
+		[self setUserName: [coder decodeObjectForKey: @"userName"]];
+		[self setUserPassword: [coder decodeObjectForKey: @"userPassword"]];
+		[self setInitCommands: [coder decodeObjectForKey: @"initCommands"]];
 	}
 	return self;
 }

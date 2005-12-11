@@ -2,29 +2,31 @@
 // $Id$
 
 #import "global.h"
+#import "ChessServerConnection.h"
 
 @interface GameWindowController : NSWindowController {
 	ChessServerConnection *serverConnection;
-    IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTextView *serverOutput;
 	IBOutlet NSTextField *serverInput;
 	IBOutlet NSWindow *promotionPiece;
-	IBOutlet ChessServerListControl *chessServerListControl;
 	IBOutlet NSDrawer *seekDrawer;
 	IBOutlet NSTableView *tableView;
 	IBOutlet ChessView *chessView;
 	IBOutlet NSTextField *upperClock, *lowerClock;
+	IBOutlet NSTableView *seekTable;
 	char move[10];
 	NSTimer *timer;
 }
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc;
 - (void) addToServerOutput: (NSString *) s;
-- (NSSize) windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize;
-- (void) userMoveFrom: (ChessField) from to: (ChessField) to;
 - (void) dealloc;
 - (IBAction) selectedPromotionPiece: (id) sender;
 - (IBAction) toggleSeekDrawer: (id) sender;
 - (void) updateClock: (NSTimer *) aTimer;
+- (int) numberOfRowsInTableView: (NSTableView *) aTableView;
+- (id) tableView:(NSTableView *) aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
+- (void) seekTableNeedsDisplay;
+- (void) setShowBoard: (Board *) board;
 
 @end

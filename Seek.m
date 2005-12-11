@@ -111,4 +111,19 @@
 	[super dealloc];
 }
 
+- (int) ratingValue
+{
+	return ratingValue;
+}
+
+- (NSString *) nameFrom
+{
+	return [[nameFrom retain] autorelease];
+}
+
+- (NSString *) typeOfPlay
+{
+	return [[typeOfPlay retain] autorelease];
+}
+
 @end

@@ -250,7 +250,7 @@ int pieceFromChar(char c)
 	return [NSString stringWithCString: string];
 }
 
-- (ValidationResult) moveValidationFrom: (ChessField) from to: (ChessField) to
+- (ValidationResult) moveValidationFrom: (struct ChessField) from to: (struct ChessField) to
 {
 	if (((to.row == 1) || (to.row == 8)) && GETPIECE([board pieceOnField:from]) == PAWN)
 		return REQUIRES_PROMOTION;

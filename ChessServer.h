@@ -5,7 +5,6 @@
 #import "AppController.h"
 
 @interface ChessServer : NSObject <NSCoding> {
-	@public
 	NSString *serverName;
 	NSString *serverAddress;
 	NSNumber *serverPort;
@@ -16,6 +15,16 @@
 
 - (void) setServerName: (NSString *) n;
 - (NSString *) serverName;
+- (void) setServerAddress: (NSString *) s;
+- (void) setServerPort: (NSNumber *) i;
+- (void) setUserName: (NSString *) s;
+- (void) setUserPassword: (NSString *) s;
+- (void) setInitCommands: (NSString *) s;
+- (NSString *) serverAddress;
+- (NSNumber *) serverPort;
+- (NSString *) userName;
+- (NSString *) userPassword;
+- (NSString *) initCommands;
 
 @end
 

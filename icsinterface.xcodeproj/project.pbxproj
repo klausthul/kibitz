@@ -37,6 +37,8 @@
 		CE69B23E094BCE8400F4E6D9 /* GameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */; };
 		CE69B2F6094BD9E500F4E6D9 /* GameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60D609399D0000AC6D87 /* GameWindow.nib */; };
 		CE69B300094BDA4B00F4E6D9 /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
+		CEDE1124094C431E0085CC1F /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9BC7090B96B000864136 /* Seek.m */; };
+		CEDE1245094C6B020085CC1F /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDE2093756DF00724529 /* ChessMove.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -91,7 +93,6 @@
 		CE9CFDE1093756DF00724529 /* ChessMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessMove.h; sourceTree = "<group>"; };
 		CE9CFDE2093756DF00724529 /* ChessMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessMove.m; sourceTree = "<group>"; };
 		CE9CFDE6093756F000724529 /* ChessMoveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessMoveStore.h; sourceTree = "<group>"; };
-		CE9CFDE7093756F000724529 /* ChessMoveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessMoveStore.m; sourceTree = "<group>"; };
 		CE9CFDEB093758CF00724529 /* ChessServerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServerList.h; sourceTree = "<group>"; };
 		CE9CFDEC093758CF00724529 /* ChessServerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServerList.m; sourceTree = "<group>"; };
 		CE9CFDF0093758E100724529 /* ChessServerListControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServerListControl.h; sourceTree = "<group>"; };
@@ -149,7 +150,6 @@
 				CE9CFDE1093756DF00724529 /* ChessMove.h */,
 				CE9CFDE2093756DF00724529 /* ChessMove.m */,
 				CE9CFDE6093756F000724529 /* ChessMoveStore.h */,
-				CE9CFDE7093756F000724529 /* ChessMoveStore.m */,
 				CE9CFDDC0937565D00724529 /* Board.h */,
 				CE9CFDDD0937565D00724529 /* Board.m */,
 				CEA0CBDF09015EAC00BF913A /* Game.h */,
@@ -343,6 +343,8 @@
 				CE69B08D094BB4F400F4E6D9 /* ChessServerConnection.m in Sources */,
 				CE69B23E094BCE8400F4E6D9 /* GameWindowController.m in Sources */,
 				CE69B300094BDA4B00F4E6D9 /* ChessView.m in Sources */,
+				CEDE1124094C431E0085CC1F /* Seek.m in Sources */,
+				CEDE1245094C6B020085CC1F /* ChessMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,6 @@
 #import "global.h"
 
 @interface Seek : NSObject {
-	@public
 	NSString *nameFrom;
 	int title;
 	int ratingValue;
@@ -22,6 +21,9 @@
 
 + (Seek *) seekFromSeekInfo: (const char *) seekInfo;
 - (void) dealloc;
+- (int) ratingValue;
+- (NSString *) nameFrom;
+- (NSString *) typeOfPlay;
 
 @end
 

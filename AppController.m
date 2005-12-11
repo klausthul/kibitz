@@ -26,10 +26,8 @@
 
 - (IBAction) selectServer: (id) sender
 {
-	if (chessServerListControl == nil) {
+	if (chessServerListControl == nil)
 		chessServerListControl = [[ChessServerListControl alloc] init];
-		[chessServerListControl setAppController: self];
-	}
 	[chessServerListControl show: sender];
 }
 

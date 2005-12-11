@@ -82,11 +82,6 @@
 	return self;
 }
 
-- (void) setAppController: (id) ac
-{
-	appController = ac;
-}
-
 - (IBAction) updateDefaults: (id) sender
 {
 	NSData *serverData = [NSKeyedArchiver archivedDataWithRootObject:chessServerList];
@@ -95,10 +90,8 @@
 
 - (IBAction) buttonSelect: (id) sender
 {
-	printf("Hallo 2!\n");
 	ChessServerConnection *csc = [[ChessServerConnection alloc] initWithChessServer: [self currentServer]]; 
 	if (csc != nil) {
-//		[appController: newServerConnection csc];
 		[csc setErrorHandler: self];
 		[self close];
 	}

@@ -2,10 +2,10 @@
 // $Id$
 
 #import "global.h"
-#import "Game.h"
+//#import "Game.h"
 #import "ChessServerListControl.h"
-#import "SeekGraph.h"
-#import "ChessView.h"
+//#import "SeekGraph.h"
+//#import "ChessView.h"
 #import "ChessServerConnection.h"
 
 @interface AppController : NSObject

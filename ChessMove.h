@@ -4,13 +4,15 @@
 #import "global.h"
 
 @interface ChessMove : NSObject {
-  @public
-	char from, to, promotion;
+	Board *positionAfter;
+	NSString *movePrint;
+	NSString *timeUsed;
 }
 
-+ (ChessMove *) fromString: (const char *) s;
-+ (ChessMove *) fromFieldsfrom: (ChessField) from to: (ChessField) to; 
-- (void) printMove;
-- (NSString *) asCoordinates;
++ (ChessMove *) moveFromStyle12: (NSArray *) data;
+- (void) print;
+- (Board *) positionAfter;
+//+ (ChessMove *) fromString: (const char *) s;
+//+ (ChessMove *) fromFieldsfrom: (struct ChessField) from to: (struct ChessField) to; 
+//- (NSString *) asCoordinates;
 @end
-

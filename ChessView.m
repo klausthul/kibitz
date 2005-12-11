@@ -7,10 +7,7 @@
 
 - (id)initWithFrame:(NSRect)frameRect
 {
-	if ((self = [super initWithFrame:frameRect]) != nil) {
-		// Add initialization code here
-	}
-	return self;
+	return (self = [super initWithFrame:frameRect]);
 }
 
 - (void)drawRect:(NSRect)rect
@@ -37,7 +34,7 @@
 		for (j = 0; j < 8; j++) {
 			if (c == 1)
 				[NSBezierPath fillRect: cur_field];
-			if ((p = [game pieceLine:j+1 row:i+1]) != 0) {
+			if ((p = [showBoard pieceLine:j+1 row:i+1]) != 0) {
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
 			}
 			cur_field.origin.x += size_x;
@@ -63,9 +60,9 @@
 	}
 }
 
-- (ChessField) getField: (NSEvent *) theEvent
+- (struct ChessField) getField: (NSEvent *) theEvent
 {
-	ChessField f;
+	struct ChessField f;
 	NSPoint p = [self convertPoint:[theEvent locationInWindow] fromView: nil];
 	NSRect bounds = [self bounds];
 	f.line = ceilf(p.x / bounds.size.width * 8);
@@ -83,7 +80,14 @@
 - (void) mouseUp: (NSEvent *) theEvent
 {
 	toMouse = [self getField: theEvent];
-	[appController userMoveFrom: fromMouse to: toMouse];
+//	[appController userMoveFrom: fromMouse to: toMouse];
+}
+
+- (void) setShowBoard: (Board *) board
+{
+	[showBoard release];
+	showBoard = [board retain];
+	[self setNeedsDisplay: TRUE];
 }
 
 @end

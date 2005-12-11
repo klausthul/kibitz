@@ -15,18 +15,14 @@
 		[serverMainWindow showWindow: self];
 	}
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
-		NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity: 40];
-		char *cp1, *cp2;
-		int i, flip;
-		enum RunningClock rc;
+		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
+		ChessMove *cm = [ChessMove moveFromStyle12: a];
+		[cm print];
+		[serverMainWindow setShowBoard: [cm positionAfter]];
+//		int i, flip;
 		
-		[a autorelease];
-		for (cp1 = cp2 = lineBuf; *cp1; cp1++) {
-			if (*cp1 == ' ') {
-				[a addObject: [NSString stringWithCString:cp2 length:cp1 - cp2]];
-				cp2 = cp1 + 1;
-			}
-		}
+/*		enum RunningClock rc;
+		
 		for (i = 0; i < [a count]; i++)
 			printf("%d: %s\n", i, [[a objectAtIndex:i] UTF8String]);
 //		flip = atoi([[a objectAtIndex: 30] UTF8String]);
@@ -42,27 +38,34 @@
 		}
 		[game setBoardFromString: lineBuf + 5 flip: flip];
 		[game setClocksWhite: atoi([[a objectAtIndex:24] UTF8String]) black: atoi([[a objectAtIndex:25] UTF8String]) running: rc];
+*/
 	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
 		int num = 0;
 		sscanf(lineBuf + 3, " %d", &num);
 		printf("processing: %s\n", lineBuf);
 		printf("  num = %d\n", num);
-		[seekGraph newSeekFromServer: num description: lineBuf + 4];
+		[self newSeekFromServer: num description: lineBuf + 4];
 	} else if (strncmp(lineBuf,"<sr>", 4) == 0) {
-		int num = 0;
-		printf("processing: %s\n", lineBuf);
-		sscanf(lineBuf + 4, " %d", &num);
-		[seekGraph removeSeekFromServer: num];
+		NSArray *sr = [[[NSString stringWithCString:lineBuf + 4] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
+		NSEnumerator *enumerator = [sr objectEnumerator];
+		NSString *s;
+
+		printf("processing: %s\n", lineBuf);		
+		while (s = [enumerator nextObject]) {
+			int num = [s intValue];
+			NSLog(@"Removing string %d", num);
+			[self removeSeekFromServer: num];
+		}
 	} else if (strncmp(lineBuf,"login:", 6) == 0) {
 		printf("SERVER asking for login!!\n");
 		if (currentServer != nil && sendNamePassword == YES) {
 			const char *s;
 			sendNamePassword = NO;
-			if (currentServer->userName && currentServer->userPassword) {
-				s = [currentServer->userName UTF8String];
+			if ([currentServer userName] && [currentServer userPassword]) {
+				s = [[currentServer userName] UTF8String];
 				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
 				[serverOS write:(unsigned const char *) "\n" maxLength:1];
-				s = [currentServer->userPassword UTF8String];
+				s = [[currentServer userPassword] UTF8String];
 				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
 				[serverOS write:(unsigned const char *) "\n" maxLength:1];
 			}
@@ -71,7 +74,7 @@
 		if (sendInit) {
 			const char *s;
 			sendInit = NO;
-			if (s = [currentServer->initCommands UTF8String]) {
+			if (s = [[currentServer initCommands] UTF8String]) {
 				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
 				[serverOS write:(unsigned const char *) "\n" maxLength:1];
 			}
@@ -131,7 +134,7 @@
 	if (self != nil) {
 		[self retain];
 		currentServer = server;
-		NSHost *host = [NSHost hostWithName: server->serverAddress];
+		NSHost *host = [NSHost hostWithName: [server serverAddress]];
 		[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
 		[serverIS retain];
 		[serverOS retain];
@@ -153,7 +156,7 @@
 	self = [super init];
 	if (self != nil) {
 		game = [[Game alloc] init];
-		seekGraph = [[SeekGraph alloc] init];
+		seeks = [[NSMutableDictionary dictionaryWithCapacity:500] retain];
 		lastChar = 0;
 	}
 	return self;
@@ -162,11 +165,11 @@
 - (void) dealloc
 {
 	[game release];
-	[seekGraph release];
 	[serverIS close];
 	[serverOS close];
 	[serverIS release];
 	[serverOS release];
+	[seeks release];
 	[super dealloc];
 }
 
@@ -180,6 +183,52 @@
 - (void) write: (unsigned char *) data maxLength: (int) i
 {
 	[serverOS write: data maxLength:i ];
+}
+
+- (void) newSeekFromServer: (int) num description: (const char *) seekInfo
+{
+	NSEnumerator *keyEnumerator;
+	NSNumber *key;
+	Seek *s = [Seek seekFromSeekInfo: seekInfo];
+	if (s != nil) {
+		[seeks setObject: s forKey: [NSNumber numberWithInt: num]];
+		keyEnumerator = [seeks keyEnumerator];
+		while ((key = [keyEnumerator nextObject]) != nil) {
+			s = [seeks objectForKey:key];
+			printf("%d: %s\n", [key intValue], [[s nameFrom] cString]);
+		}
+		[serverMainWindow seekTableNeedsDisplay];
+	} else
+		NSLog(@"Error in Seek request");
+}
+
+- (void) removeSeekFromServer: (int) num
+{
+	[seeks removeObjectForKey: [NSNumber numberWithInt: num]];
+	[serverMainWindow seekTableNeedsDisplay];
+}
+
+- (int) numSeeks
+{
+	return [seeks count];
+}
+
+- (id) dataForSeekTable: (NSString *) x row:(int)rowIndex;
+{
+	NSNumber *key = [[seeks allKeys] objectAtIndex: rowIndex];
+	if ([x compare: @"#"] == 0) {
+		return key;
+	} else {
+		Seek *s = [seeks objectForKey:key];
+		if ([x compare: @"Name"] == 0) {
+			return [s nameFrom];
+		} else if ([x compare: @"Rating"] == 0) {
+			return [NSNumber numberWithInt: [s ratingValue]];
+		} else if ([x compare: @"Type"] == 0) {
+			return [s typeOfPlay];
+		} else
+			return nil;
+	}
 }
 
 @end

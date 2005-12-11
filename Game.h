@@ -34,7 +34,7 @@
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (void) setBoardFromString: (char *) s flip: (int) flip;
 - (void) setClocksWhite: (int) white black: (int) black running: (enum RunningClock) running;
-- (ValidationResult) moveValidationFrom: (ChessField) from to: (ChessField) to;
+- (enum ValidationResult) moveValidationFrom: (struct ChessField) from to: (struct ChessField) to;
 - (void) updateClocks;
 
 @end
