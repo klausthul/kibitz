@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "Seek.h"
 
 @implementation Seek

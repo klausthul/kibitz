@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "SeekGraph.h"
 
 @implementation SeekGraph

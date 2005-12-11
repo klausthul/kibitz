@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "ChessMove.h"
 #import "Board.h"
 

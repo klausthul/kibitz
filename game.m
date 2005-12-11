@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import <ctype.h>
 #import "Game.h"
 #import "Board.h"

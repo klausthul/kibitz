@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "global.h"
 
 @interface ChessMove : NSObject {

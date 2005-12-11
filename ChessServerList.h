@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "global.h"
 #import "ChessServer.h"
 @class ChessServer;

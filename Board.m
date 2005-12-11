@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "Board.h"
 
 @implementation Board

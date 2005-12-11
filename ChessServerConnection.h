@@ -1,5 +1,5 @@
 // icsinterface
-// $id$
+// $Id$
 
 #import "global.h"
 #import "Game.h"

@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "ChessServerList.h"
 
 @implementation ChessServerList

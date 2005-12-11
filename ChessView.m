@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "ChessView.h"
 
 @implementation ChessView

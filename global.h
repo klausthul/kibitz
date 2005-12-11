@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import <Cocoa/Cocoa.h>
 
 @class SeekGraph;

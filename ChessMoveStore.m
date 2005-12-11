@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "ChessMoveStore.h"
 
 @implementation ChessMoveStore

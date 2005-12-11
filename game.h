@@ -1,3 +1,6 @@
+// icsinterface
+// $Id$
+
 #import "global.h"
 #import "Board.h"
 #import "ChessView.h"
