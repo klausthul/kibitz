@@ -1,13 +1,14 @@
 // icsinterface
 // $id$
 
-#import <Cocoa/Cocoa.h>
+#import "global.h"
 #import "Game.h"
 #import "SeekGraph.h"
 #import "ChessServer.h"
-@class Game, ChessServer;
 
 @interface ChessServerConnection : NSObject {
+	id errorHandler;
+	id serverMainWindow;
 	Game *game;
 	SeekGraph *seekGraph;
 	NSInputStream *serverIS;
@@ -20,8 +21,9 @@
 
 - (void) processServerOutput;
 - (void) stream:(NSStream *)stream handleEvent:(NSStreamEvent)event;
-+ initWithChessServer: (ChessServer *) server;
+- (id) initWithChessServer: (ChessServer *) server;
 - (id) init;
 - (void) dealloc;
+- (void) setErrorHandler: (id) eh;
 
 @end

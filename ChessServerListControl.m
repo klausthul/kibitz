@@ -69,7 +69,7 @@
 		return [chessServerList serverAtIndex: n];
 }
 
-- (id) init
+- (id) init 
 {
 	if ((self = [super initWithWindowNibName: @"ServerSelector"]) != nil) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -77,6 +77,11 @@
 		[chessServerList retain];
 	}
 	return self;
+}
+
+- (void) setAppController: (id) ac
+{
+	appController = ac;
 }
 
 - (IBAction) updateDefaults: (id) sender
@@ -87,15 +92,17 @@
 
 - (IBAction) buttonSelect: (id) sender
 {
-//	if (chessServerConnection != nil)
-//		[chessServerConnection release];
-//	chessServerConnection = [[ChessServerConnection alloc] initWithChessServer: [chessServerListControl currentServer]]; 
+	printf("Hallo 2!\n");
+	ChessServerConnection *csc = [[ChessServerConnection alloc] initWithChessServer: [self currentServer]]; 
+	if (csc != nil) {
+//		[appController: newServerConnection csc];
+		[csc setErrorHandler: self];
+		[self close];
+	}
 }
 
 - (IBAction) buttonCancel: (id) sender
 {
-	printf("Close\n");
-	printf("%d", [super window]);
 	[self close];
 }
 
@@ -105,6 +112,22 @@
 	[[self window] makeKeyAndOrderFront: sender];
 }
 
+- (void) handleStreamError: (NSError *) theError
+{
+	NSAlert *theAlert = [[NSAlert alloc] init]; 
+
+	[self showWindow: nil];
+	NSLog([theError localizedDescription]);
+	[theAlert setMessageText:@"Error reading stream!"];
+	[theAlert setInformativeText:[NSString stringWithFormat:@"Error %i: %@", [theError code], [theError localizedDescription]]];
+	[theAlert addButtonWithTitle:@"OK"];
+    [theAlert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:)
+	 contextInfo:nil];
+}
+
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo
+{
+}
 @end
 
 

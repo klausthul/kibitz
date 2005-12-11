@@ -1,15 +1,4 @@
-#import <Cocoa/Cocoa.h>
-
-enum {
-	UNREGISTERED = 1,
-	COMPUTER = 2,
-	GM = 4,
-	IM = 8,
-	FM = 0x10,
-	WGM = 0x20,
-	WIM = 0x40,
-	WFM = 0x80
-};
+#import "global.h"
 
 @interface Seek : NSObject {
 	@public

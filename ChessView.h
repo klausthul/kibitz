@@ -1,7 +1,6 @@
-#import <Cocoa/Cocoa.h>
+#import "global.h"
 #import "Game.h"
 #import "AppController.h"
-@class Game, AppController;
 
 @interface ChessView : NSView
 {

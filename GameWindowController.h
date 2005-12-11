@@ -1,10 +1,11 @@
 // icsinterface
 // $Id$
 
-#import <Cocoa/Cocoa.h>
+#import "global.h"
 
 
 @interface GameWindowController : NSWindowController {
+	ChessServerConnection *serverConnection;
     IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTextView *serverOutput;
 	IBOutlet NSTextField *serverInput;
@@ -20,7 +21,7 @@
 }
 
 - (id) init;
-- (void) addToServerOutput: (NSString *) s
+- (void) addToServerOutput: (NSString *) s;
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize;
 - (void) userMoveFrom: (ChessField) from to: (ChessField) to;
 - (void) dealloc;

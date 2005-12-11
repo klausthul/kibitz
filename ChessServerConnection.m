@@ -3,12 +3,16 @@
 
 #import "ChessServerConnection.h"
 #import "Game.h"
+#import "GameWindowController.h"
 
 @implementation ChessServerConnection
 
 - (void) processServerOutput
 {
 	printf("**%s\n", lineBuf);
+	if (serverMainWindow == nil) {
+		serverMainWindow = [[GameWindowController alloc] initWithServerConnection: self];
+	}
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity: 40];
 		char *cp1, *cp2;
@@ -72,12 +76,12 @@
 			}
 		}
 	} else {
-		[self addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
-		[self addToServerOutput:@"\n"];
+		[serverMainWindow addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
+		[serverMainWindow addToServerOutput:@"\n"];
 	}
 }
 
-- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)event
+- (void) stream: (NSStream *) theStream handleEvent:(NSStreamEvent)event
 {
 	char c;
 	int i;
@@ -86,7 +90,7 @@
 	  case NSStreamEventHasBytesAvailable: {
 		unsigned char buf[2048];
 		unsigned int len = 0;
-		while (len = [(NSInputStream *) stream read:buf maxLength: 2048]) {
+		while (len = [(NSInputStream *) theStream read:buf maxLength: 2048]) {
 			printf("LEN = %d, lastChar = %d\n", len, lastChar);
 			for (i = 0; i < len; i++) {
 				switch (c = buf[i]) {
@@ -113,39 +117,32 @@
 		}
 		break;
 	  }
-	  case NSStreamEventErrorOccurred: {
-		NSError *theError = [stream streamError];
-		NSAlert *theAlert = [[NSAlert alloc] init]; 
-
-		NSLog([theError localizedDescription]);
-		[theAlert setMessageText:@"Error reading stream!"];
-		[theAlert setInformativeText:[NSString stringWithFormat:@"Error %i: %@", [theError code], [theError localizedDescription]]];
-		[theAlert addButtonWithTitle:@"OK"];
-        [theAlert beginSheetModalForWindow:[NSApp mainWindow] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:)
-		 contextInfo:nil];
-		[stream close];
-		[stream release];
-		}
+	  case NSStreamEventErrorOccurred:
+		[errorHandler handleStreamError: [theStream streamError]];
+		[self release];
 		break;
 	}
 }
 
-- (ChessServerConnection *) initWithChessServer: (ChessServer *) server {
+- (id) initWithChessServer: (ChessServer *) server {
+	printf("Hallo!\n");
 	self = [self init];
 	if (self != nil) {
+		[self retain];
 		currentServer = server;
 		NSHost *host = [NSHost hostWithName: server->serverAddress];
 		[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
 		[serverIS retain];
 		[serverOS retain];
-		[serverIS setDelegate:self];
-		[serverOS setDelegate:self];
+		[serverIS setDelegate: self];
+		[serverOS setDelegate: self];
 		[serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 		[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 		[serverIS open];
 		[serverOS open];
 		sendNamePassword = YES;
 		sendInit = YES;
+		[self release];
 	}
 	return self;
 }
@@ -155,7 +152,7 @@
 	self = [super init];
 	if (self != nil) {
 		game = [[Game alloc] init];
-		seekGraph = [[Seek Graph alloc] init];
+		seekGraph = [[SeekGraph alloc] init];
 		lastChar = 0;
 	}
 	return self;
@@ -169,6 +166,19 @@
 	[serverOS close];
 	[serverIS release];
 	[serverOS release];
+	[super dealloc];
+}
+
+- (void) setErrorHandler: (id) eh
+{
+	[errorHandler release];
+	errorHandler = eh;
+	[eh retain];
+}
+
+- (void) write: (unsigned char *) data maxLength: (int) i
+{
+	[serverOS write: data maxLength:i ];
 }
 
 @end

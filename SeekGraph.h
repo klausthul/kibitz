@@ -1,4 +1,4 @@
-#import <Cocoa/Cocoa.h>
+#import "global.h"
 #import "Seek.h"
 
 @interface SeekGraph : NSObject {

@@ -1,23 +1,6 @@
-#import <Cocoa/Cocoa.h>
-#import <ChessMove.h>
-#import <ChessMoveStore.h>
-
-enum PIECE {
-	PAWN = 1, KNIGHT = 2, BISHOP = 3, ROOK = 4, QUEEN = 5, KING = 6
-};
-
-enum COLOR {
-	BLACK = 8, WHITE = 0
-};
-
-#define GETPIECE(x) ((x) & 7)
-#define GETCOLOR(x) ((x) & 8)
-
-enum CASTLE_RIGHTS {
-	WHITE_LONG = 1, WHITE_SHORT = 2, BLACK_LONG = 4, BLACK_SHORT = 8
-};
-
-
+#import "global.h"
+#import "ChessMove.h"
+#import "ChessMoveStore.h"
 
 @interface Board : NSObject {
 	unsigned char fields[64];

@@ -1,5 +1,4 @@
-#import <Cocoa/Cocoa.h>
-#import <ChessField.h>
+#import "global.h"
 
 @interface ChessMove : NSObject {
   @public

@@ -1,5 +1,5 @@
-#import <Cocoa/Cocoa.h>
-#import <ChessServer.h>
+#import "global.h"
+#import "ChessServer.h"
 @class ChessServer;
 
 @interface ChessServerList : NSObject <NSCoding> {

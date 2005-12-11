@@ -1,17 +1,6 @@
-#import <Cocoa/Cocoa.h>
+#import "global.h"
 #import "Board.h"
 #import "ChessView.h"
-@class ChessView;
-
-enum RunningClock { 
-	NO_CLOCK_RUNS = 0,
-	WHITE_CLOCK_RUNS = 1, 
-	BLACK_CLOCK_RUNS = 2 
-};
-
-typedef enum {
-	INVALID, VALID, REQUIRES_PROMOTION
-} ValidationResult;
 
 @interface Game : NSObject {
 	Board *board;

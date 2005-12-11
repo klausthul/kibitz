@@ -1,4 +1,4 @@
-#import <Cocoa/Cocoa.h>
+#import "global.h"
 #import "AppController.h"
 
 @interface ChessServer : NSObject <NSCoding> {

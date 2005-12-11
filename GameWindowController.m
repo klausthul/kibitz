@@ -6,11 +6,12 @@
 
 @implementation GameWindowController
 
-- (id) init
+- (id) initWithServerConnection: sc
 {
 	self = [super initWithWindowNibName: @"GameWindow"];
 	if (self != nil) {
 		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
+		serverConnection = sc;
 	}
 	return self;
 }
@@ -27,8 +28,8 @@
 	const char *s = [input UTF8String];
 	NSLog([serverInput stringValue]);
 	if (strlen(s) > 0)
-		[serverOS write:(unsigned char *) s maxLength:strlen(s)];
-	[serverOS write:(unsigned char *) "\n\r" maxLength:2];
+		[serverConnection write:(unsigned char *) s maxLength:strlen(s)];
+	[serverConnection write:(unsigned char *) "\n\r" maxLength:2];
 }
 
 - (void) userMoveFrom: (ChessField) from to: (ChessField) to
@@ -40,11 +41,11 @@
 	move[4] = to.row + '1' - 1;
 	move[5] = '\n';
 	move[6] = 0;
-	if ([game moveValidationFrom: from to: to] == REQUIRES_PROMOTION) {
-		[NSApp beginSheet:promotionPiece modalForWindow:mainWindow modalDelegate:self didEndSelector:NULL contextInfo:NULL];
-	} else {
-		[serverOS write:(unsigned char *) move maxLength:6 ];
-	}
+//	if ([game moveValidationFrom: from to: to] == REQUIRES_PROMOTION) {
+//		[NSApp beginSheet:promotionPiece modalForWindow:mainWindow modalDelegate:self didEndSelector:NULL contextInfo:NULL];
+//	} else {
+//		[serverConnection write:(unsigned char *) move maxLength:6 ];
+//	}
 } 
 
 - (IBAction) selectedPromotionPiece: (id) sender
@@ -56,7 +57,7 @@
 	move[8] = 0;
 	[NSApp endSheet:promotionPiece returnCode: 1];
 	printf("USERMOVE: %s\n", move);
-	[serverOS write:(unsigned char *) move maxLength:8 ];
+	[serverConnection write:(unsigned char *) move maxLength:8 ];
 }
 
 - (IBAction) toggleSeekDrawer: (id) sender
@@ -66,7 +67,7 @@
 
 - (void) updateClock: (NSTimer *) aTimer
 {
-	[game updateClocks];
+//	[game updateClocks];
 }
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize

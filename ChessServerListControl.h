@@ -1,8 +1,8 @@
-#import <Cocoa/Cocoa.h>
-#import <ChessServerList.h>
-@class ChessServer, ChessServerList;
+#import "global.h"
+#import "ChessServerList.h"
 
 @interface ChessServerListControl : NSWindowController {
+	AppController *appController;
 	ChessServerList *chessServerList;
 	IBOutlet NSTableView *serverList;
 	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;
@@ -17,6 +17,7 @@
 - (void) show: (id) sender;
 - (IBAction) buttonSelect: (id) sender;
 - (IBAction) buttonCancel: (id) sender;
+- (void) setAppController: (id) ac;
 
 @end
 
