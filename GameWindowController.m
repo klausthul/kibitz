@@ -6,7 +6,7 @@
 
 @implementation GameWindowController
 
-- (id) initWithServerConnection: sc
+- (id) initWithServerConnection: (ChessServerConnection *) sc
 {
 	self = [super initWithWindowNibName: @"GameWindow"];
 	if (self != nil) {
@@ -78,4 +78,13 @@
 	s.height += delta;
 	return s;
 }
+
+- (void) dealloc
+{
+	[timer release];
+	[serverConnection release];
+	[super dealloc];
+}
+
+
 @end

@@ -27,3 +27,9 @@
 - (void) setErrorHandler: (id) eh;
 
 @end
+
+@interface NSObject(ChessServerConnectionErrorHandler)
+
+- (void) handleStreamError: (NSError *) theError;
+
+@end

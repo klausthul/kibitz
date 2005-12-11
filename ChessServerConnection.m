@@ -12,6 +12,7 @@
 	printf("**%s\n", lineBuf);
 	if (serverMainWindow == nil) {
 		serverMainWindow = [[GameWindowController alloc] initWithServerConnection: self];
+		[serverMainWindow showWindow: self];
 	}
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity: 40];
