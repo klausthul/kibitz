@@ -85,6 +85,7 @@
 	NSLog(@"New Game Selected\n");
 	NSLog([[gameSelector selectedItem] title]);
 	[self setActiveGame: [[gameSelector selectedItem] representedObject]];
+	[self updateClock];
 }
 
 - (void) setGameList: (NSDictionary *) gl
@@ -159,9 +160,7 @@
 	string[4] = ':';
 	string[5] = seconds / 10 + '0';
 	string[6] = seconds % 10 + '0';
-	string[7] = '.';
-	string[8] = '0';
-	string[9] = 0;
+	string[7] = 0;
 	return [NSString stringWithCString: string];
 }
 
