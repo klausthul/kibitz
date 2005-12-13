@@ -26,26 +26,6 @@
 		}
 		[g newMove: [ChessMove moveFromStyle12: a]];
 		[serverMainWindow updateGame: g];
-//		int i, flip;
-		
-/*		enum RunningClock rc;
-		
-		for (i = 0; i < [a count]; i++)
-			printf("%d: %s\n", i, [[a objectAtIndex:i] UTF8String]);
-//		flip = atoi([[a objectAtIndex: 30] UTF8String]);
-		switch ([[a objectAtIndex:9] UTF8String][0]) {
-		  case 'b': case 'B':
-		    rc = BLACK_CLOCK_RUNS;
-			break;
-		  case 'w': case 'W':
-		    rc = WHITE_CLOCK_RUNS;
-			break;
-		  default:
-			rc = NO_CLOCK_RUNS;
-		}
-		[game setBoardFromString: lineBuf + 5 flip: flip];
-		[game setClocksWhite: atoi([[a objectAtIndex:24] UTF8String]) black: atoi([[a objectAtIndex:25] UTF8String]) running: rc];
-*/
 	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
 		int num = 0;
 		sscanf(lineBuf + 3, " %d", &num);
