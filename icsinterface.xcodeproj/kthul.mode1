@@ -217,6 +217,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -264,12 +266,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>71</integer>
+									<integer>70</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 107}, {244, 706}}</string>
+							<string>{{0, 552}, {244, 706}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,7 +318,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CE9A6752094EEE38001628CC</string>
+										<string>CEF40F7B094EF3E7004861C3</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -352,7 +354,7 @@
 											<string>CE9A6710094EE90F001628CC</string>
 											<string>CE9A6743094EEBD3001628CC</string>
 											<string>CE9A674B094EECC0001628CC</string>
-											<string>CE9A66EA094EE78B001628CC</string>
+											<string>CE9A6752094EEE38001628CC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -390,36 +392,6 @@
 											<string>CEDFCDEC094BE776001F9310</string>
 											<string>CE9A6604094EA44E001628CC</string>
 											<string>CE9A6656094ECCCB001628CC</string>
-											<string>CE9A6657094ECCCB001628CC</string>
-											<string>CE9A6658094ECCCB001628CC</string>
-											<string>CE9A6666094ED14B001628CC</string>
-											<string>CE9A6667094ED14B001628CC</string>
-											<string>CE9A6668094ED14B001628CC</string>
-											<string>CE9A6669094ED14B001628CC</string>
-											<string>CE9A666A094ED14B001628CC</string>
-											<string>CE9A666B094ED14B001628CC</string>
-											<string>CE9A6683094EDA42001628CC</string>
-											<string>CE9A6684094EDA42001628CC</string>
-											<string>CE9A6685094EDA42001628CC</string>
-											<string>CE9A6686094EDA42001628CC</string>
-											<string>CE9A6687094EDA42001628CC</string>
-											<string>CE9A6688094EDA42001628CC</string>
-											<string>CE9A6689094EDA42001628CC</string>
-											<string>CE9A668A094EDA42001628CC</string>
-											<string>CE9A668B094EDA42001628CC</string>
-											<string>CE9A668C094EDA42001628CC</string>
-											<string>CE9A66C9094EE124001628CC</string>
-											<string>CE9A66CA094EE124001628CC</string>
-											<string>CE9A66CB094EE124001628CC</string>
-											<string>CE9A66CC094EE124001628CC</string>
-											<string>CE9A66CD094EE124001628CC</string>
-											<string>CE9A66CE094EE124001628CC</string>
-											<string>CE9A66EC094EE78B001628CC</string>
-											<string>CE9A66ED094EE78B001628CC</string>
-											<string>CE9A6711094EE90F001628CC</string>
-											<string>CE9A6712094EE90F001628CC</string>
-											<string>CE9A6744094EEBD3001628CC</string>
-											<string>CE9A674C094EECC0001628CC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -441,8 +413,6 @@
 							<string>289pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -460,7 +430,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CE9A6753094EEE38001628CC</string>
+										<string>CEF40F7C094EF3E7004861C3</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -496,7 +466,7 @@
 											<string>CE9A673E094EEB2D001628CC</string>
 											<string>CE9A6746094EEBD3001628CC</string>
 											<string>CE9A674E094EECC0001628CC</string>
-											<string>CE9A66D6094EE124001628CC</string>
+											<string>CE9A6753094EEE38001628CC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -534,38 +504,6 @@
 											<string>CEDFCDEC094BE776001F9310</string>
 											<string>CE9A6604094EA44E001628CC</string>
 											<string>CE9A6656094ECCCB001628CC</string>
-											<string>CE9A666F094ED14B001628CC</string>
-											<string>CE9A6670094ED14B001628CC</string>
-											<string>CE9A6671094ED14B001628CC</string>
-											<string>CE9A6698094EDA42001628CC</string>
-											<string>CE9A6699094EDA42001628CC</string>
-											<string>CE9A669A094EDA42001628CC</string>
-											<string>CE9A669B094EDA42001628CC</string>
-											<string>CE9A669C094EDA42001628CC</string>
-											<string>CE9A669D094EDA42001628CC</string>
-											<string>CE9A669E094EDA42001628CC</string>
-											<string>CE9A669F094EDA42001628CC</string>
-											<string>CE9A66A0094EDA42001628CC</string>
-											<string>CE9A66A1094EDA42001628CC</string>
-											<string>CE9A66A2094EDA42001628CC</string>
-											<string>CE9A66D8094EE124001628CC</string>
-											<string>CE9A66D9094EE124001628CC</string>
-											<string>CE9A66DA094EE124001628CC</string>
-											<string>CE9A66DB094EE124001628CC</string>
-											<string>CE9A66DC094EE124001628CC</string>
-											<string>CE9A66DD094EE124001628CC</string>
-											<string>CE9A66DE094EE124001628CC</string>
-											<string>CE9A66DF094EE124001628CC</string>
-											<string>CE9A66E0094EE124001628CC</string>
-											<string>CE9A66F3094EE78B001628CC</string>
-											<string>CE9A66F4094EE78B001628CC</string>
-											<string>CE9A66F5094EE78B001628CC</string>
-											<string>CE9A6708094EE7B5001628CC</string>
-											<string>CE9A6717094EE90F001628CC</string>
-											<string>CE9A6718094EE90F001628CC</string>
-											<string>CE9A6740094EEB2D001628CC</string>
-											<string>CE9A6747094EEBD3001628CC</string>
-											<string>CE9A674F094EECC0001628CC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -597,7 +535,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 587}, {1174, 137}}</string>
+								<string>{{0, 588}, {1174, 137}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 113 1440 765 0 0 1440 878 </string>
 							</dict>
@@ -624,9 +562,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CE9A6673094ED14B001628CC</string>
+				<string>CEF40F7D094EF3E7004861C3</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CE9A6674094ED14B001628CC</string>
+				<string>CEF40F7E094EF3E7004861C3</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
@@ -761,12 +699,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CE9A6700094EE78B001628CC</string>
-		<string>CE9A6701094EE78B001628CC</string>
-		<string>CE3AC1580901EC4D00DD3768</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>CE9A66FD094EE78B001628CC</string>
-		<string>CE3AC19D0901FF4300DD3768</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
 	</array>
@@ -1162,8 +1094,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {367, 168}}</string>
-											<string>{{0, 173}, {367, 270}}</string>
+											<string>{{0, 0}, {366, 168}}</string>
+											<string>{{0, 173}, {366, 270}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -1212,9 +1144,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>CE9A665A094ED058001628CC</string>
+				<string>CEF40F7F094EF3E7004861C3</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>CE9A665B094ED058001628CC</string>
+				<string>CEF40F80094EF3E7004861C3</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>

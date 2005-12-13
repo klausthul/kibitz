@@ -260,7 +260,7 @@
 		move[6] = 0;
 	} else {
 		move[5] = '=';
-		move[6] = "  KBRQ"[promotionPiece];
+		move[6] = "  NBRQ"[promotionPiece];
 		move[7] = '\n';
 		move[8] = 0;
 	}
