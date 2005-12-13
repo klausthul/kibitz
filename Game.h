@@ -6,14 +6,31 @@
 #import "ChessView.h"
 
 @interface Game : NSObject {
-	Board *board;
-	NSMutableArray *move_list;
-	int cur_move, num_half_moves;
-	int timeWhite, timeBlack;
-	time_t lastTimeUpdate;
-	enum RunningClock runningClock;
+	NSString *whiteName, *blackName;
+	enum GameRelationship gameRelationShip;
+	int initialTime, incrementTime;
+	ChessMove *lastMove;
+//	Board *board;
+//	NSMutableArray *move_list;
+//	int cur_move, num_half_moves;
+//	int timeWhite, timeBlack;
+//	time_t lastTimeUpdate;
+//	enum RunningClock runningClock;
 }
 
+- (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black;
+- (NSString *) whiteName;
+- (NSString *) blackName;
+- (void) setTimeInitial: (int) initial increment: (int) increment;
+- (int) initialTime;
+- (int) incrementTime;
+- (Board *) currentBoardPosition;
+- (void) newMove: (ChessMove *) move;
+- (void) dealloc;
+- (Game *) initWithStyle12: (NSArray *) data;
+- (NSString *) gameInfoString;
+
+/*
 + (NSString *) stringWithClock: (int) seconds;
 - (int) pieceLine: (int) l row: (int) r;
 - (Game *) init;
@@ -36,5 +53,5 @@
 - (void) setClocksWhite: (int) white black: (int) black running: (enum RunningClock) running;
 - (enum ValidationResult) moveValidationFrom: (struct ChessField) from to: (struct ChessField) to;
 - (void) updateClocks;
-
+*/
 @end

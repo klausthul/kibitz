@@ -17,6 +17,8 @@
 	IBOutlet NSPopUpButton *gameSelector;
 	char move[10];
 	NSTimer *timer;
+	Game *activeGame;
+	NSDictionary *gameList;
 }
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc;
@@ -28,7 +30,11 @@
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView;
 - (id) tableView:(NSTableView *) aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (void) seekTableNeedsDisplay;
-- (void) setShowBoard: (Board *) board;
+// - (void) setShowBoard: (Board *) board;
 - (IBAction) selectGame: (id) sender;
+- (void) setGameList: (NSDictionary *) gl;
+- (void) updateGame: (Game *) g;
+- (void) setActiveGame: (Game *) g;
+- (Game *) activeGame;
 
 @end

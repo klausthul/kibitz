@@ -11,7 +11,7 @@
 	self = [super initWithWindowNibName: @"GameWindow"];
 	if (self != nil) {
 		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
-		serverConnection = sc;
+		serverConnection = [sc retain];
 	}
 	return self;
 }
@@ -55,6 +55,8 @@
 {
 	[timer release];
 	[serverConnection release];
+	[activeGame release];
+	[gameList release];
 	[super dealloc];
 }
 
@@ -86,5 +88,41 @@
 {
 	NSLog(@"New Game Selected\n");
 	NSLog([[gameSelector selectedItem] title]);
+	[self setActiveGame: [gameList objectForKey: [NSNumber numberWithInt: [[gameSelector titleOfSelectedItem] intValue]]]];
 }
+
+- (void) setGameList: (NSDictionary *) gl
+{
+	NSEnumerator *enumerator;
+	NSNumber *num;
+	
+	[gameList release];
+	gameList = [gl retain];
+	[gameSelector removeAllItems];
+	enumerator = [gameList keyEnumerator];
+	while ((num = [enumerator nextObject])) {
+		[gameSelector addItemWithTitle: [NSString stringWithFormat: @"%@: %@", num, [[gl objectForKey: num] gameInfoString]]];
+	}
+}
+
+- (void) updateGame: (Game *) g
+{
+	if (g == activeGame) {
+		[chessView setShowBoard: [g currentBoardPosition]];
+	}
+}
+
+- (void) setActiveGame: (Game *) g
+{
+	[activeGame release];
+	activeGame = [g retain];
+	[self updateGame: activeGame];
+	[gameSelector selectItemWithTag:<#(int)tag#>
+}
+
+- (Game *) activeGame
+{
+	return activeGame;
+}
+
 @end

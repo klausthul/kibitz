@@ -36,8 +36,6 @@ enum CastleRights {
 	WHITE_LONG = 1, WHITE_SHORT = 2, BLACK_LONG = 4, BLACK_SHORT = 8
 };
 
-// #define MIN(a, b) (((a) < (b)) ? (a) : (b))
-
 enum PlayerType {
 	UNREGISTERED = 1,
 	COMPUTER = 2,
@@ -59,6 +57,15 @@ enum ValidationResult {
 	INVALID, VALID, REQUIRES_PROMOTION
 };
 
-@protocol ChessServerErrorHandler
+enum GameRelationship {
+	OBSERVER = 0,
+	PLAYING_MYMOVE = 1,
+	PLAYING_OPONENT_MOVE = -1,
+	EXAMINER = 2,
+	OBSERVING_EXAMINATION = -2,
+	ISOLATED_POSITION = -3
+};
+
+@protocol ChessServerErrorHandler <NSObject>
 - (void) handleStreamError: (NSError *) theError;
 @end

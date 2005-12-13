@@ -16,9 +16,16 @@
 	}
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
-		ChessMove *cm = [ChessMove moveFromStyle12: a];
-		[cm print];
-		[serverMainWindow setShowBoard: [cm positionAfter]];
+		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 16] intValue]];
+		Game *g = [activeGames objectForKey: n];
+		if (g == nil) {
+			g = [[Game alloc] initWithStyle12: a];
+			[activeGames setObject: g forKey: n];
+			[serverMainWindow setGameList: activeGames];
+			[serverMainWindow setActiveGame: g];
+		}
+		[g newMove: [ChessMove moveFromStyle12: a]];
+		[serverMainWindow updateGame: g];
 //		int i, flip;
 		
 /*		enum RunningClock rc;
@@ -155,7 +162,7 @@
 {
 	self = [super init];
 	if (self != nil) {
-		game = [[Game alloc] init];
+		activeGames = [[NSMutableDictionary alloc] init];
 		seeks = [[NSMutableDictionary dictionaryWithCapacity:500] retain];
 		lastChar = 0;
 	}
@@ -164,12 +171,15 @@
 
 - (void) dealloc
 {
-	[game release];
+	[activeGames release];
 	[serverIS close];
 	[serverOS close];
 	[serverIS release];
 	[serverOS release];
 	[seeks release];
+	[currentServer release];
+	[serverMainWindow release];
+	[errorHandler release];
 	[super dealloc];
 }
 

@@ -8,9 +8,8 @@
 #import "GameWindowController.h"
 
 @interface ChessServerConnection : NSObject {
-	id errorHandler;
+	id <ChessServerErrorHandler> errorHandler;
 	GameWindowController *serverMainWindow;
-	Game *game;
 	NSInputStream *serverIS;
 	NSOutputStream *serverOS;
 	char lineBuf[4096];
@@ -18,6 +17,7 @@
 	ChessServer *currentServer;
 	bool sendNamePassword, sendInit;
 	NSMutableDictionary *seeks;
+	NSMutableDictionary *activeGames;
 }
 
 - (void) processServerOutput;
