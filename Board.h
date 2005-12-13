@@ -17,5 +17,6 @@
 - (void) startPosition;
 - (void) print;
 - (int) pieceOnField: (struct ChessField) field;
+- (enum ValidationResult) validateMoveFrom: (struct ChessField) from to: (struct ChessField) to;
 
 @end

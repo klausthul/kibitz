@@ -75,10 +75,6 @@
 	[seekTable reloadData];
 }
 
-- (IBAction) selectedPromotionPiece: (id) sender
-{
-}
-
 - (void) setShowBoard: (Board *) board
 {
 	[chessView setShowBoard: board];
@@ -88,20 +84,30 @@
 {
 	NSLog(@"New Game Selected\n");
 	NSLog([[gameSelector selectedItem] title]);
-	[self setActiveGame: [gameList objectForKey: [NSNumber numberWithInt: [[gameSelector titleOfSelectedItem] intValue]]]];
+	[self setActiveGame: [[gameSelector selectedItem] representedObject]];
 }
 
 - (void) setGameList: (NSDictionary *) gl
 {
 	NSEnumerator *enumerator;
 	NSNumber *num;
+	int c = [gl count];
 	
 	[gameList release];
 	gameList = [gl retain];
 	[gameSelector removeAllItems];
-	enumerator = [gameList keyEnumerator];
-	while ((num = [enumerator nextObject])) {
-		[gameSelector addItemWithTitle: [NSString stringWithFormat: @"%@: %@", num, [[gl objectForKey: num] gameInfoString]]];
+	[gameSelector setEnabled: FALSE];
+	if (c <= 0) {
+		[gameSelector addItemWithTitle: @"no game played or observed"];
+	} else {
+		enumerator = [gameList keyEnumerator];
+		while ((num = [enumerator nextObject])) {
+			Game *g = [gl objectForKey: num];
+			[gameSelector addItemWithTitle: [NSString stringWithFormat: @"%@: %@", num, [g gameInfoString]]];
+			[[gameSelector lastItem] setRepresentedObject: g];
+		}
+		if (c > 1)
+			[gameSelector setEnabled: TRUE];
 	}
 }
 
@@ -117,12 +123,17 @@
 	[activeGame release];
 	activeGame = [g retain];
 	[self updateGame: activeGame];
-	[gameSelector selectItemWithTag:<#(int)tag#>
+	[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
 }
 
 - (Game *) activeGame
 {
 	return activeGame;
+}
+
+- (void) userMoveFrom: (struct ChessField) from to: (struct ChessField)to promotion: (int) promotion
+{
+	[serverConnection userMoveFrom: from to: to promotion: promotion];
 }
 
 @end

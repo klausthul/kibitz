@@ -1,21 +1,60 @@
 {
     IBClasses = (
         {
+            ACTIONS = {selectServer = id; }; 
+            CLASS = AppController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ChessMove; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ChessServer; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = ChessServerConnection; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {errorHandler = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = ChessServerList; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                buttonCancel = id; 
+                buttonSelect = id; 
+                show = id; 
+                updateDefaults = id; 
+                userAddNewServer = id; 
+                userDeleteCurrentServer = id; 
+            }; 
+            CLASS = ChessServerListControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                serverAddress = NSTextField; 
+                serverInitialization = NSTextField; 
+                serverList = NSTableView; 
+                serverName = NSTextField; 
+                serverPassword = NSTextField; 
+                serverPort = NSTextField; 
+                serverUserName = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {selectedPromotionPiece = id; }; 
             CLASS = ChessView; 
             LANGUAGE = ObjC; 
-            OUTLETS = {appController = AppController; game = Game; }; 
+            OUTLETS = {gameWindowController = GameWindowController; promotionDialog = NSWindow; }; 
             SUPERCLASS = NSView; 
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = Game; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {selectGame = id; selectedPromotionPiece = id; toggleSeekDrawer = id; }; 
+            ACTIONS = {selectGame = id; toggleSeekDrawer = id; }; 
             CLASS = GameWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
                 chessView = ChessView; 
                 gameSelector = NSPopUpButton; 
                 lowerClock = NSTextField; 
-                promotionPiece = NSWindow; 
                 seekDrawer = NSDrawer; 
                 seekTable = NSTableView; 
                 serverInput = NSTextField; 
@@ -24,7 +63,8 @@
                 upperClock = NSTextField; 
             }; 
             SUPERCLASS = NSWindowController; 
-        }
+        }, 
+        {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
     ); 
     IBVersion = 1; 
 }

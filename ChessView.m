@@ -67,20 +67,27 @@
 	NSRect bounds = [self bounds];
 	f.line = ceilf(p.x / bounds.size.width * 8);
 	f.row = ceilf(p.y / bounds.size.height * 8);
-	printf("%f %f\n", p.x, p.y);
 	return f;	
 }
 
 - (void) mouseDown: (NSEvent *) theEvent
 {
 	fromMouse = [self getField: theEvent];
-	printf("%d %d\n", fromMouse.line, fromMouse.row);
 }
 
 - (void) mouseUp: (NSEvent *) theEvent
 {
 	toMouse = [self getField: theEvent];
-//	[appController userMoveFrom: fromMouse to: toMouse];
+	switch ([showBoard validateMoveFrom: fromMouse to: toMouse]) {
+	  case INVALID:
+		break;
+	  case VALID:
+		[gameWindowController userMoveFrom: fromMouse to: toMouse promotion: 0];
+		break;
+	  case REQUIRES_PROMOTION:
+		[NSApp beginSheet: promotionDialog modalForWindow: [gameWindowController window] modalDelegate: self didEndSelector: NULL contextInfo: NULL];
+		break;
+	}
 }
 
 - (void) setShowBoard: (Board *) board
@@ -88,6 +95,13 @@
 	[showBoard release];
 	showBoard = [board retain];
 	[self setNeedsDisplay: TRUE];
+}
+
+- (IBAction) selectedPromotionPiece: (id) sender
+{
+	[promotionDialog orderOut:sender];
+	[NSApp endSheet:promotionDialog returnCode: 1];
+	[gameWindowController userMoveFrom: fromMouse to: toMouse promotion: [sender tag]];
 }
 
 @end

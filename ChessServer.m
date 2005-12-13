@@ -24,8 +24,8 @@
 
 - (void) setServerPort: (NSNumber *) i
 {
-	[userName release];
-	userName = [i retain];
+	[serverPort release];
+	serverPort = [i retain];
 }
 
 - (void) setUserName: (NSString *) s

@@ -82,4 +82,11 @@
 	return fields[field.row * 8 + field.line - 9];
 }
 
+- (enum ValidationResult) validateMoveFrom: (struct ChessField) from to: (struct ChessField) to
+{
+	if (((to.row == 1) || (to.row == 8)) && GETPIECE([self pieceOnField:from]) == PAWN)
+		return REQUIRES_PROMOTION;
+	return VALID;
+}
+
 @end

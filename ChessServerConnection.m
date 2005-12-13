@@ -140,7 +140,7 @@
 	self = [self init];
 	if (self != nil) {
 		[self retain];
-		currentServer = server;
+		currentServer = [server retain];
 		NSHost *host = [NSHost hostWithName: [server serverAddress]];
 		[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
 		[serverIS retain];
@@ -240,5 +240,31 @@
 			return nil;
 	}
 }
+
+- (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to
+{
+	[self userMoveFrom: from to: to promotion: 0];
+}
+
+- (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotionPiece
+{
+	unsigned char move[10];
+	
+	move[0] = from.line + 'a' - 1;
+	move[1] = from.row + '1' - 1;
+	move[2] = '-';
+	move[3] = to.line  + 'a' - 1;
+	move[4] = to.row + '1' - 1;
+	if ((promotionPiece < 2) || (promotionPiece > 5)) {
+		move[5] = '\n';
+		move[6] = 0;
+	} else {
+		move[5] = '=';
+		move[6] = "  KBRQ"[promotionPiece];
+		move[7] = '\n';
+		move[8] = 0;
+	}
+	[serverOS write: move maxLength: strlen((char *) move)];
+} 
 
 @end

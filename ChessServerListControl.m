@@ -37,9 +37,8 @@
 
 - (void) tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	ChessServer *s;
 	int n = [serverList selectedRow];
-	if (n < 0) {
+	if ((n < 0) || (n >= [chessServerList numServers])) {
 		[serverName setEnabled: NO];
 		[serverAddress setEnabled: NO];
 		[serverUserName setEnabled: NO];
@@ -47,7 +46,7 @@
 		[serverPort setEnabled: NO];
 		[serverInitialization setEnabled: NO];
 	} else {
-		s = [chessServerList serverAtIndex: n];
+		ChessServer *s = [chessServerList serverAtIndex: n];
 		[serverName bind:@"value" toObject:s withKeyPath:@"serverName" options:nil];
 		[serverAddress bind:@"value" toObject:s withKeyPath:@"serverAddress" options:nil];
 		[serverUserName bind:@"value" toObject:s withKeyPath:@"userName" options:nil];
@@ -113,7 +112,6 @@
 	NSAlert *theAlert = [[NSAlert alloc] init]; 
 
 	[self showWindow: nil];
-	NSLog([theError localizedDescription]);
 	[theAlert setMessageText:@"Error reading stream!"];
 	[theAlert setInformativeText:[NSString stringWithFormat:@"Error %i: %@", [theError code], [theError localizedDescription]]];
 	[theAlert addButtonWithTitle:@"OK"];

@@ -37,7 +37,7 @@
 
 - (ChessServer *) serverAtIndex: (int) i
 {
-	return [servers objectAtIndex:i];
+	return [[[servers objectAtIndex:i] retain] autorelease];
 }
 
 - (void) addNewServerName: (NSString *) name Address: (NSString *) address port: (int) port userName: (NSString *) userName userPassword: (NSString *) userPassword 
