@@ -16,6 +16,6 @@
 - (int) pieceLine: (int) l row: (int) r;
 - (void) startPosition;
 - (void) print;
-- (unsigned char) pieceOnField: (struct ChessField) field;
+- (int) pieceOnField: (struct ChessField) field;
 
 @end

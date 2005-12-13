@@ -264,12 +264,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>68</integer>
-									<integer>60</integer>
+									<integer>71</integer>
+									<integer>70</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 620}, {244, 690}}</string>
+							<string>{{0, 568}, {244, 690}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -306,7 +306,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ChessView.m</string>
+								<string>GameWindowController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -314,11 +314,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ChessView.m</string>
+										<string>GameWindowController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CEDE1303094C7BAC0085CC1F</string>
+										<string>CE9A6526094DC337001628CC</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -334,25 +334,25 @@
 											<string>CEDFCDCE094BE776001F9310</string>
 											<string>CEDFCDD1094BE776001F9310</string>
 											<string>CEDE1033094C37980085CC1F</string>
-											<string>CEDE1036094C37980085CC1F</string>
 											<string>CEDE1037094C37980085CC1F</string>
 											<string>CEDE10E5094C41CC0085CC1F</string>
 											<string>CEDE114D094C4E600085CC1F</string>
 											<string>CEDE11E3094C683E0085CC1F</string>
 											<string>CEDE11E4094C683E0085CC1F</string>
 											<string>CEDE11E5094C683E0085CC1F</string>
-											<string>CEDE11E6094C683E0085CC1F</string>
-											<string>CEDE11E7094C683E0085CC1F</string>
 											<string>CEDE11E8094C683E0085CC1F</string>
 											<string>CEDE123A094C694D0085CC1F</string>
 											<string>CEDE129A094C77DC0085CC1F</string>
 											<string>CEDE129B094C77DC0085CC1F</string>
 											<string>CEDE12DB094C79DD0085CC1F</string>
-											<string>CEDE12DD094C79DD0085CC1F</string>
 											<string>CEDE12DE094C79DD0085CC1F</string>
-											<string>CEDE12DF094C79DD0085CC1F</string>
 											<string>CEDE1300094C7BAC0085CC1F</string>
-											<string>CEDE1301094C7BAC0085CC1F</string>
+											<string>CE9A64E7094DB524001628CC</string>
+											<string>CE9A64E8094DB524001628CC</string>
+											<string>CE9A64E9094DB524001628CC</string>
+											<string>CE9A6519094DC2E4001628CC</string>
+											<string>CE9A651A094DC2E4001628CC</string>
+											<string>CE9A64EA094DB524001628CC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -388,70 +388,12 @@
 											<string>CEDFCDDD094BE776001F9310</string>
 											<string>CEDFCDE5094BE776001F9310</string>
 											<string>CEDFCDEC094BE776001F9310</string>
-											<string>CEDE103F094C37980085CC1F</string>
-											<string>CEDE1040094C37980085CC1F</string>
-											<string>CEDE1041094C37980085CC1F</string>
-											<string>CEDE1042094C37980085CC1F</string>
-											<string>CEDE1043094C37980085CC1F</string>
-											<string>CEDE1044094C37980085CC1F</string>
-											<string>CEDE1045094C37980085CC1F</string>
-											<string>CEDE1046094C37980085CC1F</string>
-											<string>CEDE1047094C37980085CC1F</string>
-											<string>CEDE1048094C37980085CC1F</string>
-											<string>CEDE1049094C37980085CC1F</string>
-											<string>CEDE104A094C37980085CC1F</string>
-											<string>CEDE104B094C37980085CC1F</string>
-											<string>CEDE104C094C37980085CC1F</string>
-											<string>CEDE104D094C37980085CC1F</string>
-											<string>CEDE104E094C37980085CC1F</string>
-											<string>CEDE104F094C37980085CC1F</string>
-											<string>CEDE10E9094C41CC0085CC1F</string>
-											<string>CEDE10EA094C41CC0085CC1F</string>
-											<string>CEDE10EB094C41CC0085CC1F</string>
-											<string>CEDE10EC094C41CC0085CC1F</string>
-											<string>CEDE10ED094C41CC0085CC1F</string>
-											<string>CEDE10EE094C41CC0085CC1F</string>
-											<string>CEDE10EF094C41CC0085CC1F</string>
-											<string>CEDE10F0094C41CC0085CC1F</string>
-											<string>CEDE10F1094C41CC0085CC1F</string>
-											<string>CEDE10F2094C41CC0085CC1F</string>
-											<string>CEDE10F3094C41CC0085CC1F</string>
-											<string>CEDE10F4094C41CC0085CC1F</string>
-											<string>CEDE1127094C43300085CC1F</string>
-											<string>CEDE114E094C4E600085CC1F</string>
-											<string>CEDE11EF094C683E0085CC1F</string>
-											<string>CEDE11F0094C683E0085CC1F</string>
-											<string>CEDE11F1094C683E0085CC1F</string>
-											<string>CEDE11F2094C683E0085CC1F</string>
-											<string>CEDE11F3094C683E0085CC1F</string>
-											<string>CEDE11F4094C683E0085CC1F</string>
-											<string>CEDE11F5094C683E0085CC1F</string>
-											<string>CEDE11F6094C683E0085CC1F</string>
-											<string>CEDE11F7094C683E0085CC1F</string>
-											<string>CEDE11F8094C683E0085CC1F</string>
-											<string>CEDE11F9094C683E0085CC1F</string>
-											<string>CEDE11FA094C683E0085CC1F</string>
-											<string>CEDE11FB094C683E0085CC1F</string>
-											<string>CEDE11FC094C683E0085CC1F</string>
-											<string>CEDE11FD094C683E0085CC1F</string>
-											<string>CEDE11FE094C683E0085CC1F</string>
-											<string>CEDE123C094C694D0085CC1F</string>
-											<string>CEDE123D094C694D0085CC1F</string>
-											<string>CEDE123E094C694D0085CC1F</string>
-											<string>CEDE128C094C74740085CC1F</string>
-											<string>CEDE129D094C77DC0085CC1F</string>
-											<string>CEDE129E094C77DC0085CC1F</string>
-											<string>CEDE129F094C77DC0085CC1F</string>
-											<string>CEDE12E1094C79DD0085CC1F</string>
-											<string>CEDE12E2094C79DD0085CC1F</string>
-											<string>CEDE12E3094C79DD0085CC1F</string>
-											<string>CEDE12E4094C79DD0085CC1F</string>
-											<string>CEDE12E5094C79DD0085CC1F</string>
-											<string>CEDE12E6094C79DD0085CC1F</string>
-											<string>CEDE12E7094C79DD0085CC1F</string>
-											<string>CEDE12E8094C79DD0085CC1F</string>
-											<string>CEDE12E9094C79DD0085CC1F</string>
-											<string>CEDE1302094C7BAC0085CC1F</string>
+											<string>CE9A64EB094DB524001628CC</string>
+											<string>CE9A64EC094DB524001628CC</string>
+											<string>CE9A64ED094DB524001628CC</string>
+											<string>CE9A64EE094DB524001628CC</string>
+											<string>CE9A651B094DC2E4001628CC</string>
+											<string>CE9A651C094DC2E4001628CC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -478,7 +420,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ChessView.h</string>
+								<string>GameWindowController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -486,11 +428,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ChessView.h</string>
+										<string>GameWindowController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CEDE1306094C7BAC0085CC1F</string>
+										<string>CE9A6527094DC337001628CC</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -503,8 +445,6 @@
 											<string>CE2091910939B1E4008697DE</string>
 											<string>CEDFCDBF094BE776001F9310</string>
 											<string>CEDE1033094C37980085CC1F</string>
-											<string>CEDE1037094C37980085CC1F</string>
-											<string>CEDE1038094C37980085CC1F</string>
 											<string>CEDE10F8094C41CC0085CC1F</string>
 											<string>CEDE10FC094C41CC0085CC1F</string>
 											<string>CEDE112A094C43300085CC1F</string>
@@ -513,18 +453,20 @@
 											<string>CEDE1201094C683E0085CC1F</string>
 											<string>CEDE1202094C683E0085CC1F</string>
 											<string>CEDE1203094C683E0085CC1F</string>
-											<string>CEDE1205094C683E0085CC1F</string>
-											<string>CEDE1206094C683E0085CC1F</string>
 											<string>CEDE1209094C683E0085CC1F</string>
 											<string>CEDE1258094C6B470085CC1F</string>
-											<string>CEDE1271094C6BA20085CC1F</string>
 											<string>CEDE128E094C74740085CC1F</string>
-											<string>CEDE12A1094C77DC0085CC1F</string>
-											<string>CEDE12EB094C79DD0085CC1F</string>
-											<string>CEDE12EC094C79DD0085CC1F</string>
-											<string>CEDE12EE094C79DD0085CC1F</string>
-											<string>CEDE1304094C7BAC0085CC1F</string>
-											<string>CEDE12ED094C79DD0085CC1F</string>
+											<string>CE9A64F0094DB524001628CC</string>
+											<string>CE9A64F1094DB524001628CC</string>
+											<string>CE9A64F2094DB524001628CC</string>
+											<string>CE9A64F3094DB524001628CC</string>
+											<string>CE9A64F4094DB524001628CC</string>
+											<string>CE9A64F5094DB524001628CC</string>
+											<string>CE9A64F6094DB524001628CC</string>
+											<string>CE9A64F7094DB524001628CC</string>
+											<string>CE9A651E094DC2E4001628CC</string>
+											<string>CE9A651F094DC2E4001628CC</string>
+											<string>CE9A6520094DC2E4001628CC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -560,72 +502,17 @@
 											<string>CEDFCDDD094BE776001F9310</string>
 											<string>CEDFCDE5094BE776001F9310</string>
 											<string>CEDFCDEC094BE776001F9310</string>
-											<string>CEDE10FF094C41CC0085CC1F</string>
-											<string>CEDE1100094C41CC0085CC1F</string>
-											<string>CEDE1101094C41CC0085CC1F</string>
-											<string>CEDE1102094C41CC0085CC1F</string>
-											<string>CEDE1103094C41CC0085CC1F</string>
-											<string>CEDE1104094C41CC0085CC1F</string>
-											<string>CEDE1105094C41CC0085CC1F</string>
-											<string>CEDE1106094C41CC0085CC1F</string>
-											<string>CEDE1107094C41CC0085CC1F</string>
-											<string>CEDE1108094C41CC0085CC1F</string>
-											<string>CEDE1109094C41CC0085CC1F</string>
-											<string>CEDE110A094C41CC0085CC1F</string>
-											<string>CEDE110B094C41CC0085CC1F</string>
-											<string>CEDE110C094C41CC0085CC1F</string>
-											<string>CEDE110D094C41CC0085CC1F</string>
-											<string>CEDE110E094C41CC0085CC1F</string>
-											<string>CEDE110F094C41CC0085CC1F</string>
-											<string>CEDE1110094C41CC0085CC1F</string>
-											<string>CEDE1111094C41CC0085CC1F</string>
-											<string>CEDE1112094C41CC0085CC1F</string>
-											<string>CEDE1113094C41CC0085CC1F</string>
-											<string>CEDE1114094C41CC0085CC1F</string>
-											<string>CEDE1115094C41CC0085CC1F</string>
-											<string>CEDE1116094C41CC0085CC1F</string>
-											<string>CEDE1117094C41CC0085CC1F</string>
-											<string>CEDE1118094C41CC0085CC1F</string>
-											<string>CEDE1119094C41CC0085CC1F</string>
-											<string>CEDE112C094C43300085CC1F</string>
-											<string>CEDE112D094C43300085CC1F</string>
-											<string>CEDE112E094C43300085CC1F</string>
-											<string>CEDE1152094C4E600085CC1F</string>
-											<string>CEDE116D094C54720085CC1F</string>
-											<string>CEDE120A094C683E0085CC1F</string>
-											<string>CEDE120B094C683E0085CC1F</string>
-											<string>CEDE120C094C683E0085CC1F</string>
-											<string>CEDE120D094C683E0085CC1F</string>
-											<string>CEDE120E094C683E0085CC1F</string>
-											<string>CEDE120F094C683E0085CC1F</string>
-											<string>CEDE1210094C683E0085CC1F</string>
-											<string>CEDE1211094C683E0085CC1F</string>
-											<string>CEDE1212094C683E0085CC1F</string>
-											<string>CEDE1213094C683E0085CC1F</string>
-											<string>CEDE1214094C683E0085CC1F</string>
-											<string>CEDE1215094C683E0085CC1F</string>
-											<string>CEDE1216094C683E0085CC1F</string>
-											<string>CEDE1217094C683E0085CC1F</string>
-											<string>CEDE1218094C683E0085CC1F</string>
-											<string>CEDE1242094C694D0085CC1F</string>
-											<string>CEDE1243094C694D0085CC1F</string>
-											<string>CEDE125A094C6B470085CC1F</string>
-											<string>CEDE125B094C6B470085CC1F</string>
-											<string>CEDE1273094C6BA20085CC1F</string>
-											<string>CEDE1291094C74740085CC1F</string>
-											<string>CEDE1292094C74740085CC1F</string>
-											<string>CEDE12A4094C77DC0085CC1F</string>
-											<string>CEDE12A5094C77DC0085CC1F</string>
-											<string>CEDE12A6094C77DC0085CC1F</string>
-											<string>CEDE12A7094C77DC0085CC1F</string>
-											<string>CEDE12F0094C79DD0085CC1F</string>
-											<string>CEDE12F1094C79DD0085CC1F</string>
-											<string>CEDE12F2094C79DD0085CC1F</string>
-											<string>CEDE12F3094C79DD0085CC1F</string>
-											<string>CEDE12F4094C79DD0085CC1F</string>
-											<string>CEDE12F5094C79DD0085CC1F</string>
-											<string>CEDE12F6094C79DD0085CC1F</string>
-											<string>CEDE1305094C7BAC0085CC1F</string>
+											<string>CE9A64F9094DB524001628CC</string>
+											<string>CE9A64FA094DB524001628CC</string>
+											<string>CE9A64FB094DB524001628CC</string>
+											<string>CE9A64FC094DB524001628CC</string>
+											<string>CE9A64FD094DB524001628CC</string>
+											<string>CE9A64FE094DB524001628CC</string>
+											<string>CE9A64FF094DB524001628CC</string>
+											<string>CE9A6500094DB524001628CC</string>
+											<string>CE9A6501094DB524001628CC</string>
+											<string>CE9A6521094DC2E4001628CC</string>
+											<string>CE9A6522094DC2E4001628CC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -684,9 +571,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CEDE0FB7094C0EF40085CC1F</string>
+				<string>CE9A6503094DB524001628CC</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CEDE0FB8094C0EF40085CC1F</string>
+				<string>CE9A6504094DB524001628CC</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
@@ -821,13 +708,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CEDE1161094C51DB0085CC1F</string>
-		<string>CEDE1162094C51DB0085CC1F</string>
-		<string>CE3AC1580901EC4D00DD3768</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>CEDE115E094C51DB0085CC1F</string>
-		<string>CEDE1122094C430B0085CC1F</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>CE3AC19D0901FF4300DD3768</string>
 		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
@@ -849,12 +729,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>ChessServerListControl.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -863,7 +745,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {994, 417}}</string>
 								<key>RubberWindowFrame</key>
-								<string>775 130 994 699 0 0 1440 878 </string>
+								<string>213 178 994 699 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -887,7 +769,7 @@
 								<key>Frame</key>
 								<string>{{0, 422}, {994, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>775 130 994 699 0 0 1440 878 </string>
+								<string>213 178 994 699 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -910,14 +792,14 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CE3AC19D0901FF4300DD3768</string>
-				<string>CEDE0FB9094C0EF40085CC1F</string>
+				<string>CE9A64D4094DB471001628CC</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.build</string>
 			<key>WindowString</key>
-			<string>775 130 994 699 0 0 1440 878 </string>
+			<string>213 178 994 699 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>CE3AC19D0901FF4300DD3768</string>
 			<key>WindowToolIsVisible</key>
@@ -1224,8 +1106,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {491, 168}}</string>
-											<string>{{0, 173}, {491, 270}}</string>
+											<string>{{0, 0}, {366, 168}}</string>
+											<string>{{0, 173}, {366, 270}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -1274,9 +1156,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>CEDE0FBA094C0EF40085CC1F</string>
+				<string>CE9A64D5094DB471001628CC</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>CEDE0FBB094C0EF40085CC1F</string>
+				<string>CE9A64D6094DB471001628CC</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>

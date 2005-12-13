@@ -92,13 +92,10 @@
 		CE9CFDDD0937565D00724529 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		CE9CFDE1093756DF00724529 /* ChessMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessMove.h; sourceTree = "<group>"; };
 		CE9CFDE2093756DF00724529 /* ChessMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessMove.m; sourceTree = "<group>"; };
-		CE9CFDE6093756F000724529 /* ChessMoveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessMoveStore.h; sourceTree = "<group>"; };
 		CE9CFDEB093758CF00724529 /* ChessServerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServerList.h; sourceTree = "<group>"; };
 		CE9CFDEC093758CF00724529 /* ChessServerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServerList.m; sourceTree = "<group>"; };
 		CE9CFDF0093758E100724529 /* ChessServerListControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServerListControl.h; sourceTree = "<group>"; };
 		CE9CFDF1093758E100724529 /* ChessServerListControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServerListControl.m; sourceTree = "<group>"; };
-		CE9CFDF5093759BC00724529 /* SeekGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeekGraph.h; sourceTree = "<group>"; };
-		CE9CFDF6093759BC00724529 /* SeekGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekGraph.m; sourceTree = "<group>"; };
 		CEA0CBDF09015EAC00BF913A /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		CEA0CBE009015EAC00BF913A /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		CEA8303409028C85003FFFDB /* ChessView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessView.h; sourceTree = "<group>"; };
@@ -141,15 +138,12 @@
 			children = (
 				CE7D60CA0939942600AC6D87 /* GameWindowController.h */,
 				CE69B0D3094BB6D900F4E6D9 /* global.h */,
-				CE9CFDF5093759BC00724529 /* SeekGraph.h */,
-				CE9CFDF6093759BC00724529 /* SeekGraph.m */,
 				CE9CFDEB093758CF00724529 /* ChessServerList.h */,
 				CE9CFDEC093758CF00724529 /* ChessServerList.m */,
 				CE9CFDF0093758E100724529 /* ChessServerListControl.h */,
 				CE9CFDF1093758E100724529 /* ChessServerListControl.m */,
 				CE9CFDE1093756DF00724529 /* ChessMove.h */,
 				CE9CFDE2093756DF00724529 /* ChessMove.m */,
-				CE9CFDE6093756F000724529 /* ChessMoveStore.h */,
 				CE9CFDDC0937565D00724529 /* Board.h */,
 				CE9CFDDD0937565D00724529 /* Board.m */,
 				CEA0CBDF09015EAC00BF913A /* Game.h */,

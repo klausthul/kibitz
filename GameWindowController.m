@@ -82,4 +82,9 @@
 	[chessView setShowBoard: board];
 }
 
+- (IBAction) selectGame: (id) sender
+{
+	NSLog(@"New Game Selected\n");
+	NSLog([[gameSelector selectedItem] title]);
+}
 @end

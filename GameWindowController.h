@@ -14,6 +14,7 @@
 	IBOutlet ChessView *chessView;
 	IBOutlet NSTextField *upperClock, *lowerClock;
 	IBOutlet NSTableView *seekTable;
+	IBOutlet NSPopUpButton *gameSelector;
 	char move[10];
 	NSTimer *timer;
 }
@@ -28,5 +29,6 @@
 - (id) tableView:(NSTableView *) aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (void) seekTableNeedsDisplay;
 - (void) setShowBoard: (Board *) board;
+- (IBAction) selectGame: (id) sender;
 
 @end

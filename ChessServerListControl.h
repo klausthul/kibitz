@@ -2,9 +2,10 @@
 // $Id$
 
 #import "global.h"
+#import "ChessServerConnection.h"
 #import "ChessServerList.h"
 
-@interface ChessServerListControl : NSWindowController {
+@interface ChessServerListControl : NSWindowController <ChessServerErrorHandler> {
 	ChessServerList *chessServerList;
 	IBOutlet NSTableView *serverList;
 	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;

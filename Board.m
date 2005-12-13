@@ -77,7 +77,7 @@
 	return fields[l + 8*r - 9];
 }
 
-- (unsigned char) pieceOnField: (struct ChessField) field
+- (int) pieceOnField: (struct ChessField) field
 {
 	return fields[field.row * 8 + field.line - 9];
 }

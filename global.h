@@ -58,3 +58,7 @@ enum RunningClock {
 enum ValidationResult {
 	INVALID, VALID, REQUIRES_PROMOTION
 };
+
+@protocol ChessServerErrorHandler
+- (void) handleStreamError: (NSError *) theError;
+@end

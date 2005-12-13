@@ -8,11 +8,12 @@
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {selectedPromotionPiece = id; toggleSeekDrawer = id; }; 
+            ACTIONS = {selectGame = id; selectedPromotionPiece = id; toggleSeekDrawer = id; }; 
             CLASS = GameWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
                 chessView = ChessView; 
+                gameSelector = NSPopUpButton; 
                 lowerClock = NSTextField; 
                 promotionPiece = NSWindow; 
                 seekDrawer = NSDrawer; 
