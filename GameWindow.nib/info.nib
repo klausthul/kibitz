@@ -11,27 +11,13 @@
 	</dict>
 	<key>IBFramework Version</key>
 	<string>443.0</string>
-	<key>IBGroupedObjects</key>
-	<dict>
-		<key>0</key>
-		<array>
-			<string>21</string>
-			<string>9</string>
-			<string>10</string>
-			<string>22</string>
-			<string>8</string>
-			<string>7</string>
-		</array>
-	</dict>
-	<key>IBLastGroupID</key>
-	<string>1</string>
 	<key>IBOldestOS</key>
 	<integer>3</integer>
 	<key>IBOpenObjects</key>
 	<array>
-		<integer>42</integer>
 		<integer>26</integer>
 		<integer>5</integer>
+		<integer>42</integer>
 	</array>
 	<key>IBSystem Version</key>
 	<string>8F46</string>

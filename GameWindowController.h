@@ -14,6 +14,7 @@
 	IBOutlet NSTextField *upperClock, *lowerClock;
 	IBOutlet NSTableView *seekTable;
 	IBOutlet NSPopUpButton *gameSelector;
+	IBOutlet NSButton *buttonTakeback, *buttonTakeback2, *buttonDraw, *buttonResign, *buttonAdjurn, *buttonAbort;
 	char move[10];
 	NSTimer *timer;
 	Game *activeGame;
@@ -37,5 +38,10 @@
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotion;
 + (NSString *) stringWithClock: (int) seconds;
 - (void) updateClocks;
-
+- (IBAction) buttonTakeback: (id) sender;
+- (IBAction) buttonTakeback2: (id) sender;
+- (IBAction) buttonDraw: (id) sender;
+- (IBAction) buttonResign: (id) sender;
+- (IBAction) buttonAdjurn: (id) sender;
+- (IBAction) buttonAbort: (id) sender;
 @end

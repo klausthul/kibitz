@@ -26,7 +26,7 @@
 		b->sideToMove = BLACK;
 	else
 		b->sideToMove = WHITE;
-	b->runningClock = (sideToMove == WHITE) ? WHITE_CLOCK_RUNS : BLACK_CLOCK_RUNS;
+	b->runningClock = (b->sideToMove == WHITE) ? WHITE_CLOCK_RUNS : BLACK_CLOCK_RUNS;
 	b->enPassantLine = [[data objectAtIndex: 10] intValue];
 	b->castleRights = [[data objectAtIndex: 11] intValue] * WHITE_SHORT;
 	b->castleRights += [[data objectAtIndex: 12] intValue] * WHITE_LONG;

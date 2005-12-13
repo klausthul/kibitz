@@ -85,7 +85,7 @@
 	NSLog(@"New Game Selected\n");
 	NSLog([[gameSelector selectedItem] title]);
 	[self setActiveGame: [[gameSelector selectedItem] representedObject]];
-	[self updateClock];
+	[self updateClocks];
 }
 
 - (void) setGameList: (NSDictionary *) gl
@@ -162,6 +162,36 @@
 	string[6] = seconds % 10 + '0';
 	string[7] = 0;
 	return [NSString stringWithCString: string];
+}
+
+- (IBAction) buttonTakeback: (id) sender
+{
+	NSLog(@"bottonTakeback");
+}
+
+- (IBAction) buttonTakeback2: (id) sender
+{
+	NSLog(@"bottonTakeback2");
+}
+
+- (IBAction) buttonDraw: (id) sender
+{
+	NSLog(@"buttonDraw");
+}
+
+- (IBAction) buttonResign: (id) sender
+{
+	NSLog(@"buttonResign");
+}
+
+- (IBAction) buttonAdjurn: (id) sender
+{
+	NSLog(@"buttonAdjurn");
+}
+
+- (IBAction) buttonAbort: (id) sender
+{
+	NSLog(@"buttonAbort");
 }
 
 @end

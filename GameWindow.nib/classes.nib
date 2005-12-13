@@ -48,10 +48,25 @@
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = Game; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {selectGame = id; toggleSeekDrawer = id; }; 
+            ACTIONS = {
+                buttonAbort = id; 
+                buttonAdjurn = id; 
+                buttonDraw = id; 
+                buttonResign = id; 
+                buttonTakeback = id; 
+                buttonTakeback2 = id; 
+                selectGame = id; 
+                toggleSeekDrawer = id; 
+            }; 
             CLASS = GameWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                buttonAbort = NSButton; 
+                buttonAdjurn = NSButton; 
+                buttonDraw = NSButton; 
+                buttonResign = NSButton; 
+                buttonTakeback = NSButton; 
+                buttonTakeback2 = NSButton; 
                 chessView = ChessView; 
                 gameSelector = NSPopUpButton; 
                 lowerClock = NSTextField; 
