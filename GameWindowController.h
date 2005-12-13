@@ -35,5 +35,7 @@
 - (void) setActiveGame: (Game *) g;
 - (Game *) activeGame;
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotion;
++ (NSString *) stringWithClock: (int) seconds;
+- (void) updateClocks;
 
 @end

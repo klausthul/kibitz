@@ -10,6 +10,8 @@
 	enum Color sideToMove;
 	int enPassantLine, moveCounter50Rule, whiteMaterial, blackMaterial, nextMoveNumber, 
 	 whiteRemainingTime, blackRemainingTime; 
+	time_t lastTimeUpdate;
+	enum RunningClock runningClock;
 }
 
 + (Board *) boardFromStyle12: (NSArray *) data; 
@@ -18,5 +20,7 @@
 - (void) print;
 - (int) pieceOnField: (struct ChessField) field;
 - (enum ValidationResult) validateMoveFrom: (struct ChessField) from to: (struct ChessField) to;
+- (int) whiteCurrentTime;
+- (int) blackCurrentTime;
 
 @end
