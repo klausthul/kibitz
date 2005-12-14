@@ -42,14 +42,28 @@
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotion;
 + (NSString *) stringWithClock: (int) seconds;
 - (void) updateClocks;
-- (IBAction) buttonTakeback: (id) sender;
-- (IBAction) buttonTakeback2: (id) sender;
-- (IBAction) buttonDraw: (id) sender;
-- (IBAction) buttonResign: (id) sender;
-- (IBAction) buttonAdjurn: (id) sender;
-- (IBAction) buttonAbort: (id) sender;
+- (IBAction) takeback: (id) sender;
+- (IBAction) takeback2: (id) sender;
+- (IBAction) draw: (id) sender;
+- (IBAction) resign: (id) sender;
+- (IBAction) adjurn: (id) sender;
+- (IBAction) abort: (id) sender;
+- (IBAction) newSeek: (id) sender;
+- (IBAction) match: (id) sender;
+- (IBAction) accept: (id) sender;
+- (IBAction) decline: (id) sender;
+- (IBAction) flipBoard: (id) sender;
+- (IBAction) hideMoves: (id) sender;
+- (IBAction) hideDialog: (id) sender;
+- (IBAction) logout: (id) sender;
+- (IBAction) reconnect: (id) sender;
+- (IBAction) exportGame: (id) sender;
 - (BOOL)splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview;
 - (float)splitView: (NSSplitView *) sender constrainMaxCoordinate: (float) proposedMax ofSubviewAt:(int)offset;
 - (float)splitView: (NSSplitView *) sender constrainMinCoordinate: (float) proposedMin ofSubviewAt:(int)offset;
-
+- (void) awakeFromNib;
+- (NSToolbarItem *) toolbar: (NSToolbar *) toolbar itemForItemIdentifier: (NSString *) itemIdentifier willBeInsertedIntoToolbar: (BOOL) flag;
+- (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar; 
+ - (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar;
+ 
 @end

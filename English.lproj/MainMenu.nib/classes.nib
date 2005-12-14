@@ -32,7 +32,31 @@
             OUTLETS = {appController = AppController; game = Game; }; 
             SUPERCLASS = NSView; 
         }, 
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                abort = id; 
+                accept = id; 
+                adjurn = id; 
+                decline = id; 
+                draw = id; 
+                exportGame = id; 
+                flipBoard = id; 
+                hideDialog = id; 
+                hideMoves = id; 
+                logout = id; 
+                match = id; 
+                newPlayWindow = id; 
+                newSeek = id; 
+                reconnect = id; 
+                resign = id; 
+                takeback = id; 
+                takeback2 = id; 
+                toggleSeekDrawer = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
         {
             ACTIONS = {goBackward = id; goEnd = id; goForeward = id; goStart = id; }; 
             CLASS = Game; 

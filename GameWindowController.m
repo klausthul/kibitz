@@ -3,6 +3,87 @@
 
 #import "GameWindowController.h"
 
+enum ToolbarItems {
+	ToolbarTakeback,
+	ToolbarTakeback2,
+	ToolbarDraw,
+	ToolbarResign,
+	ToolbarAdjurn,
+	ToolbarAbort,
+	ToolbarNewSeek,
+	ToolbarMatch,
+	ToolbarAccept,
+	ToolbarDecline,
+	ToolbarFlipBoard,
+	ToolbarHideMoves,
+	ToolbarHideDialog,
+	ToolbarLogout,
+	ToolbarReconnect,
+	ToolbarExportGame,
+	ToolbarSeekDrawer
+};
+
+NSString *toolbarIdentifiers[] = {
+	@"ToolbarTakeback",
+	@"ToolbarTakeback2",
+	@"ToolbarDraw",
+	@"ToolbarResign",
+	@"ToolbarAdjurn",
+	@"ToolbarAbort",
+	@"ToolbarNewSeek",
+	@"ToolbarMatch",
+	@"ToolbarAccept",
+	@"ToolbarDecline",
+	@"ToolbarFlipBoard",
+	@"ToolbarHideMoves",
+	@"ToolbarHideDialog",
+	@"ToolbarLogout",
+	@"ToolbarReconnect",
+	@"ToolbarExportGame",
+	@"ToolbarSeekDrawer",
+	nil
+};
+
+NSString *toolbarLabels[] = {
+	@"Takeback",
+	@"Takeback 2",
+	@"Draw",
+	@"Resign",
+	@"Adjurn",
+	@"Abort",
+	@"New Seek",
+	@"Match",
+	@"Accept",
+	@"Decline",
+	@"Flip board",
+	@"Hide Moves",
+	@"Hide Dialog",
+	@"Logout",
+	@"Reconnect",
+	@"Export Game",
+	@"Show Seek Drawer",
+	nil
+};
+
+NSString *toolbarTooltips[] = {
+	@"Take back one (half) move",
+	@"Take back two (half) move",
+	@"Offer / accept / claim a draw",
+	@"Resign the game",
+	@"Adjurn the game",
+	@"Abort the game",
+	@"Place a new seek request",
+	@"Match a player",
+	@"Accept a match request",
+	@"Decline a match request",
+	@"Turn board by 180 deg",
+	@"Hide move list from window",
+	@"Hide dialog from window",
+	@"Logout from server",
+	@"Reconnect to server",
+	@"Export game to file",
+	nil
+};
 
 @implementation GameWindowController
 
@@ -170,34 +251,84 @@
 	return [NSString stringWithCString: string];
 }
 
-- (IBAction) buttonTakeback: (id) sender
+- (IBAction) takeback: (id) sender
 {
 	NSLog(@"bottonTakeback");
 }
 
-- (IBAction) buttonTakeback2: (id) sender
+- (IBAction) takeback2: (id) sender
 {
 	NSLog(@"bottonTakeback2");
 }
 
-- (IBAction) buttonDraw: (id) sender
+- (IBAction) draw: (id) sender
 {
 	NSLog(@"buttonDraw");
 }
 
-- (IBAction) buttonResign: (id) sender
+- (IBAction) resign: (id) sender
 {
 	NSLog(@"buttonResign");
 }
 
-- (IBAction) buttonAdjurn: (id) sender
+- (IBAction) adjurn: (id) sender
 {
 	NSLog(@"buttonAdjurn");
 }
 
-- (IBAction) buttonAbort: (id) sender
+- (IBAction) abort: (id) sender
 {
 	NSLog(@"buttonAbort");
+}
+
+- (IBAction) newSeek: (id) sender
+{
+	NSLog(@"newSeek");
+}
+
+- (IBAction) match: (id) sender
+{
+	NSLog(@"match");
+}
+
+- (IBAction) accept: (id) sender
+{
+	NSLog(@"accept");
+}
+
+- (IBAction) decline: (id) sender
+{
+	NSLog(@"decline");
+}
+
+- (IBAction) flipBoard: (id) sender
+{
+	NSLog(@"decline");
+}
+
+- (IBAction) hideMoves: (id) sender
+{
+	NSLog(@"decline");
+}
+
+- (IBAction) hideDialog: (id) sender
+{
+	NSLog(@"decline");
+}
+
+- (IBAction) logout: (id) sender;
+{
+	NSLog(@"logout");
+}
+
+- (IBAction) reconnect: (id) sender;
+{
+	NSLog(@"reconnect");
+}
+
+- (IBAction) exportGame: (id) sender;
+{
+	NSLog(@"exportGame");
 }
 
 - (BOOL) splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview
@@ -221,37 +352,63 @@
 	[toolbar setDelegate: self];
 	[toolbar setAllowsUserCustomization: YES];
 	[toolbar setAutosavesConfiguration: YES];
-	toolbarItems = [[NSMutableDictionary alloc] initWithCapacity: 10]; 
-	[toolbarItems setObject:[[NSToolbarItem alloc] initWithItemIdentifier: NSToolbarShowFontsItemIdentifier] forKey: @"Fonts"];
-	[toolbarItems setObject:[[NSToolbarItem alloc] initWithItemIdentifier: NSToolbarShowFontsItemIdentifier] forKey: @"Colors"];	
-		
-/*
-NSToolbarSpaceItemIdentifier	
-NSToolbarFlexibleSpaceItemIdentifier	
-NSToolbarShowColorsItemIdentifier	
-NSToolbarShowFontsItemIdentifier	
-NSToolbarCustomizeToolbarItemIdentifier	
-NSToolbarPrintItemIdentifier
-*/
 	[[self window] setToolbar: toolbar]; 
-	[toolbar setVisible: true];
 }
 
-- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar 
-    itemForItemIdentifier:(NSString *)itemIdentifier
-    willBeInsertedIntoToolbar:(BOOL)flag 
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL) flag 
 {
     NSToolbarItem *toolbarItem = [[[NSToolbarItem alloc] initWithItemIdentifier: itemIdentifier] autorelease];
+	int i;
+	NSString *s;
+	SEL toolbarSelectors[] = {
+		@selector(takeback:),
+		@selector(takeback2:),
+		@selector(draw:),
+		@selector(resign:),
+		@selector(adjurn:),
+		@selector(abort:),
+		@selector(newSeek:),
+		@selector(match:),
+		@selector(accept:),
+		@selector(decline:),
+		@selector(flipBoard:),
+		@selector(hideMoves:),
+		@selector(hideDialog:),
+		@selector(logout:),
+		@selector(reconnect:),
+		@selector(exportGame:),
+		@selector(toggleSeekDrawer:)
+	};
+	
+	for (i = 0; (s = toolbarIdentifiers[i]) != nil; i++) {
+		if ([itemIdentifier isEqual: s]) {
+			[toolbarItem setLabel: toolbarLabels[i]];
+			[toolbarItem setPaletteLabel:toolbarLabels[i]];
+			[toolbarItem setToolTip: toolbarTooltips[i]];
+			[toolbarItem setImage:[NSImage imageNamed:@"SaveDocumentItemImage"]];
+			[toolbarItem setTarget:self];
+			[toolbarItem setAction: toolbarSelectors[i]];		
+			break;
+		}
+	}
+    return toolbarItem;
 }
 
-- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
+- (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar 
 {
-    return [toolbarItems allKeys];
+	NSMutableArray *a = [NSMutableArray arrayWithObjects: NSToolbarFlexibleSpaceItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarSeparatorItemIdentifier, 
+	 NSToolbarCustomizeToolbarItemIdentifier, nil];
+	NSString **sp;
+	
+	for (sp = toolbarIdentifiers; (*sp) != nil; sp++)
+		[a addObject: *sp];
+	return a;
 }
 
-- (NSArray *) toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
+- (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar
 {
-    return [[toolbarItems allKeys] subarrayWithRange:NSMakeRange(0,2)];
+    return [NSArray arrayWithObjects: toolbarIdentifiers[ToolbarDraw], toolbarIdentifiers[ToolbarResign], 
+	 NSToolbarFlexibleSpaceItemIdentifier, toolbarIdentifiers[ToolbarSeekDrawer], nil];
 }
 
 @end
