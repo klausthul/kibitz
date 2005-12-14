@@ -15,10 +15,14 @@
 	IBOutlet NSTableView *seekTable;
 	IBOutlet NSPopUpButton *gameSelector;
 	IBOutlet NSButton *buttonTakeback, *buttonTakeback2, *buttonDraw, *buttonResign, *buttonAdjurn, *buttonAbort;
+	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
+	IBOutlet NSView *playView, *chatView, *movesView;
 	char move[10];
 	NSTimer *timer;
 	Game *activeGame;
 	NSDictionary *gameList;
+	NSToolbar *toolbar;
+	NSMutableDictionary *toolbarItems;
 }
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc;
@@ -44,4 +48,8 @@
 - (IBAction) buttonResign: (id) sender;
 - (IBAction) buttonAdjurn: (id) sender;
 - (IBAction) buttonAbort: (id) sender;
+- (BOOL)splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview;
+- (float)splitView: (NSSplitView *) sender constrainMaxCoordinate: (float) proposedMax ofSubviewAt:(int)offset;
+- (float)splitView: (NSSplitView *) sender constrainMinCoordinate: (float) proposedMin ofSubviewAt:(int)offset;
+
 @end

@@ -9,7 +9,6 @@
 
 - (void) processServerOutput
 {
-	printf("**%s\n", lineBuf);
 	if (serverMainWindow == nil) {
 		serverMainWindow = [[GameWindowController alloc] initWithServerConnection: self];
 		[serverMainWindow showWindow: self];
@@ -29,22 +28,17 @@
 	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
 		int num = 0;
 		sscanf(lineBuf + 3, " %d", &num);
-		printf("processing: %s\n", lineBuf);
-		printf("  num = %d\n", num);
 		[self newSeekFromServer: num description: lineBuf + 4];
 	} else if (strncmp(lineBuf,"<sr>", 4) == 0) {
 		NSArray *sr = [[[NSString stringWithCString:lineBuf + 4] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
 		NSEnumerator *enumerator = [sr objectEnumerator];
 		NSString *s;
-
-		printf("processing: %s\n", lineBuf);		
+		
 		while (s = [enumerator nextObject]) {
 			int num = [s intValue];
-			NSLog(@"Removing string %d", num);
 			[self removeSeekFromServer: num];
 		}
 	} else if (strncmp(lineBuf,"login:", 6) == 0) {
-		printf("SERVER asking for login!!\n");
 		if (currentServer != nil && sendNamePassword == YES) {
 			const char *s;
 			sendNamePassword = NO;
@@ -82,7 +76,6 @@
 		unsigned char buf[2048];
 		unsigned int len = 0;
 		while (len = [(NSInputStream *) theStream read:buf maxLength: 2048]) {
-			printf("LEN = %d, lastChar = %d\n", len, lastChar);
 			for (i = 0; i < len; i++) {
 				switch (c = buf[i]) {
 				  case 10: 
@@ -116,7 +109,6 @@
 }
 
 - (id) initWithChessServer: (ChessServer *) server {
-	printf("Hallo!\n");
 	self = [self init];
 	if (self != nil) {
 		[self retain];
@@ -177,16 +169,9 @@
 
 - (void) newSeekFromServer: (int) num description: (const char *) seekInfo
 {
-	NSEnumerator *keyEnumerator;
-	NSNumber *key;
 	Seek *s = [Seek seekFromSeekInfo: seekInfo];
 	if (s != nil) {
 		[seeks setObject: s forKey: [NSNumber numberWithInt: num]];
-		keyEnumerator = [seeks keyEnumerator];
-		while ((key = [keyEnumerator nextObject]) != nil) {
-			s = [seeks objectForKey:key];
-			printf("%d: %s\n", [key intValue], [[s nameFrom] cString]);
-		}
 		[serverMainWindow seekTableNeedsDisplay];
 	} else
 		NSLog(@"Error in Seek request");

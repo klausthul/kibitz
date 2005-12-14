@@ -26,7 +26,6 @@
 {
 	NSString *input = [serverInput stringValue];
 	const char *s = [input UTF8String];
-	NSLog([serverInput stringValue]);
 	if (strlen(s) > 0)
 		[serverConnection write:(unsigned char *) s maxLength:strlen(s)];
 	[serverConnection write:(unsigned char *) "\n\r" maxLength:2];
@@ -44,11 +43,12 @@
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize
 {
-	NSSize s = [sender frame].size;
-	float delta = MIN(proposedFrameSize.width - s.width, proposedFrameSize.height - s.height);
-	s.width += delta;
-	s.height += delta;
-	return s;
+//	NSSize s = [sender frame].size;
+//	float delta = MIN(proposedFrameSize.width - s.width, proposedFrameSize.height - s.height);
+//	s.width += delta;
+//	s.height += delta;
+//	return s;
+	return proposedFrameSize;
 }
 
 - (void) dealloc
@@ -57,17 +57,25 @@
 	[serverConnection release];
 	[activeGame release];
 	[gameList release];
+	[toolbar release];
+	[toolbarItems release];
 	[super dealloc];
 }
 
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView
 {
-	return [serverConnection numSeeks];
+	if (aTableView == seekTable)
+		return [serverConnection numSeeks];
+	else
+		return 0;
 }
 
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 {
-	return [serverConnection dataForSeekTable: [aTableColumn identifier] row: rowIndex];
+	if (aTableView == seekTable)
+		return [serverConnection dataForSeekTable: [aTableColumn identifier] row: rowIndex];
+	else
+		return 0;
 }
 
 - (void) seekTableNeedsDisplay
@@ -82,8 +90,6 @@
 
 - (IBAction) selectGame: (id) sender
 {
-	NSLog(@"New Game Selected\n");
-	NSLog([[gameSelector selectedItem] title]);
 	[self setActiveGame: [[gameSelector selectedItem] representedObject]];
 	[self updateClocks];
 }
@@ -192,6 +198,60 @@
 - (IBAction) buttonAbort: (id) sender
 {
 	NSLog(@"buttonAbort");
+}
+
+- (BOOL) splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview
+{
+	return ((subview == chatView) || (subview == movesView));
+}
+
+- (float) splitView: (NSSplitView *) sender constrainMaxCoordinate: (float) proposedMax ofSubviewAt:(int)offset
+{
+	return 0.8 * proposedMax;
+}
+
+- (float)splitView: (NSSplitView *) sender constrainMinCoordinate: (float) proposedMin ofSubviewAt:(int)offset
+{
+	return 0.4 * proposedMin;
+}
+
+- (void) awakeFromNib
+{
+	toolbar = [[NSToolbar alloc] initWithIdentifier: @"GameWindowToolbar"];
+	[toolbar setDelegate: self];
+	[toolbar setAllowsUserCustomization: YES];
+	[toolbar setAutosavesConfiguration: YES];
+	toolbarItems = [[NSMutableDictionary alloc] initWithCapacity: 10]; 
+	[toolbarItems setObject:[[NSToolbarItem alloc] initWithItemIdentifier: NSToolbarShowFontsItemIdentifier] forKey: @"Fonts"];
+	[toolbarItems setObject:[[NSToolbarItem alloc] initWithItemIdentifier: NSToolbarShowFontsItemIdentifier] forKey: @"Colors"];	
+		
+/*
+NSToolbarSpaceItemIdentifier	
+NSToolbarFlexibleSpaceItemIdentifier	
+NSToolbarShowColorsItemIdentifier	
+NSToolbarShowFontsItemIdentifier	
+NSToolbarCustomizeToolbarItemIdentifier	
+NSToolbarPrintItemIdentifier
+*/
+	[[self window] setToolbar: toolbar]; 
+	[toolbar setVisible: true];
+}
+
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar 
+    itemForItemIdentifier:(NSString *)itemIdentifier
+    willBeInsertedIntoToolbar:(BOOL)flag 
+{
+    NSToolbarItem *toolbarItem = [[[NSToolbarItem alloc] initWithItemIdentifier: itemIdentifier] autorelease];
+}
+
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
+{
+    return [toolbarItems allKeys];
+}
+
+- (NSArray *) toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
+{
+    return [[toolbarItems allKeys] subarrayWithRange:NSMakeRange(0,2)];
 }
 
 @end

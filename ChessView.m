@@ -14,35 +14,40 @@
 {
 	NSRect bounds = [self bounds];
 	NSRect cur_field;
-	float size_x = bounds.size.width / 8.0;
-	float size_y = bounds.size.height / 8.0;
+	float board_size = MIN(bounds.size.width, bounds.size.height);
+	NSRect board = {
+		{ bounds.size.width - board_size, bounds.size.height - board_size },
+		{ board_size, board_size }
+	};
+	
+	float field_size = board_size / 8;
 	int i, j, n, c, p;
 	NSRect imagerect;
 	
 	imagerect.size = [pieces[1] size];
 	imagerect.origin = NSZeroPoint;
 	[[NSColor whiteColor] set];
-	[NSBezierPath fillRect: bounds];	
+	[NSBezierPath fillRect: board];	
 	[[NSColor brownColor] set];
-	cur_field.size.width = size_x;
-	cur_field.size.height = size_y;
-	cur_field.origin.y = 0;
+	cur_field.size.width = field_size;
+	cur_field.size.height = field_size;
+	cur_field.origin.y = board.origin.y;
 	n = 0;
 	c = 1;
 	for (i = 0; i < 8; i++) {
-		cur_field.origin.x = 0;
+		cur_field.origin.x = board.origin.x;
 		for (j = 0; j < 8; j++) {
 			if (c == 1)
 				[NSBezierPath fillRect: cur_field];
 			if ((p = [showBoard pieceLine:j+1 row:i+1]) != 0) {
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
 			}
-			cur_field.origin.x += size_x;
+			cur_field.origin.x += field_size;
 			n++;
 			c = 1 - c;
 		}
 		c = 1 - c;
-		cur_field.origin.y += size_y;
+		cur_field.origin.y += field_size;
 	}
 }
 

@@ -58,22 +58,6 @@
 	castleRights = WHITE_LONG | WHITE_SHORT | BLACK_LONG | BLACK_SHORT;
 }
 
-- (void) print
-{
-	int i, j, i_max;
-	const char *pieces = ".pnbrqk  PNBRQK";
-	
-	for (j = 56, i_max = 64; j >= 0; i_max = j, j -= 8) {
-		for (i = j; i < i_max; i++)
-			printf("%c", pieces[fields[i]]);
-		printf("\n");
-	}
-	printf("Castle: %d, Enpassant: %d\n", castleRights, enPassantLine);
-	printf("\n%s to move.\n\n", (sideToMove == WHITE) ? "White" : "Black");
-	printf("Time remaining white: %d black: %d\n", whiteRemainingTime, blackRemainingTime);	
-}
-
-
 - (int) pieceLine: (int) l row: (int) r
 {
 	return fields[l + 8*r - 9];

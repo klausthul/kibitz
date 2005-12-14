@@ -67,15 +67,20 @@
                 buttonResign = NSButton; 
                 buttonTakeback = NSButton; 
                 buttonTakeback2 = NSButton; 
+                chatView = NSView; 
                 chessView = ChessView; 
                 gameSelector = NSPopUpButton; 
+                horizontalSplit = NSSplitView; 
                 lowerClock = NSTextField; 
+                movesView = NSView; 
+                playView = NSView; 
                 seekDrawer = NSDrawer; 
                 seekTable = NSTableView; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
                 tableView = NSTableView; 
                 upperClock = NSTextField; 
+                verticalSplit = NSSplitView; 
             }; 
             SUPERCLASS = NSWindowController; 
         }, 

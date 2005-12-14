@@ -10,7 +10,6 @@
 }
 
 + (ChessMove *) moveFromStyle12: (NSArray *) data;
-- (void) print;
 - (Board *) positionAfter;
 
 @end
