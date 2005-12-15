@@ -42,20 +42,25 @@
 	return [b autorelease];
 }
  
-- (void) startPosition
++ (Board *) startPosition;
 {
-	int i, j, k, l;
-	const char firstrow[] = { ROOK, KNIGHT, BISHOP, QUEEN, KING, BISHOP, KNIGHT, ROOK };
+	Board *b = [[Board alloc] init];
+	if (b != nil) {
+		int i, j, k, l;
+		const char firstrow[] = { ROOK, KNIGHT, BISHOP, QUEEN, KING, BISHOP, KNIGHT, ROOK };
 	
-	for (i = 0, j = 56, k = 8, l = 48; i < 8; i++, j++, k++, l++) {
-		fields[i] = firstrow[i] | WHITE;
-		fields[j] = firstrow[i] | BLACK;
-		fields[k] = PAWN | WHITE;
-		fields[l] = PAWN | BLACK;
+		for (i = 0, j = 56, k = 8, l = 48; i < 8; i++, j++, k++, l++) {
+			b->fields[i] = firstrow[i] | WHITE;
+			b->fields[j] = firstrow[i] | BLACK;
+			b->fields[k] = PAWN | WHITE;
+			b->fields[l] = PAWN | BLACK;
+		}
+		b->enPassantLine = -1;
+		b->sideToMove = WHITE;
+		b->castleRights = WHITE_LONG | WHITE_SHORT | BLACK_LONG | BLACK_SHORT;
 	}
-	enPassantLine = -1;
-	sideToMove = WHITE;
-	castleRights = WHITE_LONG | WHITE_SHORT | BLACK_LONG | BLACK_SHORT;
+	b->whiteRemainingTime = b->blackRemainingTime = -1;
+	return [b autorelease];
 }
 
 - (int) pieceLine: (int) l row: (int) r

@@ -17,6 +17,15 @@
 	return [cm autorelease];
 }
 
++ (ChessMove *) initialPosition
+{
+	ChessMove *cm = [[ChessMove alloc] init];
+	if (cm != nil) {
+		cm->positionAfter = [[Board startPosition] retain];
+	}
+	return [cm autorelease];
+}
+
 - (Board *) positionAfter
 {
 	return [[positionAfter retain] autorelease];

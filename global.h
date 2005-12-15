@@ -71,3 +71,11 @@ enum GameRelationship {
 @end
 
 #define STRBEGINS(x, y) (strncmp((x), (y), strlen(y)) == 0)
+
+inline NSString *nil2Empty(NSString *x)
+{
+	if (x == nil)
+		return @"";
+	else
+		return x;
+}

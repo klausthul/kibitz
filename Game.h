@@ -12,6 +12,7 @@
 	ChessMove *lastMove;
 	NSString *result, *reason;
 	int gameNumber;
+	enum Color siteShownOnBottom;
 }
 
 - (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black;
@@ -24,9 +25,13 @@
 - (void) newMove: (ChessMove *) move;
 - (void) dealloc;
 - (Game *) initWithStyle12: (NSArray *) data;
+- (Game *) initWithEmptyGame;
 - (NSString *) gameInfoString;
 - (void) setResult: (NSString *) resultV reason: (NSString *) reasonV;
 - (NSString *) result;
 - (NSString *) reason;
+- (void) setSiteShownOnBottom: (enum Color) color;
+- (void) flipSiteShownOnBottom;
+- (enum Color) siteShownOnBottom;
 
 @end

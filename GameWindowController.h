@@ -11,10 +11,9 @@
 	IBOutlet NSDrawer *seekDrawer;
 	IBOutlet NSTableView *tableView;
 	IBOutlet ChessView *chessView;
-	IBOutlet NSTextField *upperClock, *lowerClock;
+	IBOutlet NSTextField *upperClock, *lowerClock, *upperName, *lowerName, *result, *resultReason, *gameType;
 	IBOutlet NSTableView *seekTable;
 	IBOutlet NSPopUpButton *gameSelector;
-	IBOutlet NSButton *buttonTakeback, *buttonTakeback2, *buttonDraw, *buttonResign, *buttonAdjurn, *buttonAbort;
 	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
 	IBOutlet NSView *playView, *chatView, *movesView;
 	char move[10];
@@ -64,6 +63,7 @@
 - (void) awakeFromNib;
 - (NSToolbarItem *) toolbar: (NSToolbar *) toolbar itemForItemIdentifier: (NSString *) itemIdentifier willBeInsertedIntoToolbar: (BOOL) flag;
 - (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar; 
- - (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar;
- 
+- (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar;
+- (void) updateGameInfo;
+
 @end

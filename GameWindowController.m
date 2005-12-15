@@ -122,6 +122,37 @@ NSString *toolbarTooltips[] = {
 	[self updateClocks];
 }
 
+- (void) updateGameInfo
+{
+	[self updateClocks];
+	if (activeGame == nil) {
+		[lowerName setStringValue: @""];
+		[upperName setStringValue: @""];
+		[result setStringValue: @""];
+		[resultReason setStringValue: @""];
+		[gameType setStringValue: @""];	
+	} else {
+		if ([activeGame siteShownOnBottom] == WHITE) {
+			[upperName setStringValue: nil2Empty([activeGame blackName])];
+			[lowerName setStringValue: nil2Empty([activeGame whiteName])];
+		} else {
+			[lowerName setStringValue: nil2Empty([activeGame blackName])];
+			[upperName setStringValue: nil2Empty([activeGame whiteName])];
+		}
+		[result setStringValue: nil2Empty([activeGame result])];
+		[resultReason setStringValue: nil2Empty([activeGame reason])];
+		[gameType setStringValue: 
+		 ([activeGame initialTime] >= 0) 
+		 ? nil2Empty([NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n", [activeGame initialTime], [activeGame incrementTime]])
+		 : @""];
+	}
+	[lowerName setNeedsDisplay: YES];
+	[result setNeedsDisplay: YES];
+	[resultReason setNeedsDisplay: YES];
+	[upperName setNeedsDisplay: YES];
+	[gameType setNeedsDisplay: YES];
+}
+
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize
 {
 //	NSSize s = [sender frame].size;
@@ -172,7 +203,6 @@ NSString *toolbarTooltips[] = {
 - (IBAction) selectGame: (id) sender
 {
 	[self setActiveGame: [[gameSelector selectedItem] representedObject]];
-	[self updateClocks];
 }
 
 - (void) setGameList: (NSDictionary *) gl
@@ -203,6 +233,7 @@ NSString *toolbarTooltips[] = {
 		if (ag >= 0)
 			[gameSelector selectItemAtIndex: ag];
 	}
+	[self updateGameInfo];
 }
 
 - (void) updateGame: (Game *) g
@@ -218,6 +249,7 @@ NSString *toolbarTooltips[] = {
 	activeGame = [g retain];
 	[self updateGame: activeGame];
 	[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
+	[self updateGameInfo];
 }
 
 - (Game *) activeGame
@@ -232,29 +264,43 @@ NSString *toolbarTooltips[] = {
 
 - (void) updateClocks
 {
-	[upperClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]]];
+	if (activeGame == nil) {
+		[upperClock setStringValue: @"-:--:--"];	
+		[lowerClock setStringValue: @"-:--:--"];	
+	} else if ([activeGame siteShownOnBottom] == WHITE) {
+		[upperClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]]];	
+		[lowerClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]]];
+	} else {
+		[lowerClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]]];
+		[upperClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]]];
+	}
 	[upperClock setNeedsDisplay: YES];
-	[lowerClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]]];
 	[lowerClock setNeedsDisplay: YES];
+
 }
 
 + (NSString *) stringWithClock: (int) seconds
 {
 	int minutes, hours;
 	char string[10];
-	minutes = seconds / 60;
-	seconds -= minutes * 60;
-	hours = minutes / 60;
-	minutes -= hours * 60;
-	string[0] = hours % 10 + '0';
-	string[1] = ':';
-	string[2] = minutes / 10 + '0';
-	string[3] = minutes % 10 + '0';
-	string[4] = ':';
-	string[5] = seconds / 10 + '0';
-	string[6] = seconds % 10 + '0';
-	string[7] = 0;
-	return [NSString stringWithCString: string];
+	
+	if (seconds < 0) {
+		return @"-:--:--";
+	} else {
+		minutes = seconds / 60;
+		seconds -= minutes * 60;
+		hours = minutes / 60;
+		minutes -= hours * 60;
+		string[0] = hours % 10 + '0';
+		string[1] = ':';
+		string[2] = minutes / 10 + '0';
+		string[3] = minutes % 10 + '0';
+		string[4] = ':';
+		string[5] = seconds / 10 + '0';
+		string[6] = seconds % 10 + '0';
+		string[7] = 0;
+		return [NSString stringWithCString: string];
+	}
 }
 
 - (IBAction) takeback: (id) sender
@@ -359,6 +405,8 @@ NSString *toolbarTooltips[] = {
 	[toolbar setAllowsUserCustomization: YES];
 	[toolbar setAutosavesConfiguration: YES];
 	[[self window] setToolbar: toolbar]; 
+	[self setActiveGame: [[[Game alloc] initWithEmptyGame] autorelease]];
+//	[self updateGameInfo];
 }
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL) flag 

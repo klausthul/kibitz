@@ -70,6 +70,16 @@
 	return self;
 }
 
+- (Game *) initWithEmptyGame
+{
+	if ((self = [self init]) != nil) {
+		[self setPlayerNamesWhite: @"White" black: @"Black"];
+		lastMove = [[ChessMove initialPosition] retain];
+		initialTime = -1;
+	}
+	return self;
+}
+
 - (NSString *) gameInfoString
 {
 	if (result)
@@ -95,6 +105,21 @@
 - (NSString *) reason
 {
 	return reason;
+}
+
+- (void) setSiteShownOnBottom: (enum Color) color
+{
+	siteShownOnBottom = color;
+}
+
+- (void) flipSiteShownOnBottom;
+{
+	siteShownOnBottom = (siteShownOnBottom == BLACK) ? WHITE : BLACK;
+}
+
+- (enum Color) siteShownOnBottom
+{
+	return siteShownOnBottom;
 }
 
 @end

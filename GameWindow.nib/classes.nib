@@ -49,13 +49,23 @@
         {CLASS = Game; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
             ACTIONS = {
-                buttonAbort = id; 
-                buttonAdjurn = id; 
-                buttonDraw = id; 
-                buttonResign = id; 
-                buttonTakeback = id; 
-                buttonTakeback2 = id; 
+                abort = id; 
+                accept = id; 
+                adjurn = id; 
+                decline = id; 
+                draw = id; 
+                exportGame = id; 
+                flipBoard = id; 
+                hideDialog = id; 
+                hideMoves = id; 
+                logout = id; 
+                match = id; 
+                newSeek = id; 
+                reconnect = id; 
+                resign = id; 
                 selectGame = id; 
+                takeback = id; 
+                takeback2 = id; 
                 toggleSeekDrawer = id; 
             }; 
             CLASS = GameWindowController; 
@@ -70,16 +80,21 @@
                 chatView = NSView; 
                 chessView = ChessView; 
                 gameSelector = NSPopUpButton; 
+                gameType = NSTextField; 
                 horizontalSplit = NSSplitView; 
                 lowerClock = NSTextField; 
+                lowerName = NSTextField; 
                 movesView = NSView; 
                 playView = NSView; 
+                result = NSTextField; 
+                resultReason = NSTextField; 
                 seekDrawer = NSDrawer; 
                 seekTable = NSTableView; 
                 serverInput = NSTextField; 
                 serverOutput = NSTextView; 
                 tableView = NSTableView; 
                 upperClock = NSTextField; 
+                upperName = NSTextField; 
                 verticalSplit = NSSplitView; 
             }; 
             SUPERCLASS = NSWindowController; 
