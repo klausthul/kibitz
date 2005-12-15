@@ -91,4 +91,9 @@
 		return blackRemainingTime;
 }
 
+- (void) stopClock
+{
+	runningClock = NO_CLOCK_RUNS;
+}
+
 @end

@@ -4,11 +4,14 @@
 #import "ChessServerConnection.h"
 #import "Game.h"
 #import "GameWindowController.h"
+#import "PatternMatching.h"
 
 @implementation ChessServerConnection
 
 - (void) processServerOutput
 {
+	NSString *serverOutput = [NSString stringWithCString: lineBuf];
+	
 	if (serverMainWindow == nil) {
 		serverMainWindow = [[GameWindowController alloc] initWithServerConnection: self];
 		[serverMainWindow showWindow: self];
@@ -65,7 +68,18 @@
 //	} else if (handleGameInfo(line)) {
 //	} else if (handleDeltaBoard(line)) {
 //	} else if (handleBughouseHoldings(line)) {
-//	} else if (handleGameEnd(line)) {
+	} else if (STRBEGINS(lineBuf, "{Game ")) {
+		NSLog(@"Game end\n");
+		NSArray *a = matchPattern(serverOutput, PATTERN_GAME_END);
+		NSNumber *gameNum = [NSNumber numberWithInt:[[a objectAtIndex: 1] intValue]];
+		Game *g = [activeGames objectForKey: gameNum]; 
+		NSLog(@"%@\n", a);
+		if (g != nil) {
+			[g setResult: [a objectAtIndex: 5] reason: [a objectAtIndex: 4]];
+			[activeGames removeObjectForKey: gameNum];
+			[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]]; 
+			[serverMainWindow setGameList: activeGames];
+		}
 //	} else if (handleStoppedObserving(line)) {
 //	} else if (handleStoppedExamining(line)) {
 //	} else if (handleEnteredBSetupMode(line)) {

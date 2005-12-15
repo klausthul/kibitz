@@ -69,3 +69,5 @@ enum GameRelationship {
 @protocol ChessServerErrorHandler <NSObject>
 - (void) handleStreamError: (NSError *) theError;
 @end
+
+#define STRBEGINS(x, y) (strncmp((x), (y), strlen(y)) == 0)

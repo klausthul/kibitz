@@ -188,14 +188,20 @@ NSString *toolbarTooltips[] = {
 	if (c <= 0) {
 		[gameSelector addItemWithTitle: @"no game played or observed"];
 	} else {
+		int i = 0, ag = -1;
 		enumerator = [gameList keyEnumerator];
 		while ((num = [enumerator nextObject])) {
 			Game *g = [gl objectForKey: num];
 			[gameSelector addItemWithTitle: [NSString stringWithFormat: @"%@: %@", num, [g gameInfoString]]];
 			[[gameSelector lastItem] setRepresentedObject: g];
+			if (g == activeGame)
+				ag = i;
+			i++;
 		}
 		if (c > 1)
 			[gameSelector setEnabled: TRUE];
+		if (ag >= 0)
+			[gameSelector selectItemAtIndex: ag];
 	}
 }
 

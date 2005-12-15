@@ -18,6 +18,7 @@
 	bool sendNamePassword, sendInit;
 	NSMutableDictionary *seeks;
 	NSMutableDictionary *activeGames;
+	int storedGameCounter;
 }
 
 - (void) processServerOutput;

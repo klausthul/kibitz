@@ -65,13 +65,36 @@
 	if ((self = [self init]) != nil) {
 		[self setPlayerNamesWhite: [data objectAtIndex: 17] black: [data objectAtIndex: 18]];
 		[self setTimeInitial: [[data objectAtIndex: 20] intValue] increment: [[data objectAtIndex: 21] intValue]];
+		gameNumber = [[data objectAtIndex: 16] intValue];
 	}
 	return self;
 }
 
 - (NSString *) gameInfoString
 {
-	return [NSString stringWithFormat: @"%@ - %@, %d, %d", whiteName, blackName, initialTime, incrementTime];
+	if (result)
+		return [NSString stringWithFormat: @"was Game #%d: %@ - %@, (%d+%d), Result: %@", gameNumber, whiteName, blackName, initialTime, incrementTime, result];
+	else
+		return [NSString stringWithFormat: @"Game #%d: %@ - %@ (%d+%d)", gameNumber, whiteName, blackName, initialTime, incrementTime];
+}
+
+- (void) setResult: (NSString *) resultV reason: (NSString *) reasonV
+{
+	[result release];
+	result = [resultV retain];
+	[reason release];
+	reason = [reasonV retain];
+	[[lastMove positionAfter] stopClock];
+}
+
+- (NSString *) result
+{
+	return result;
+}
+
+- (NSString *) reason
+{
+	return reason;
 }
 
 @end

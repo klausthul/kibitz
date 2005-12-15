@@ -21,5 +21,6 @@
 - (enum ValidationResult) validateMoveFrom: (struct ChessField) from to: (struct ChessField) to;
 - (int) whiteCurrentTime;
 - (int) blackCurrentTime;
+- (void) stopClock;
 
 @end
