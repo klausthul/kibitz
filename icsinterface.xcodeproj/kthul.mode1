@@ -322,7 +322,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CE6E43E60951347700202A86</string>
+										<string>CE6E43E90951364600202A86</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -457,7 +457,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Game.m</string>
+								<string>GameWindowController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -465,11 +465,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Game.m</string>
+										<string>GameWindowController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CE6E43E70951347700202A86</string>
+										<string>CE6E43EC0951364600202A86</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -498,7 +498,6 @@
 											<string>CE6E4336095112FC00202A86</string>
 											<string>CE6E436B0951233C00202A86</string>
 											<string>CE6E436C0951233C00202A86</string>
-											<string>CE6E43700951233C00202A86</string>
 											<string>CE6E43A909512DEB00202A86</string>
 											<string>CE6E43AA09512DEB00202A86</string>
 											<string>CE6E43C8095130BE00202A86</string>
@@ -508,7 +507,8 @@
 											<string>CE6E43DD0951344300202A86</string>
 											<string>CE6E43DE0951344300202A86</string>
 											<string>CE6E43DF0951344300202A86</string>
-											<string>CE6E43C6095130BE00202A86</string>
+											<string>CE6E43EA0951364600202A86</string>
+											<string>CE6E43700951233C00202A86</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -584,6 +584,7 @@
 											<string>CE6E43E00951344300202A86</string>
 											<string>CE6E43E10951344300202A86</string>
 											<string>CE6E43E20951344300202A86</string>
+											<string>CE6E43EB0951364600202A86</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -787,8 +788,8 @@
 		<string>CE3AC1580901EC4D00DD3768</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
-		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
 		<string>CE3AC19D0901FF4300DD3768</string>
+		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 113 1440 765 0 0 1440 878 </string>

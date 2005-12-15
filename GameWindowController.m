@@ -192,7 +192,7 @@ NSString *toolbarTooltips[] = {
 		enumerator = [gameList keyEnumerator];
 		while ((num = [enumerator nextObject])) {
 			Game *g = [gl objectForKey: num];
-			[gameSelector addItemWithTitle: [NSString stringWithFormat: @"%@: %@", num, [g gameInfoString]]];
+			[gameSelector addItemWithTitle: [g gameInfoString]];
 			[[gameSelector lastItem] setRepresentedObject: g];
 			if (g == activeGame)
 				ag = i;

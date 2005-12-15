@@ -401,6 +401,10 @@
 			CE6E43E30951344300202A86 /* PBXTextBookmark */ = CE6E43E30951344300202A86 /* PBXTextBookmark */;
 			CE6E43E60951347700202A86 /* PBXTextBookmark */ = CE6E43E60951347700202A86 /* PBXTextBookmark */;
 			CE6E43E70951347700202A86 /* PBXTextBookmark */ = CE6E43E70951347700202A86 /* PBXTextBookmark */;
+			CE6E43E90951364600202A86 /* PBXTextBookmark */ = CE6E43E90951364600202A86 /* PBXTextBookmark */;
+			CE6E43EA0951364600202A86 /* PBXTextBookmark */ = CE6E43EA0951364600202A86 /* PBXTextBookmark */;
+			CE6E43EB0951364600202A86 /* PBXTextBookmark */ = CE6E43EB0951364600202A86 /* PBXTextBookmark */;
+			CE6E43EC0951364600202A86 /* PBXTextBookmark */ = CE6E43EC0951364600202A86 /* PBXTextBookmark */;
 			CE7247B30914C9DB0005DB27 = CE7247B30914C9DB0005DB27 /* PBXTextBookmark */;
 			CE7247B60914C9DB0005DB27 = CE7247B60914C9DB0005DB27 /* PBXTextBookmark */;
 			CE7247B70914C9DB0005DB27 = CE7247B70914C9DB0005DB27 /* PBXTextBookmark */;
@@ -561,7 +565,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 218";
 		rLen = 0;
-		rLoc = 7448;
+		rLoc = 7403;
 		rType = 0;
 		vrLen = 467;
 		vrLoc = 4693;
@@ -571,7 +575,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 259";
 		rLen = 0;
-		rLoc = 9233;
+		rLoc = 9188;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 4802;
@@ -641,7 +645,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 226";
 		rLen = 0;
-		rLoc = 6488;
+		rLoc = 6443;
 		rType = 0;
 		vrLen = 557;
 		vrLoc = 6532;
@@ -651,7 +655,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 226";
 		rLen = 0;
-		rLoc = 6488;
+		rLoc = 6443;
 		rType = 0;
 		vrLen = 557;
 		vrLoc = 6532;
@@ -691,7 +695,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 335";
 		rLen = 0;
-		rLoc = 8636;
+		rLoc = 8591;
 		rType = 0;
 		vrLen = 742;
 		vrLoc = 7044;
@@ -721,7 +725,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 411";
 		rLen = 0;
-		rLoc = 9274;
+		rLoc = 9229;
 		rType = 0;
 		vrLen = 681;
 		vrLoc = 8485;
@@ -741,7 +745,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 411";
 		rLen = 0;
-		rLoc = 9274;
+		rLoc = 9229;
 		rType = 0;
 		vrLen = 681;
 		vrLoc = 8485;
@@ -761,7 +765,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 415";
 		rLen = 0;
-		rLoc = 9288;
+		rLoc = 9243;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 7845;
@@ -821,7 +825,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 383";
 		rLen = 0;
-		rLoc = 8248;
+		rLoc = 8203;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 8515;
@@ -870,7 +874,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 383";
 		rLen = 0;
-		rLoc = 8248;
+		rLoc = 8203;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 8515;
@@ -1320,7 +1324,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 383";
 		rLen = 0;
-		rLoc = 8248;
+		rLoc = 8203;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 4724;
@@ -1380,7 +1384,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 383";
 		rLen = 0;
-		rLoc = 8248;
+		rLoc = 8203;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 4724;
@@ -1724,7 +1728,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 383";
 		rLen = 0;
-		rLoc = 8248;
+		rLoc = 8203;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 1513;
@@ -1864,7 +1868,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 383";
 		rLen = 0;
-		rLoc = 8248;
+		rLoc = 8203;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 1513;
@@ -2405,7 +2409,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 204";
 		rLen = 0;
-		rLoc = 4467;
+		rLoc = 4422;
 		rType = 0;
 		vrLen = 429;
 		vrLoc = 0;
@@ -2425,7 +2429,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 204";
 		rLen = 0;
-		rLoc = 4467;
+		rLoc = 4422;
 		rType = 0;
 		vrLen = 506;
 		vrLoc = 4127;
@@ -2445,7 +2449,7 @@
 		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
 		name = "GameWindowController.m: 204";
 		rLen = 0;
-		rLoc = 4467;
+		rLoc = 4422;
 		rType = 0;
 		vrLen = 429;
 		vrLoc = 0;
@@ -2549,6 +2553,46 @@
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 888;
+	};
+	CE6E43E90951364600202A86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE7D606B093945EC00AC6D87 /* ChessServerConnection.m */;
+		name = "ChessServerConnection.m: 288";
+		rLen = 0;
+		rLoc = 8503;
+		rType = 0;
+		vrLen = 1150;
+		vrLoc = 329;
+	};
+	CE6E43EA0951364600202A86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CEA0CBE009015EAC00BF913A /* Game.m */;
+		name = "Game.m: 101";
+		rLen = 0;
+		rLoc = 1942;
+		rType = 0;
+		vrLen = 827;
+		vrLoc = 888;
+	};
+	CE6E43EB0951364600202A86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CEA0CBE009015EAC00BF913A /* Game.m */;
+		name = "Game.m: 101";
+		rLen = 0;
+		rLoc = 1942;
+		rType = 0;
+		vrLen = 827;
+		vrLoc = 888;
+	};
+	CE6E43EC0951364600202A86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE7D60CB0939942600AC6D87 /* GameWindowController.m */;
+		name = "GameWindowController.m: 195";
+		rLen = 0;
+		rLoc = 4213;
+		rType = 0;
+		vrLen = 629;
+		vrLoc = 3702;
 	};
 	CE7247B30914C9DB0005DB27 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2680,7 +2724,7 @@
 	CE7D606B093945EC00AC6D87 /* ChessServerConnection.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 4032}}";
-			sepNavSelRange = "{2612, 0}";
+			sepNavSelRange = "{8503, 0}";
 			sepNavVisRect = "{{0, 189}, {1133, 315}}";
 			sepNavWindowFrame = "{{15, 58}, {1254, 815}}";
 		};
@@ -2715,9 +2759,9 @@
 	};
 	CE7D60CB0939942600AC6D87 /* GameWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {980, 5894}}";
-			sepNavSelRange = "{4029, 0}";
-			sepNavVisRect = "{{0, 2611}, {953, 385}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 5894}}";
+			sepNavSelRange = "{4213, 0}";
+			sepNavVisRect = "{{0, 2478}, {1133, 335}}";
 		};
 	};
 	CE7D60E109399D9900AC6D87 /* PBXTextBookmark */ = {
@@ -3132,7 +3176,7 @@
 	CEA0CBE009015EAC00BF913A /* Game.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 1414}}";
-			sepNavSelRange = "{1282, 0}";
+			sepNavSelRange = "{1942, 0}";
 			sepNavVisRect = "{{0, 808}, {1133, 335}}";
 			sepNavWindowFrame = "{{5, 71}, {1420, 807}}";
 		};
