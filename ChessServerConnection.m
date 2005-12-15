@@ -38,6 +38,8 @@
 			int num = [s intValue];
 			[self removeSeekFromServer: num];
 		}
+	} else if (strncmp(lineBuf,"<sc>", 4) == 0) {
+		[self removeAllSeeks];
 	} else if (strncmp(lineBuf,"login:", 6) == 0) {
 		if (currentServer != nil && sendNamePassword == YES) {
 			const char *s;
@@ -60,6 +62,36 @@
 				[serverOS write:(unsigned const char *) "\n" maxLength:1];
 			}
 		}
+//	} else if (handleGameInfo(line)) {
+//	} else if (handleDeltaBoard(line)) {
+//	} else if (handleBughouseHoldings(line)) {
+//	} else if (handleGameEnd(line)) {
+//	} else if (handleStoppedObserving(line)) {
+//	} else if (handleStoppedExamining(line)) {
+//	} else if (handleEnteredBSetupMode(line)) {
+//	} else if (handleExitedBSetupMode(line)) {
+//	} else if (handleIllegalMove(line)) {
+//	} else if (handleChannelTell(line)) {
+//    } else if (handleIvarStateChanged(line)) {
+//	} else if (handlePersonalTell(line)) {
+//	} else if (handleSayTell(line)) {
+//	} else if (handlePTell(line)) {
+//	} else if (handleShout(line)) {
+//	} else if (handleIShout(line)) {
+//	} else if (handleTShout(line)) {
+//	} else if (handleCShout(line)) {
+//	} else if (handleAnnouncement(line)) {
+//	} else if (handleKibitz(line)) {
+//	} else if (handleWhisper(line)) {
+//	} else if (handleQTell(line)) {
+//	} else if (handleOffer(line)) {
+//    } else if (handleOfferRemoved(line)) {
+//    } else if (handlePlayerOffered(line)) {                  
+//    } else if (handlePlayerDeclined(line)) { 
+//    } else if (handlePlayerWithdrew(line)) {
+//    } else if (handlePlayerCounteredTakebackOffer(line)) {             
+//    } else if (handleSimulCurrentBoardChanged(line)) {
+//    } else if (handlePrimaryGameChanged(line)) {
 	} else {
 		[serverMainWindow addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
 		[serverMainWindow addToServerOutput:@"\n"];
@@ -181,6 +213,12 @@
 {
 	[seeks removeObjectForKey: [NSNumber numberWithInt: num]];
 	[serverMainWindow seekTableNeedsDisplay];
+}
+
+- (void) removeAllSeeks
+{
+	[seeks removeAllObjects];
+	[serverMainWindow seekTableNeedsDisplay];	
 }
 
 - (int) numSeeks

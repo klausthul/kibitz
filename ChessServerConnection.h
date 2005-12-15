@@ -33,5 +33,6 @@
 - (id) dataForSeekTable: (NSString *) x row:(int)rowIndex;
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to;
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotionPiece;
+- (void) removeAllSeeks;
 
 @end
