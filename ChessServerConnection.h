@@ -23,6 +23,8 @@
 	PatternMatching *patternMatcher;
 }
 
+- (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason;
+- (void) serverIllegalMove: (NSString *) why;
 - (void) processServerOutput;
 - (void) stream:(NSStream *)stream handleEvent:(NSStreamEvent)event;
 - (id) initWithChessServer: (ChessServer *) server;

@@ -11,7 +11,7 @@
 	IBOutlet NSDrawer *seekDrawer;
 	IBOutlet NSTableView *tableView;
 	IBOutlet ChessView *chessView;
-	IBOutlet NSTextField *upperClock, *lowerClock, *upperName, *lowerName, *result, *resultReason, *gameType;
+	IBOutlet NSTextField *upperClock, *lowerClock, *upperName, *lowerName, *result, *resultReason, *gameType, *messageField;
 	IBOutlet NSTableView *seekTable;
 	IBOutlet NSPopUpButton *gameSelector;
 	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
@@ -22,6 +22,7 @@
 	NSDictionary *gameList;
 	NSToolbar *toolbar;
 	NSMutableDictionary *toolbarItems;
+	NSString *message;
 }
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc;
@@ -65,5 +66,7 @@
 - (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar; 
 - (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar;
 - (void) updateGameInfo;
+- (void) showMessage: (NSString *) text;
+- (void) clearMessage;
 
 @end

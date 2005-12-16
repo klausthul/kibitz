@@ -146,11 +146,12 @@ NSString *toolbarTooltips[] = {
 		 ? nil2Empty([NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n", [activeGame initialTime], [activeGame incrementTime]])
 		 : @""];
 	}
-	[lowerName setNeedsDisplay: YES];
+	[messageField setStringValue: nil2Empty(message)];
+/*	[lowerName setNeedsDisplay: YES];
 	[result setNeedsDisplay: YES];
 	[resultReason setNeedsDisplay: YES];
 	[upperName setNeedsDisplay: YES];
-	[gameType setNeedsDisplay: YES];
+	[gameType setNeedsDisplay: YES]; */
 }
 
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize
@@ -249,7 +250,7 @@ NSString *toolbarTooltips[] = {
 	activeGame = [g retain];
 	[self updateGame: activeGame];
 	[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
-	[self updateGameInfo];
+	[self clearMessage];
 }
 
 - (Game *) activeGame
@@ -260,6 +261,7 @@ NSString *toolbarTooltips[] = {
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField)to promotion: (int) promotion
 {
 	[serverConnection userMoveFrom: from to: to promotion: promotion];
+	[self clearMessage];
 }
 
 - (void) updateClocks
@@ -465,4 +467,17 @@ NSString *toolbarTooltips[] = {
 	 NSToolbarFlexibleSpaceItemIdentifier, toolbarIdentifiers[ToolbarSeekDrawer], nil];
 }
 
+- (void) showMessage: (NSString *) text
+{
+	[message release];
+	message = [text retain];
+	[self updateGameInfo];
+}
+
+- (void) clearMessage
+{
+	[message release];
+	message = nil;
+	[self updateGameInfo];
+}
 @end

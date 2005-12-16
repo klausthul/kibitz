@@ -71,12 +71,6 @@
             CLASS = GameWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
-                buttonAbort = NSButton; 
-                buttonAdjurn = NSButton; 
-                buttonDraw = NSButton; 
-                buttonResign = NSButton; 
-                buttonTakeback = NSButton; 
-                buttonTakeback2 = NSButton; 
                 chatView = NSView; 
                 chessView = ChessView; 
                 gameSelector = NSPopUpButton; 
@@ -84,6 +78,7 @@
                 horizontalSplit = NSSplitView; 
                 lowerClock = NSTextField; 
                 lowerName = NSTextField; 
+                messageField = NSTextField; 
                 movesView = NSView; 
                 playView = NSView; 
                 result = NSTextField; 

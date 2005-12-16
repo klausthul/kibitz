@@ -37,7 +37,6 @@
 	b->blackMaterial = [[data objectAtIndex: 23] intValue];
 	b->whiteRemainingTime = [[data objectAtIndex: 24] intValue];
 	b->blackRemainingTime = [[data objectAtIndex: 25] intValue];
-	b->nextMoveNumber = [[data objectAtIndex: 26] intValue];
 	b->lastTimeUpdate = time(NULL);	
 	return [b autorelease];
 }
