@@ -90,6 +90,7 @@
                 tableView = NSTableView; 
                 upperClock = NSTextField; 
                 upperName = NSTextField; 
+                upperView = NSView; 
                 verticalSplit = NSSplitView; 
             }; 
             SUPERCLASS = NSWindowController; 

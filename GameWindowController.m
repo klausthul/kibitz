@@ -392,12 +392,74 @@ NSString *toolbarTooltips[] = {
 
 - (float) splitView: (NSSplitView *) sender constrainMaxCoordinate: (float) proposedMax ofSubviewAt:(int)offset
 {
-	return 0.8 * proposedMax;
+	if (sender == verticalSplit) {
+		return proposedMax - 210;
+	} else if (sender == horizontalSplit) {
+		return proposedMax - 150;
+	}
+	return proposedMax; // line should never be reached
 }
 
 - (float)splitView: (NSSplitView *) sender constrainMinCoordinate: (float) proposedMin ofSubviewAt:(int)offset
 {
-	return 0.4 * proposedMin;
+	if (sender == verticalSplit) {
+		return 457;
+	} else if (sender == horizontalSplit) {
+		return 353;
+	}
+	return proposedMin; // line should never be reached
+}
+
+- (void) splitView: (NSSplitView *) sender resizeSubviewsWithOldSize: (NSSize) oldSize
+{
+	NSRect chatFrame = [chatView frame];
+	NSRect senderFrame = [sender frame];
+	float dividerThickness = [sender dividerThickness];
+	printf("%f %f %x\n", oldSize.width, oldSize.height, (int) sender);
+	if (sender == verticalSplit) {
+		NSRect movesFrame = [movesView frame];
+		NSRect playFrame = [playView frame];
+		float delta = oldSize.width - senderFrame.size.width;
+		float room_left = playFrame.size.width - 457;
+		float room_right = movesFrame.size.width - 210;		
+		if ([sender isSubviewCollapsed: movesView])
+			room_right = 0;
+		float total_room = room_left + room_right;
+		if (total_room >= 1)
+			playFrame.size.width = ceilf(playFrame.size.width - room_left / total_room * delta);
+		else
+			playFrame.size.width = ceilf(playFrame.size.width - delta * 0.5);
+		if (![sender isSubviewCollapsed: movesView]) 
+			movesFrame.size.width = senderFrame.size.width - dividerThickness - playFrame.size.width;
+		movesFrame.size.height = playFrame.size.height = senderFrame.size.height;
+		movesFrame.origin.x = playFrame.size.width + dividerThickness;
+//		playFrame.size.height = MIN(playFrame.size.height, playFrame.size.width - 97);
+//		playFrame.size.width = playFrame.size.height + 97;		
+		[playView setFrame: playFrame];
+		[movesView setFrame: movesFrame];
+		[chatView setFrame: chatFrame];
+	}
+	else if (sender == horizontalSplit) {
+		NSRect upperFrame = [upperView frame];
+		float delta = oldSize.height - senderFrame.size.height;
+		float room_upper = upperFrame.size.height - 353;
+		float room_lower = chatFrame.size.height - 150;
+		if ([sender isSubviewCollapsed: chatView])
+			room_lower = 0;
+		float total_room = room_upper + room_lower;
+		if (total_room >= 1)
+			upperFrame.size.height = ceilf(upperFrame.size.height - room_upper / total_room * delta);
+		else
+			upperFrame.size.height = ceilf(upperFrame.size.height - delta * 0.5);
+		if (![sender isSubviewCollapsed: chatView])
+			chatFrame.size.height = senderFrame.size.height - dividerThickness - upperFrame.size.height;
+		upperFrame.size.width = chatFrame.size.width = senderFrame.size.width;
+		chatFrame.origin.y = upperFrame.size.height + dividerThickness;
+		[chatView setFrame: chatFrame];
+		[upperView setFrame: upperFrame];
+	} else { // line should never be reached
+		[sender adjustSubviews];
+	}
 }
 
 - (void) awakeFromNib
