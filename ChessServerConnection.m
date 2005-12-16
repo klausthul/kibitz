@@ -6,11 +6,26 @@
 #import "GameWindowController.h"
 #import "PatternMatching.h"
 
+#define USERNAME_REGEX "[A-z]{3,17}"
+#define TITLES_REGEX "\\([A-Z\\*\\(\\)]*\\)"
+
 @implementation ChessServerConnection
+
+- (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason
+{
+	NSLog(@"Game end\n");
+	Game *g = [activeGames objectForKey: game]; 
+	if (g != nil) {
+		[g setResult: result reason: reason];
+		[activeGames removeObjectForKey: game];
+		[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]]; 
+		[serverMainWindow setGameList: activeGames];
+	}
+}
 
 - (void) processServerOutput
 {
-	NSString *serverOutput = [NSString stringWithCString: lineBuf];
+	NSInvocation *invoc;
 	
 	if (serverMainWindow == nil) {
 		serverMainWindow = [[GameWindowController alloc] initWithServerConnection: self];
@@ -68,7 +83,10 @@
 //	} else if (handleGameInfo(line)) {
 //	} else if (handleDeltaBoard(line)) {
 //	} else if (handleBughouseHoldings(line)) {
-	} else if (STRBEGINS(lineBuf, "{Game ")) {
+	} else if (invoc = [patternMatcher parseLine: lineBuf toTarget: self]) {
+		[invoc invoke];
+	/* (STRBEGINS(lineBuf, "{Game ")) {
+		
 		NSLog(@"Game end\n");
 		NSArray *a = matchPattern(serverOutput, PATTERN_GAME_END);
 		NSNumber *gameNum = [NSNumber numberWithInt:[[a objectAtIndex: 1] intValue]];
@@ -106,6 +124,7 @@
 //    } else if (handlePlayerCounteredTakebackOffer(line)) {             
 //    } else if (handleSimulCurrentBoardChanged(line)) {
 //    } else if (handlePrimaryGameChanged(line)) {
+*/
 	} else {
 		[serverMainWindow addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
 		[serverMainWindow addToServerOutput:@"\n"];
@@ -155,6 +174,11 @@
 }
 
 - (id) initWithChessServer: (ChessServer *) server {
+	struct ServerPattern serverPatterns[] = {
+		{ "^\\{Game ([0-9]+) \\((" USERNAME_REGEX ") vs\\. (" USERNAME_REGEX ")\\) ([^\\}]+)\\} (.*)", @selector(serverGameEnd:result:reason:), "1I54" },
+		{ 0, 0, 0 }
+	};
+
 	self = [self init];
 	if (self != nil) {
 		[self retain];
@@ -172,6 +196,7 @@
 		sendNamePassword = YES;
 		sendInit = YES;
 		[self release];
+		patternMatcher = [[PatternMatching alloc] initWithPatterns: serverPatterns];
 	}
 	return self;
 }
@@ -198,6 +223,7 @@
 	[currentServer release];
 	[serverMainWindow release];
 	[errorHandler release];
+	[patternMatcher release];
 	[super dealloc];
 }
 

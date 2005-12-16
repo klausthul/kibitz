@@ -6,6 +6,7 @@
 #import "Seek.h"
 #import "ChessServer.h"
 #import "GameWindowController.h"
+#import "PatternMatching.h"
 
 @interface ChessServerConnection : NSObject {
 	id <ChessServerErrorHandler> errorHandler;
@@ -19,6 +20,7 @@
 	NSMutableDictionary *seeks;
 	NSMutableDictionary *activeGames;
 	int storedGameCounter;
+	PatternMatching *patternMatcher;
 }
 
 - (void) processServerOutput;
