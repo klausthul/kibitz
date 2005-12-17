@@ -15,7 +15,7 @@
 	IBOutlet NSTableView *seekTable;
 	IBOutlet NSPopUpButton *gameSelector;
 	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
-	IBOutlet NSView *playView, *chatView, *movesView, *upperView;
+	IBOutlet NSView *playView, *playInnerView, *chatView, *movesView, *upperView;
 	char move[10];
 	NSTimer *timer;
 	Game *activeGame;

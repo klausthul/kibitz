@@ -39,6 +39,7 @@
 		CE69B300094BDA4B00F4E6D9 /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8303509028C85003FFFDB /* ChessView.m */; };
 		CE6E4342095113CA00202A86 /* PatternMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6E4341095113CA00202A86 /* PatternMatching.m */; };
 		CE9A655E094E532E001628CC /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0CBE009015EAC00BF913A /* Game.m */; };
+		CECBFE6309535363007EAA75 /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECBFE6209535363007EAA75 /* PlayView.m */; };
 		CEDE1124094C431E0085CC1F /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9BC7090B96B000864136 /* Seek.m */; };
 		CEDE1245094C6B020085CC1F /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9CFDE2093756DF00724529 /* ChessMove.m */; };
 /* End PBXBuildFile section */
@@ -108,6 +109,8 @@
 		CEA8305809029C98003FFFDB /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		CEAE4379090B4B8F00B56E1C /* ChessServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessServer.h; sourceTree = "<group>"; };
 		CEAE437A090B4B8F00B56E1C /* ChessServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessServer.m; sourceTree = "<group>"; };
+		CECBFE6109535363007EAA75 /* PlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayView.h; sourceTree = "<group>"; };
+		CECBFE6209535363007EAA75 /* PlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayView.m; sourceTree = "<group>"; };
 		CED33BF4091E36E0005B773B /* bb.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bb.tiff; path = pieces/bb.tiff; sourceTree = "<group>"; };
 		CED33BF7091E36EF005B773B /* bk.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bk.tiff; path = pieces/bk.tiff; sourceTree = "<group>"; };
 		CED33BF8091E36EF005B773B /* bn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bn.tiff; path = pieces/bn.tiff; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CECBFE6109535363007EAA75 /* PlayView.h */,
+				CECBFE6209535363007EAA75 /* PlayView.m */,
 				CE7D60CA0939942600AC6D87 /* GameWindowController.h */,
 				CE69B0D3094BB6D900F4E6D9 /* global.h */,
 				CE9CFDEB093758CF00724529 /* ChessServerList.h */,
@@ -347,6 +352,7 @@
 				CEDE1245094C6B020085CC1F /* ChessMove.m in Sources */,
 				CE9A655E094E532E001628CC /* Game.m in Sources */,
 				CE6E4342095113CA00202A86 /* PatternMatching.m in Sources */,
+				CECBFE6309535363007EAA75 /* PlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

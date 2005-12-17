@@ -80,6 +80,7 @@
                 lowerName = NSTextField; 
                 messageField = NSTextField; 
                 movesView = NSView; 
+                playInnerView = NSView; 
                 playView = NSView; 
                 result = NSTextField; 
                 resultReason = NSTextField; 
@@ -95,6 +96,7 @@
             }; 
             SUPERCLASS = NSWindowController; 
         }, 
+        {CLASS = PlayView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
         {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
     ); 
     IBVersion = 1; 

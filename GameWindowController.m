@@ -415,7 +415,6 @@ NSString *toolbarTooltips[] = {
 	NSRect chatFrame = [chatView frame];
 	NSRect senderFrame = [sender frame];
 	float dividerThickness = [sender dividerThickness];
-	printf("%f %f %x\n", oldSize.width, oldSize.height, (int) sender);
 	if (sender == verticalSplit) {
 		NSRect movesFrame = [movesView frame];
 		NSRect playFrame = [playView frame];
@@ -433,8 +432,6 @@ NSString *toolbarTooltips[] = {
 			movesFrame.size.width = senderFrame.size.width - dividerThickness - playFrame.size.width;
 		movesFrame.size.height = playFrame.size.height = senderFrame.size.height;
 		movesFrame.origin.x = playFrame.size.width + dividerThickness;
-//		playFrame.size.height = MIN(playFrame.size.height, playFrame.size.width - 97);
-//		playFrame.size.width = playFrame.size.height + 97;		
 		[playView setFrame: playFrame];
 		[movesView setFrame: movesFrame];
 		[chatView setFrame: chatFrame];
