@@ -16,7 +16,7 @@
 	NSRect cur_field;
 	float board_size = MIN(bounds.size.width, bounds.size.height);
 	NSRect board = {
-		{ bounds.size.width - board_size, bounds.size.height - board_size },
+		{ 0, bounds.size.height - board_size },
 		{ board_size, board_size }
 	};
 	
