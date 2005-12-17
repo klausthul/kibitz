@@ -11,5 +11,6 @@
 - (void) resizeWithOldSuperviewSize: (NSSize) oldBoundsSize;
 - (float) maxWidthForHeight;
 - (float) maxHeightForWidth;
+- (float) maxWidthForHeight: (float) height;
 
 @end
