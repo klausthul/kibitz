@@ -3,6 +3,7 @@
 
 #import "global.h"
 #import "ChessServerConnection.h"
+#import "PlayView.h"
 
 @interface GameWindowController : NSWindowController {
 	ChessServerConnection *serverConnection;
@@ -15,7 +16,8 @@
 	IBOutlet NSTableView *seekTable;
 	IBOutlet NSPopUpButton *gameSelector;
 	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
-	IBOutlet NSView *playView, *playInnerView, *chatView, *movesView, *upperView;
+	IBOutlet NSView *playView, *chatView, *movesView, *upperView;
+	IBOutlet PlayView *playInnerView;
 	char move[10];
 	NSTimer *timer;
 	Game *activeGame;

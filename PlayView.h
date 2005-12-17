@@ -9,5 +9,7 @@
 }
 
 - (void) resizeWithOldSuperviewSize: (NSSize) oldBoundsSize;
+- (float) maxWidthForHeight;
+- (float) maxHeightForWidth;
 
 @end

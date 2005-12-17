@@ -15,4 +15,14 @@
 	[self setFrame: f];
 }
 
+- (float) maxWidthForHeight
+{
+	return [self frame].size.height + 97;
+}
+
+- (float) maxHeightForWidth
+{
+	return [self frame].size.width - 97;
+}
+
 @end

@@ -414,18 +414,26 @@ NSString *toolbarTooltips[] = {
 {
 	NSRect chatFrame = [chatView frame];
 	NSRect senderFrame = [sender frame];
+	NSRect playFrame = [playView frame];
+
 	float dividerThickness = [sender dividerThickness];
 	if (sender == verticalSplit) {
 		NSRect movesFrame = [movesView frame];
-		NSRect playFrame = [playView frame];
 		float delta = oldSize.width - senderFrame.size.width;
+		if (delta < 0) {
+			int x;
+			x = MIN(playFrame.size.height - [playInnerView maxHeightForWidth], -delta);
+			delta += x;
+			playFrame.size.width += x;
+			movesFrame.size.width -= x;
+		}
 		float room_left = playFrame.size.width - 457;
 		float room_right = movesFrame.size.width - 210;		
 		if ([sender isSubviewCollapsed: movesView])
 			room_right = 0;
 		float total_room = room_left + room_right;
 		if (total_room >= 1)
-			playFrame.size.width = ceilf(playFrame.size.width - room_left / total_room * delta);
+			playFrame.size.width = ceilf(MIN(playFrame.size.width - room_left / total_room * delta, MAX([playInnerView maxWidthForHeight], playFrame.size.width)));
 		else
 			playFrame.size.width = ceilf(playFrame.size.width - delta * 0.5);
 		if (![sender isSubviewCollapsed: movesView]) 
@@ -439,15 +447,22 @@ NSString *toolbarTooltips[] = {
 	else if (sender == horizontalSplit) {
 		NSRect upperFrame = [upperView frame];
 		float delta = oldSize.height - senderFrame.size.height;
+		if (delta < 0) {
+			int x;
+			x = MIN(playFrame.size.width - [playInnerView maxWidthForHeight], -delta);
+			delta += x;
+			upperFrame.size.height += x;
+			chatFrame.size.height -= x;
+		}
 		float room_upper = upperFrame.size.height - 353;
 		float room_lower = chatFrame.size.height - 150;
 		if ([sender isSubviewCollapsed: chatView])
 			room_lower = 0;
 		float total_room = room_upper + room_lower;
 		if (total_room >= 1)
-			upperFrame.size.height = ceilf(upperFrame.size.height - room_upper / total_room * delta);
+			upperFrame.size.height = ceilf(MIN(upperFrame.size.height - room_upper / total_room * delta, MAX([playInnerView maxHeightForWidth]  - dividerThickness, upperFrame.size.height)));
 		else
-			upperFrame.size.height = ceilf(upperFrame.size.height - delta * 0.5);
+				upperFrame.size.height = ceilf(upperFrame.size.height - delta * 0.5);
 		if (![sender isSubviewCollapsed: chatView])
 			chatFrame.size.height = senderFrame.size.height - dividerThickness - upperFrame.size.height;
 		upperFrame.size.width = chatFrame.size.width = senderFrame.size.width;

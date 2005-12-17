@@ -270,7 +270,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>32</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -305,8 +305,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -324,7 +322,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CED1B1CA0953ACDD0015429F</string>
+										<string>CED1B20E0953C0520015429F</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -354,7 +352,6 @@
 											<string>CE6E44A809515B1600202A86</string>
 											<string>CE6E44BF095192E900202A86</string>
 											<string>CE6E45060951BE1800202A86</string>
-											<string>CE6E45070951BE1800202A86</string>
 											<string>CE6E45080951BE1800202A86</string>
 											<string>CE6E45090951BE1800202A86</string>
 											<string>CE6E450B0951BE1800202A86</string>
@@ -364,8 +361,9 @@
 											<string>CE6E45C50952598900202A86</string>
 											<string>CED9427C0953247800827754</string>
 											<string>CECBFE7F09535A46007EAA75</string>
-											<string>CECBFE8009535A46007EAA75</string>
-											<string>CED1B19E0953A8620015429F</string>
+											<string>CED1B1F60953BC1D0015429F</string>
+											<string>CED1B1F70953BC1D0015429F</string>
+											<string>CED1B1E30953B9330015429F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -408,6 +406,12 @@
 											<string>CE6E435E0951233C00202A86</string>
 											<string>CECBFE8309535A46007EAA75</string>
 											<string>CECBFE8409535A46007EAA75</string>
+											<string>CED1B1E50953B9330015429F</string>
+											<string>CED1B1E60953B9330015429F</string>
+											<string>CED1B1E70953B9330015429F</string>
+											<string>CED1B1E80953B9330015429F</string>
+											<string>CED1B1F80953BC1D0015429F</string>
+											<string>CED1B1F90953BC1D0015429F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -419,16 +423,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1174, 354}}</string>
+								<string>{{0, 0}, {1174, 298}}</string>
 								<key>RubberWindowFrame</key>
 								<string>1 113 1440 765 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>354pt</string>
+							<string>298pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -446,7 +452,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CED1B1CB0953ACDD0015429F</string>
+										<string>CED1B20F0953C0520015429F</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -468,7 +474,6 @@
 											<string>CE9A6715094EE90F001628CC</string>
 											<string>CEF40F94094EFA68004861C3</string>
 											<string>CEF41015094F077D004861C3</string>
-											<string>CE77B4DF094FACC400C02A9B</string>
 											<string>CE6E42910950FBE100202A86</string>
 											<string>CE6E4336095112FC00202A86</string>
 											<string>CE6E43A909512DEB00202A86</string>
@@ -484,8 +489,9 @@
 											<string>CE6E453D0951C14100202A86</string>
 											<string>CE6E45920952503900202A86</string>
 											<string>CED9427F0953247800827754</string>
-											<string>CECBFE8709535A46007EAA75</string>
-											<string>CECBFE8909535A46007EAA75</string>
+											<string>CED1B1EA0953B9330015429F</string>
+											<string>CED1B1EB0953B9330015429F</string>
+											<string>CED1B1EC0953B9330015429F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -526,6 +532,10 @@
 											<string>CE6E42950950FBE100202A86</string>
 											<string>CE6E43740951233C00202A86</string>
 											<string>CE6E43AC09512DEB00202A86</string>
+											<string>CED1B1ED0953B9330015429F</string>
+											<string>CED1B1EE0953B9330015429F</string>
+											<string>CED1B1EF0953B9330015429F</string>
+											<string>CED1B1F00953B9330015429F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -537,14 +547,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 359}, {1174, 252}}</string>
+								<string>{{0, 303}, {1174, 308}}</string>
 								<key>RubberWindowFrame</key>
 								<string>1 113 1440 765 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>252pt</string>
+							<string>308pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -754,7 +764,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PlayView.m</string>
+								<string>GameWindowController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
