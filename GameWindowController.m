@@ -394,10 +394,8 @@ NSString *toolbarTooltips[] = {
 
 - (void) splitView: (NSSplitView *) sender resizeSubviewsWithOldSize: (NSSize) oldSize
 {
-	NSRect chatFrame = [chatView frame];
 	NSRect senderFrame = [sender frame];
 	NSRect playFrame = [playView frame];
-
 	float dividerThickness = [sender dividerThickness];
 	if (sender == verticalSplit) {
 		NSRect movesFrame = [movesView frame];
@@ -419,19 +417,16 @@ NSString *toolbarTooltips[] = {
 				playFrame.size.width = ceilf(MIN(playFrame.size.width - room_left / total_room * delta, MAX([playInnerView maxWidthForHeight], playFrame.size.width)));
 			else
 				playFrame.size.width = ceilf(playFrame.size.width - delta * 0.5);
-			if (playFrame.size.height - senderFrame.size.height > 0 && ![sender isSubviewCollapsed: movesView])
-				playFrame.size.width = MIN(playFrame.size.width, [playInnerView maxWidthForHeight: senderFrame.size.height]);
-			if (![sender isSubviewCollapsed: movesView]) 
-				movesFrame.size.width = senderFrame.size.width - dividerThickness - playFrame.size.width;
+			movesFrame.size.width = senderFrame.size.width - dividerThickness - playFrame.size.width;
 			movesFrame.origin.x = playFrame.size.width + dividerThickness;
+			movesFrame.size.height = senderFrame.size.height;
+			[movesView setFrame: movesFrame];
 		}
-		movesFrame.size.height = playFrame.size.height = senderFrame.size.height;
-		[playView setFrame: playFrame];
-		[movesView setFrame: movesFrame];
-		[chatView setFrame: chatFrame];
+		playFrame.size.height = senderFrame.size.height;
+		[playView setFrameSize: playFrame.size];
 	}
 	else if (sender == horizontalSplit) {
-		printf("Horizontal split\n");
+		NSRect chatFrame = [chatView frame];
 		NSRect upperFrame = [upperView frame];
 		if ([sender isSubviewCollapsed: chatView]) {
 			upperFrame.size.height = senderFrame.size.height - dividerThickness;
@@ -452,14 +447,13 @@ NSString *toolbarTooltips[] = {
 			else
 				upperFrame.size.height = ceilf(upperFrame.size.height - delta * 0.5);
 			chatFrame.size.height = senderFrame.size.height - dividerThickness - upperFrame.size.height;
+			chatFrame.size.width = senderFrame.size.width;
 			chatFrame.origin.y = upperFrame.size.height + dividerThickness;
 			[chatView setFrame: chatFrame];
 		}
-		upperFrame.size.width = chatFrame.size.width = senderFrame.size.width;
+		upperFrame.size.width = senderFrame.size.width;
 		[upperView setFrame: upperFrame];
-	} else { // line should never be reached
-		[sender adjustSubviews];
-	}
+	} 
 }
 
 - (float) splitView: (NSSplitView *) sender constrainSplitPosition: (float) proposedPosition ofSubviewAt: (int) offset
