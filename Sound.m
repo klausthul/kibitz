@@ -14,21 +14,26 @@ NSString *soundNames[NUMBER_OF_SOUNDS] = {
 	[SOUND_GAME_END_OTHER] = @"SoundGameEnd"
 };
 
+bool soundPlayDefaults[NUMBER_OF_SOUNDS] = { YES, YES, YES, NO, YES, NO, YES, NO };
+
 @implementation Sound
 
 - (Sound *) init
 {
 	if ((self = [super init]) != nil) {
 		int i;
-		for (i = 0; i < NUMBER_OF_SOUNDS; i++)
+		for (i = 0; i < NUMBER_OF_SOUNDS; i++) {
 			sounds[i] = [[NSSound soundNamed: soundNames[i]] retain];
+			playFlag[i] = soundPlayDefaults[i];
+		}
 	}
 	return self;
 }
 
 - (void) playSound: (enum SoundTypes) type
 {
-	[sounds[type] play];
+	if ((sounds[type] != nil) && playFlag[type])
+		[sounds[type] play];
 }
 
 - (void) dealloc

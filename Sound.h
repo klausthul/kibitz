@@ -20,7 +20,7 @@ enum SoundTypes {
 
 @interface Sound : NSObject {
 	NSSound *sounds[NUMBER_OF_SOUNDS];
-	bool playFlag;
+	bool playFlag[NUMBER_OF_SOUNDS];
 }
 
 - (Sound *) init;
