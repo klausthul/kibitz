@@ -49,7 +49,7 @@
 		CED82AFA0955BFC60073F9CD /* PatternMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82AAB0955BFC60073F9CD /* PatternMatching.m */; };
 		CED82B070955BFC60073F9CD /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82ABA0955BFC60073F9CD /* PlayView.m */; };
 		CED82B080955BFC60073F9CD /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82ABC0955BFC60073F9CD /* Seek.m */; };
-		CED82B0C0955BFC60073F9CD /* ServerSelectorControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82AC00955BFC60073F9CD /* ServerSelectorControl.m */; };
+		CED82B0C0955BFC60073F9CD /* SeekControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82AC00955BFC60073F9CD /* SeekControl.m */; };
 		CED82B830955C2D60073F9CD /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82B820955C2D60073F9CD /* Sound.m */; };
 /* End PBXBuildFile section */
 
@@ -139,8 +139,8 @@
 		CED82ABA0955BFC60073F9CD /* PlayView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PlayView.m; sourceTree = "<group>"; };
 		CED82ABB0955BFC60073F9CD /* Seek.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Seek.h; sourceTree = "<group>"; };
 		CED82ABC0955BFC60073F9CD /* Seek.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Seek.m; sourceTree = "<group>"; };
-		CED82AC00955BFC60073F9CD /* ServerSelectorControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ServerSelectorControl.m; sourceTree = "<group>"; };
-		CED82B630955C0FA0073F9CD /* ServerSelectorControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerSelectorControl.h; sourceTree = "<group>"; };
+		CED82AC00955BFC60073F9CD /* SeekControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = file; path = SeekControl.m; sourceTree = "<group>"; };
+		CED82B630955C0FA0073F9CD /* SeekControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SeekControl.h; sourceTree = "<group>"; };
 		CED82B810955C2D60073F9CD /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 		CED82B820955C2D60073F9CD /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -277,8 +277,8 @@
 				CED82ABA0955BFC60073F9CD /* PlayView.m */,
 				CED82ABB0955BFC60073F9CD /* Seek.h */,
 				CED82ABC0955BFC60073F9CD /* Seek.m */,
-				CED82AC00955BFC60073F9CD /* ServerSelectorControl.m */,
-				CED82B630955C0FA0073F9CD /* ServerSelectorControl.h */,
+				CED82AC00955BFC60073F9CD /* SeekControl.m */,
+				CED82B630955C0FA0073F9CD /* SeekControl.h */,
 				CED82B810955C2D60073F9CD /* Sound.h */,
 				CED82B820955C2D60073F9CD /* Sound.m */,
 			);
@@ -391,7 +391,7 @@
 				CED82AFA0955BFC60073F9CD /* PatternMatching.m in Sources */,
 				CED82B070955BFC60073F9CD /* PlayView.m in Sources */,
 				CED82B080955BFC60073F9CD /* Seek.m in Sources */,
-				CED82B0C0955BFC60073F9CD /* ServerSelectorControl.m in Sources */,
+				CED82B0C0955BFC60073F9CD /* SeekControl.m in Sources */,
 				CED82B830955C2D60073F9CD /* Sound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
