@@ -147,21 +147,6 @@ NSString *toolbarTooltips[] = {
 		 : @""];
 	}
 	[messageField setStringValue: nil2Empty(message)];
-/*	[lowerName setNeedsDisplay: YES];
-	[result setNeedsDisplay: YES];
-	[resultReason setNeedsDisplay: YES];
-	[upperName setNeedsDisplay: YES];
-	[gameType setNeedsDisplay: YES]; */
-}
-
-- (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)proposedFrameSize
-{
-//	NSSize s = [sender frame].size;
-//	float delta = MIN(proposedFrameSize.width - s.width, proposedFrameSize.height - s.height);
-//	s.width += delta;
-//	s.height += delta;
-//	return s;
-	return proposedFrameSize;
 }
 
 - (void) dealloc
@@ -276,9 +261,6 @@ NSString *toolbarTooltips[] = {
 		[lowerClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]]];
 		[upperClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]]];
 	}
-	[upperClock setNeedsDisplay: YES];
-	[lowerClock setNeedsDisplay: YES];
-
 }
 
 + (NSString *) stringWithClock: (int) seconds
@@ -362,12 +344,37 @@ NSString *toolbarTooltips[] = {
 
 - (IBAction) hideMoves: (id) sender
 {
-	NSLog(@"decline");
+	float w = [movesView frame].size.width;
+	NSSize oldSize = [verticalSplit bounds].size;
+	NSRect f = [[self window] frame];
+	if (![verticalSplit isSubviewCollapsed: movesView]) {
+		[verticalSplit setSubview: movesView isCollapsed: TRUE];
+		f.size.width -= w;
+	} else {
+		[verticalSplit setSubview: movesView isCollapsed: FALSE];
+		f.size.width += w;
+	}
+	[[self window] setFrame: f display: YES]; 
+	[verticalSplit resizeSubviewsWithOldSize: oldSize];
 }
 
 - (IBAction) hideDialog: (id) sender
 {
-	NSLog(@"decline");
+	float h = [chatView frame].size.height;
+	NSSize oldSize = [horizontalSplit bounds].size;
+	NSRect f = [[self window] frame];
+	if (![horizontalSplit isSubviewCollapsed: chatView]) {
+		[horizontalSplit setSubview: chatView isCollapsed: TRUE];
+		f.size.height -= h;
+		f.origin.y += h;
+	} else {
+		[horizontalSplit setSubview: chatView isCollapsed: FALSE];
+		f.size.height += h;
+		f.origin.y -= h;	
+	}
+	[horizontalSplit resizeSubviewsWithOldSize: oldSize];
+	[[self window] setFrame: f display: YES]; 
+	[horizontalSplit resizeSubviewsWithOldSize: oldSize];
 }
 
 - (IBAction) logout: (id) sender;
@@ -403,7 +410,7 @@ NSString *toolbarTooltips[] = {
 - (float)splitView: (NSSplitView *) sender constrainMinCoordinate: (float) proposedMin ofSubviewAt:(int)offset
 {
 	if (sender == verticalSplit) {
-		return 457;
+		return 463;
 	} else if (sender == horizontalSplit) {
 		return 353;
 	}
@@ -430,7 +437,7 @@ NSString *toolbarTooltips[] = {
 				playFrame.size.width += x;
 				movesFrame.size.width -= x;
 			}
-			float room_left = playFrame.size.width - 457;
+			float room_left = playFrame.size.width - 463;
 			float room_right = movesFrame.size.width - 210;		
 			float total_room = room_left + room_right;
 			if (total_room >= 1)
@@ -449,6 +456,7 @@ NSString *toolbarTooltips[] = {
 		[chatView setFrame: chatFrame];
 	}
 	else if (sender == horizontalSplit) {
+		printf("Horizontal split\n");
 		NSRect upperFrame = [upperView frame];
 		if ([sender isSubviewCollapsed: chatView]) {
 			upperFrame.size.height = senderFrame.size.height - dividerThickness;
@@ -469,14 +477,27 @@ NSString *toolbarTooltips[] = {
 			else
 				upperFrame.size.height = ceilf(upperFrame.size.height - delta * 0.5);
 			chatFrame.size.height = senderFrame.size.height - dividerThickness - upperFrame.size.height;
+			chatFrame.origin.y = upperFrame.size.height + dividerThickness;
+			[chatView setFrame: chatFrame];
 		}
 		upperFrame.size.width = chatFrame.size.width = senderFrame.size.width;
-		chatFrame.origin.y = upperFrame.size.height + dividerThickness;
-		[chatView setFrame: chatFrame];
 		[upperView setFrame: upperFrame];
 	} else { // line should never be reached
 		[sender adjustSubviews];
 	}
+}
+
+- (float) splitView: (NSSplitView *) sender constrainSplitPosition: (float) proposedPosition ofSubviewAt: (int) offset
+{
+	NSSize wc = [[[self window] contentView] bounds].size;
+	if (sender == verticalSplit) {
+		if (wc.width < 683)
+			return 683 - 9;
+	} else if (sender == horizontalSplit) {
+		if (wc.height < 513)
+			return 513 - 9;
+	}
+	return proposedPosition;
 }
 
 - (void) awakeFromNib
@@ -487,7 +508,6 @@ NSString *toolbarTooltips[] = {
 	[toolbar setAutosavesConfiguration: YES];
 	[[self window] setToolbar: toolbar]; 
 	[self setActiveGame: [[[Game alloc] initWithEmptyGame] autorelease]];
-//	[self updateGameInfo];
 }
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL) flag 
@@ -558,5 +578,16 @@ NSString *toolbarTooltips[] = {
 	[message release];
 	message = nil;
 	[self updateGameInfo];
+}
+
+- (NSSize) windowWillResize:(NSWindow *) sender toSize: (NSSize) size
+{
+	size = [sender contentRectForFrameRect: (NSRect) { {0, 0}, size }].size;
+	if (size.width < 683 && ![verticalSplit isSubviewCollapsed: movesView])
+			size.width = 683;
+	if (size.height < 513 && ![horizontalSplit isSubviewCollapsed: chatView])
+		size.height = 513;	
+	size = [sender frameRectForContentRect: (NSRect) { {0, 0}, size }].size;
+	return size;
 }
 @end

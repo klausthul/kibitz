@@ -4,6 +4,7 @@
 #import "global.h"
 #import "ChessServerConnection.h"
 #import "PlayView.h"
+#import "KFSplitView.h"
 
 @interface GameWindowController : NSWindowController {
 	ChessServerConnection *serverConnection;
@@ -15,7 +16,7 @@
 	IBOutlet NSTextField *upperClock, *lowerClock, *upperName, *lowerName, *result, *resultReason, *gameType, *messageField;
 	IBOutlet NSTableView *seekTable;
 	IBOutlet NSPopUpButton *gameSelector;
-	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
+	IBOutlet KFSplitView *verticalSplit, *horizontalSplit;
 	IBOutlet NSView *playView, *chatView, *movesView, *upperView;
 	IBOutlet PlayView *playInnerView;
 	char move[10];
@@ -70,5 +71,6 @@
 - (void) updateGameInfo;
 - (void) showMessage: (NSString *) text;
 - (void) clearMessage;
+- (NSSize) windowWillResize:(NSWindow *) sender toSize: (NSSize) proposedFrameSize;
 
 @end
