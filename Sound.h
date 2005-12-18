@@ -1,7 +1,7 @@
 // icsinterface
-// $Id: Seek.m 32 2005-12-11 15:40:55Z kthul $
+// $Id$
 
-#import <Cocoa/Cocoa.h>
+#import "global.h"
 
 #define NUMBER_OF_SOUNDS 8
 
@@ -26,5 +26,8 @@ enum SoundTypes {
 - (Sound *) init;
 - (void) playSound: (enum SoundTypes) type;
 - (void) dealloc;
+- (void) gameEnd: (enum GameRelationship) r;
+- (void) newGame: (enum GameRelationship) r;
+- (void) move: (enum GameRelationship) r;
 
 @end

@@ -1,5 +1,5 @@
 // icsinterface
-// $Id: Seek.m 32 2005-12-11 15:40:55Z kthul $
+// $Id$
 
 #import "Sound.h"
 
@@ -42,6 +42,56 @@ bool soundPlayDefaults[NUMBER_OF_SOUNDS] = { YES, YES, YES, NO, YES, NO, YES, NO
 	for (i = 0; i < NUMBER_OF_SOUNDS; i++)
 		[sounds[i] release];	
 	[super dealloc];
+}
+
+- (void) gameEnd: (enum GameRelationship) r
+{
+	switch (r) {
+	  case OBSERVER:
+	  case EXAMINER:
+	  case OBSERVING_EXAMINATION:
+	  case ISOLATED_POSITION:	
+		[self playSound: SOUND_GAME_END_OTHER];
+		break;
+	  case PLAYING_MYMOVE:
+	  case PLAYING_OPONENT_MOVE:
+		[self playSound: SOUND_GAME_END_OWN];
+		break;
+	}
+}
+
+- (void) newGame: (enum GameRelationship) r
+{
+	switch (r) {
+	  case OBSERVER:
+	  case EXAMINER:
+	  case OBSERVING_EXAMINATION:
+	  case ISOLATED_POSITION:	
+		[self playSound: SOUND_GAME_START_OTHER];
+		break;
+	  case PLAYING_MYMOVE:
+	  case PLAYING_OPONENT_MOVE:
+		[self playSound: SOUND_GAME_START_OWN];
+		break;
+	}
+}
+
+- (void) move: (enum GameRelationship) r
+{
+	switch (r) {
+	  case OBSERVER:
+	  case EXAMINER:
+	  case OBSERVING_EXAMINATION:
+	  case ISOLATED_POSITION:	
+		[self playSound: SOUND_MOVE_ACTIVE];
+		break;
+	  case PLAYING_MYMOVE:
+		[self playSound: SOUND_MOVE_SELF];
+		break;
+	  case PLAYING_OPONENT_MOVE:
+		[self playSound: SOUND_MOVE_OPPONENT];
+		break;
+	}
 }
 
 @end

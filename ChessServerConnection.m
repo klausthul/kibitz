@@ -5,6 +5,7 @@
 #import "Game.h"
 #import "GameWindowController.h"
 #import "PatternMatching.h"
+#import "Sound.h"
 
 #define USERNAME_REGEX "[A-z]{3,17}"
 #define TITLES_REGEX "\\([A-Z\\*\\(\\)]*\\)"
@@ -20,6 +21,7 @@
 		[activeGames removeObjectForKey: game];
 		[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]]; 
 		[serverMainWindow setGameList: activeGames];
+		[gSounds gameEnd: [g gameRelationship]];
 	}
 }
 
@@ -45,8 +47,13 @@
 			[activeGames setObject: g forKey: n];
 			[serverMainWindow setGameList: activeGames];
 			[serverMainWindow setActiveGame: g];
+			[gSounds newGame: [g gameRelationship]];
+			[g newMove: [ChessMove moveFromStyle12: a]];
+		} else {
+			ChessMove *m = [ChessMove moveFromStyle12: a];
+			[gSounds move: [m gameRelationship]];
+			[g newMove: m];
 		}
-		[g newMove: [ChessMove moveFromStyle12: a]];
 		[serverMainWindow updateGame: g];
 	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
 		int num = 0;
