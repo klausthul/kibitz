@@ -10,9 +10,22 @@
         {CLASS = ChessMove; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessMoveStore; LANGUAGE = ObjC; SUPERCLASS = ChessMove; }, 
         {CLASS = ChessServer; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = ChessServerConnection; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {errorHandler = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
         {CLASS = ChessServerList; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {updateDefaults = id; userAddNewServer = id; userDeleteCurrentServer = id; }; 
+            ACTIONS = {
+                buttonCancel = id; 
+                buttonSelect = id; 
+                show = id; 
+                updateDefaults = id; 
+                userAddNewServer = id; 
+                userDeleteCurrentServer = id; 
+            }; 
             CLASS = ChessServerListControl; 
             LANGUAGE = ObjC; 
             OUTLETS = {
@@ -24,12 +37,13 @@
                 serverPort = NSTextField; 
                 serverUserName = NSTextField; 
             }; 
-            SUPERCLASS = NSObject; 
+            SUPERCLASS = NSWindowController; 
         }, 
         {
+            ACTIONS = {selectedPromotionPiece = id; }; 
             CLASS = ChessView; 
             LANGUAGE = ObjC; 
-            OUTLETS = {appController = AppController; game = Game; }; 
+            OUTLETS = {gameWindowController = GameWindowController; promotionDialog = NSWindow; }; 
             SUPERCLASS = NSView; 
         }, 
         {
@@ -57,26 +71,67 @@
             LANGUAGE = ObjC; 
             SUPERCLASS = NSObject; 
         }, 
+        {CLASS = Game; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {goBackward = id; goEnd = id; goForeward = id; goStart = id; }; 
-            CLASS = Game; 
+            ACTIONS = {
+                abort = id; 
+                accept = id; 
+                adjurn = id; 
+                decline = id; 
+                draw = id; 
+                exportGame = id; 
+                flipBoard = id; 
+                hideDialog = id; 
+                hideMoves = id; 
+                logout = id; 
+                match = id; 
+                newSeek = id; 
+                reconnect = id; 
+                resign = id; 
+                selectGame = id; 
+                takeback = id; 
+                takeback2 = id; 
+                toggleSeekDrawer = id; 
+            }; 
+            CLASS = GameWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                chatView = NSView; 
                 chessView = ChessView; 
+                gameSelector = NSPopUpButton; 
+                gameType = NSTextField; 
+                horizontalSplit = NSSplitView; 
                 lowerClock = NSTextField; 
+                lowerName = NSTextField; 
+                messageField = NSTextField; 
+                movesView = NSView; 
+                playInnerView = PlayView; 
+                playView = NSView; 
+                result = NSTextField; 
+                resultReason = NSTextField; 
+                seekDrawer = NSDrawer; 
+                seekTable = NSTableView; 
+                serverInput = NSTextField; 
+                serverOutput = NSTextView; 
                 tableView = NSTableView; 
                 upperClock = NSTextField; 
+                upperName = NSTextField; 
+                upperView = NSView; 
+                verticalSplit = NSSplitView; 
             }; 
-            SUPERCLASS = NSObject; 
+            SUPERCLASS = NSWindowController; 
         }, 
         {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {CLASS = PatternMatching; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = PlayView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
         {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
             CLASS = SeekGraph; 
             LANGUAGE = ObjC; 
             OUTLETS = {seekTable = NSTableView; }; 
             SUPERCLASS = NSObject; 
-        }
+        }, 
+        {CLASS = Sound; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
     ); 
     IBVersion = 1; 
 }
