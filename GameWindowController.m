@@ -344,37 +344,12 @@ NSString *toolbarTooltips[] = {
 
 - (IBAction) hideMoves: (id) sender
 {
-	float w = [movesView frame].size.width;
-	NSSize oldSize = [verticalSplit bounds].size;
-	NSRect f = [[self window] frame];
-	if (![verticalSplit isSubviewCollapsed: movesView]) {
-		[verticalSplit setSubview: movesView isCollapsed: TRUE];
-		f.size.width -= w;
-	} else {
-		[verticalSplit setSubview: movesView isCollapsed: FALSE];
-		f.size.width += w;
-	}
-	[[self window] setFrame: f display: YES]; 
-	[verticalSplit resizeSubviewsWithOldSize: oldSize];
+
 }
 
 - (IBAction) hideDialog: (id) sender
 {
-	float h = [chatView frame].size.height;
-	NSSize oldSize = [horizontalSplit bounds].size;
-	NSRect f = [[self window] frame];
-	if (![horizontalSplit isSubviewCollapsed: chatView]) {
-		[horizontalSplit setSubview: chatView isCollapsed: TRUE];
-		f.size.height -= h;
-		f.origin.y += h;
-	} else {
-		[horizontalSplit setSubview: chatView isCollapsed: FALSE];
-		f.size.height += h;
-		f.origin.y -= h;	
-	}
-	[horizontalSplit resizeSubviewsWithOldSize: oldSize];
-	[[self window] setFrame: f display: YES]; 
-	[horizontalSplit resizeSubviewsWithOldSize: oldSize];
+
 }
 
 - (IBAction) logout: (id) sender;

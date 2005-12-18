@@ -15,6 +15,7 @@
 	serverData = [NSKeyedArchiver archivedDataWithRootObject:defaultServers];
 	[defaultValues setObject:serverData forKey:@"ICSChessServers"];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+	gSounds = [[Sound alloc] init];
 }
 
 - (void) dealloc

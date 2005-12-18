@@ -1,9 +1,9 @@
-//
-//  main.m
-//  icsinterface
-//
+// icsinterface
+// $Id$
 
-#import <Cocoa/Cocoa.h>
+#import "global.h"
+
+Sound *gSounds;
 
 int main(int argc, char *argv[])
 {

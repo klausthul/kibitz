@@ -16,6 +16,9 @@
 @class Seek;
 @class ChessServerConnection;
 @class GameWindowController;
+@class Sound;
+
+extern Sound *gSounds;
 
 struct ChessField {
 	int row, line;
