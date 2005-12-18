@@ -13,6 +13,7 @@
 	NSString *result, *reason;
 	int gameNumber;
 	enum Color siteShownOnBottom;
+	enum GameRelationship gameRelationship;
 }
 
 - (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black;
@@ -33,5 +34,6 @@
 - (void) setSiteShownOnBottom: (enum Color) color;
 - (void) flipSiteShownOnBottom;
 - (enum Color) siteShownOnBottom;
+- (enum GameRelationship) gameRelationship;
 
 @end

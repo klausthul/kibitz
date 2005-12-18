@@ -13,6 +13,7 @@
 		cm->movePrint = [[data objectAtIndex: 29] retain];
 		cm->timeUsed = [[data objectAtIndex: 28] retain];
 		cm->positionAfter = [[Board boardFromStyle12: data] retain];
+		cm->gameRelationship = [[data objectAtIndex: 19] intValue];
 	}
 	return [cm autorelease];
 }
@@ -29,6 +30,11 @@
 - (Board *) positionAfter
 {
 	return [[positionAfter retain] autorelease];
+}
+
+- (enum GameRelationship) gameRelationship
+{
+	return gameRelationship;
 }
 
 @end

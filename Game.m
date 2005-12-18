@@ -66,6 +66,7 @@
 		[self setPlayerNamesWhite: [data objectAtIndex: 17] black: [data objectAtIndex: 18]];
 		[self setTimeInitial: [[data objectAtIndex: 20] intValue] increment: [[data objectAtIndex: 21] intValue]];
 		gameNumber = [[data objectAtIndex: 16] intValue];
+		gameRelationship = [[data objectAtIndex: 19] intValue];
 	}
 	return self;
 }
@@ -120,6 +121,11 @@
 - (enum Color) siteShownOnBottom
 {
 	return siteShownOnBottom;
+}
+
+- (enum GameRelationship) gameRelationship
+{
+	return gameRelationship;
 }
 
 @end
