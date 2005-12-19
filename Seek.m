@@ -176,6 +176,7 @@ NSString *StyleNames[] = {
 
 - (void) setWildStyle: (NSString *) style
 {
+	[self willChangeValueForKey: @"seekDescriptionLine"];
 	[wildStyle release];
 	wildStyle = [style copy];
 }
@@ -192,7 +193,6 @@ NSString *StyleNames[] = {
 
 - (NSString *) seekDescriptionLine
 {
-	printf("Hallo\n");
 	NSString *style;
 	if (playStyle == STYLE_WILD)
 		style = [NSString stringWithFormat: @"Wild %@", wildStyle];
@@ -202,6 +202,71 @@ NSString *StyleNames[] = {
 	 timeStart, timeIncrement,
 	 (rated) ? "rated" : "unrated", (automatic) ? "automatic" : "manual",
 	 ratingRangeLow, ratingRangeHigh, (formulaChecked) ? ", formula" : ""];
+}
+
+- (void) setTimeStart: (int) t
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	timeStart = t;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setTimeIncrement: (int) t
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	timeIncrement = t;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setRated: (bool) r
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	rated = r;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setWantsColor: (enum WantsColor) c
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	wantsColor = c;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setAutomatic: (bool) a
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	automatic = a;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setFormulaChecked: (bool) c
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	formulaChecked = c;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setRatingRangeLow: (int) r
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	ratingRangeLow = r;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setRatingRangeHigh: (int) r
+{
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	ratingRangeHigh = r;
+	[self didChangeValueForKey: @"seekDescriptionLine"];
+}
+
+- (void) setPlayStyle: (enum PlayStyle) s
+{
+	[self willChangeValueForKey: @"isWild"];
+	[self willChangeValueForKey: @"seekDescriptionLine"];
+	playStyle = s;
+	[self didChangeValueForKey: @"isWild"];
+	[self didChangeValueForKey: @"seekDescriptionLine"];
 }
 
 @end

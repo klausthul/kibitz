@@ -111,7 +111,7 @@
 					20,
 					20,
 					20,
-					110,
+					692,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXFileDataSource_FiletypeID,
@@ -441,6 +441,19 @@
 			CED82DBB0956591F0073F9CD /* PBXTextBookmark */ = CED82DBB0956591F0073F9CD /* PBXTextBookmark */;
 			CED82DBC0956591F0073F9CD /* PBXTextBookmark */ = CED82DBC0956591F0073F9CD /* PBXTextBookmark */;
 			CED82DBD0956591F0073F9CD /* PBXTextBookmark */ = CED82DBD0956591F0073F9CD /* PBXTextBookmark */;
+			CED82DC109565D4A0073F9CD /* PBXTextBookmark */ = CED82DC109565D4A0073F9CD /* PBXTextBookmark */;
+			CED82DC209565D4A0073F9CD /* PBXTextBookmark */ = CED82DC209565D4A0073F9CD /* PBXTextBookmark */;
+			CED82DC309565D4A0073F9CD /* PBXTextBookmark */ = CED82DC309565D4A0073F9CD /* PBXTextBookmark */;
+			CED82DC409565D4B0073F9CD /* PBXTextBookmark */ = CED82DC409565D4B0073F9CD /* PBXTextBookmark */;
+			CED82DC609565E960073F9CD /* PBXTextBookmark */ = CED82DC609565E960073F9CD /* PBXTextBookmark */;
+			CED82DC709565E960073F9CD /* PBXTextBookmark */ = CED82DC709565E960073F9CD /* PBXTextBookmark */;
+			CED82DC809565E960073F9CD /* PBXTextBookmark */ = CED82DC809565E960073F9CD /* PBXTextBookmark */;
+			CED82DC909565E960073F9CD /* PBXTextBookmark */ = CED82DC909565E960073F9CD /* PBXTextBookmark */;
+			CED82DCA09565E960073F9CD /* PBXTextBookmark */ = CED82DCA09565E960073F9CD /* PBXTextBookmark */;
+			CED82DCE09565ECB0073F9CD /* PBXTextBookmark */ = CED82DCE09565ECB0073F9CD /* PBXTextBookmark */;
+			CED82DCF09565ECB0073F9CD /* PBXTextBookmark */ = CED82DCF09565ECB0073F9CD /* PBXTextBookmark */;
+			CED82DD109565F670073F9CD /* PBXTextBookmark */ = CED82DD109565F670073F9CD /* PBXTextBookmark */;
+			CED82DD209565F670073F9CD /* PBXTextBookmark */ = CED82DD209565F670073F9CD /* PBXTextBookmark */;
 			CEDE11E3094C683E0085CC1F = CEDE11E3094C683E0085CC1F /* PBXTextBookmark */;
 			CEDE11E5094C683E0085CC1F = CEDE11E5094C683E0085CC1F /* PBXTextBookmark */;
 			CEDFCDDD094BE776001F9310 = CEDFCDDD094BE776001F9310 /* PBXTextBookmark */;
@@ -1339,16 +1352,16 @@
 	};
 	CED82ABB0955BFC60073F9CD /* Seek.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {551, 490}}";
-			sepNavSelRange = "{158, 0}";
-			sepNavVisRect = "{{0, 71}, {551, 234}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 616}}";
+			sepNavSelRange = "{529, 0}";
+			sepNavVisRect = "{{0, 346}, {1133, 235}}";
 		};
 	};
 	CED82ABC0955BFC60073F9CD /* Seek.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {551, 2912}}";
-			sepNavSelRange = "{3449, 0}";
-			sepNavVisRect = "{{0, 2476}, {551, 235}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 3822}}";
+			sepNavSelRange = "{4102, 0}";
+			sepNavVisRect = "{{0, 3147}, {1133, 234}}";
 		};
 	};
 	CED82AC00955BFC60073F9CD /* SeekControl.m */ = {
@@ -2223,7 +2236,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 3909;
+		rLoc = 5536;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 2578;
@@ -2251,7 +2264,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 3909;
+		rLoc = 5536;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 2578;
@@ -2341,7 +2354,7 @@
 		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
 		name = "Seek.h: 32";
 		rLen = 0;
-		rLoc = 669;
+		rLoc = 1000;
 		rType = 0;
 		vrLen = 331;
 		vrLoc = 334;
@@ -2371,7 +2384,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 159";
 		rLen = 0;
-		rLoc = 3394;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 242;
 		vrLoc = 2601;
@@ -2411,7 +2424,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 155";
 		rLen = 0;
-		rLoc = 3394;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 221;
 		vrLoc = 2618;
@@ -2541,7 +2554,7 @@
 		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
 		name = "Seek.h: 32";
 		rLen = 0;
-		rLoc = 669;
+		rLoc = 1000;
 		rType = 0;
 		vrLen = 331;
 		vrLoc = 334;
@@ -2581,7 +2594,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 159";
 		rLen = 0;
-		rLoc = 3394;
+		rLoc = 3449;
 		rType = 0;
 		vrLen = 242;
 		vrLoc = 2601;
@@ -2621,7 +2634,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 172";
 		rLen = 0;
-		rLoc = 3905;
+		rLoc = 3940;
 		rType = 0;
 		vrLen = 324;
 		vrLoc = 2150;
@@ -2671,7 +2684,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 172";
 		rLen = 0;
-		rLoc = 3905;
+		rLoc = 3940;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 2871;
@@ -2701,7 +2714,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 172";
 		rLen = 0;
-		rLoc = 3905;
+		rLoc = 3940;
 		rType = 0;
 		vrLen = 324;
 		vrLoc = 2150;
@@ -2949,7 +2962,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 164";
 		rLen = 0;
-		rLoc = 3509;
+		rLoc = 3544;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 2913;
@@ -2982,7 +2995,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 164";
 		rLen = 0;
-		rLoc = 3509;
+		rLoc = 3544;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 2913;
@@ -3002,7 +3015,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 164";
 		rLen = 0;
-		rLoc = 3509;
+		rLoc = 3544;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 2913;
@@ -3122,7 +3135,7 @@
 		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
 		name = "Seek.h: 32";
 		rLen = 0;
-		rLoc = 669;
+		rLoc = 1000;
 		rType = 0;
 		vrLen = 313;
 		vrLoc = 0;
@@ -3152,7 +3165,7 @@
 		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
 		name = "Seek.h: 32";
 		rLen = 0;
-		rLoc = 669;
+		rLoc = 1000;
 		rType = 0;
 		vrLen = 313;
 		vrLoc = 0;
@@ -3272,7 +3285,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 190";
 		rLen = 0;
-		rLoc = 3425;
+		rLoc = 3480;
 		rType = 0;
 		vrLen = 235;
 		vrLoc = 3231;
@@ -3292,7 +3305,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 190";
 		rLen = 0;
-		rLoc = 3425;
+		rLoc = 3480;
 		rType = 0;
 		vrLen = 235;
 		vrLoc = 3231;
@@ -3322,7 +3335,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 204";
 		rLen = 0;
-		rLoc = 3881;
+		rLoc = 3916;
 		rType = 0;
 		vrLen = 258;
 		vrLoc = 2230;
@@ -3342,10 +3355,140 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 190";
 		rLen = 0;
-		rLoc = 3449;
+		rLoc = 3504;
 		rType = 0;
 		vrLen = 259;
 		vrLoc = 3231;
+	};
+	CED82DC109565D4A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 32";
+		rLen = 331;
+		rLoc = 669;
+		rType = 0;
+		vrLen = 494;
+		vrLoc = 512;
+	};
+	CED82DC209565D4A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 32";
+		rLen = 331;
+		rLoc = 669;
+		rType = 0;
+		vrLen = 494;
+		vrLoc = 512;
+	};
+	CED82DC309565D4A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 249";
+		rLen = 0;
+		rLoc = 5532;
+		rType = 0;
+		vrLen = 195;
+		vrLoc = 4247;
+	};
+	CED82DC409565D4B0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 253";
+		rLen = 0;
+		rLoc = 5541;
+		rType = 0;
+		vrLen = 257;
+		vrLoc = 3231;
+	};
+	CED82DC609565E960073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 249";
+		rLen = 0;
+		rLoc = 5437;
+		rType = 0;
+		vrLen = 251;
+		vrLoc = 4286;
+	};
+	CED82DC709565E960073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 143";
+		rLen = 0;
+		rLoc = 2763;
+		rType = 0;
+		vrLen = 331;
+		vrLoc = 2625;
+	};
+	CED82DC809565E960073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: setTimeStart:";
+		rLen = 330;
+		rLoc = 669;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 491;
+	};
+	CED82DC909565E960073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 143";
+		rLen = 0;
+		rLoc = 2763;
+		rType = 0;
+		vrLen = 331;
+		vrLoc = 2625;
+	};
+	CED82DCA09565E960073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: nameFrom";
+		rLen = 0;
+		rLoc = 529;
+		rType = 0;
+		vrLen = 533;
+		vrLoc = 473;
+	};
+	CED82DCE09565ECB0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 250";
+		rLen = 0;
+		rLoc = 5378;
+		rType = 0;
+		vrLen = 343;
+		vrLoc = 4286;
+	};
+	CED82DCF09565ECB0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: nameFrom";
+		rLen = 0;
+		rLoc = 529;
+		rType = 0;
+		vrLen = 533;
+		vrLoc = 473;
+	};
+	CED82DD109565F670073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: setTimeStart:";
+		rLen = 0;
+		rLoc = 4102;
+		rType = 0;
+		vrLen = 431;
+		vrLoc = 4371;
+	};
+	CED82DD209565F670073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: nameFrom";
+		rLen = 0;
+		rLoc = 529;
+		rType = 0;
+		vrLen = 533;
+		vrLoc = 473;
 	};
 	CEDE11E3094C683E0085CC1F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

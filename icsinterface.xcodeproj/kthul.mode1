@@ -266,13 +266,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>28</integer>
+									<integer>27</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {244, 706}}</string>
+							<string>{{0, 15}, {244, 706}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -291,7 +291,7 @@
 							<real>244</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>459 113 858 765 0 0 1440 878 </string>
+						<string>0 113 1440 765 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -302,12 +302,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Seek.h</string>
+								<string>Seek.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -315,11 +317,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Seek.h</string>
+										<string>Seek.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CED82DB90956591F0073F9CD</string>
+										<string>CED82DD109565F670073F9CD</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -360,8 +362,8 @@
 											<string>CED82D69095647E80073F9CD</string>
 											<string>CED82D9D095654E70073F9CD</string>
 											<string>CED82DAA095657C20073F9CD</string>
+											<string>CED82DC109565D4A0073F9CD</string>
 											<string>CED82DB60956591F0073F9CD</string>
-											<string>CED82DB70956591F0073F9CD</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -438,6 +440,7 @@
 											<string>CED82DAC095657C20073F9CD</string>
 											<string>CED82DAD095657C20073F9CD</string>
 											<string>CED82DB80956591F0073F9CD</string>
+											<string>CED82DC209565D4A0073F9CD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -449,9 +452,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {592, 266}}</string>
+								<string>{{0, 0}, {1174, 266}}</string>
 								<key>RubberWindowFrame</key>
-								<string>459 113 858 765 0 0 1440 878 </string>
+								<string>0 113 1440 765 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -459,14 +462,12 @@
 							<string>266pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Seek.m</string>
+								<string>Seek.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -474,11 +475,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Seek.m</string>
+										<string>Seek.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CED82DBD0956591F0073F9CD</string>
+										<string>CED82DD209565F670073F9CD</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -519,7 +520,8 @@
 											<string>CED82D48095644920073F9CD</string>
 											<string>CED82DAF095657C20073F9CD</string>
 											<string>CED82DBA0956591F0073F9CD</string>
-											<string>CED82DBB0956591F0073F9CD</string>
+											<string>CED82DC709565E960073F9CD</string>
+											<string>CED82DC809565E960073F9CD</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -577,6 +579,7 @@
 											<string>CED82D50095644920073F9CD</string>
 											<string>CED82DB1095657C20073F9CD</string>
 											<string>CED82DBC0956591F0073F9CD</string>
+											<string>CED82DC909565E960073F9CD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -588,9 +591,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 271}, {592, 267}}</string>
+								<string>{{0, 271}, {1174, 267}}</string>
 								<key>RubberWindowFrame</key>
-								<string>459 113 858 765 0 0 1440 878 </string>
+								<string>0 113 1440 765 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -608,9 +611,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 543}, {592, 181}}</string>
+								<string>{{0, 543}, {1174, 181}}</string>
 								<key>RubberWindowFrame</key>
-								<string>459 113 858 765 0 0 1440 878 </string>
+								<string>0 113 1440 765 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -619,7 +622,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>592pt</string>
+					<string>1174pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -782,7 +785,7 @@
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
-	<string>459 113 858 765 0 0 1440 878 </string>
+	<string>0 113 1440 765 0 0 1440 878 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
@@ -805,7 +808,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Seek.m</string>
+								<string>Seek.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

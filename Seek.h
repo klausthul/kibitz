@@ -29,6 +29,15 @@
 - (void) setWildStyle: (NSString *) style;
 - (NSString *) wildStyle;
 - (NSString *) seekDescriptionLine;
-
+- (void) setTimeStart: (int) t;
+- (void) setTimeIncrement: (int) t;
+- (void) setRated: (bool) r;
+- (void) setWantsColor: (enum WantsColor) c;
+- (void) setAutomatic: (bool) a;
+- (void) setFormulaChecked: (bool) c;
+- (void) setRatingRangeLow: (int) r;
+- (void) setRatingRangeHigh: (int) r;
+- (void) setPlayStyle: (enum PlayStyle) s;
+9ffffd
 @end
 
