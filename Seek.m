@@ -271,4 +271,27 @@ NSString *StyleNames[] = {
 	[self didChangeValueForKey: @"seekDescriptionLine"];
 }
 
+- (NSString *) seekCommand
+{
+	NSString *style;
+	switch (playStyle) {
+	  case STYLE_WILD:
+		style = [NSString stringWithFormat: @"Wild %@ ", [self wildStyle]];
+		break;
+	  case STYLE_CRAZYHOUSE:
+	    style = @"crazyhouse ";
+		break;
+	  case STYLE_SUICIDE:
+	    style = @"suicide ";
+		break;
+	  default:
+		style = @"";
+	}
+	return [NSString stringWithFormat: @"seek %d %d %s %s %@ %s %s %d-%d", 
+	 timeStart, timeIncrement, rated ? "rated" : "unrated", 
+	 (wantsColor == WANTS_BOTH) ? "" : ((wantsColor == WANTS_WHITE) ? "white" : "black"), 
+	 style, automatic ? "auto" : "manual", formulaChecked ? "formula" : "", 
+	 ratingRangeLow, ratingRangeHigh];
+}
+
 @end

@@ -41,5 +41,6 @@
 - (void) removeAllSeeks;
 - (NSString *) connectionName;
 - (void) sendSeek: (Seek *) s;
+- (void) sendToServer: (NSString *) s;
 
 @end

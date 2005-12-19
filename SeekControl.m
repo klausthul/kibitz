@@ -3,6 +3,7 @@
 
 #import "SeekControl.h"
 #import "Seek.h"
+#import "ChessServerConnection.h"
 
 @implementation SeekControl
 

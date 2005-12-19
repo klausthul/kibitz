@@ -366,5 +366,14 @@
 {
 	NSLog([self connectionName]);
 	NSLog([s seekDescriptionLine]);
+	[self sendToServer: [s seekCommand]];
 }
+
+- (void) sendToServer: (NSString *) s
+{
+	const char *cs = [s UTF8String];
+	[serverOS write: (unsigned char *) cs maxLength: strlen(cs)];
+	[serverOS write: (unsigned char *) "\n" maxLength: 1];	
+}
+
 @end

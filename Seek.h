@@ -38,6 +38,7 @@
 - (void) setRatingRangeLow: (int) r;
 - (void) setRatingRangeHigh: (int) r;
 - (void) setPlayStyle: (enum PlayStyle) s;
+- (NSString *) seekCommand;
 
 @end
 

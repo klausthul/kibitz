@@ -266,13 +266,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
+									<integer>11</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 144}, {244, 706}}</string>
+							<string>{{0, 2}, {244, 706}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -307,7 +307,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SeekControl.m</string>
+								<string>ChessServerConnection.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -315,11 +315,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SeekControl.m</string>
+										<string>ChessServerConnection.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CED82F10095696D70073F9CD</string>
+										<string>CED82F610956A0670073F9CD</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -351,17 +351,17 @@
 											<string>CED82D25095644920073F9CD</string>
 											<string>CED82D2A095644920073F9CD</string>
 											<string>CED82D2D095644920073F9CD</string>
-											<string>CED82DDB0956619A0073F9CD</string>
 											<string>CED82DE4095661E80073F9CD</string>
 											<string>CED82E09095666D20073F9CD</string>
 											<string>CED82E3009566D620073F9CD</string>
 											<string>CED82E53095672AC0073F9CD</string>
 											<string>CED82E54095672AC0073F9CD</string>
-											<string>CED82E55095672AC0073F9CD</string>
-											<string>CED82E56095672AC0073F9CD</string>
-											<string>CED82ED90956852F0073F9CD</string>
 											<string>CED82EF4095693100073F9CD</string>
-											<string>CED82EF5095693100073F9CD</string>
+											<string>CED82F2B09569E3C0073F9CD</string>
+											<string>CED82F4709569F230073F9CD</string>
+											<string>CED82F4909569F230073F9CD</string>
+											<string>CED82F5E0956A0670073F9CD</string>
+											<string>CED82F5F0956A0670073F9CD</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -474,6 +474,13 @@
 											<string>CED82EDB0956852F0073F9CD</string>
 											<string>CED82EF6095693100073F9CD</string>
 											<string>CED82EF7095693100073F9CD</string>
+											<string>CED82F2D09569E3C0073F9CD</string>
+											<string>CED82F2E09569E3C0073F9CD</string>
+											<string>CED82F2F09569E3C0073F9CD</string>
+											<string>CED82F4A09569F230073F9CD</string>
+											<string>CED82F4B09569F230073F9CD</string>
+											<string>CED82F4C09569F230073F9CD</string>
+											<string>CED82F600956A0670073F9CD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -502,7 +509,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ChessServerConnection.h</string>
+								<string>ChessServerConnection.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -510,11 +517,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ChessServerConnection.h</string>
+										<string>ChessServerConnection.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CED82F16095696D70073F9CD</string>
+										<string>CED82F690956A0670073F9CD</string>
 										<key>history</key>
 										<array>
 											<string>CE7247B30914C9DB0005DB27</string>
@@ -545,18 +552,18 @@
 											<string>CED82D25095644920073F9CD</string>
 											<string>CED82D2A095644920073F9CD</string>
 											<string>CED82D2D095644920073F9CD</string>
-											<string>CED82DDB0956619A0073F9CD</string>
 											<string>CED82DE4095661E80073F9CD</string>
-											<string>CED82E09095666D20073F9CD</string>
 											<string>CED82E3009566D620073F9CD</string>
 											<string>CED82E3309566D620073F9CD</string>
-											<string>CED82E5F095672AC0073F9CD</string>
 											<string>CED82E88095675F50073F9CD</string>
 											<string>CED82EAD09567AC50073F9CD</string>
-											<string>CED82EC609567D190073F9CD</string>
 											<string>CED82F11095696D70073F9CD</string>
-											<string>CED82F12095696D70073F9CD</string>
-											<string>CED82F13095696D70073F9CD</string>
+											<string>CED82F4F09569F230073F9CD</string>
+											<string>CED82F5009569F230073F9CD</string>
+											<string>CED82F620956A0670073F9CD</string>
+											<string>CED82F630956A0670073F9CD</string>
+											<string>CED82F640956A0670073F9CD</string>
+											<string>CED82F650956A0670073F9CD</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -611,6 +618,14 @@
 											<string>CED82EFA095693100073F9CD</string>
 											<string>CED82F14095696D70073F9CD</string>
 											<string>CED82F15095696D70073F9CD</string>
+											<string>CED82F3309569E3C0073F9CD</string>
+											<string>CED82F3409569E3C0073F9CD</string>
+											<string>CED82F5209569F230073F9CD</string>
+											<string>CED82F5309569F230073F9CD</string>
+											<string>CED82F5409569F230073F9CD</string>
+											<string>CED82F660956A0670073F9CD</string>
+											<string>CED82F670956A0670073F9CD</string>
+											<string>CED82F680956A0670073F9CD</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -812,6 +827,7 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>CED82D84095648B60073F9CD</string>
 		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
+		<string>CE3AC19D0901FF4300DD3768</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
@@ -831,12 +847,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SeekControl.m</string>
+								<string>ChessServerConnection.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -845,7 +863,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1440, 482}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 114 1440 764 0 0 1440 878 </string>
+								<string>3 114 1440 764 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -853,8 +871,6 @@
 							<string>482pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -871,7 +887,7 @@
 								<key>Frame</key>
 								<string>{{0, 487}, {1440, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 114 1440 764 0 0 1440 878 </string>
+								<string>3 114 1440 764 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -901,7 +917,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.build</string>
 			<key>WindowString</key>
-			<string>0 114 1440 764 0 0 1440 878 </string>
+			<string>3 114 1440 764 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>CE3AC19D0901FF4300DD3768</string>
 			<key>WindowToolIsVisible</key>
