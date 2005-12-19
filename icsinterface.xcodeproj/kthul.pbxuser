@@ -872,6 +872,14 @@
 			CED830A00956CF240073F9CD /* PBXTextBookmark */ = CED830A00956CF240073F9CD /* PBXTextBookmark */;
 			CED830A10956CF240073F9CD /* PBXTextBookmark */ = CED830A10956CF240073F9CD /* PBXTextBookmark */;
 			CED830A20956CF240073F9CD /* PBXTextBookmark */ = CED830A20956CF240073F9CD /* PBXTextBookmark */;
+			CED830A60956D29A0073F9CD /* PBXTextBookmark */ = CED830A60956D29A0073F9CD /* PBXTextBookmark */;
+			CED830A70956D29A0073F9CD /* PBXTextBookmark */ = CED830A70956D29A0073F9CD /* PBXTextBookmark */;
+			CED830A90956D54F0073F9CD /* PBXTextBookmark */ = CED830A90956D54F0073F9CD /* PBXTextBookmark */;
+			CED830AB0956D5550073F9CD /* PBXTextBookmark */ = CED830AB0956D5550073F9CD /* PBXTextBookmark */;
+			CED830AC0956D5550073F9CD /* PBXTextBookmark */ = CED830AC0956D5550073F9CD /* PBXTextBookmark */;
+			CED830AD0956D5550073F9CD /* PBXTextBookmark */ = CED830AD0956D5550073F9CD /* PBXTextBookmark */;
+			CED830AE0956D5550073F9CD /* PBXTextBookmark */ = CED830AE0956D5550073F9CD /* PBXTextBookmark */;
+			CED830AF0956D5550073F9CD /* PBXTextBookmark */ = CED830AF0956D5550073F9CD /* PBXTextBookmark */;
 			CEDE11E3094C683E0085CC1F = CEDE11E3094C683E0085CC1F /* PBXTextBookmark */;
 			CEDE11E5094C683E0085CC1F = CEDE11E5094C683E0085CC1F /* PBXTextBookmark */;
 			CEDFCDDD094BE776001F9310 = CEDFCDDD094BE776001F9310 /* PBXTextBookmark */;
@@ -1583,13 +1591,13 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 350}}";
 			sepNavSelRange = "{561, 0}";
-			sepNavVisRect = "{{0, 115}, {1133, 235}}";
+			sepNavVisRect = "{{0, 101}, {1133, 235}}";
 		};
 	};
 	CED82A6E0955BFC50073F9CD /* AppController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 1022}}";
-			sepNavSelRange = "{2083, 0}";
+			sepNavSelRange = "{2161, 0}";
 			sepNavVisRect = "{{0, 718}, {1133, 235}}";
 		};
 	};
@@ -1617,15 +1625,15 @@
 	CED82A860955BFC60073F9CD /* ChessServer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 448}}";
-			sepNavSelRange = "{266, 0}";
-			sepNavVisRect = "{{0, 0}, {1133, 235}}";
+			sepNavSelRange = "{235, 0}";
+			sepNavVisRect = "{{0, 203}, {1133, 235}}";
 		};
 	};
 	CED82A870955BFC60073F9CD /* ChessServer.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 1414}}";
 			sepNavSelRange = "{1130, 909}";
-			sepNavVisRect = "{{0, 0}, {1133, 235}}";
+			sepNavVisRect = "{{0, 3}, {1133, 235}}";
 		};
 	};
 	CED82A880955BFC60073F9CD /* ChessServerConnection.h */ = {
@@ -1637,9 +1645,9 @@
 	};
 	CED82A890955BFC60073F9CD /* ChessServerConnection.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1399, 5320}}";
-			sepNavSelRange = "{12555, 0}";
-			sepNavVisRect = "{{0, 4808}, {1399, 450}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 5320}}";
+			sepNavSelRange = "{9908, 0}";
+			sepNavVisRect = "{{0, 3251}, {1133, 235}}";
 		};
 	};
 	CED82A8B0955BFC60073F9CD /* ChessServerList.m */ = {
@@ -1659,15 +1667,22 @@
 	CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 1764}}";
-			sepNavSelRange = "{2731, 172}";
-			sepNavVisRect = "{{0, 205}, {1133, 235}}";
+			sepNavSelRange = "{2670, 0}";
+			sepNavVisRect = "{{0, 588}, {1133, 235}}";
 		};
 	};
 	CED82A8E0955BFC60073F9CD /* ChessView.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 294}}";
 			sepNavSelRange = "{338, 0}";
-			sepNavVisRect = "{{0, 17}, {1133, 235}}";
+			sepNavVisRect = "{{0, 39}, {1133, 235}}";
+		};
+	};
+	CED82A8F0955BFC60073F9CD /* ChessView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1610}}";
+			sepNavSelRange = "{2817, 0}";
+			sepNavVisRect = "{{0, 93}, {1133, 235}}";
 		};
 	};
 	CED82A960955BFC60073F9CD /* Game.h */ = {
@@ -1808,7 +1823,7 @@
 	CED82B630955C0FA0073F9CD /* SeekControl.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 294}}";
-			sepNavSelRange = "{242, 0}";
+			sepNavSelRange = "{513, 0}";
 			sepNavVisRect = "{{0, 16}, {1133, 235}}";
 		};
 	};
@@ -4570,7 +4585,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 348";
 		rLen = 0;
-		rLoc = 12189;
+		rLoc = 12215;
 		rType = 0;
 		vrLen = 320;
 		vrLoc = 12182;
@@ -4630,7 +4645,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 348";
 		rLen = 0;
-		rLoc = 12189;
+		rLoc = 12215;
 		rType = 0;
 		vrLen = 320;
 		vrLoc = 12182;
@@ -5448,7 +5463,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 367";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 278;
 		vrLoc = 12295;
@@ -5478,7 +5493,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 367";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 278;
 		vrLoc = 12295;
@@ -5538,7 +5553,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 367";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 278;
 		vrLoc = 12295;
@@ -5548,7 +5563,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 367";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 278;
 		vrLoc = 12295;
@@ -5618,7 +5633,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "- (void) sendSeek: (Seek *) s";
 		rLen = 29;
-		rLoc = 12499;
+		rLoc = 12525;
 		rType = 0;
 		vrLen = 272;
 		vrLoc = 12333;
@@ -5648,7 +5663,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "- (void) sendSeek: (Seek *) s";
 		rLen = 29;
-		rLoc = 12499;
+		rLoc = 12525;
 		rType = 0;
 		vrLen = 272;
 		vrLoc = 12333;
@@ -5726,7 +5741,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 370";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 324;
 		vrLoc = 12461;
@@ -5756,7 +5771,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 370";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 324;
 		vrLoc = 12461;
@@ -5786,7 +5801,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 379";
 		rLen = 0;
-		rLoc = 12681;
+		rLoc = 12707;
 		rType = 0;
 		vrLen = 542;
 		vrLoc = 12461;
@@ -5806,7 +5821,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 379";
 		rLen = 0;
-		rLoc = 12681;
+		rLoc = 12707;
 		rType = 0;
 		vrLen = 542;
 		vrLoc = 12461;
@@ -5894,7 +5909,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 370";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 12461;
@@ -5924,7 +5939,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 370";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 12461;
@@ -6044,7 +6059,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 370";
 		rLen = 0;
-		rLoc = 12631;
+		rLoc = 12657;
 		rType = 0;
 		vrLen = 319;
 		vrLoc = 12461;
@@ -6064,7 +6079,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 376";
 		rLen = 0;
-		rLoc = 12824;
+		rLoc = 12850;
 		rType = 0;
 		vrLen = 327;
 		vrLoc = 12351;
@@ -6142,7 +6157,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 376";
 		rLen = 0;
-		rLoc = 12812;
+		rLoc = 12838;
 		rType = 0;
 		vrLen = 374;
 		vrLoc = 12463;
@@ -6180,7 +6195,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 12182;
@@ -6190,7 +6205,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 327;
 		vrLoc = 12351;
@@ -6200,7 +6215,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 374;
 		vrLoc = 12463;
@@ -6210,7 +6225,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 12182;
@@ -6220,7 +6235,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 0;
@@ -6280,7 +6295,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 0;
@@ -6350,7 +6365,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 12182;
@@ -6368,7 +6383,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 660;
 		vrLoc = 12182;
@@ -7514,7 +7529,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 465;
 		vrLoc = 11308;
@@ -7574,7 +7589,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 380";
 		rLen = 0;
-		rLoc = 12836;
+		rLoc = 12862;
 		rType = 0;
 		vrLen = 465;
 		vrLoc = 11308;
@@ -7774,7 +7789,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "- (NSString *) description";
 		rLen = 26;
-		rLoc = 12431;
+		rLoc = 12457;
 		rType = 0;
 		vrLen = 317;
 		vrLoc = 12278;
@@ -7814,7 +7829,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "- (NSString *) description";
 		rLen = 26;
-		rLoc = 12431;
+		rLoc = 12457;
 		rType = 0;
 		vrLen = 317;
 		vrLoc = 12278;
@@ -7862,7 +7877,7 @@
 		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
 		name = "ChessServerConnection.m: 367";
 		rLen = 0;
-		rLoc = 12555;
+		rLoc = 12581;
 		rType = 0;
 		vrLen = 753;
 		vrLoc = 12075;
@@ -8083,6 +8098,86 @@
 		name = "SeekControl.h: selectedConnection";
 		rLen = 0;
 		rLoc = 242;
+		rType = 0;
+		vrLen = 491;
+		vrLoc = 16;
+	};
+	CED830A60956D29A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 73";
+		rLen = 0;
+		rLoc = 2161;
+		rType = 0;
+		vrLen = 517;
+		vrLoc = 1636;
+	};
+	CED830A70956D29A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: 21";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 491;
+		vrLoc = 16;
+	};
+	CED830A90956D54F0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */;
+		name = "ChessServerConnection.m: 380";
+		rLen = 0;
+		rLoc = 12862;
+		rType = 0;
+		vrLen = 753;
+		vrLoc = 12075;
+	};
+	CED830AB0956D5550073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 73";
+		rLen = 0;
+		rLoc = 2161;
+		rType = 0;
+		vrLen = 517;
+		vrLoc = 1636;
+	};
+	CED830AC0956D5550073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 23";
+		rLen = 0;
+		rLoc = 561;
+		rType = 0;
+		vrLen = 382;
+		vrLoc = 185;
+	};
+	CED830AD0956D5550073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 73";
+		rLen = 0;
+		rLoc = 2161;
+		rType = 0;
+		vrLen = 517;
+		vrLoc = 1636;
+	};
+	CED830AE0956D5550073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 23";
+		rLen = 0;
+		rLoc = 561;
+		rType = 0;
+		vrLen = 382;
+		vrLoc = 185;
+	};
+	CED830AF0956D5550073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: 21";
+		rLen = 0;
+		rLoc = 513;
 		rType = 0;
 		vrLen = 491;
 		vrLoc = 16;

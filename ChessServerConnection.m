@@ -231,7 +231,7 @@
 		[self retain];
 		currentServer = [server retain];
 		NSHost *host = [NSHost hostWithName: [server serverAddress]];
-		[NSStream getStreamsToHost:host port:5000 inputStream: &serverIS outputStream: &serverOS];
+		[NSStream getStreamsToHost:host port:[[server serverPort] intValue] inputStream: &serverIS outputStream: &serverOS];
 		[serverIS retain];
 		[serverOS retain];
 		[serverIS setDelegate: self];
