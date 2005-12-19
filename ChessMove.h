@@ -14,5 +14,6 @@
 + (ChessMove *) initialPosition;
 - (Board *) positionAfter;
 - (enum GameRelationship) gameRelationship;
+- (enum Color) sideToMove;
 
 @end

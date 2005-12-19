@@ -108,19 +108,19 @@
 	return reason;
 }
 
-- (void) setSiteShownOnBottom: (enum Color) color
+- (void) setSideShownOnBottom: (enum Color) color
 {
-	siteShownOnBottom = color;
+	sideShownOnBottom = color;
 }
 
-- (void) flipSiteShownOnBottom;
+- (void) flipSideShownOnBottom;
 {
-	siteShownOnBottom = (siteShownOnBottom == BLACK) ? WHITE : BLACK;
+	sideShownOnBottom = (sideShownOnBottom == BLACK) ? WHITE : BLACK;
 }
 
-- (enum Color) siteShownOnBottom
+- (enum Color) sideShownOnBottom
 {
-	return siteShownOnBottom;
+	return sideShownOnBottom;
 }
 
 - (enum GameRelationship) gameRelationship
@@ -128,4 +128,22 @@
 	return gameRelationship;
 }
 
+- (void) setDefaultBoardOrientation
+{
+	enum Color toMove = WHITE;
+	switch (gameRelationship) {
+	  case -1:
+		toMove = BLACK;
+	  case 1:
+		if ([self sideToMove] == BLACK)
+			toMove = BLACK - toMove; 
+	    break;
+	}
+    [self setSideShownOnBottom: WHITE];
+}
+
+- (enum Color) sideToMove
+{
+	return [lastMove sideToMove];
+}
 @end

@@ -132,7 +132,7 @@ NSString *toolbarTooltips[] = {
 		[resultReason setStringValue: @""];
 		[gameType setStringValue: @""];	
 	} else {
-		if ([activeGame siteShownOnBottom] == WHITE) {
+		if ([activeGame sideShownOnBottom] == WHITE) {
 			[upperName setStringValue: nil2Empty([activeGame blackName])];
 			[lowerName setStringValue: nil2Empty([activeGame whiteName])];
 		} else {
@@ -254,7 +254,7 @@ NSString *toolbarTooltips[] = {
 	if (activeGame == nil) {
 		[upperClock setStringValue: @"-:--:--"];	
 		[lowerClock setStringValue: @"-:--:--"];	
-	} else if ([activeGame siteShownOnBottom] == WHITE) {
+	} else if ([activeGame sideShownOnBottom] == WHITE) {
 		[upperClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]]];	
 		[lowerClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]]];
 	} else {
@@ -340,7 +340,7 @@ NSString *toolbarTooltips[] = {
 - (IBAction) flipBoard: (id) sender
 {
 	NSLog(@"decline");
-	[activeGame flipSiteShownOnBottom];
+	[activeGame flipSideShownOnBottom];
 	[self updateGameInfo];
 	[chessView setNeedsDisplay: YES];
 }
@@ -565,7 +565,7 @@ NSString *toolbarTooltips[] = {
 
 - (enum Color) sideShownOnBottom
 {
-	return [activeGame siteShownOnBottom];
+	return [activeGame sideShownOnBottom];
 }
 
 @end

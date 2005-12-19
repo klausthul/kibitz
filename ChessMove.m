@@ -37,4 +37,9 @@
 	return gameRelationship;
 }
 
+- (enum Color) sideToMove
+{
+	return [positionAfter sideToMove];
+}
+
 @end

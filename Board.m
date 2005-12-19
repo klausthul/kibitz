@@ -105,4 +105,9 @@
 	runningClock = NO_CLOCK_RUNS;
 }
 
+- (enum Color) sideToMove
+{
+	return sideToMove;
+}
+
 @end

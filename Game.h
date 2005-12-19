@@ -12,7 +12,7 @@
 	ChessMove *lastMove;
 	NSString *result, *reason;
 	int gameNumber;
-	enum Color siteShownOnBottom;
+	enum Color sideShownOnBottom;
 	enum GameRelationship gameRelationship;
 }
 
@@ -31,9 +31,11 @@
 - (void) setResult: (NSString *) resultV reason: (NSString *) reasonV;
 - (NSString *) result;
 - (NSString *) reason;
-- (void) setSiteShownOnBottom: (enum Color) color;
-- (void) flipSiteShownOnBottom;
-- (enum Color) siteShownOnBottom;
+- (void) setSideShownOnBottom: (enum Color) color;
+- (void) flipSideShownOnBottom;
+- (enum Color) sideShownOnBottom;
 - (enum GameRelationship) gameRelationship;
+- (void) setDefaultBoardOrientation;
+- (enum Color) sideToMove;
 
 @end

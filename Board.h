@@ -23,5 +23,6 @@
 - (int) whiteCurrentTime;
 - (int) blackCurrentTime;
 - (void) stopClock;
+- (enum Color) sideToMove;
 
 @end

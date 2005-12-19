@@ -77,6 +77,10 @@
 	NSRect bounds = [self bounds];
 	f.line = ceilf(p.x / bounds.size.width * 8);
 	f.row = ceilf(p.y / bounds.size.height * 8);
+	if ([gameWindowController sideShownOnBottom] == BLACK) {
+		f.line = 9 - f.line;
+		f.row = 9 - f.row;
+	}
 	return f;	
 }
 

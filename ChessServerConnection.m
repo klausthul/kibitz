@@ -49,6 +49,7 @@
 			[serverMainWindow setActiveGame: g];
 			[gSounds newGame: [g gameRelationship]];
 			[g newMove: [ChessMove moveFromStyle12: a]];
+			[g setDefaultBoardOrientation];
 		} else {
 			ChessMove *m = [ChessMove moveFromStyle12: a];
 			[gSounds move: [m gameRelationship]];
