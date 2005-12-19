@@ -11,12 +11,15 @@
 {
 	if ((self = [super initWithWindowNibName: @"Seek"]) != nil) {
 		appController = ac;
-//		seeks = [[NSMutableArray arrayWithCapacity: 20] retain];
-//		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
-//		[chessServerList retain];
 	}
 	return self;
+}
+
+- (void) awakeFromNib
+{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSArray *df = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"Seeks"]];
+	[seekArrayController addObjects: df];
 }
 
 - (void) dealloc
@@ -38,6 +41,12 @@
 	[[self window] close];
 }
 
+- (IBAction) save: (id) sender
+{
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject: [seekArrayController content]];
+	[[NSUserDefaults standardUserDefaults] setObject:data forKey:@"Seeks"];
+}
+
 - (void) show: (id) sender
 {
 	[self showWindow: sender];
@@ -46,7 +55,6 @@
 
 - (AppController *) appController
 {
-	printf("App Controller\n");
 	return appController;
 }
 
