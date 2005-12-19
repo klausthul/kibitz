@@ -357,14 +357,14 @@
 	[serverOS write: move maxLength: strlen((char *) move)];
 } 
 
-- (NSString *) connectionName
+- (NSString *) description
 {
 	return [currentServer serverName];
 }
 
 - (void) sendSeek: (Seek *) s
 {
-	NSLog([self connectionName]);
+	NSLog([self description]);
 	NSLog([s seekDescriptionLine]);
 	[self sendToServer: [s seekCommand]];
 }

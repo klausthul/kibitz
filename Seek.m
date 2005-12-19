@@ -136,19 +136,7 @@ NSString *StyleNames[] = {
 
 + (Seek *) defaultSeek
 {
-	Seek *s = [[[Seek alloc] init] autorelease];
-	if (s != nil) {
-		s->timeStart = 5;
-		s->timeIncrement = 0;
-		s->rated = YES;
-		s->wantsColor = WANTS_BOTH;
-		s->playStyle = STYLE_NORMAL;
-		s->automatic = YES;
-		s->ratingRangeLow = 0;
-		s->ratingRangeHigh = 9999;
-		s->formulaChecked = NO;
-	}
-	return s;
+	return [[[Seek alloc] init] autorelease];
 }
 
 
@@ -156,6 +144,7 @@ NSString *StyleNames[] = {
 {
 	[nameFrom release];
 	[typeOfPlay release];
+	[wildStyle release];
 	[super dealloc];
 }
 
@@ -292,6 +281,37 @@ NSString *StyleNames[] = {
 	 (wantsColor == WANTS_BOTH) ? "" : ((wantsColor == WANTS_WHITE) ? "white" : "black"), 
 	 style, automatic ? "auto" : "manual", formulaChecked ? "formula" : "", 
 	 ratingRangeLow, ratingRangeHigh];
+}
+
+- (id) initWithCoder: (NSCoder *) coder
+{
+	if (self = [super init]) {
+		[self setTimeStart: [coder decodeIntForKey: @"timeStart"]];
+		[self setTimeIncrement: [coder decodeIntForKey: @"timeIncrement"]];
+		[self setRated: [coder decodeBoolForKey: @"rated"]];
+		[self setWantsColor: [coder decodeIntForKey: @"wantsColor"]];
+		[self setAutomatic: [coder decodeBoolForKey: @"automatic"]];
+		[self setFormulaChecked: [coder decodeBoolForKey: @"formulaChecked"]];
+		[self setRatingRangeLow: [coder decodeIntForKey: @"ratingRangeLow"]];
+		[self setRatingRangeHigh: [coder decodeIntForKey: @"ratingRangeHigh"]];
+		[self setPlayStyle: [coder decodeIntForKey: @"playStyle"]];
+		[self setWildStyle: [coder decodeObjectForKey: @"wildStyle"]];	
+	}
+	return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) coder
+{
+	[coder encodeInt: timeStart forKey: @"timeStart"];
+	[coder encodeInt: timeIncrement forKey: @"timeIncrement"];
+	[coder encodeBool: rated forKey: @"rated"];
+	[coder encodeInt: wantsColor forKey: @"wantsColor"];
+	[coder encodeBool: automatic forKey: @"automatic"];
+	[coder encodeBool: formulaChecked forKey: @"formulaChecked"];
+	[coder encodeInt: ratingRangeLow forKey: @"ratingRangeLow"];
+	[coder encodeInt: ratingRangeHigh forKey: @"ratingRangeHigh"];
+	[coder encodeInt: playStyle forKey: @"playStyle"];
+	[coder encodeObject: wildStyle forKey: @"wildStyle"];
 }
 
 @end

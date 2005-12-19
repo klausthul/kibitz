@@ -3,7 +3,7 @@
 
 #import "global.h"
 
-@interface Seek : NSObject {
+@interface Seek : NSObject <NSCoding> {
 	NSString *nameFrom;
 	int title;
 	int ratingValue;
@@ -39,6 +39,8 @@
 - (void) setRatingRangeHigh: (int) r;
 - (void) setPlayStyle: (enum PlayStyle) s;
 - (NSString *) seekCommand;
+- (id) initWithCoder: (NSCoder *) coder;
+- (void) encodeWithCoder: (NSCoder *) coder;
 
 @end
 

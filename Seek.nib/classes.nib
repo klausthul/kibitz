@@ -2,7 +2,7 @@
     IBClasses = (
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {cancel = id; seek = id; show = id; }; 
+            ACTIONS = {cancel = id; save = id; seek = id; show = id; }; 
             CLASS = SeekControl; 
             LANGUAGE = ObjC; 
             OUTLETS = {

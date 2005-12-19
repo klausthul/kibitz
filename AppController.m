@@ -9,12 +9,15 @@
 + (void) initialize
 { 
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
-	ChessServerList *defaultServers = [[ChessServerList alloc] init];
-	NSData *serverData;
+	ChessServerList *defaultServers = [[[ChessServerList alloc] init] autorelease];
+	NSData *data;
 	[defaultServers addNewServerName: @"Free Internet Chess Server (FICS)" Address: @"69.36.243.188" port: 5000 userName: nil userPassword: nil 
 	 initCommands: @"iset seekremove 1\niset seekinfo 1\n"];
-	serverData = [NSKeyedArchiver archivedDataWithRootObject:defaultServers];
-	[defaultValues setObject:serverData forKey:@"ICSChessServers"];
+	data = [NSKeyedArchiver archivedDataWithRootObject:defaultServers];
+	[defaultValues setObject:data forKey:@"ICSChessServers"];
+	NSArray *defaultSeeks = [NSArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
+	data = [NSKeyedArchiver archivedDataWithRootObject: defaultSeeks];
+	[defaultValues setObject: data forKey:@"Seeks"];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	gSounds = [[Sound alloc] init];
 }
@@ -57,6 +60,7 @@
 		[self willChangeValueForKey: @"serverConnections"];
 		[serverConnections addObject: csc];
 		[self didChangeValueForKey: @"serverConnections"];
+		[seekControl setValue: csc forKey: @"selectedConnection"];
 	}
 }
 

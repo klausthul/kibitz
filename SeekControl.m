@@ -31,7 +31,7 @@
 {
 	NSArray *selectedSeeks = [seekArrayController selectedObjects];
 	int i, m = [selectedSeeks count];
-	ChessServerConnection *selectedConnection = [[serverArrayController selectedObjects] objectAtIndex: 0];
+//	ChessServerConnection *selectedConnection = [[serverArrayController selectedObjects] objectAtIndex: 0];
 	for (i = 0; i < m; i++)
 		[selectedConnection sendSeek: [selectedSeeks objectAtIndex: i]];
 }
