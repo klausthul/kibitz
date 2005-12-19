@@ -71,5 +71,6 @@
 - (void) showMessage: (NSString *) text;
 - (void) clearMessage;
 - (NSSize) windowWillResize:(NSWindow *) sender toSize: (NSSize) proposedFrameSize;
+- (enum Color) sideShownOnBottom;
 
 @end

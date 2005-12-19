@@ -67,6 +67,11 @@
 	return fields[l + 8*r - 9];
 }
 
+- (int) flipPieceLine: (int) l row: (int) r
+{
+	return fields[63 - l - 8*r + 9];
+}
+
 - (int) pieceOnField: (struct ChessField) field
 {
 	return fields[field.row * 8 + field.line - 9];

@@ -16,6 +16,7 @@
 
 + (Board *) boardFromStyle12: (NSArray *) data; 
 - (int) pieceLine: (int) l row: (int) r;
+- (int) flipPieceLine: (int) l row: (int) r;
 + (Board *) startPosition;
 - (int) pieceOnField: (struct ChessField) field;
 - (enum ValidationResult) validateMoveFrom: (struct ChessField) from to: (struct ChessField) to;

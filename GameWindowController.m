@@ -340,6 +340,9 @@ NSString *toolbarTooltips[] = {
 - (IBAction) flipBoard: (id) sender
 {
 	NSLog(@"decline");
+	[activeGame flipSiteShownOnBottom];
+	[self updateGameInfo];
+	[chessView setNeedsDisplay: YES];
 }
 
 - (IBAction) hideMoves: (id) sender
@@ -558,6 +561,11 @@ NSString *toolbarTooltips[] = {
 		size.height = 513;	
 	size = [sender frameRectForContentRect: (NSRect) { {0, 0}, size }].size;
 	return size;
+}
+
+- (enum Color) sideShownOnBottom
+{
+	return [activeGame siteShownOnBottom];
 }
 
 @end

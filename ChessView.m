@@ -23,6 +23,7 @@
 	float field_size = board_size / 8;
 	int i, j, n, c, p;
 	NSRect imagerect;
+	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
 	
 	imagerect.size = [pieces[1] size];
 	imagerect.origin = NSZeroPoint;
@@ -39,7 +40,11 @@
 		for (j = 0; j < 8; j++) {
 			if (c == 1)
 				[NSBezierPath fillRect: cur_field];
-			if ((p = [showBoard pieceLine:j+1 row:i+1]) != 0) {
+			if (flip)
+				p = [showBoard flipPieceLine: j + 1 row: i + 1];
+			else
+				p = [showBoard pieceLine: j + 1 row: i + 1];
+			if (p != 0) {
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
 			}
 			cur_field.origin.x += field_size;
