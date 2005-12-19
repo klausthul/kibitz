@@ -357,4 +357,9 @@
 	[serverOS write: move maxLength: strlen((char *) move)];
 } 
 
+- (NSString *) connectionName
+{
+	return [currentServer serverName];
+}
+
 @end

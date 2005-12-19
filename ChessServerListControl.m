@@ -71,12 +71,13 @@
 		return [chessServerList serverAtIndex: n];
 }
 
-- (id) init 
+- (ChessServerListControl *) initWithAppController: (AppController *) ac 
 {
 	if ((self = [super initWithWindowNibName: @"ServerSelector"]) != nil) {
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
 		[chessServerList retain];
+		appController = ac;
 	}
 	return self;
 }
@@ -89,11 +90,7 @@
 
 - (IBAction) buttonSelect: (id) sender
 {
-	ChessServerConnection *csc = [[ChessServerConnection alloc] initWithChessServer: [self currentServer]]; 
-	if (csc != nil) {
-		[csc setErrorHandler: self];
-		[self close];
-	}
+	[appController connectChessServer: [self currentServer]];
 }
 
 - (IBAction) buttonCancel: (id) sender

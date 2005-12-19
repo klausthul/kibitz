@@ -4,13 +4,14 @@
 #import "global.h"
 
 @interface SeekControl : NSWindowController {
-//	NSMutableArray *seeks;
+	AppController *appController;
 	IBOutlet NSArrayController *arrayController;
 }
 
-- (id) init;
+- (SeekControl *) initWithAppController: (AppController *) ac;
 - (void) dealloc;
 - (IBAction) seek: (id) sender;
 - (void) show: (id) sender;
+- (AppController *) appController;
 
 @end

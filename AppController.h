@@ -10,11 +10,15 @@
 {
 	SeekControl *seekControl;
 	ChessServerListControl *chessServerListControl;
+	NSMutableArray *serverConnections;
 }
 
 + (void) initialize;
+- (AppController *) init;
 - (void) dealloc;
 - (IBAction) selectServer: (id) sender;
 - (IBAction) newSeek: (id) sender;
+- (void) connectChessServer: (ChessServer *) cs;
+- (NSArray *) serverConnectionNames;
 
 @end

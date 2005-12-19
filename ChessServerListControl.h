@@ -7,6 +7,7 @@
 
 @interface ChessServerListControl : NSWindowController <ChessServerErrorHandler> {
 	ChessServerList *chessServerList;
+	AppController *appController;
 	IBOutlet NSTableView *serverList;
 	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;
 	IBOutlet NSTextField *serverInitialization;
@@ -16,7 +17,7 @@
 - (IBAction) userDeleteCurrentServer: (id) sender;
 - (ChessServer *) currentServer;
 - (IBAction) updateDefaults: (id) sender;
-- (id) init;
+- (ChessServerListControl *) initWithAppController: (AppController *) ac;
 - (void) show: (id) sender;
 - (IBAction) buttonSelect: (id) sender;
 - (IBAction) buttonCancel: (id) sender;

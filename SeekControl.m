@@ -6,9 +6,10 @@
 
 @implementation SeekControl
 
-- (id) init 
+- (SeekControl *) initWithAppController: (AppController *) ac 
 {
 	if ((self = [super initWithWindowNibName: @"Seek"]) != nil) {
+		appController = ac;
 //		seeks = [[NSMutableArray arrayWithCapacity: 20] retain];
 //		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 //		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
@@ -31,6 +32,12 @@
 {
 	[self showWindow: sender];
 	[[self window] makeKeyAndOrderFront: sender];
+}
+
+- (AppController *) appController
+{
+	printf("App Controller\n");
+	return appController;
 }
 
 @end
