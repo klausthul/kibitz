@@ -2,13 +2,14 @@
 // $Id$
 
 #import "SeekControl.h"
+#import "Seek.h"
 
 @implementation SeekControl
 
 - (id) init 
 {
 	if ((self = [super initWithWindowNibName: @"Seek"]) != nil) {
-		seeks = [[NSMutableArray arrayWithCapacity: 20] retain];
+//		seeks = [[NSMutableArray arrayWithCapacity: 20] retain];
 //		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 //		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
 //		[chessServerList retain];
@@ -18,20 +19,12 @@
 
 - (void) dealloc
 {
-	[seeks release];
 	[super dealloc];
 }
 
 - (IBAction) seek: (id) sender
 {
-}
-
-- (IBAction) unseek: (id) sender
-{
-}
-
-- (IBAction) unseekAll: (id) sender
-{
+	NSLog([[[arrayController selectedObjects] objectAtIndex: 0] seekDescriptionLine]);
 }
 
 - (void) show: (id) sender

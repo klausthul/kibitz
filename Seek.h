@@ -38,6 +38,6 @@
 - (void) setRatingRangeLow: (int) r;
 - (void) setRatingRangeHigh: (int) r;
 - (void) setPlayStyle: (enum PlayStyle) s;
-9ffffd
+
 @end
 

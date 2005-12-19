@@ -179,11 +179,12 @@ NSString *StyleNames[] = {
 	[self willChangeValueForKey: @"seekDescriptionLine"];
 	[wildStyle release];
 	wildStyle = [style copy];
+	[self didChangeValueForKey: @"seekDescriptionLine"];
 }
 
 - (NSString *) wildStyle
 {
-	return [[wildStyle retain] autorelease];
+	return (wildStyle == nil) ? @"" : wildStyle;
 }
 
 - (BOOL) isWild
@@ -195,13 +196,14 @@ NSString *StyleNames[] = {
 {
 	NSString *style;
 	if (playStyle == STYLE_WILD)
-		style = [NSString stringWithFormat: @"Wild %@", wildStyle];
+		style = [NSString stringWithFormat: @"Wild %@", [self wildStyle]];
 	else
 		style = StyleNames[playStyle];
-	return [NSString stringWithFormat: @"%@: %d+%d, %s, %s (%d-%d%s)", style,
+	return [NSString stringWithFormat: @"%@: %d+%d, %s, %s%s (%d-%d%s)", style,
 	 timeStart, timeIncrement,
-	 (rated) ? "rated" : "unrated", (automatic) ? "automatic" : "manual",
-	 ratingRangeLow, ratingRangeHigh, (formulaChecked) ? ", formula" : ""];
+	 (rated) ? "r" : "u", (automatic) ? "a" : "m",
+	 (wantsColor == WANTS_BOTH) ? "" : ((wantsColor == WANTS_WHITE) ? ", w" : ", b"),
+	 ratingRangeLow, ratingRangeHigh, (formulaChecked) ? ", f" : ""];
 }
 
 - (void) setTimeStart: (int) t

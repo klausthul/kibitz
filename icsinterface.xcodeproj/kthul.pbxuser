@@ -21,7 +21,7 @@
 			CE9A6705094EE7AF001628CC /* ChessServerListControl.m:42 */,
 			CE6E45C00952589D00202A86 /* PatternMatching.m:35 */,
 			CECBFDD60953320B007EAA75 /* GameWindowController.m:428 */,
-			CED82D77095648A40073F9CD /* SeekControl.m:10 */,
+			CED82D77095648A40073F9CD /* SeekControl.m:11 */,
 		);
 		breakpointsGroup = CE3AC14D0901EC1B00DD3768 /* XCBreakpointsBucket */;
 		codeSenseManager = CEA0CBDE09015E9A00BF913A /* Code sense */;
@@ -454,6 +454,43 @@
 			CED82DCF09565ECB0073F9CD /* PBXTextBookmark */ = CED82DCF09565ECB0073F9CD /* PBXTextBookmark */;
 			CED82DD109565F670073F9CD /* PBXTextBookmark */ = CED82DD109565F670073F9CD /* PBXTextBookmark */;
 			CED82DD209565F670073F9CD /* PBXTextBookmark */ = CED82DD209565F670073F9CD /* PBXTextBookmark */;
+			CED82DDB0956619A0073F9CD /* PBXTextBookmark */ = CED82DDB0956619A0073F9CD /* PBXTextBookmark */;
+			CED82DDC0956619A0073F9CD /* PBXTextBookmark */ = CED82DDC0956619A0073F9CD /* PBXTextBookmark */;
+			CED82DDD0956619A0073F9CD /* PBXTextBookmark */ = CED82DDD0956619A0073F9CD /* PBXTextBookmark */;
+			CED82DDE0956619A0073F9CD /* PBXTextBookmark */ = CED82DDE0956619A0073F9CD /* PBXTextBookmark */;
+			CED82DDF0956619A0073F9CD /* PBXTextBookmark */ = CED82DDF0956619A0073F9CD /* PBXTextBookmark */;
+			CED82DE00956619A0073F9CD /* PBXTextBookmark */ = CED82DE00956619A0073F9CD /* PBXTextBookmark */;
+			CED82DE10956619A0073F9CD /* PBXTextBookmark */ = CED82DE10956619A0073F9CD /* PBXTextBookmark */;
+			CED82DE4095661E80073F9CD /* PBXTextBookmark */ = CED82DE4095661E80073F9CD /* PBXTextBookmark */;
+			CED82DE5095661E80073F9CD /* PBXTextBookmark */ = CED82DE5095661E80073F9CD /* PBXTextBookmark */;
+			CED82DE6095661E80073F9CD /* PBXTextBookmark */ = CED82DE6095661E80073F9CD /* PBXTextBookmark */;
+			CED82DE7095661E80073F9CD /* PBXTextBookmark */ = CED82DE7095661E80073F9CD /* PBXTextBookmark */;
+			CED82DE8095661E80073F9CD /* PBXTextBookmark */ = CED82DE8095661E80073F9CD /* PBXTextBookmark */;
+			CED82DEC095662860073F9CD /* PBXTextBookmark */ = CED82DEC095662860073F9CD /* PBXTextBookmark */;
+			CED82DF2095666460073F9CD /* PBXTextBookmark */ = CED82DF2095666460073F9CD /* PBXTextBookmark */;
+			CED82DF3095666460073F9CD /* PBXTextBookmark */ = CED82DF3095666460073F9CD /* PBXTextBookmark */;
+			CED82DF4095666460073F9CD /* PBXTextBookmark */ = CED82DF4095666460073F9CD /* PBXTextBookmark */;
+			CED82DF5095666460073F9CD /* PBXTextBookmark */ = CED82DF5095666460073F9CD /* PBXTextBookmark */;
+			CED82DF6095666460073F9CD /* PBXTextBookmark */ = CED82DF6095666460073F9CD /* PBXTextBookmark */;
+			CED82DF7095666460073F9CD /* PBXTextBookmark */ = CED82DF7095666460073F9CD /* PBXTextBookmark */;
+			CED82DF8095666460073F9CD /* PBXTextBookmark */ = CED82DF8095666460073F9CD /* PBXTextBookmark */;
+			CED82DF9095666460073F9CD /* PBXTextBookmark */ = CED82DF9095666460073F9CD /* PBXTextBookmark */;
+			CED82DFA095666460073F9CD /* PBXTextBookmark */ = CED82DFA095666460073F9CD /* PBXTextBookmark */;
+			CED82DFB095666480073F9CD /* PBXTextBookmark */ = CED82DFB095666480073F9CD /* PBXTextBookmark */;
+			CED82DFC0956664B0073F9CD /* PBXTextBookmark */ = CED82DFC0956664B0073F9CD /* PBXTextBookmark */;
+			CED82DFD0956664E0073F9CD /* PBXTextBookmark */ = CED82DFD0956664E0073F9CD /* PBXTextBookmark */;
+			CED82DFE095666510073F9CD /* PBXTextBookmark */ = CED82DFE095666510073F9CD /* PBXTextBookmark */;
+			CED82E05095666D00073F9CD /* PBXTextBookmark */ = CED82E05095666D00073F9CD /* PBXTextBookmark */;
+			CED82E06095666D00073F9CD /* PBXTextBookmark */ = CED82E06095666D00073F9CD /* PBXTextBookmark */;
+			CED82E07095666D00073F9CD /* PBXTextBookmark */ = CED82E07095666D00073F9CD /* PBXTextBookmark */;
+			CED82E08095666D00073F9CD /* PBXTextBookmark */ = CED82E08095666D00073F9CD /* PBXTextBookmark */;
+			CED82E09095666D20073F9CD /* PBXTextBookmark */ = CED82E09095666D20073F9CD /* PBXTextBookmark */;
+			CED82E0A095666D20073F9CD /* PBXTextBookmark */ = CED82E0A095666D20073F9CD /* PBXTextBookmark */;
+			CED82E0B095666D20073F9CD /* PBXTextBookmark */ = CED82E0B095666D20073F9CD /* PBXTextBookmark */;
+			CED82E0C095666D20073F9CD /* PBXTextBookmark */ = CED82E0C095666D20073F9CD /* PBXTextBookmark */;
+			CED82E0D095666D20073F9CD /* PBXTextBookmark */ = CED82E0D095666D20073F9CD /* PBXTextBookmark */;
+			CED82E0E095666D20073F9CD /* PBXTextBookmark */ = CED82E0E095666D20073F9CD /* PBXTextBookmark */;
+			CED82E12095667790073F9CD /* PBXTextBookmark */ = CED82E12095667790073F9CD /* PBXTextBookmark */;
 			CEDE11E3094C683E0085CC1F = CEDE11E3094C683E0085CC1F /* PBXTextBookmark */;
 			CEDE11E5094C683E0085CC1F = CEDE11E5094C683E0085CC1F /* PBXTextBookmark */;
 			CEDFCDDD094BE776001F9310 = CEDFCDDD094BE776001F9310 /* PBXTextBookmark */;
@@ -1324,9 +1361,9 @@
 	};
 	CED82A9C0955BFC60073F9CD /* global.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {551, 1302}}";
-			sepNavSelRange = "{1234, 0}";
-			sepNavVisRect = "{{0, 930}, {551, 235}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1302}}";
+			sepNavSelRange = "{1097, 0}";
+			sepNavVisRect = "{{0, 783}, {1133, 506}}";
 		};
 	};
 	CED82AA90955BFC60073F9CD /* main.m */ = {
@@ -1353,22 +1390,22 @@
 	CED82ABB0955BFC60073F9CD /* Seek.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 616}}";
-			sepNavSelRange = "{529, 0}";
-			sepNavVisRect = "{{0, 346}, {1133, 235}}";
+			sepNavSelRange = "{1000, 0}";
+			sepNavVisRect = "{{0, 24}, {1133, 506}}";
 		};
 	};
 	CED82ABC0955BFC60073F9CD /* Seek.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1133, 3822}}";
-			sepNavSelRange = "{4102, 0}";
-			sepNavVisRect = "{{0, 3147}, {1133, 234}}";
+			sepNavIntBoundsRect = "{{0, 0}, {953, 3850}}";
+			sepNavSelRange = "{3717, 0}";
+			sepNavVisRect = "{{0, 2646}, {953, 385}}";
 		};
 	};
 	CED82AC00955BFC60073F9CD /* SeekControl.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {704, 616}}";
-			sepNavSelRange = "{664, 0}";
-			sepNavVisRect = "{{0, 0}, {551, 234}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 506}}";
+			sepNavSelRange = "{651, 0}";
+			sepNavVisRect = "{{0, 0}, {1133, 506}}";
 		};
 	};
 	CED82B160955C03B0073F9CD /* PBXTextBookmark */ = {
@@ -1423,9 +1460,9 @@
 	};
 	CED82B630955C0FA0073F9CD /* SeekControl.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {551, 308}}";
-			sepNavSelRange = "{498, 0}";
-			sepNavVisRect = "{{0, 74}, {551, 234}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 506}}";
+			sepNavSelRange = "{162, 0}";
+			sepNavVisRect = "{{0, 0}, {1133, 506}}";
 		};
 	};
 	CED82B6A0955C1490073F9CD /* PBXTextBookmark */ = {
@@ -1493,7 +1530,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "ServerSelectorControl.h: 1";
 		rLen = 0;
-		rLoc = 362;
+		rLoc = 210;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -1523,7 +1560,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "ServerSelectorControl.h: 9";
 		rLen = 0;
-		rLoc = 362;
+		rLoc = 210;
 		rType = 0;
 		vrLen = 128;
 		vrLoc = 0;
@@ -1547,7 +1584,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "ServerSelectorControl.h: 11";
 		rLen = 0;
-		rLoc = 532;
+		rLoc = 309;
 		rType = 0;
 		vrLen = 135;
 		vrLoc = 0;
@@ -1607,7 +1644,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "ServerSelectorControl.h: 11";
 		rLen = 0;
-		rLoc = 532;
+		rLoc = 309;
 		rType = 0;
 		vrLen = 135;
 		vrLoc = 0;
@@ -1847,7 +1884,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = chessServerList;
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 151;
 		vrLoc = 0;
@@ -1941,7 +1978,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "ServerSelectorControl.h: 7";
 		rLen = 0;
-		rLoc = 532;
+		rLoc = 309;
 		rType = 0;
 		vrLen = 135;
 		vrLoc = 0;
@@ -2008,7 +2045,7 @@
 		comments = "error: parse error before 'AT_NAME' token";
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		rLen = 1;
-		rLoc = 20;
+		rLoc = 15;
 		rType = 1;
 	};
 	CED82CEB0955D7BE0073F9CD /* PBXTextBookmark */ = {
@@ -2016,7 +2053,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: tableView:objectValueForTableColumn:row:";
 		rLen = 0;
-		rLoc = 498;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 0;
@@ -2036,7 +2073,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 10";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 151;
 		vrLoc = 0;
@@ -2076,7 +2113,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 10";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 151;
 		vrLoc = 0;
@@ -2116,7 +2153,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: seeks";
 		rLen = 0;
-		rLoc = 160;
+		rLoc = 162;
 		rType = 0;
 		vrLen = 495;
 		vrLoc = 0;
@@ -2146,7 +2183,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 10";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 131;
 		vrLoc = 0;
@@ -2196,7 +2233,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 10";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 131;
 		vrLoc = 0;
@@ -2226,7 +2263,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: tableView:objectValueForTableColumn:row:";
 		rLen = 0;
-		rLoc = 498;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 0;
@@ -2236,7 +2273,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 5536;
+		rLoc = 5657;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 2578;
@@ -2254,7 +2291,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: tableView:objectValueForTableColumn:row:";
 		rLen = 0;
-		rLoc = 498;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 0;
@@ -2264,7 +2301,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 5536;
+		rLoc = 5657;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 2578;
@@ -2364,7 +2401,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: 24";
 		rLen = 0;
-		rLoc = 526;
+		rLoc = 303;
 		rType = 0;
 		vrLen = 597;
 		vrLoc = 194;
@@ -2384,7 +2421,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 159";
 		rLen = 0;
-		rLoc = 3449;
+		rLoc = 3507;
 		rType = 0;
 		vrLen = 242;
 		vrLoc = 2601;
@@ -2394,7 +2431,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 26";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 431;
 		vrLoc = 125;
@@ -2404,7 +2441,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: seeks";
 		rLen = 0;
-		rLoc = 160;
+		rLoc = 162;
 		rType = 0;
 		vrLen = 495;
 		vrLoc = 0;
@@ -2424,7 +2461,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 155";
 		rLen = 0;
-		rLoc = 3449;
+		rLoc = 3507;
 		rType = 0;
 		vrLen = 221;
 		vrLoc = 2618;
@@ -2444,7 +2481,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: dealloc";
 		rLen = 0;
-		rLoc = 394;
+		rLoc = 242;
 		rType = 0;
 		vrLen = 543;
 		vrLoc = 90;
@@ -2564,7 +2601,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 26";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 431;
 		vrLoc = 125;
@@ -2574,7 +2611,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: 24";
 		rLen = 0;
-		rLoc = 526;
+		rLoc = 303;
 		rType = 0;
 		vrLen = 597;
 		vrLoc = 194;
@@ -2594,7 +2631,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 159";
 		rLen = 0;
-		rLoc = 3449;
+		rLoc = 3507;
 		rType = 0;
 		vrLen = 242;
 		vrLoc = 2601;
@@ -2604,7 +2641,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 30";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 190;
 		vrLoc = 473;
@@ -2614,7 +2651,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: 21";
 		rLen = 0;
-		rLoc = 526;
+		rLoc = 303;
 		rType = 0;
 		vrLen = 588;
 		vrLoc = 137;
@@ -2634,7 +2671,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 172";
 		rLen = 0;
-		rLoc = 3940;
+		rLoc = 4061;
 		rType = 0;
 		vrLen = 324;
 		vrLoc = 2150;
@@ -2644,7 +2681,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 24";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 416;
 		vrLoc = 140;
@@ -2674,7 +2711,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: 21";
 		rLen = 0;
-		rLoc = 526;
+		rLoc = 303;
 		rType = 0;
 		vrLen = 588;
 		vrLoc = 137;
@@ -2684,7 +2721,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 172";
 		rLen = 0;
-		rLoc = 3940;
+		rLoc = 4061;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 2871;
@@ -2694,7 +2731,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 10";
 		rLen = 0;
-		rLoc = 778;
+		rLoc = 784;
 		rType = 0;
 		vrLen = 131;
 		vrLoc = 0;
@@ -2714,7 +2751,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 172";
 		rLen = 0;
-		rLoc = 3940;
+		rLoc = 4061;
 		rType = 0;
 		vrLen = 324;
 		vrLoc = 2150;
@@ -2724,7 +2761,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 24";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 416;
 		vrLoc = 140;
@@ -2743,8 +2780,8 @@
 		isa = PBXTextBookmark;
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: seek:";
-		rLen = 102;
-		rLoc = 395;
+		rLen = 32;
+		rLoc = 243;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 161;
@@ -2754,7 +2791,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 30";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 190;
 		vrLoc = 473;
@@ -2764,7 +2801,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 30";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 778;
 		rType = 0;
 		vrLen = 190;
 		vrLoc = 473;
@@ -2773,8 +2810,8 @@
 		isa = PBXTextBookmark;
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: seek:";
-		rLen = 102;
-		rLoc = 395;
+		rLen = 32;
+		rLoc = 243;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 161;
@@ -2784,7 +2821,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 181;
 		vrLoc = 512;
@@ -2804,7 +2841,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 185;
 		vrLoc = 476;
@@ -2814,7 +2851,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 185;
 		vrLoc = 476;
@@ -2824,7 +2861,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: show:";
 		rLen = 0;
-		rLoc = 498;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 91;
@@ -2892,7 +2929,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: show:";
 		rLen = 0;
-		rLoc = 498;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 91;
@@ -2902,7 +2939,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 185;
 		vrLoc = 476;
@@ -2912,7 +2949,7 @@
 		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
 		name = "SeekControl.h: show:";
 		rLen = 0;
-		rLoc = 498;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 91;
@@ -2922,7 +2959,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 492;
 		vrLoc = 0;
@@ -2942,7 +2979,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 138;
@@ -2952,7 +2989,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 138;
@@ -2962,7 +2999,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 164";
 		rLen = 0;
-		rLoc = 3544;
+		rLoc = 3602;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 2913;
@@ -2977,7 +3014,7 @@
 		vrLen = 331;
 		vrLoc = 92;
 	};
-	CED82D77095648A40073F9CD /* SeekControl.m:10 */ = {
+	CED82D77095648A40073F9CD /* SeekControl.m:11 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2986,7 +3023,7 @@
 		fileReference = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		functionName = "-init";
 		hitCount = 1;
-		lineNumber = 10;
+		lineNumber = 11;
 		modificationTime = 156649664.800157;
 		state = 1;
 	};
@@ -2995,7 +3032,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 164";
 		rLen = 0;
-		rLoc = 3544;
+		rLoc = 3602;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 2913;
@@ -3005,7 +3042,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 138;
@@ -3015,7 +3052,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 164";
 		rLen = 0;
-		rLoc = 3544;
+		rLoc = 3602;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 2913;
@@ -3025,7 +3062,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 452;
 		vrLoc = 96;
@@ -3065,7 +3102,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 452;
 		vrLoc = 96;
@@ -3095,7 +3132,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 452;
 		vrLoc = 96;
@@ -3125,7 +3162,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 492;
 		vrLoc = 0;
@@ -3155,7 +3192,7 @@
 		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		name = "SeekControl.m: 35";
 		rLen = 0;
-		rLoc = 664;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 492;
 		vrLoc = 0;
@@ -3285,7 +3322,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 190";
 		rLen = 0;
-		rLoc = 3480;
+		rLoc = 3538;
 		rType = 0;
 		vrLen = 235;
 		vrLoc = 3231;
@@ -3305,7 +3342,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 190";
 		rLen = 0;
-		rLoc = 3480;
+		rLoc = 3538;
 		rType = 0;
 		vrLen = 235;
 		vrLoc = 3231;
@@ -3335,7 +3372,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 204";
 		rLen = 0;
-		rLoc = 3916;
+		rLoc = 4043;
 		rType = 0;
 		vrLen = 258;
 		vrLoc = 2230;
@@ -3355,7 +3392,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 190";
 		rLen = 0;
-		rLoc = 3504;
+		rLoc = 3562;
 		rType = 0;
 		vrLen = 259;
 		vrLoc = 3231;
@@ -3385,7 +3422,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 249";
 		rLen = 0;
-		rLoc = 5532;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 195;
 		vrLoc = 4247;
@@ -3395,7 +3432,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 253";
 		rLen = 0;
-		rLoc = 5541;
+		rLoc = 5662;
 		rType = 0;
 		vrLen = 257;
 		vrLoc = 3231;
@@ -3405,7 +3442,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 249";
 		rLen = 0;
-		rLoc = 5437;
+		rLoc = 5558;
 		rType = 0;
 		vrLen = 251;
 		vrLoc = 4286;
@@ -3455,7 +3492,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: 250";
 		rLen = 0;
-		rLoc = 5378;
+		rLoc = 5499;
 		rType = 0;
 		vrLen = 343;
 		vrLoc = 4286;
@@ -3475,7 +3512,7 @@
 		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
 		name = "Seek.m: setTimeStart:";
 		rLen = 0;
-		rLoc = 4102;
+		rLoc = 4223;
 		rType = 0;
 		vrLen = 431;
 		vrLoc = 4371;
@@ -3489,6 +3526,372 @@
 		rType = 0;
 		vrLen = 533;
 		vrLoc = 473;
+	};
+	CED82DDB0956619A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 204";
+		rLen = 0;
+		rLoc = 3983;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 3381;
+	};
+	CED82DDC0956619A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9C0955BFC60073F9CD /* global.h */;
+		name = "global.h: EXAMINER";
+		rLen = 0;
+		rLoc = 1097;
+		rType = 0;
+		vrLen = 633;
+		vrLoc = 927;
+	};
+	CED82DDD0956619A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "- (NSString *) wildStyle;";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 920;
+		vrLoc = 113;
+	};
+	CED82DDE0956619A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 231";
+		rLen = 0;
+		rLoc = 4664;
+		rType = 0;
+		vrLen = 869;
+		vrLoc = 4104;
+	};
+	CED82DDF0956619A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 204";
+		rLen = 0;
+		rLoc = 3983;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 3381;
+	};
+	CED82DE00956619A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9C0955BFC60073F9CD /* global.h */;
+		name = "global.h: EXAMINER";
+		rLen = 0;
+		rLoc = 1097;
+		rType = 0;
+		vrLen = 633;
+		vrLoc = 927;
+	};
+	CED82DE10956619A0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: wildStyle";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 894;
+		vrLoc = 113;
+	};
+	CED82DE4095661E80073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9C0955BFC60073F9CD /* global.h */;
+		name = "global.h: EXAMINER";
+		rLen = 0;
+		rLoc = 1097;
+		rType = 0;
+		vrLen = 656;
+		vrLoc = 904;
+	};
+	CED82DE5095661E80073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 41";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 894;
+		vrLoc = 113;
+	};
+	CED82DE6095661E80073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 41";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 894;
+		vrLoc = 113;
+	};
+	CED82DE7095661E80073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9C0955BFC60073F9CD /* global.h */;
+		name = "global.h: EXAMINER";
+		rLen = 0;
+		rLoc = 1097;
+		rType = 0;
+		vrLen = 656;
+		vrLoc = 904;
+	};
+	CED82DE8095661E80073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 41";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 923;
+		vrLoc = 84;
+	};
+	CED82DEC095662860073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 41";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 923;
+		vrLoc = 84;
+	};
+	CED82DF2095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 37";
+		rLen = 0;
+		rLoc = 1104;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 514;
+	};
+	CED82DF3095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9C0955BFC60073F9CD /* global.h */;
+		name = "global.h: 78";
+		rLen = 0;
+		rLoc = 1305;
+		rType = 0;
+		vrLen = 578;
+		vrLoc = 931;
+	};
+	CED82DF4095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 45";
+		rLen = 0;
+		rLoc = 1007;
+		rType = 0;
+		vrLen = 731;
+		vrLoc = 302;
+	};
+	CED82DF5095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: return makes pointer from integer without a cast";
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		rLen = 1;
+		rLoc = 186;
+		rType = 1;
+	};
+	CED82DF6095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 37";
+		rLen = 0;
+		rLoc = 1104;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 514;
+	};
+	CED82DF7095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9C0955BFC60073F9CD /* global.h */;
+		name = "global.h: 78";
+		rLen = 0;
+		rLoc = 1305;
+		rType = 0;
+		vrLen = 578;
+		vrLoc = 931;
+	};
+	CED82DF8095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "{";
+		rLen = 57;
+		rLoc = 4593;
+		rType = 0;
+		vrLen = 328;
+		vrLoc = 3958;
+	};
+	CED82DF9095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 45";
+		rLen = 0;
+		rLoc = 1007;
+		rType = 0;
+		vrLen = 731;
+		vrLoc = 302;
+	};
+	CED82DFA095666460073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 199";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 3512;
+	};
+	CED82DFB095666480073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 199";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 3512;
+	};
+	CED82DFC0956664B0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 41";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 923;
+		vrLoc = 84;
+	};
+	CED82DFD0956664E0073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 199";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 3512;
+	};
+	CED82DFE095666510073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 199";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 3512;
+	};
+	CED82E05095666D00073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 199";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 3512;
+	};
+	CED82E06095666D00073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'seeks' undeclared (first use in this function)";
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		rLen = 1;
+		rLoc = 21;
+		rType = 1;
+	};
+	CED82E07095666D00073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 199";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 3512;
+	};
+	CED82E08095666D00073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 21";
+		rLen = 0;
+		rLoc = 531;
+		rType = 0;
+		vrLen = 598;
+		vrLoc = 0;
+	};
+	CED82E09095666D20073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 41";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 903;
+		vrLoc = 16;
+	};
+	CED82E0A095666D20073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: 7";
+		rLen = 0;
+		rLoc = 162;
+		rType = 0;
+		vrLen = 309;
+		vrLoc = 0;
+	};
+	CED82E0B095666D20073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 41";
+		rLen = 0;
+		rLoc = 1000;
+		rType = 0;
+		vrLen = 903;
+		vrLoc = 16;
+	};
+	CED82E0C095666D20073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 11";
+		rLen = 0;
+		rLoc = 222;
+		rType = 0;
+		vrLen = 701;
+		vrLoc = 0;
+	};
+	CED82E0D095666D20073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: 7";
+		rLen = 0;
+		rLoc = 162;
+		rType = 0;
+		vrLen = 309;
+		vrLoc = 0;
+	};
+	CED82E0E095666D20073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 21";
+		rLen = 0;
+		rLoc = 531;
+		rType = 0;
+		vrLen = 683;
+		vrLoc = 0;
+	};
+	CED82E12095667790073F9CD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 26";
+		rLen = 0;
+		rLoc = 668;
+		rType = 0;
+		vrLen = 767;
+		vrLoc = 0;
 	};
 	CEDE11E3094C683E0085CC1F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
