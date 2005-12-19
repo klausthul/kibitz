@@ -40,5 +40,6 @@
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotionPiece;
 - (void) removeAllSeeks;
 - (NSString *) connectionName;
+- (void) sendSeek: (Seek *) s;
 
 @end

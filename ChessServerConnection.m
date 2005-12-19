@@ -362,4 +362,9 @@
 	return [currentServer serverName];
 }
 
+- (void) sendSeek: (Seek *) s
+{
+	NSLog([self connectionName]);
+	NSLog([s seekDescriptionLine]);
+}
 @end

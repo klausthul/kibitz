@@ -63,16 +63,6 @@
 - (NSArray *) serverConnections
 {
 	return serverConnections;
-/*
-	printf("serverConnectionNames");
-	NSMutableArray *a = [NSMutableArray arrayWithCapacity: 20];
-	int m = [serverConnections count], i;
-	for (i = 0; i < m; i++)
-		[a addObject: [[serverConnections objectAtIndex: i] connectionName]];
-	if (m > 0)
-		NSLog(@"Hallo");
-	return a;
-*/
 }
 
 @end

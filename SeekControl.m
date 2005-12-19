@@ -25,7 +25,16 @@
 
 - (IBAction) seek: (id) sender
 {
-	NSLog([[[arrayController selectedObjects] objectAtIndex: 0] seekDescriptionLine]);
+	NSArray *selectedSeeks = [seekArrayController selectedObjects];
+	int i, m = [selectedSeeks count];
+	ChessServerConnection *selectedConnection = [[serverArrayController selectedObjects] objectAtIndex: 0];
+	for (i = 0; i < m; i++)
+		[selectedConnection sendSeek: [selectedSeeks objectAtIndex: i]];
+}
+
+- (IBAction) cancel: (id) sender
+{
+	[[self window] close];
 }
 
 - (void) show: (id) sender

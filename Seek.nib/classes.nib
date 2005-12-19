@@ -2,10 +2,13 @@
     IBClasses = (
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {seek = id; show = id; }; 
+            ACTIONS = {cancel = id; seek = id; show = id; }; 
             CLASS = SeekControl; 
             LANGUAGE = ObjC; 
-            OUTLETS = {arrayController = NSArrayController; }; 
+            OUTLETS = {
+                seekArrayController = NSArrayController; 
+                serverArrayController = NSArrayController; 
+            }; 
             SUPERCLASS = NSWindowController; 
         }
     ); 
