@@ -20,23 +20,28 @@
 		[g setResult: result reason: reason];
 		[activeGames removeObjectForKey: game];
 		[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]]; 
-		[serverMainWindow setGameList: activeGames];
+		[self setGameLists];
 		[gSounds gameEnd: [g gameRelationship]];
 	}
 }
 
 - (void) serverIllegalMove: (NSString *) why
 {
-	[serverMainWindow showMessage: why];
+	NSEnumerator *enumerator = [serverWindows objectEnumerator];
+	GameWindowController *gwc;
+   
+	while (gwc = [enumerator nextObject])
+		[gwc showMessage: why];
 }
 
 - (void) processServerOutput
 {
 	NSInvocation *invoc;
 	
-	if (serverMainWindow == nil) {
-		serverMainWindow = [[GameWindowController alloc] initWithServerConnection: self];
-		[serverMainWindow showWindow: self];
+	if ([serverWindows count] == 0) {
+		GameWindowController *gwc = [[[GameWindowController alloc] initWithServerConnection: self] autorelease];
+		[serverWindows addObject: gwc];
+		[gwc showWindow: self];
 	}
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
@@ -45,8 +50,11 @@
 		if (g == nil) {
 			g = [[Game alloc] initWithStyle12: a];
 			[activeGames setObject: g forKey: n];
-			[serverMainWindow setGameList: activeGames];
-			[serverMainWindow setActiveGame: g];
+			[self setGameLists];
+			NSEnumerator *enumerator = [serverWindows objectEnumerator];
+			GameWindowController *gwc;
+			while (gwc = [enumerator nextObject])
+				[gwc setActiveGame: g];
 			[gSounds newGame: [g gameRelationship]];
 			[g newMove: [ChessMove moveFromStyle12: a]];
 			[g setDefaultBoardOrientation];
@@ -55,7 +63,7 @@
 			[gSounds move: [m gameRelationship]];
 			[g newMove: m];
 		}
-		[serverMainWindow updateGame: g];
+		[self updateGame: g];
 	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
 		int num = 0;
 		sscanf(lineBuf + 3, " %d", &num);
@@ -139,8 +147,13 @@
 //    } else if (handlePrimaryGameChanged(line)) {
 */
 	} else {
-		[serverMainWindow addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
-		[serverMainWindow addToServerOutput:@"\n"];
+		NSEnumerator *enumerator = [serverWindows objectEnumerator];
+		GameWindowController *gwc;
+   
+		while (gwc = [enumerator nextObject]) {
+			[gwc addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
+			[gwc addToServerOutput:@"\n"];
+		}
 	}
 }
 
@@ -255,6 +268,7 @@
 	if (self != nil) {
 		activeGames = [[NSMutableDictionary alloc] init];
 		seeks = [[NSMutableDictionary dictionaryWithCapacity:500] retain];
+		serverWindows = [[NSMutableArray arrayWithCapacity: 20] retain];
 		lastChar = 0;
 	}
 	return self;
@@ -269,9 +283,9 @@
 	[serverOS release];
 	[seeks release];
 	[currentServer release];
-	[serverMainWindow release];
 	[errorHandler release];
 	[patternMatcher release];
+	[serverWindows release];
 	[super dealloc];
 }
 
@@ -292,7 +306,7 @@
 	Seek *s = [Seek seekFromSeekInfo: seekInfo];
 	if (s != nil) {
 		[seeks setObject: s forKey: [NSNumber numberWithInt: num]];
-		[serverMainWindow seekTableNeedsDisplay];
+		[self redisplaySeekTables];
 	} else
 		NSLog(@"Error in Seek request");
 }
@@ -300,13 +314,13 @@
 - (void) removeSeekFromServer: (int) num
 {
 	[seeks removeObjectForKey: [NSNumber numberWithInt: num]];
-	[serverMainWindow seekTableNeedsDisplay];
+	[self redisplaySeekTables];
 }
 
 - (void) removeAllSeeks
 {
 	[seeks removeAllObjects];
-	[serverMainWindow seekTableNeedsDisplay];	
+	[self redisplaySeekTables];	
 }
 
 - (int) numSeeks
@@ -375,6 +389,45 @@
 	const char *cs = [s UTF8String];
 	[serverOS write: (unsigned char *) cs maxLength: strlen(cs)];
 	[serverOS write: (unsigned char *) "\n" maxLength: 1];	
+}
+
+- (void) redisplaySeekTables
+{
+	NSEnumerator *enumerator = [serverWindows objectEnumerator];
+	GameWindowController *gwc;
+   
+	while (gwc = [enumerator nextObject])
+		[gwc seekTableNeedsDisplay];
+}
+
+- (void) setGameLists
+{
+	NSEnumerator *enumerator = [serverWindows objectEnumerator];
+	GameWindowController *gwc;
+   
+	while (gwc = [enumerator nextObject])
+		[gwc setGameList: activeGames];
+}
+
+- (void) updateGame: (Game *) g
+{
+	NSEnumerator *enumerator = [serverWindows objectEnumerator];
+	GameWindowController *gwc;
+   
+	while (gwc = [enumerator nextObject])
+		[gwc updateGame: g];
+}
+
+- (void) newPlayWindow
+{
+	GameWindowController *gwc = [[[GameWindowController alloc] initWithServerConnection: self] autorelease];
+	[serverWindows addObject: gwc];
+	[gwc showWindow: self];
+	[gwc setGameList: activeGames];
+	NSEnumerator *enumerator = [activeGames objectEnumerator];
+	Game *g;  
+	while (g = [enumerator nextObject])
+		[gwc updateGame: g];
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @interface ChessServerConnection : NSObject {
 	id <ChessServerErrorHandler> errorHandler;
-	GameWindowController *serverMainWindow;
+	NSMutableArray *serverWindows;
 	NSInputStream *serverIS;
 	NSOutputStream *serverOS;
 	char lineBuf[4096];
@@ -42,5 +42,9 @@
 - (NSString *) description;
 - (void) sendSeek: (Seek *) s;
 - (void) sendToServer: (NSString *) s;
+- (void) redisplaySeekTables;
+- (void) setGameLists;
+- (void) updateGame: (Game *) g;
+- (void) newPlayWindow;
 
 @end

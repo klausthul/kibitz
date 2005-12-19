@@ -93,8 +93,19 @@ NSString *toolbarTooltips[] = {
 	if (self != nil) {
 		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
 		serverConnection = [sc retain];
+		[self updateWindowTitle];
 	}
 	return self;
+}
+
+- (void) updateWindowTitle
+{
+	NSString *title;
+	if (activeGame != nil)
+		title = [NSString stringWithFormat: @"%@ - %@", [serverConnection description], [activeGame gameInfoString]];
+	else
+		title = [NSString stringWithFormat: @"%@", [serverConnection description]];
+	[[self window] setTitle: title];
 }
 
 - (void) addToServerOutput: (NSString *) s
@@ -147,6 +158,7 @@ NSString *toolbarTooltips[] = {
 		 : @""];
 	}
 	[messageField setStringValue: nil2Empty(message)];
+	[self updateWindowTitle];
 }
 
 - (void) dealloc
@@ -368,6 +380,11 @@ NSString *toolbarTooltips[] = {
 - (IBAction) exportGame: (id) sender;
 {
 	NSLog(@"exportGame");
+}
+
+- (IBAction) newPlayWindow: (id) sender
+{
+	[serverConnection newPlayWindow];
 }
 
 - (BOOL) splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview
