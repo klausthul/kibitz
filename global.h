@@ -69,6 +69,14 @@ enum GameRelationship {
 	ISOLATED_POSITION = -3
 };
 
+enum PlayStyle {
+	STYLE_NORMAL, STYLE_CRAZYHOUSE, STYLE_SUICIDE, STYLE_WILD
+};
+
+enum WantsColor {
+	WANTS_BOTH = 0, WANTS_WHITE = 1, WANTS_BLACK = 2
+};
+
 @protocol ChessServerErrorHandler <NSObject>
 - (void) handleStreamError: (NSError *) theError;
 @end

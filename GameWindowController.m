@@ -317,10 +317,10 @@ NSString *toolbarTooltips[] = {
 	NSLog(@"buttonAbort");
 }
 
-- (IBAction) newSeek: (id) sender
-{
-	NSLog(@"newSeek");
-}
+//- (IBAction) newSeek: (id) sender
+//{
+//	NSLog(@"newSeek");
+//}
 
 - (IBAction) match: (id) sender
 {
@@ -559,4 +559,5 @@ NSString *toolbarTooltips[] = {
 	size = [sender frameRectForContentRect: (NSRect) { {0, 0}, size }].size;
 	return size;
 }
+
 @end

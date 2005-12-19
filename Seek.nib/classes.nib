@@ -1,4 +1,25 @@
 {
-    IBClasses = ({CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }); 
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {addSeek = id; deleteSeek = id; seek = id; unseek = id; unseekAll = id; }; 
+            CLASS = SeekControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                color = NSMatrix; 
+                manual = NSButton; 
+                rated = NSButton; 
+                ratingFrom = NSTextField; 
+                ratingTo = NSTextField; 
+                seekList = NSTableView; 
+                timeIncrement = NSTextField; 
+                timeStart = NSTextField; 
+                useFormula = NSButton; 
+                variant = NSMatrix; 
+                wild = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
     IBVersion = 1; 
 }

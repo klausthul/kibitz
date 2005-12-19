@@ -139,8 +139,8 @@
 		CED82ABA0955BFC60073F9CD /* PlayView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PlayView.m; sourceTree = "<group>"; };
 		CED82ABB0955BFC60073F9CD /* Seek.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Seek.h; sourceTree = "<group>"; };
 		CED82ABC0955BFC60073F9CD /* Seek.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Seek.m; sourceTree = "<group>"; };
-		CED82AC00955BFC60073F9CD /* SeekControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = file; path = SeekControl.m; sourceTree = "<group>"; };
-		CED82B630955C0FA0073F9CD /* SeekControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = SeekControl.h; sourceTree = "<group>"; };
+		CED82AC00955BFC60073F9CD /* SeekControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SeekControl.m; sourceTree = "<group>"; };
+		CED82B630955C0FA0073F9CD /* SeekControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeekControl.h; sourceTree = "<group>"; };
 		CED82B810955C2D60073F9CD /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 		CED82B820955C2D60073F9CD /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */

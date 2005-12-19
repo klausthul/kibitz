@@ -50,7 +50,7 @@
 - (IBAction) resign: (id) sender;
 - (IBAction) adjurn: (id) sender;
 - (IBAction) abort: (id) sender;
-- (IBAction) newSeek: (id) sender;
+// - (IBAction) newSeek: (id) sender;
 - (IBAction) match: (id) sender;
 - (IBAction) accept: (id) sender;
 - (IBAction) decline: (id) sender;

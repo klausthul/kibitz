@@ -11,12 +11,14 @@
 	int timeStart;
 	int timeIncrement;
 	bool rated;
-	char wantsColor;
+	enum WantsColor wantsColor;
 	NSString *typeOfPlay;
 	bool automatic;
 	bool formulaChecked;
 	int ratingRangeLow;
 	int ratingRangeHigh;
+	enum PlayStyle playStyle;
+	NSString *wildStyle;
 }
 
 + (Seek *) seekFromSeekInfo: (const char *) seekInfo;
@@ -24,6 +26,9 @@
 - (int) ratingValue;
 - (NSString *) nameFrom;
 - (NSString *) typeOfPlay;
+- (void) setWildStyle: (NSString *) style;
+- (NSString *) wildStyle;
+- (NSString *) seekDescriptionLine;
 
 @end
 

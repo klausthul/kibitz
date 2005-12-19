@@ -3,6 +3,10 @@
 
 #import "Seek.h"
 
+NSString *StyleNames[] = {
+	@"Normal", @"Crazyhouse", @"Suicide", @"Wild"
+};
+
 @implementation Seek
 
 + (Seek *) seekFromSeekInfo: (const char *) seekInfo
@@ -55,7 +59,17 @@
 				}
 				break;
 			  case 'c':
-				s->wantsColor = *value;
+				switch (tolower(*value)) {
+				  case '?':
+				    s->wantsColor = WANTS_BOTH;
+					break;
+				  case 'b':
+				    s->wantsColor = WANTS_BLACK;
+					break;
+				  case 'w':
+				    s->wantsColor = WANTS_WHITE;
+					break;
+				}
 				break;
 			  case 'a':
 				switch (*value) {
@@ -104,6 +118,40 @@
 	return nil;
 }
 
+- (Seek *) init
+{
+	if ((self = [super init]) != nil) {
+		timeStart = 5;
+		timeIncrement = 0;
+		rated = YES;
+		wantsColor = WANTS_BOTH;
+		playStyle = STYLE_NORMAL;
+		automatic = YES;
+		ratingRangeLow = 0;
+		ratingRangeHigh = 9999;
+		formulaChecked = NO;
+	}
+	return self;
+}
+
++ (Seek *) defaultSeek
+{
+	Seek *s = [[[Seek alloc] init] autorelease];
+	if (s != nil) {
+		s->timeStart = 5;
+		s->timeIncrement = 0;
+		s->rated = YES;
+		s->wantsColor = WANTS_BOTH;
+		s->playStyle = STYLE_NORMAL;
+		s->automatic = YES;
+		s->ratingRangeLow = 0;
+		s->ratingRangeHigh = 9999;
+		s->formulaChecked = NO;
+	}
+	return s;
+}
+
+
 - (void) dealloc
 {
 	[nameFrom release];
@@ -124,6 +172,36 @@
 - (NSString *) typeOfPlay
 {
 	return [[typeOfPlay retain] autorelease];
+}
+
+- (void) setWildStyle: (NSString *) style
+{
+	[wildStyle release];
+	wildStyle = [style copy];
+}
+
+- (NSString *) wildStyle
+{
+	return [[wildStyle retain] autorelease];
+}
+
+- (BOOL) isWild
+{
+	return playStyle == STYLE_WILD;
+}
+
+- (NSString *) seekDescriptionLine
+{
+	printf("Hallo\n");
+	NSString *style;
+	if (playStyle == STYLE_WILD)
+		style = [NSString stringWithFormat: @"Wild %@", wildStyle];
+	else
+		style = StyleNames[playStyle];
+	return [NSString stringWithFormat: @"%@: %d+%d, %s, %s (%d-%d%s)", style,
+	 timeStart, timeIncrement,
+	 (rated) ? "rated" : "unrated", (automatic) ? "automatic" : "manual",
+	 ratingRangeLow, ratingRangeHigh, (formulaChecked) ? ", formula" : ""];
 }
 
 @end

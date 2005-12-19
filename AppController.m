@@ -20,7 +20,6 @@
 
 - (void) dealloc
 {
-	[chessServerConnection release];
 	[chessServerListControl release];
 	[super dealloc];
 }
@@ -30,6 +29,13 @@
 	if (chessServerListControl == nil)
 		chessServerListControl = [[ChessServerListControl alloc] init];
 	[chessServerListControl show: sender];
+}
+
+- (IBAction) newSeek: (id) sender
+{
+	if (seekControl == nil)
+		seekControl = [[SeekControl alloc] init];
+	[seekControl show: sender];
 }
 
 @end
