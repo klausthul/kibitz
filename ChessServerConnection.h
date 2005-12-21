@@ -21,14 +21,15 @@
 	NSMutableDictionary *activeGames;
 	int storedGameCounter;
 	PatternMatching *patternMatcher;
+	NSMutableArray *outputLines;
+	bool eatEmptyLine;
 }
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason;
 - (void) serverIllegalMove: (NSString *) why;
 - (void) processServerOutput;
 - (void) stream:(NSStream *)stream handleEvent:(NSStreamEvent)event;
-- (id) initWithChessServer: (ChessServer *) server;
-- (id) init;
+- (ChessServerConnection *) initWithChessServer: (ChessServer *) server;
 - (void) dealloc;
 - (void) setErrorHandler: (id) eh;
 - (void) write: (unsigned char *) data maxLength: (int) i;
@@ -46,5 +47,6 @@
 - (void) setGameLists;
 - (void) updateGame: (Game *) g;
 - (void) newPlayWindow;
+- (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i;
 
 @end

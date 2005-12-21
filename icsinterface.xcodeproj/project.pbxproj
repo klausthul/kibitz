@@ -51,6 +51,9 @@
 		CED82B080955BFC60073F9CD /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82ABC0955BFC60073F9CD /* Seek.m */; };
 		CED82B0C0955BFC60073F9CD /* SeekControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82AC00955BFC60073F9CD /* SeekControl.m */; };
 		CED82B830955C2D60073F9CD /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82B820955C2D60073F9CD /* Sound.m */; };
+		CED831BF09578FEE0073F9CD /* ChatWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED831BE09578FEE0073F9CD /* ChatWindowController.m */; };
+		CED83248095792870073F9CD /* OutputLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CED83247095792860073F9CD /* OutputLine.m */; };
+		CED8329409579A130073F9CD /* ChatWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CED8329309579A130073F9CD /* ChatWindow.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -143,6 +146,11 @@
 		CED82B630955C0FA0073F9CD /* SeekControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeekControl.h; sourceTree = "<group>"; };
 		CED82B810955C2D60073F9CD /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 		CED82B820955C2D60073F9CD /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
+		CED831BD09578FEE0073F9CD /* ChatWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatWindowController.h; sourceTree = "<group>"; };
+		CED831BE09578FEE0073F9CD /* ChatWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatWindowController.m; sourceTree = "<group>"; };
+		CED83246095792860073F9CD /* OutputLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputLine.h; sourceTree = "<group>"; };
+		CED83247095792860073F9CD /* OutputLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputLine.m; sourceTree = "<group>"; };
+		CED8329309579A130073F9CD /* ChatWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ChatWindow.nib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +242,7 @@
 				CED33C00091E36EF005B773B /* wq.tiff */,
 				CED33C01091E36EF005B773B /* wr.tiff */,
 				CE2951E20955B024006C8D90 /* Seek.nib */,
+				CED8329309579A130073F9CD /* ChatWindow.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -250,6 +259,10 @@
 		CE2952740955B945006C8D90 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CED83246095792860073F9CD /* OutputLine.h */,
+				CED83247095792860073F9CD /* OutputLine.m */,
+				CED831BD09578FEE0073F9CD /* ChatWindowController.h */,
+				CED831BE09578FEE0073F9CD /* ChatWindowController.m */,
 				CED82A6D0955BFC50073F9CD /* AppController.h */,
 				CED82A6E0955BFC50073F9CD /* AppController.m */,
 				CED82A6F0955BFC50073F9CD /* Board.h */,
@@ -366,6 +379,7 @@
 				CE2951CD09559866006C8D90 /* SoundGameEnd.aiff in Resources */,
 				CE2951CE09559866006C8D90 /* SoundMessage.aiff in Resources */,
 				CE2951E30955B024006C8D90 /* Seek.nib in Resources */,
+				CED8329409579A130073F9CD /* ChatWindow.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +407,8 @@
 				CED82B080955BFC60073F9CD /* Seek.m in Sources */,
 				CED82B0C0955BFC60073F9CD /* SeekControl.m in Sources */,
 				CED82B830955C2D60073F9CD /* Sound.m in Sources */,
+				CED831BF09578FEE0073F9CD /* ChatWindowController.m in Sources */,
+				CED83248095792870073F9CD /* OutputLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

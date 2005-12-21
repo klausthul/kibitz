@@ -77,6 +77,10 @@ enum WantsColor {
 	WANTS_BOTH = 0, WANTS_WHITE = 1, WANTS_BLACK = 2
 };
 
+enum OutputLineType {
+	OTHER = 0
+};
+
 @protocol ChessServerErrorHandler <NSObject>
 - (void) handleStreamError: (NSError *) theError;
 @end

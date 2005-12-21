@@ -6,6 +6,7 @@
 #import "GameWindowController.h"
 #import "PatternMatching.h"
 #import "Sound.h"
+#import "OutputLine.h"
 
 #define USERNAME_REGEX "[A-z]{3,17}"
 #define TITLES_REGEX "\\([A-Z\\*\\(\\)]*\\)"
@@ -37,12 +38,6 @@
 - (void) processServerOutput
 {
 	NSInvocation *invoc;
-	
-	if ([serverWindows count] == 0) {
-		GameWindowController *gwc = [[[GameWindowController alloc] initWithServerConnection: self] autorelease];
-		[serverWindows addObject: gwc];
-		[gwc showWindow: self];
-	}
 	if (strncmp(lineBuf,"<12>", 4) == 0) {
 		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
 		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 16] intValue]];
@@ -79,80 +74,19 @@
 		}
 	} else if (strncmp(lineBuf,"<sc>", 4) == 0) {
 		[self removeAllSeeks];
-	} else if (strncmp(lineBuf,"login:", 6) == 0) {
-		if (currentServer != nil && sendNamePassword == YES) {
-			const char *s;
-			sendNamePassword = NO;
-			if ([currentServer userName] && [currentServer userPassword]) {
-				s = [[currentServer userName] UTF8String];
-				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
-				[serverOS write:(unsigned const char *) "\n" maxLength:1];
-				s = [[currentServer userPassword] UTF8String];
-				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
-				[serverOS write:(unsigned const char *) "\n" maxLength:1];
-			}
-		}
-	} else if (strncmp(lineBuf,"fics%", 5) == 0) {
-		if (sendInit) {
-			const char *s;
-			sendInit = NO;
-			if (s = [[currentServer initCommands] UTF8String]) {
-				[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
-				[serverOS write:(unsigned const char *) "\n" maxLength:1];
-			}
-		}
-//	} else if (handleGameInfo(line)) {
-//	} else if (handleDeltaBoard(line)) {
-//	} else if (handleBughouseHoldings(line)) {
 	} else if (invoc = [patternMatcher parseLine: lineBuf toTarget: self]) {
 		[invoc invoke];
-	/* (STRBEGINS(lineBuf, "{Game ")) {
-		
-		NSLog(@"Game end\n");
-		NSArray *a = matchPattern(serverOutput, PATTERN_GAME_END);
-		NSNumber *gameNum = [NSNumber numberWithInt:[[a objectAtIndex: 1] intValue]];
-		Game *g = [activeGames objectForKey: gameNum]; 
-		NSLog(@"%@\n", a);
-		if (g != nil) {
-			[g setResult: [a objectAtIndex: 5] reason: [a objectAtIndex: 4]];
-			[activeGames removeObjectForKey: gameNum];
-			[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]]; 
-			[serverMainWindow setGameList: activeGames];
-		}
-//	} else if (handleStoppedObserving(line)) {
-//	} else if (handleStoppedExamining(line)) {
-//	} else if (handleEnteredBSetupMode(line)) {
-//	} else if (handleExitedBSetupMode(line)) {
-//	} else if (handleIllegalMove(line)) {
-//	} else if (handleChannelTell(line)) {
-//    } else if (handleIvarStateChanged(line)) {
-//	} else if (handlePersonalTell(line)) {
-//	} else if (handleSayTell(line)) {
-//	} else if (handlePTell(line)) {
-//	} else if (handleShout(line)) {
-//	} else if (handleIShout(line)) {
-//	} else if (handleTShout(line)) {
-//	} else if (handleCShout(line)) {
-//	} else if (handleAnnouncement(line)) {
-//	} else if (handleKibitz(line)) {
-//	} else if (handleWhisper(line)) {
-//	} else if (handleQTell(line)) {
-//	} else if (handleOffer(line)) {
-//    } else if (handleOfferRemoved(line)) {
-//    } else if (handlePlayerOffered(line)) {                  
-//    } else if (handlePlayerDeclined(line)) { 
-//    } else if (handlePlayerWithdrew(line)) {
-//    } else if (handlePlayerCounteredTakebackOffer(line)) {             
-//    } else if (handleSimulCurrentBoardChanged(line)) {
-//    } else if (handlePrimaryGameChanged(line)) {
-*/
 	} else {
+		static int n = 0;
 		NSEnumerator *enumerator = [serverWindows objectEnumerator];
 		GameWindowController *gwc;
-   
-		while (gwc = [enumerator nextObject]) {
-			[gwc addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
-			[gwc addToServerOutput:@"\n"];
+		NSString *s = [NSString stringWithUTF8String:(char *) lineBuf];
+		if (s != nil) {
+			while (gwc = [enumerator nextObject]) {
+				[gwc addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
+				[gwc addToServerOutput:@"\n"];
+			}
+			[self addOutputLine: [NSString stringWithUTF8String:(char *) lineBuf] type: OTHER info: 0];
 		}
 	}
 }
@@ -171,8 +105,9 @@
 				switch (c = buf[i]) {
 				  case 10: 
 					lineBuf[lastChar] = 0;
+					if ((lastChar > 0) || !(eatEmptyLine))
+						[self processServerOutput];
 					lastChar = 0;
-					[self processServerOutput];
 					break;
 				  case 13:
 					break;
@@ -181,13 +116,40 @@
 					break;
 				}
 			}
-			if (len < 2048) { // !!! dirty code
-				if (lastChar > 0) {
-					lineBuf[lastChar] = 0;
-					lastChar = 0;
-					[self processServerOutput];
-				}
+			if (len < 2048) {
+				lineBuf[lastChar] = 0;
 				break;
+			}
+		}
+		eatEmptyLine = NO;
+		if (lastChar > 0) {
+			if (strncmp(lineBuf,"fics%", 5) == 0) {
+				if (sendInit) {
+					const char *s;
+					sendInit = NO;
+					if (s = [[currentServer initCommands] UTF8String]) {
+						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+						[serverOS write:(unsigned const char *) "\n" maxLength:1];
+					}
+				} else
+					eatEmptyLine = YES;
+				lastChar = 0;
+				lineBuf[0] = 0;
+			} else if (strncmp(lineBuf,"login:", 6) == 0) {
+				if (currentServer != nil && sendNamePassword == YES) {
+					const char *s;
+					sendNamePassword = NO;
+					if ([currentServer userName] && [currentServer userPassword]) {
+						s = [[currentServer userName] UTF8String];
+						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+						[serverOS write:(unsigned const char *) "\n" maxLength:1];
+						s = [[currentServer userPassword] UTF8String];
+						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+						[serverOS write:(unsigned const char *) "\n" maxLength:1];
+					}
+				}
+				lastChar = 0;
+				lineBuf[0] = 0;				
 			}
 		}
 		break;
@@ -199,7 +161,7 @@
 	}
 }
 
-- (id) initWithChessServer: (ChessServer *) server {
+- (ChessServerConnection *) initWithChessServer: (ChessServer *) server {
 	struct ServerPattern serverPatterns[] = {
 		{ "^\\{Game ([0-9]+) \\((" USERNAME_REGEX ") vs\\. (" USERNAME_REGEX ")\\) ([^\\}]+)\\} (.*)", @selector(serverGameEnd:result:reason:), "1I54" },
 		{ "^Illegal move \\((.*)\\)\\.(.*)", @selector(serverIllegalMove:), "0" },
@@ -240,8 +202,7 @@
 	PRIMARY_GAME_CHANGED_REGEX = "^Your primary game is now game (\\d+)\\.$"
 */
 
-	self = [self init];
-	if (self != nil) {
+	if ((self = [super init]) != nil) {
 		[self retain];
 		currentServer = [server retain];
 		NSHost *host = [NSHost hostWithName: [server serverAddress]];
@@ -258,18 +219,14 @@
 		sendInit = YES;
 		[self release];
 		patternMatcher = [[PatternMatching alloc] initWithPatterns: serverPatterns];
-	}
-	return self;
-}
-
-- (id) init
-{
-	self = [super init];
-	if (self != nil) {
 		activeGames = [[NSMutableDictionary alloc] init];
 		seeks = [[NSMutableDictionary dictionaryWithCapacity:500] retain];
 		serverWindows = [[NSMutableArray arrayWithCapacity: 20] retain];
 		lastChar = 0;
+		outputLines = [[NSMutableArray arrayWithCapacity: 1000] retain];
+		GameWindowController *gwc = [[[GameWindowController alloc] initWithServerConnection: self] autorelease];
+		[serverWindows addObject: gwc];
+		[gwc showWindow: self];
 	}
 	return self;
 }
@@ -286,6 +243,7 @@
 	[errorHandler release];
 	[patternMatcher release];
 	[serverWindows release];
+	[outputLines release];
 	[super dealloc];
 }
 
@@ -428,6 +386,13 @@
 	Game *g;  
 	while (g = [enumerator nextObject])
 		[gwc updateGame: g];
+}
+
+- (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i
+{
+	[self willChangeValueForKey: @"outputLines"];
+	[outputLines addObject: [OutputLine newOutputLine: tx type: ty info: i]];
+	[self didChangeValueForKey: @"outputLines"];
 }
 
 @end

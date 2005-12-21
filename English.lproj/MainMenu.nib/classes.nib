@@ -1,12 +1,17 @@
 {
     IBClasses = (
         {
-            ACTIONS = {selectServer = id; }; 
+            ACTIONS = {newSeek = id; selectServer = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = ChatWindowController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSWindowController; 
+        }, 
         {CLASS = ChessMove; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessMoveStore; LANGUAGE = ObjC; SUPERCLASS = ChessMove; }, 
         {CLASS = ChessServer; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
@@ -59,6 +64,7 @@
                 hideMoves = id; 
                 logout = id; 
                 match = id; 
+                newChatWindow = id; 
                 newPlayWindow = id; 
                 newSeek = id; 
                 reconnect = id; 
@@ -85,7 +91,8 @@
                 hideMoves = id; 
                 logout = id; 
                 match = id; 
-                newSeek = id; 
+                newChatWindow = id; 
+                newPlayWindow = id; 
                 reconnect = id; 
                 resign = id; 
                 selectGame = id; 
@@ -122,9 +129,17 @@
             SUPERCLASS = NSWindowController; 
         }, 
         {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {CLASS = OutputLine; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = PatternMatching; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = PlayView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
         {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {cancel = id; save = id; seek = id; show = id; }; 
+            CLASS = SeekControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {seekArrayController = NSArrayController; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
         {
             CLASS = SeekGraph; 
             LANGUAGE = ObjC; 

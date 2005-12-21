@@ -2,6 +2,7 @@
 // $Id$
 
 #import "GameWindowController.h"
+#import "ChatWindowController.h"
 
 enum ToolbarItems {
 	ToolbarTakeback,
@@ -89,8 +90,7 @@ NSString *toolbarTooltips[] = {
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc
 {
-	self = [super initWithWindowNibName: @"GameWindow"];
-	if (self != nil) {
+	if ((self = [super initWithWindowNibName: @"GameWindow"]) != nil) {
 		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
 		serverConnection = [sc retain];
 		[self updateWindowTitle];
@@ -385,6 +385,11 @@ NSString *toolbarTooltips[] = {
 - (IBAction) newPlayWindow: (id) sender
 {
 	[serverConnection newPlayWindow];
+}
+
+- (IBAction) newChatWindow: (id) sender
+{
+	[[[ChatWindowController alloc] initWithServerConnection: serverConnection] showWindow: sender];
 }
 
 - (BOOL) splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview

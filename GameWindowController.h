@@ -51,7 +51,6 @@
 - (IBAction) resign: (id) sender;
 - (IBAction) adjurn: (id) sender;
 - (IBAction) abort: (id) sender;
-// - (IBAction) newSeek: (id) sender;
 - (IBAction) match: (id) sender;
 - (IBAction) accept: (id) sender;
 - (IBAction) decline: (id) sender;
@@ -62,6 +61,7 @@
 - (IBAction) reconnect: (id) sender;
 - (IBAction) exportGame: (id) sender;
 - (IBAction) newPlayWindow: (id) sender;
+- (IBAction) newChatWindow: (id) sender;
 - (BOOL)splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview;
 - (float)splitView: (NSSplitView *) sender constrainMaxCoordinate: (float) proposedMax ofSubviewAt:(int)offset;
 - (float)splitView: (NSSplitView *) sender constrainMinCoordinate: (float) proposedMin ofSubviewAt:(int)offset;
