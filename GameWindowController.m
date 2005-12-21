@@ -144,18 +144,19 @@ NSString *toolbarTooltips[] = {
 		[gameType setStringValue: @""];	
 	} else {
 		if ([activeGame sideShownOnBottom] == WHITE) {
-			[upperName setStringValue: nil2Empty([activeGame blackName])];
-			[lowerName setStringValue: nil2Empty([activeGame whiteName])];
+			[upperName setStringValue: nil2Empty([activeGame blackNameRating])];
+			[lowerName setStringValue: nil2Empty([activeGame whiteNameRating])];
 		} else {
-			[lowerName setStringValue: nil2Empty([activeGame blackName])];
-			[upperName setStringValue: nil2Empty([activeGame whiteName])];
+			[lowerName setStringValue: nil2Empty([activeGame blackNameRating])];
+			[upperName setStringValue: nil2Empty([activeGame whiteNameRating])];
 		}
 		[result setStringValue: nil2Empty([activeGame result])];
 		[resultReason setStringValue: nil2Empty([activeGame reason])];
-		[gameType setStringValue: 
-		 ([activeGame initialTime] >= 0) 
-		 ? nil2Empty([NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n", [activeGame initialTime], [activeGame incrementTime]])
-		 : @""];
+		if ([activeGame initialTime] >= 0) {
+			NSString *type = ([activeGame type]) ? [NSString stringWithFormat: @"%s %@", ([activeGame rated]) ? "rated" : "unrated", [activeGame type]] : @"";
+			[gameType setStringValue: [NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n%@", [activeGame initialTime], [activeGame incrementTime], type]];
+		} else
+			[gameType setStringValue: @""];
 	}
 	[messageField setStringValue: nil2Empty(message)];
 	[self updateWindowTitle];

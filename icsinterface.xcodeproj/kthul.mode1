@@ -217,6 +217,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -270,13 +272,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
+									<integer>22</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 5}, {244, 706}}</string>
+							<string>{{0, 99}, {244, 706}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -323,7 +325,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE5A48A10959034200A1D998</string>
+										<string>CE5A495C09592DA800A1D998</string>
 										<key>history</key>
 										<array>
 											<string>CED83270095797D70073F9CD</string>
@@ -377,7 +379,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Game.m</string>
+								<string>Game.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -385,23 +387,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Game.m</string>
+										<string>Game.h</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE5A48A50959034200A1D998</string>
+										<string>CE5A496109592DA800A1D998</string>
 										<key>history</key>
 										<array>
-											<string>CED833440957BD2A0073F9CD</string>
-											<string>CED833450957BD2A0073F9CD</string>
-											<string>CED8339E0957D23F0073F9CD</string>
 											<string>CE5A486B0958FA1C00A1D998</string>
 											<string>CE5A486D0958FA1C00A1D998</string>
 											<string>CE5A487E0958FDFD00A1D998</string>
 											<string>CE5A487F0958FDFD00A1D998</string>
-											<string>CE5A48930959028100A1D998</string>
-											<string>CE5A48A20959034200A1D998</string>
-											<string>CE5A48A30959034200A1D998</string>
+											<string>CE5A48C109591A7D00A1D998</string>
+											<string>CE5A48D409591EA700A1D998</string>
+											<string>CE5A48D609591EA700A1D998</string>
+											<string>CE5A49330959279100A1D998</string>
+											<string>CE5A495D09592DA800A1D998</string>
+											<string>CE5A495E09592DA800A1D998</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -420,6 +422,21 @@
 											<string>CE5A48820958FDFD00A1D998</string>
 											<string>CE5A48950959028100A1D998</string>
 											<string>CE5A48A40959034200A1D998</string>
+											<string>CE5A48B00959040800A1D998</string>
+											<string>CE5A48B10959040800A1D998</string>
+											<string>CE5A48C409591A7D00A1D998</string>
+											<string>CE5A48C509591A7D00A1D998</string>
+											<string>CE5A48C609591A7D00A1D998</string>
+											<string>CE5A48C709591A7D00A1D998</string>
+											<string>CE5A48C809591A7D00A1D998</string>
+											<string>CE5A48C909591A7D00A1D998</string>
+											<string>CE5A48D709591EA700A1D998</string>
+											<string>CE5A48D809591EA700A1D998</string>
+											<string>CE5A48D909591EA700A1D998</string>
+											<string>CE5A4907095920D000A1D998</string>
+											<string>CE5A49350959279100A1D998</string>
+											<string>CE5A495F09592DA800A1D998</string>
+											<string>CE5A496009592DA800A1D998</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -441,14 +458,12 @@
 							<string>355pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ChessServerConnection.m</string>
+								<string>GameWindowController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -456,28 +471,27 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ChessServerConnection.m</string>
+										<string>GameWindowController.m</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE5A48A80959034200A1D998</string>
+										<string>CE5A496709592DA800A1D998</string>
 										<key>history</key>
 										<array>
-											<string>CED833440957BD2A0073F9CD</string>
-											<string>CED833450957BD2A0073F9CD</string>
 											<string>CE5A486B0958FA1C00A1D998</string>
 											<string>CE5A486D0958FA1C00A1D998</string>
 											<string>CE5A487E0958FDFD00A1D998</string>
 											<string>CE5A487F0958FDFD00A1D998</string>
 											<string>CE5A48980959028100A1D998</string>
-											<string>CE5A48990959028100A1D998</string>
-											<string>CE5A48A60959034200A1D998</string>
-											<string>CE5A48970959028100A1D998</string>
+											<string>CE5A48DB09591EA700A1D998</string>
+											<string>CE5A48DD09591EA700A1D998</string>
+											<string>CE5A495309592C8200A1D998</string>
+											<string>CE5A496209592DA800A1D998</string>
+											<string>CE5A496309592DA800A1D998</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>CED83191095700310073F9CD</string>
-											<string>CED831E8095791960073F9CD</string>
 											<string>CED83276095797D70073F9CD</string>
 											<string>CED833030957A4AB0073F9CD</string>
 											<string>CED833040957A4AB0073F9CD</string>
@@ -489,6 +503,21 @@
 											<string>CE5A489D0959028100A1D998</string>
 											<string>CE5A489E0959028100A1D998</string>
 											<string>CE5A48A70959034200A1D998</string>
+											<string>CE5A48B50959040800A1D998</string>
+											<string>CE5A48DF09591EA700A1D998</string>
+											<string>CE5A48E009591EA700A1D998</string>
+											<string>CE5A48E109591EA700A1D998</string>
+											<string>CE5A48E209591EA700A1D998</string>
+											<string>CE5A48E309591EA700A1D998</string>
+											<string>CE5A48E409591EA700A1D998</string>
+											<string>CE5A48E509591EA700A1D998</string>
+											<string>CE5A48F30959203D00A1D998</string>
+											<string>CE5A48F40959203D00A1D998</string>
+											<string>CE5A494609592B0500A1D998</string>
+											<string>CE5A495409592C8200A1D998</string>
+											<string>CE5A496409592DA800A1D998</string>
+											<string>CE5A496509592DA800A1D998</string>
+											<string>CE5A496609592DA800A1D998</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -686,9 +715,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>CE5A48FF0959203D00A1D998</string>
+		<string>CE5A49000959203D00A1D998</string>
+		<string>CE3AC1580901EC4D00DD3768</string>
+		<string>CE5A48FC0959203D00A1D998</string>
 		<string>CE3AC19D0901FF4300DD3768</string>
 		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 113 1440 765 0 0 1440 878 </string>
@@ -714,7 +746,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ChessServerConnection.m</string>
+								<string>ChatWindowController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -781,7 +813,7 @@
 			<key>WindowToolGUID</key>
 			<string>CE3AC19D0901FF4300DD3768</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -812,8 +844,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {662, 289}}</string>
-											<string>{{662, 0}, {778, 289}}</string>
+											<string>{{0, 0}, {633, 284}}</string>
+											<string>{{633, 0}, {807, 284}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -828,8 +860,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {1440, 289}}</string>
-											<string>{{0, 289}, {1440, 434}}</string>
+											<string>{{0, 0}, {1440, 284}}</string>
+											<string>{{0, 284}, {1440, 439}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -876,14 +908,14 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>CED832D10957A0750073F9CD</string>
+				<string>CE5A48F60959203D00A1D998</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>CED832D20957A0750073F9CD</string>
-				<string>CED832D30957A0750073F9CD</string>
-				<string>CED832D40957A0750073F9CD</string>
-				<string>CED832D50957A0750073F9CD</string>
-				<string>CED832D60957A0750073F9CD</string>
-				<string>CED832D70957A0750073F9CD</string>
+				<string>CE5A48F70959203D00A1D998</string>
+				<string>CE5A48F80959203D00A1D998</string>
+				<string>CE5A48F90959203D00A1D998</string>
+				<string>CE5A48FA0959203D00A1D998</string>
+				<string>CE5A48FB0959203D00A1D998</string>
+				<string>CE5A48FC0959203D00A1D998</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debug</string>
@@ -892,7 +924,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1002,8 +1034,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1039,7 +1069,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CE3AC1580901EC4D00DD3768</string>
-				<string>CED832D80957A0750073F9CD</string>
+				<string>CE5A48FD0959203D00A1D998</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>WindowString</key>

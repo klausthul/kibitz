@@ -10,10 +10,12 @@
 	enum GameRelationship gameRelationShip;
 	int initialTime, incrementTime;
 	ChessMove *lastMove;
-	NSString *result, *reason;
+	NSString *result, *reason, *type, *ratingWhite, *ratingBlack;
 	int gameNumber;
 	enum Color sideShownOnBottom;
 	enum GameRelationship gameRelationship;
+	bool rated;
+	int partnerGame;
 }
 
 - (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black;
@@ -40,5 +42,11 @@
 - (enum GameRelationship) gameRelationship;
 - (void) setDefaultBoardOrientation;
 - (enum Color) sideToMove;
+- (NSString *) ratingWhite;
+- (NSString *) ratingBlack;
+- (NSString *) type;
+- (bool) rated;
+- (NSString *) whiteNameRating;
+- (NSString *) blackNameRating;
 
 @end

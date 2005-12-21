@@ -65,15 +65,15 @@
 			[g newMove: m];
 		}
 		[self updateGame: g];
-	} else if (0) /* (strncmp(lineBuf,"<g1>", 4) == 0) */ {
+	} else if (strncmp(lineBuf,"<g1>", 4) == 0) {
 		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
 		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 1] intValue]];
+		printf("%d: %s\n", [n intValue], lineBuf);
 		Game *g;
 		if ((g = [activeGames objectForKey: n]) == nil) {
 			if ((g = [infoGames objectForKey: n]) == nil) {
 				g = [[Game alloc] initWithGameInfo: a];
-				[activeGames setObject: g forKey: n];
-				[self setGameLists];
+				[infoGames setObject: g forKey: n];
 			} else
 				[g updateWithGameInfo: a];
 		} else {
@@ -415,6 +415,17 @@
 	[self willChangeValueForKey: @"outputLines"];
 	[outputLines addObject: [OutputLine newOutputLine: tx type: ty info: i]];
 	[self didChangeValueForKey: @"outputLines"];
+}
+
++ (NSString *) findTag: (NSString *) tag in: (NSArray *) array
+{
+	NSEnumerator *e = [array objectEnumerator];
+	NSString *s = s;
+	while ((s = [e nextObject]) != 0) {
+		if ([s hasPrefix: tag])
+			return [s substringFromIndex: [tag length]];
+	}
+	return nil;
 }
 
 @end

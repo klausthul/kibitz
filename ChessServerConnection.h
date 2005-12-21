@@ -48,5 +48,6 @@
 - (void) updateGame: (Game *) g;
 - (void) newPlayWindow;
 - (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i;
++ (NSString *) findTag: (NSString *) tag in: (NSArray *) array;
 
 @end
