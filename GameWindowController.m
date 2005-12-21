@@ -93,6 +93,7 @@ NSString *toolbarTooltips[] = {
 	if ((self = [super initWithWindowNibName: @"GameWindow"]) != nil) {
 		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
 		serverConnection = [sc retain];
+		[sc addObserver: self forKeyPath: @"outputLines" options: 0 context: nil];
 		[self updateWindowTitle];
 	}
 	return self;
@@ -108,19 +109,9 @@ NSString *toolbarTooltips[] = {
 	[[self window] setTitle: title];
 }
 
-- (void) addToServerOutput: (NSString *) s
-{
-	NSRange r = { [[serverOutput string] length], 0 };
-	[serverOutput replaceCharactersInRange:r withString:s];	
-}
-
 - (void) controlTextDidEndEditing:(NSNotification *)aNotification
 {
-	NSString *input = [serverInput stringValue];
-	const char *s = [input UTF8String];
-	if (strlen(s) > 0)
-		[serverConnection write:(unsigned char *) s maxLength:strlen(s)];
-	[serverConnection write:(unsigned char *) "\n\r" maxLength:2];
+	[serverConnection sendUserInputToServer: [serverInput stringValue]];
 }
 
 - (IBAction) toggleSeekDrawer: (id) sender
@@ -164,6 +155,7 @@ NSString *toolbarTooltips[] = {
 
 - (void) dealloc
 {
+	[serverConnection removeObserver: self forKeyPath: @"outputLines"];
 	[timer release];
 	[serverConnection release];
 	[activeGame release];
@@ -589,6 +581,11 @@ NSString *toolbarTooltips[] = {
 - (enum Color) sideShownOnBottom
 {
 	return [activeGame sideShownOnBottom];
+}
+
+- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
+{
+	[serverOutput scrollRowToVisible: [serverConnection lengthOutput] - 1];
 }
 
 @end

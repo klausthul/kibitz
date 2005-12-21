@@ -60,7 +60,8 @@
                 hideMoves = id; 
                 logout = id; 
                 match = id; 
-                newSeek = id; 
+                newChatWindow = id; 
+                newPlayWindow = id; 
                 reconnect = id; 
                 resign = id; 
                 selectGame = id; 
@@ -80,14 +81,14 @@
                 lowerName = NSTextField; 
                 messageField = NSTextField; 
                 movesView = NSView; 
-                playInnerView = NSView; 
+                playInnerView = PlayView; 
                 playView = NSView; 
                 result = NSTextField; 
                 resultReason = NSTextField; 
                 seekDrawer = NSDrawer; 
                 seekTable = NSTableView; 
                 serverInput = NSTextField; 
-                serverOutput = NSTextView; 
+                serverOutput = NSTableView; 
                 tableView = NSTableView; 
                 upperClock = NSTextField; 
                 upperName = NSTextField; 

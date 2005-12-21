@@ -98,16 +98,9 @@
 	} else if (invoc = [patternMatcher parseLine: lineBuf toTarget: self]) {
 		[invoc invoke];
 	} else {
-		NSEnumerator *enumerator = [serverWindows objectEnumerator];
-		GameWindowController *gwc;
 		NSString *s = [NSString stringWithUTF8String:(char *) lineBuf];
-		if (s != nil) {
-			while (gwc = [enumerator nextObject]) {
-				[gwc addToServerOutput:[NSString stringWithUTF8String:(char *) lineBuf]];
-				[gwc addToServerOutput:@"\n"];
-			}
+		if (s != nil)
 			[self addOutputLine: [NSString stringWithUTF8String:(char *) lineBuf] type: OTHER info: 0];
-		}
 	}
 }
 
@@ -125,7 +118,7 @@
 				switch (c = buf[i]) {
 				  case 10: 
 					lineBuf[lastChar] = 0;
-					if ((lastChar > 0) || !(eatEmptyLine))
+					if (lastChar > 0)
 						[self processServerOutput];
 					lastChar = 0;
 					break;
@@ -141,7 +134,6 @@
 				break;
 			}
 		}
-		eatEmptyLine = NO;
 		if (lastChar > 0) {
 			if (strncmp(lineBuf,"fics%", 5) == 0) {
 				if (sendInit) {
@@ -151,10 +143,9 @@
 						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
 						[serverOS write:(unsigned const char *) "\n" maxLength:1];
 					}
-				} else
-					eatEmptyLine = YES;
-				lastChar = 0;
-				lineBuf[0] = 0;
+					lastChar = 0;
+					lineBuf[0] = 0;
+				} 
 			} else if (strncmp(lineBuf,"login:", 6) == 0) {
 				if (currentServer != nil && sendNamePassword == YES) {
 					const char *s;
@@ -166,11 +157,13 @@
 						s = [[currentServer userPassword] UTF8String];
 						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
 						[serverOS write:(unsigned const char *) "\n" maxLength:1];
+						lastChar = 0;
+						lineBuf[0] = 0;	
 					}
-				}
-				lastChar = 0;
-				lineBuf[0] = 0;				
+				}			
 			}
+			if (lastChar > 0)
+				[self addOutputLine: [NSString stringWithUTF8String:(char *) lineBuf] type: LINE_PARTIAL info: 0];
 		}
 		break;
 	  }
@@ -371,6 +364,14 @@
 	[serverOS write: (unsigned char *) "\n" maxLength: 1];	
 }
 
+- (void) sendUserInputToServer: (NSString *) s
+{
+	if ((s == nil) || ([s length] == 0))
+		return;
+	[self sendToServer: s];
+	[self addOutputLine: s type: LINE_USER_INPUT info: 0];
+}
+
 - (void) redisplaySeekTables
 {
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
@@ -413,7 +414,22 @@
 - (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i
 {
 	[self willChangeValueForKey: @"outputLines"];
-	[outputLines addObject: [OutputLine newOutputLine: tx type: ty info: i]];
+	if (lastLinePartial) {
+		if (ty == LINE_USER_INPUT) {
+			NSString *lt = [[outputLines lastObject] text];
+			i = [lt length];
+			tx = [NSString stringWithFormat: @"%@%@", lt, tx];
+		}
+		[outputLines replaceObjectAtIndex: [outputLines count] - 1 withObject: [OutputLine newOutputLine: tx type: ty info: i]];
+		lastLinePartial = NO;
+	} else {
+		if (([outputLines count] > 0) && [[[outputLines lastObject] text] compare: @"fics% "] == 0)
+			[outputLines replaceObjectAtIndex: [outputLines count] - 1 withObject: [OutputLine newOutputLine: tx type: ty info: i]];
+		else
+			[outputLines addObject: [OutputLine newOutputLine: tx type: ty info: i]];
+	}
+	if (ty == LINE_PARTIAL)
+		lastLinePartial = YES;
 	[self didChangeValueForKey: @"outputLines"];
 }
 
@@ -426,6 +442,11 @@
 			return [s substringFromIndex: [tag length]];
 	}
 	return nil;
+}
+
+- (int) lengthOutput
+{
+	return [outputLines count];
 }
 
 @end

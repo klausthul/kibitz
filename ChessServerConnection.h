@@ -22,7 +22,7 @@
 	int storedGameCounter;
 	PatternMatching *patternMatcher;
 	NSMutableArray *outputLines;
-	bool eatEmptyLine;
+	bool lastLinePartial;
 }
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason;
@@ -43,11 +43,13 @@
 - (NSString *) description;
 - (void) sendSeek: (Seek *) s;
 - (void) sendToServer: (NSString *) s;
+- (void) sendUserInputToServer: (NSString *) s;
 - (void) redisplaySeekTables;
 - (void) setGameLists;
 - (void) updateGame: (Game *) g;
 - (void) newPlayWindow;
 - (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i;
 + (NSString *) findTag: (NSString *) tag in: (NSArray *) array;
+- (int) lengthOutput;
 
 @end

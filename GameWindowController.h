@@ -7,10 +7,9 @@
 
 @interface GameWindowController : NSWindowController {
 	ChessServerConnection *serverConnection;
-	IBOutlet NSTextView *serverOutput;
 	IBOutlet NSTextField *serverInput;
 	IBOutlet NSDrawer *seekDrawer;
-	IBOutlet NSTableView *tableView;
+	IBOutlet NSTableView *tableView, *serverOutput;
 	IBOutlet ChessView *chessView;
 	IBOutlet NSTextField *upperClock, *lowerClock, *upperName, *lowerName, *result, *resultReason, *gameType, *messageField;
 	IBOutlet NSTableView *seekTable;
@@ -29,7 +28,6 @@
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc;
 - (void) updateWindowTitle;
-- (void) addToServerOutput: (NSString *) s;
 - (void) dealloc;
 - (IBAction) toggleSeekDrawer: (id) sender;
 - (void) updateClock: (NSTimer *) aTimer;
@@ -74,5 +72,6 @@
 - (void) clearMessage;
 - (NSSize) windowWillResize:(NSWindow *) sender toSize: (NSSize) proposedFrameSize;
 - (enum Color) sideShownOnBottom;
+- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context;
 
 @end

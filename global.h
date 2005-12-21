@@ -78,7 +78,7 @@ enum WantsColor {
 };
 
 enum OutputLineType {
-	OTHER = 0
+	OTHER, LINE_PARTIAL, LINE_USER_INPUT
 };
 
 @protocol ChessServerErrorHandler <NSObject>
