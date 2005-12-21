@@ -18,7 +18,7 @@
 	ChessServer *currentServer;
 	bool sendNamePassword, sendInit;
 	NSMutableDictionary *seeks;
-	NSMutableDictionary *activeGames;
+	NSMutableDictionary *activeGames, *infoGames;
 	int storedGameCounter;
 	PatternMatching *patternMatcher;
 	NSMutableArray *outputLines;

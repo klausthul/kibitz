@@ -26,6 +26,9 @@
 - (void) newMove: (ChessMove *) move;
 - (void) dealloc;
 - (Game *) initWithStyle12: (NSArray *) data;
+- (Game *) initWithGameInfo: (NSArray *) data;
+- (void) updateWithStyle12: (NSArray *) data;
+- (void) updateWithGameInfo: (NSArray *) data;
 - (Game *) initWithEmptyGame;
 - (NSString *) gameInfoString;
 - (void) setResult: (NSString *) resultV reason: (NSString *) reasonV;

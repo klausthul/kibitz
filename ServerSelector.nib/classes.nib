@@ -4,6 +4,7 @@
             ACTIONS = {
                 buttonCancel = id; 
                 buttonSelect = id; 
+                show = id; 
                 updateDefaults = id; 
                 userAddNewServer = id; 
                 userDeleteCurrentServer = id; 
@@ -12,7 +13,7 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 serverAddress = NSTextField; 
-                serverInitialization = NSTextField; 
+                serverInitialization = NSTextView; 
                 serverList = NSTableView; 
                 serverName = NSTextField; 
                 serverPassword = NSTextField; 

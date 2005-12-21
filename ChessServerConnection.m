@@ -43,7 +43,13 @@
 		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 16] intValue]];
 		Game *g = [activeGames objectForKey: n];
 		if (g == nil) {
-			g = [[Game alloc] initWithStyle12: a];
+			if (g = [infoGames objectForKey: n]) {
+				[[g retain] autorelease];
+				[infoGames removeObjectForKey: n];
+				[g updateWithStyle12: a];
+			} else {
+				g = [[[Game alloc] initWithStyle12: a] autorelease];
+			}
 			[activeGames setObject: g forKey: n];
 			[self setGameLists];
 			NSEnumerator *enumerator = [serverWindows objectEnumerator];
@@ -59,6 +65,21 @@
 			[g newMove: m];
 		}
 		[self updateGame: g];
+	} else if (0) /* (strncmp(lineBuf,"<g1>", 4) == 0) */ {
+		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
+		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 1] intValue]];
+		Game *g;
+		if ((g = [activeGames objectForKey: n]) == nil) {
+			if ((g = [infoGames objectForKey: n]) == nil) {
+				g = [[Game alloc] initWithGameInfo: a];
+				[activeGames setObject: g forKey: n];
+				[self setGameLists];
+			} else
+				[g updateWithGameInfo: a];
+		} else {
+			[g updateWithGameInfo: a];
+			[self setGameLists];
+		}
 	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
 		int num = 0;
 		sscanf(lineBuf + 3, " %d", &num);
@@ -77,7 +98,6 @@
 	} else if (invoc = [patternMatcher parseLine: lineBuf toTarget: self]) {
 		[invoc invoke];
 	} else {
-		static int n = 0;
 		NSEnumerator *enumerator = [serverWindows objectEnumerator];
 		GameWindowController *gwc;
 		NSString *s = [NSString stringWithUTF8String:(char *) lineBuf];
@@ -220,6 +240,7 @@
 		[self release];
 		patternMatcher = [[PatternMatching alloc] initWithPatterns: serverPatterns];
 		activeGames = [[NSMutableDictionary alloc] init];
+		infoGames = [[NSMutableDictionary alloc] init];
 		seeks = [[NSMutableDictionary dictionaryWithCapacity:500] retain];
 		serverWindows = [[NSMutableArray arrayWithCapacity: 20] retain];
 		lastChar = 0;
@@ -233,7 +254,6 @@
 
 - (void) dealloc
 {
-	[activeGames release];
 	[serverIS close];
 	[serverOS close];
 	[serverIS release];
@@ -244,6 +264,8 @@
 	[patternMatcher release];
 	[serverWindows release];
 	[outputLines release];
+	[activeGames release];
+	[infoGames release];
 	[super dealloc];
 }
 

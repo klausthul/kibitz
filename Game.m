@@ -63,12 +63,29 @@
 - (Game *) initWithStyle12: (NSArray *) data
 {
 	if ((self = [self init]) != nil) {
-		[self setPlayerNamesWhite: [data objectAtIndex: 17] black: [data objectAtIndex: 18]];
 		[self setTimeInitial: [[data objectAtIndex: 20] intValue] increment: [[data objectAtIndex: 21] intValue]];
-		gameNumber = [[data objectAtIndex: 16] intValue];
-		gameRelationship = [[data objectAtIndex: 19] intValue];
+		[self updateWithStyle12: data];
 	}
 	return self;
+}
+
+- (Game *) initWithGameInfo: (NSArray *) data
+{
+	if ((self = [self init]) != nil) {
+		[self updateWithGameInfo: data];
+	}
+	return self;
+}
+
+- (void) updateWithStyle12: (NSArray *) data
+{
+	[self setPlayerNamesWhite: [data objectAtIndex: 17] black: [data objectAtIndex: 18]];
+	gameNumber = [[data objectAtIndex: 16] intValue];
+	gameRelationship = [[data objectAtIndex: 19] intValue];
+}
+
+- (void) updateWithGameInfo: (NSArray *) data
+{
 }
 
 - (Game *) initWithEmptyGame

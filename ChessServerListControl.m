@@ -39,12 +39,23 @@
 {
 	int n = [serverList selectedRow];
 	if ((n < 0) || (n >= [chessServerList numServers])) {
+		[serverName unbind:@"value"];
+		[serverAddress unbind:@"value"];
+		[serverUserName unbind:@"value"];
+		[serverPassword unbind:@"value"];
+		[serverPort unbind:@"value"];
+		[serverInitialization bind: @"value" toObject: self withKeyPath:@"emptyString" options:nil];
 		[serverName setEnabled: NO];
 		[serverAddress setEnabled: NO];
 		[serverUserName setEnabled: NO];
 		[serverPassword setEnabled: NO];
 		[serverPort setEnabled: NO];
-		[serverInitialization setEnabled: NO];
+		[serverInitialization setEditable: NO];
+		[serverName setStringValue: @""];
+		[serverAddress setStringValue: @""];
+		[serverUserName setStringValue: @""];
+		[serverPassword setStringValue: @""];
+		[serverPort setIntValue: 0];
 	} else {
 		ChessServer *s = [chessServerList serverAtIndex: n];
 		[serverName bind:@"value" toObject:s withKeyPath:@"serverName" options:nil];
@@ -58,7 +69,7 @@
 		[serverUserName setEnabled: YES];
 		[serverPassword setEnabled: YES];
 		[serverPort setEnabled: YES];
-		[serverInitialization setEnabled: YES];
+		[serverInitialization setEditable: YES];
 	}
 }
 
@@ -77,9 +88,18 @@
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
 		[chessServerList retain];
-		appController = ac;
+		appController = [ac retain];
+		emptyString = [[NSMutableString stringWithString: @""] retain];
 	}
 	return self;
+}
+
+- (void) dealloc
+{
+	[chessServerList release];
+	[appController release];
+	[emptyString release];
+	[super dealloc];
 }
 
 - (IBAction) updateDefaults: (id) sender
