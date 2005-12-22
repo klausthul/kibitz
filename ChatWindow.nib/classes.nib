@@ -1,0 +1,62 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {newChatWindow = id; newPlayWindow = id; }; 
+            CLASS = ChatWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {serverInput = NSTextField; serverOutput = NSTableView; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                abort = id; 
+                accept = id; 
+                adjurn = id; 
+                decline = id; 
+                draw = id; 
+                exportGame = id; 
+                flipBoard = id; 
+                hideDialog = id; 
+                hideMoves = id; 
+                logout = id; 
+                match = id; 
+                newPlayWindow = id; 
+                reconnect = id; 
+                resign = id; 
+                selectGame = id; 
+                takeback = id; 
+                takeback2 = id; 
+                toggleSeekDrawer = id; 
+            }; 
+            CLASS = GameWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                chatView = NSView; 
+                chessView = ChessView; 
+                gameSelector = NSPopUpButton; 
+                gameType = NSTextField; 
+                horizontalSplit = NSSplitView; 
+                lowerClock = NSTextField; 
+                lowerName = NSTextField; 
+                messageField = NSTextField; 
+                movesView = NSView; 
+                playInnerView = PlayView; 
+                playView = NSView; 
+                result = NSTextField; 
+                resultReason = NSTextField; 
+                seekDrawer = NSDrawer; 
+                seekTable = NSTableView; 
+                serverInput = NSTextField; 
+                serverOutput = NSTextView; 
+                tableView = NSTableView; 
+                upperClock = NSTextField; 
+                upperName = NSTextField; 
+                upperView = NSView; 
+                verticalSplit = NSSplitView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

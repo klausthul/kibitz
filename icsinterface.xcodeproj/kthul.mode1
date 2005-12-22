@@ -217,6 +217,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -322,7 +324,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE5A4A220959502D00A1D998</string>
+										<string>CE5A4A270959540F00A1D998</string>
 										<key>history</key>
 										<array>
 											<string>CED83270095797D70073F9CD</string>
@@ -371,8 +373,6 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -390,7 +390,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE5A4A230959502E00A1D998</string>
+										<string>CE5A4A280959540F00A1D998</string>
 										<key>history</key>
 										<array>
 											<string>CE5A49C40959460000A1D998</string>
@@ -652,7 +652,6 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>CE5A48FC0959203D00A1D998</string>
 		<string>CE3AC19D0901FF4300DD3768</string>
-		<string>/Users/kthul/icsinterface/icsinterface.xcodeproj</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
@@ -1074,7 +1073,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1440, 723}}</string>
 								<key>RubberWindowFrame</key>
-								<string>43 114 1440 764 0 0 1440 878 </string>
+								<string>43 113 1440 764 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXRunSessionModule</string>
@@ -1104,11 +1103,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
 			<key>WindowString</key>
-			<string>43 114 1440 764 0 0 1440 878 </string>
+			<string>43 113 1440 764 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
