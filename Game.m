@@ -3,9 +3,17 @@
 
 #import <ctype.h>
 #import "Game.h"
-#import "Board.h"
+#import "MoveStore.h"
 
 @implementation Game
+
+- (Game *) init
+{
+	if ((self = [super init]) != nil) {
+		moves = [[NSMutableDictionary dictionaryWithCapacity: 100] retain];
+	}
+	return self; 
+}
 
 - (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black
 {
@@ -41,15 +49,25 @@
 	return incrementTime;
 }
 
-- (Board *) currentBoardPosition
+- (ChessMove *) currentBoardPosition
 {
-	return [lastMove positionAfter];
+	return lastMove;
 }
 
 - (void) newMove: (ChessMove *) move
 {
 	[lastMove release];
 	lastMove = [move retain];
+	NSNumber *n = [NSNumber numberWithInt: [move moveNumber]];
+	MoveStore *ms;
+	if ((ms = [moves objectForKey: n]) == nil) {
+		ms = [[[MoveStore alloc] initWithMoveNum: [n intValue]] autorelease];
+		[moves setObject: ms forKey: n];
+	}
+	if ([move moveColor] == WHITE)
+		[ms setWhiteMove: move];
+	else
+		[ms setBlackMove: move];
 }
 
 - (void) dealloc
@@ -60,6 +78,7 @@
 	[ratingWhite release];
 	[ratingBlack release];
 	[type release];
+	[moves release];
 	[super dealloc];
 }
 
@@ -134,7 +153,7 @@
 	result = [resultV retain];
 	[reason release];
 	reason = [reasonV retain];
-	[[lastMove positionAfter] stopClock];
+	[lastMove stopClock];
 }
 
 - (NSString *) result

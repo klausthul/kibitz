@@ -7,8 +7,6 @@
 @class ChessServerList;
 @class ChessServerListControl;
 @class ChessMove;
-@class ChessMoveStore;
-@class Board;
 @class Game;
 @class ChessView;
 @class AppController;
@@ -17,6 +15,7 @@
 @class ChessServerConnection;
 @class GameWindowController;
 @class Sound;
+@class MoveStore;
 
 extern Sound *gSounds;
 

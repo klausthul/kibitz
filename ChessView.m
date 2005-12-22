@@ -2,6 +2,7 @@
 // $Id$
 
 #import "ChessView.h"
+#import "ChessMove.h"
 
 @implementation ChessView
 
@@ -104,7 +105,7 @@
 	}
 }
 
-- (void) setShowBoard: (Board *) board
+- (void) setShowBoard: (ChessMove *) board
 {
 	[showBoard release];
 	showBoard = [board retain];

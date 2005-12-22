@@ -9,12 +9,12 @@
 {
 	IBOutlet GameWindowController *gameWindowController;
 	IBOutlet NSWindow *promotionDialog;
-	Board *showBoard;
+	ChessMove *showBoard;
 	NSImage *pieces[16];
 	struct ChessField fromMouse, toMouse;
 }
 
-- (void) setShowBoard: (Board *) board;
+- (void) setShowBoard: (ChessMove *) board;
 - (IBAction) selectedPromotionPiece: (id) sender;
 
 @end

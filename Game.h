@@ -2,8 +2,8 @@
 // $Id$
 
 #import "global.h"
-#import "Board.h"
 #import "ChessView.h"
+#import "ChessMove.h"
 
 @interface Game : NSObject {
 	NSString *whiteName, *blackName;
@@ -16,6 +16,7 @@
 	enum GameRelationship gameRelationship;
 	bool rated;
 	int partnerGame;
+	NSMutableDictionary *moves;
 }
 
 - (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black;
@@ -24,7 +25,7 @@
 - (void) setTimeInitial: (int) initial increment: (int) increment;
 - (int) initialTime;
 - (int) incrementTime;
-- (Board *) currentBoardPosition;
+- (ChessMove *) currentBoardPosition;
 - (void) newMove: (ChessMove *) move;
 - (void) dealloc;
 - (Game *) initWithStyle12: (NSArray *) data;

@@ -186,7 +186,7 @@ NSString *toolbarTooltips[] = {
 	[seekTable reloadData];
 }
 
-- (void) setShowBoard: (Board *) board
+- (void) setShowBoard: (ChessMove *) board
 {
 	[chessView setShowBoard: board];
 }

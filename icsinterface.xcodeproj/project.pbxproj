@@ -34,9 +34,9 @@
 		CE2951CD09559866006C8D90 /* SoundGameEnd.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CE2951CB09559866006C8D90 /* SoundGameEnd.aiff */; };
 		CE2951CE09559866006C8D90 /* SoundMessage.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CE2951CC09559866006C8D90 /* SoundMessage.aiff */; };
 		CE2951E30955B024006C8D90 /* Seek.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE2951E20955B024006C8D90 /* Seek.nib */; };
+		CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE309DC3095A2F5200F756BB /* MoveStore.m */; };
 		CE69B2F6094BD9E500F4E6D9 /* GameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60D609399D0000AC6D87 /* GameWindow.nib */; };
 		CED82AD80955BFC60073F9CD /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A6E0955BFC50073F9CD /* AppController.m */; };
-		CED82AD90955BFC60073F9CD /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A700955BFC60073F9CD /* Board.m */; };
 		CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A840955BFC60073F9CD /* ChessMove.m */; };
 		CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A870955BFC60073F9CD /* ChessServer.m */; };
 		CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */; };
@@ -100,6 +100,8 @@
 		CE2951CB09559866006C8D90 /* SoundGameEnd.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundGameEnd.aiff; path = sounds/SoundGameEnd.aiff; sourceTree = "<group>"; };
 		CE2951CC09559866006C8D90 /* SoundMessage.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundMessage.aiff; path = sounds/SoundMessage.aiff; sourceTree = "<group>"; };
 		CE2951E20955B024006C8D90 /* Seek.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Seek.nib; sourceTree = "<group>"; };
+		CE309DC2095A2F5200F756BB /* MoveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveStore.h; sourceTree = "<group>"; };
+		CE309DC3095A2F5200F756BB /* MoveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveStore.m; sourceTree = "<group>"; };
 		CE7D60D609399D0000AC6D87 /* GameWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = GameWindow.nib; sourceTree = "<group>"; };
 		CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ServerSelector.nib; sourceTree = "<group>"; };
 		CED33BF4091E36E0005B773B /* bb.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bb.tiff; path = pieces/bb.tiff; sourceTree = "<group>"; };
@@ -294,6 +296,8 @@
 				CED82B630955C0FA0073F9CD /* SeekControl.h */,
 				CED82B810955C2D60073F9CD /* Sound.h */,
 				CED82B820955C2D60073F9CD /* Sound.m */,
+				CE309DC2095A2F5200F756BB /* MoveStore.h */,
+				CE309DC3095A2F5200F756BB /* MoveStore.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -392,7 +396,6 @@
 			files = (
 				CE2091500939AFED008697DE /* main.m in Sources */,
 				CED82AD80955BFC60073F9CD /* AppController.m in Sources */,
-				CED82AD90955BFC60073F9CD /* Board.m in Sources */,
 				CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */,
 				CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */,
 				CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */,
@@ -409,6 +412,7 @@
 				CED82B830955C2D60073F9CD /* Sound.m in Sources */,
 				CED831BF09578FEE0073F9CD /* ChatWindowController.m in Sources */,
 				CED83248095792870073F9CD /* OutputLine.m in Sources */,
+				CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,7 +34,7 @@
 - (int) numberOfRowsInTableView: (NSTableView *) aTableView;
 - (id) tableView:(NSTableView *) aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (void) seekTableNeedsDisplay;
-- (void) setShowBoard: (Board *) board;
+- (void) setShowBoard: (ChessMove *) board;
 - (IBAction) selectGame: (id) sender;
 - (void) setGameList: (NSDictionary *) gl;
 - (void) updateGame: (Game *) g;

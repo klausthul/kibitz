@@ -7,6 +7,7 @@
 #import "PatternMatching.h"
 #import "Sound.h"
 #import "OutputLine.h"
+#import "ChessMove.h"
 
 #define USERNAME_REGEX "[A-z]{3,17}"
 #define TITLES_REGEX "\\([A-Z\\*\\(\\)]*\\)"
