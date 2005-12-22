@@ -259,8 +259,6 @@
 		CE2952740955B945006C8D90 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CED83246095792860073F9CD /* OutputLine.h */,
-				CED83247095792860073F9CD /* OutputLine.m */,
 				CED831BD09578FEE0073F9CD /* ChatWindowController.h */,
 				CED831BE09578FEE0073F9CD /* ChatWindowController.m */,
 				CED82A6D0955BFC50073F9CD /* AppController.h */,
@@ -294,6 +292,8 @@
 				CED82B820955C2D60073F9CD /* Sound.m */,
 				CE309DC2095A2F5200F756BB /* MoveStore.h */,
 				CE309DC3095A2F5200F756BB /* MoveStore.m */,
+				CED83246095792860073F9CD /* OutputLine.h */,
+				CED83247095792860073F9CD /* OutputLine.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

@@ -1,7 +1,7 @@
 {
     IBClasses = (
         {
-            ACTIONS = {newChatWindow = id; newPlayWindow = id; }; 
+            ACTIONS = {commandEntered = id; newChatWindow = id; newPlayWindow = id; }; 
             CLASS = ChatWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {serverInput = NSTextField; serverOutput = NSTableView; }; 

@@ -52,6 +52,7 @@
                 abort = id; 
                 accept = id; 
                 adjurn = id; 
+                commandEntered = id; 
                 decline = id; 
                 draw = id; 
                 exportGame = id; 

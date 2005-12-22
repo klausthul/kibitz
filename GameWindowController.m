@@ -91,7 +91,8 @@ NSString *toolbarTooltips[] = {
 - (id) initWithServerConnection: (ChessServerConnection *) sc
 {
 	if ((self = [super initWithWindowNibName: @"GameWindow"]) != nil) {
-		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
+		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] 
+		 retain];
 		serverConnection = [sc retain];
 		[sc addObserver: self forKeyPath: @"outputLines" options: 0 context: nil];
 		[self updateWindowTitle];
@@ -109,7 +110,7 @@ NSString *toolbarTooltips[] = {
 	[[self window] setTitle: title];
 }
 
-- (void) controlTextDidEndEditing:(NSNotification *)aNotification
+- (IBAction) commandEntered: (id) sender
 {
 	[serverConnection sendUserInputToServer: [serverInput stringValue]];
 }
@@ -144,8 +145,10 @@ NSString *toolbarTooltips[] = {
 		[result setStringValue: nil2Empty([activeGame result])];
 		[resultReason setStringValue: nil2Empty([activeGame reason])];
 		if ([activeGame initialTime] >= 0) {
-			NSString *type = ([activeGame type]) ? [NSString stringWithFormat: @"%s %@", ([activeGame rated]) ? "rated" : "unrated", [activeGame type]] : @"";
-			[gameType setStringValue: [NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n%@", [activeGame initialTime], [activeGame incrementTime], type]];
+			NSString *type = ([activeGame type]) ? [NSString stringWithFormat: @"%s %@", ([activeGame rated]) ? "rated" : "unrated", 
+			 [activeGame type]] : @"";
+			[gameType setStringValue: [NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n%@", 
+			 [activeGame initialTime], [activeGame incrementTime], type]];
 		} else
 			[gameType setStringValue: @""];
 	}
@@ -236,15 +239,19 @@ NSString *toolbarTooltips[] = {
 
 - (void) setActiveGame: (Game *) g
 {
-	[activeGame release];
+	printf("Set active game\n");
+	if (activeGame) {
+		[moveListController unbind: @"contentArray"];
+		[activeGame release];
+	}
 	activeGame = [g retain];
 	[self updateGame: activeGame];
 	[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
 	[self clearMessage];
 	[moveListController bind: @"contentArray" toObject: g withKeyPath: @"moves" options: 
-	 [NSDictionary dictionaryWithObjectsAndKeys:
-	 [NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
-	 [NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
+	[NSDictionary dictionaryWithObjectsAndKeys:
+	[NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
+	[NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
 }
 
 - (Game *) activeGame
@@ -325,11 +332,6 @@ NSString *toolbarTooltips[] = {
 {
 	NSLog(@"buttonAbort");
 }
-
-//- (IBAction) newSeek: (id) sender
-//{
-//	NSLog(@"newSeek");
-//}
 
 - (IBAction) match: (id) sender
 {
@@ -436,7 +438,8 @@ NSString *toolbarTooltips[] = {
 			float room_right = movesFrame.size.width - 210;		
 			float total_room = room_left + room_right;
 			if (total_room >= 1)
-				playFrame.size.width = ceilf(MIN(playFrame.size.width - room_left / total_room * delta, MAX([playInnerView maxWidthForHeight], playFrame.size.width)));
+				playFrame.size.width = ceilf(MIN(playFrame.size.width - room_left / total_room * delta, 
+				 MAX([playInnerView maxWidthForHeight], playFrame.size.width)));
 			else
 				playFrame.size.width = ceilf(playFrame.size.width - delta * 0.5);
 			movesFrame.size.width = senderFrame.size.width - dividerThickness - playFrame.size.width;
@@ -465,7 +468,8 @@ NSString *toolbarTooltips[] = {
 			float room_lower = chatFrame.size.height - 150;
 			float total_room = room_upper + room_lower;
 			if (total_room >= 1)
-				upperFrame.size.height = ceilf(MIN(upperFrame.size.height - room_upper / total_room * delta, MAX([playInnerView maxHeightForWidth]  - dividerThickness, upperFrame.size.height)));
+				upperFrame.size.height = ceilf(MIN(upperFrame.size.height - room_upper / total_room * delta, 
+				 MAX([playInnerView maxHeightForWidth]  - dividerThickness, upperFrame.size.height)));
 			else
 				upperFrame.size.height = ceilf(upperFrame.size.height - delta * 0.5);
 			chatFrame.size.height = senderFrame.size.height - dividerThickness - upperFrame.size.height;
@@ -542,8 +546,8 @@ NSString *toolbarTooltips[] = {
 
 - (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar 
 {
-	NSMutableArray *a = [NSMutableArray arrayWithObjects: NSToolbarFlexibleSpaceItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarSeparatorItemIdentifier, 
-	 NSToolbarCustomizeToolbarItemIdentifier, nil];
+	NSMutableArray *a = [NSMutableArray arrayWithObjects: NSToolbarFlexibleSpaceItemIdentifier, NSToolbarSpaceItemIdentifier, 
+	 NSToolbarSeparatorItemIdentifier, NSToolbarCustomizeToolbarItemIdentifier, nil];
 	NSString **sp;
 	
 	for (sp = toolbarIdentifiers; (*sp) != nil; sp++)

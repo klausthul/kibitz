@@ -12,7 +12,7 @@
 - (ChatWindowController *) initWithServerConnection: (ChessServerConnection *) sc;
 - (IBAction) newPlayWindow: (id) sender;
 - (IBAction) newChatWindow: (id) sender;
-- (void) controlTextDidEndEditing: (NSNotification *) aNotification;
+- (IBAction) commandEntered: (id) sender;
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context;
 
 @end

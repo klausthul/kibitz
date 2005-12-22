@@ -32,7 +32,7 @@
 	[[[ChatWindowController alloc] initWithServerConnection: serverConnection] showWindow: sender];
 }
 
-- (void) controlTextDidEndEditing: (NSNotification *) aNotification
+- (IBAction) commandEntered: (id) sender;
 {
 	[serverConnection sendUserInputToServer: [serverInput stringValue]];
 }

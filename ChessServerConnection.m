@@ -407,9 +407,13 @@
 	[gwc showWindow: self];
 	[gwc setGameList: activeGames];
 	NSEnumerator *enumerator = [activeGames objectEnumerator];
-	Game *g;  
-	while (g = [enumerator nextObject])
+	Game *g, *g2 = nil;  
+	while (g = [enumerator nextObject]) {
 		[gwc updateGame: g];
+		g2 = g;
+	}
+	if (g2 != nil)
+		[gwc setActiveGame: g2];
 }
 
 - (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i
