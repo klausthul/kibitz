@@ -10,7 +10,7 @@
 - (Game *) init
 {
 	if ((self = [super init]) != nil) {
-		moves = [[NSMutableDictionary dictionaryWithCapacity: 100] retain];
+		moves = [[NSMutableArray arrayWithCapacity: 100] retain];
 	}
 	return self; 
 }
@@ -58,16 +58,26 @@
 {
 	[lastMove release];
 	lastMove = [move retain];
-	NSNumber *n = [NSNumber numberWithInt: [move moveNumber]];
 	MoveStore *ms;
-	if ((ms = [moves objectForKey: n]) == nil) {
-		ms = [[[MoveStore alloc] initWithMoveNum: [n intValue]] autorelease];
-		[moves setObject: ms forKey: n];
+	NSEnumerator *e = [moves objectEnumerator];
+	int n = [move moveNumber];
+	if (n == 0) {
+		[self setStartPosition: move];
+	} else {
+		while ((ms = [e nextObject]) != nil)
+			if ([ms moveNum] == n)
+				break;
+		[self willChangeValueForKey: @"moves"];
+		if (ms == nil) {
+			ms = [[[MoveStore alloc] initWithMoveNum: n] autorelease];
+			[moves addObject: ms];
+		}
+		if ([move moveColor] == WHITE)
+			[ms setWhiteMove: move];
+		else
+			[ms setBlackMove: move];
+		[self didChangeValueForKey: @"moves"];
 	}
-	if ([move moveColor] == WHITE)
-		[ms setWhiteMove: move];
-	else
-		[ms setBlackMove: move];
 }
 
 - (void) dealloc
@@ -133,7 +143,7 @@
 {
 	if ((self = [self init]) != nil) {
 		[self setPlayerNamesWhite: @"White" black: @"Black"];
-		lastMove = [[ChessMove initialPosition] retain];
+		[self newMove: [ChessMove initialPosition]];
 		initialTime = -1;
 	}
 	return self;
@@ -239,6 +249,17 @@
 		return [NSString stringWithFormat: @"%@\n%@", blackName, ratingBlack];
 	else
 		return blackName;
+}
+
+- (void) setStartPosition: (ChessMove *) move
+{
+	[startPosition release];
+	startPosition = [move retain];
+}
+
+- (ChessMove *) startPosition
+{
+	return startPosition;
 }
 
 @end
