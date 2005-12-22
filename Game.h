@@ -9,14 +9,14 @@
 	NSString *whiteName, *blackName;
 	enum GameRelationship gameRelationShip;
 	int initialTime, incrementTime;
-	ChessMove *lastMove;
+	ChessMove *lastMove, *startPosition;
 	NSString *result, *reason, *type, *ratingWhite, *ratingBlack;
 	int gameNumber;
 	enum Color sideShownOnBottom;
 	enum GameRelationship gameRelationship;
 	bool rated;
 	int partnerGame;
-	NSMutableDictionary *moves;
+	NSMutableArray *moves;
 }
 
 - (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black;
@@ -49,5 +49,6 @@
 - (bool) rated;
 - (NSString *) whiteNameRating;
 - (NSString *) blackNameRating;
+- (void) setStartPosition: (ChessMove *) move;
 
 @end

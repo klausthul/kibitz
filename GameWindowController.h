@@ -17,6 +17,7 @@
 	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
 	IBOutlet NSView *playView, *chatView, *movesView, *upperView;
 	IBOutlet PlayView *playInnerView;
+	IBOutlet NSArrayController *moveListController;
 	char move[10];
 	NSTimer *timer;
 	Game *activeGame;

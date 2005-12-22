@@ -241,6 +241,10 @@ NSString *toolbarTooltips[] = {
 	[self updateGame: activeGame];
 	[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
 	[self clearMessage];
+	[moveListController bind: @"contentArray" toObject: g withKeyPath: @"moves" options: 
+	 [NSDictionary dictionaryWithObjectsAndKeys:
+	 [NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
+	 [NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
 }
 
 - (Game *) activeGame

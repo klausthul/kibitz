@@ -170,7 +170,7 @@
 	  }
 	  case NSStreamEventErrorOccurred:
 		[errorHandler handleStreamError: [theStream streamError]];
-		[self release];
+//		[self release];
 		break;
 	}
 }

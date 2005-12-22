@@ -80,6 +80,7 @@
                 lowerClock = NSTextField; 
                 lowerName = NSTextField; 
                 messageField = NSTextField; 
+                moveListController = NSArrayController; 
                 movesView = NSView; 
                 playInnerView = PlayView; 
                 playView = NSView; 

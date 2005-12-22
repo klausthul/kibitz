@@ -118,8 +118,6 @@
 		CED33C01091E36EF005B773B /* wr.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = wr.tiff; path = pieces/wr.tiff; sourceTree = "<group>"; };
 		CED82A6D0955BFC50073F9CD /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		CED82A6E0955BFC50073F9CD /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		CED82A6F0955BFC50073F9CD /* Board.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
-		CED82A700955BFC60073F9CD /* Board.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		CED82A830955BFC60073F9CD /* ChessMove.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessMove.h; sourceTree = "<group>"; };
 		CED82A840955BFC60073F9CD /* ChessMove.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessMove.m; sourceTree = "<group>"; };
 		CED82A860955BFC60073F9CD /* ChessServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServer.h; sourceTree = "<group>"; };
@@ -267,8 +265,6 @@
 				CED831BE09578FEE0073F9CD /* ChatWindowController.m */,
 				CED82A6D0955BFC50073F9CD /* AppController.h */,
 				CED82A6E0955BFC50073F9CD /* AppController.m */,
-				CED82A6F0955BFC50073F9CD /* Board.h */,
-				CED82A700955BFC60073F9CD /* Board.m */,
 				CED82A830955BFC60073F9CD /* ChessMove.h */,
 				CED82A840955BFC60073F9CD /* ChessMove.m */,
 				CED82A860955BFC60073F9CD /* ChessServer.h */,
