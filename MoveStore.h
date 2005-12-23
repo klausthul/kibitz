@@ -1,7 +1,8 @@
 // icsinterface
-// $Id: Game.m 79 2005-12-21 07:14:06Z kthul $
+// $Id$
 
 #import "global.h"
+#import "ChessMove.h"
 
 @interface MoveStore : NSObject {
 	int moveNum;

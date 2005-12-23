@@ -259,10 +259,10 @@
 		CE2952740955B945006C8D90 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CED831BD09578FEE0073F9CD /* ChatWindowController.h */,
-				CED831BE09578FEE0073F9CD /* ChatWindowController.m */,
 				CED82A6D0955BFC50073F9CD /* AppController.h */,
 				CED82A6E0955BFC50073F9CD /* AppController.m */,
+				CED831BD09578FEE0073F9CD /* ChatWindowController.h */,
+				CED831BE09578FEE0073F9CD /* ChatWindowController.m */,
 				CED82A830955BFC60073F9CD /* ChessMove.h */,
 				CED82A840955BFC60073F9CD /* ChessMove.m */,
 				CED82A860955BFC60073F9CD /* ChessServer.h */,

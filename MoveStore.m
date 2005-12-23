@@ -1,5 +1,5 @@
 // icsinterface
-// $Id: Game.m 79 2005-12-21 07:14:06Z kthul $
+// $Id$
 
 #import "MoveStore.h"
 
@@ -45,8 +45,19 @@
 	return moveNum;
 }
 
-- (void) setMoveNum: (int) mn { 
+- (void) setMoveNum: (int) mn 
+{ 
 	moveNum = mn;
+}
+
+- (NSString *) whiteMovePrint
+{
+	return (whiteMove != nil) ? [whiteMove movePrint] : @"";
+}
+
+- (NSString *) blackMovePrint
+{
+	return (blackMove != nil) ? [blackMove movePrint] : @"";
 }
 
 @end

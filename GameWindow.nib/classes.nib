@@ -82,6 +82,7 @@
                 lowerName = NSTextField; 
                 messageField = NSTextField; 
                 moveListController = NSArrayController; 
+                movesTable = NSTableView; 
                 movesView = NSView; 
                 playInnerView = PlayView; 
                 playView = NSView; 

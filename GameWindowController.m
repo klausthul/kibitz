@@ -176,12 +176,24 @@ NSString *toolbarTooltips[] = {
 		return 0;
 }
 
-- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
+- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn: (NSTableColumn *) aTableColumn row: (int) rowIndex;
 {
 	if (aTableView == seekTable)
 		return [serverConnection dataForSeekTable: [aTableColumn identifier] row: rowIndex];
 	else
 		return 0;
+}
+
+- (void) tableViewSelectionDidChange: (NSNotification *) notification
+{
+	if ([notification object] == movesTable) {
+		int r = [movesTable selectedRow];
+		if (r != -1) {
+			ChessMove *m = [activeGame storedMoveNumber: r];
+			if (m != nil)
+				[chessView setShowBoard: m];
+		}
+	}
 }
 
 - (void) seekTableNeedsDisplay
@@ -242,6 +254,7 @@ NSString *toolbarTooltips[] = {
 	printf("Set active game\n");
 	if (activeGame) {
 		[moveListController unbind: @"contentArray"];
+		[activeGame removeObserver: self forKeyPath: @"moves"];
 		[activeGame release];
 	}
 	activeGame = [g retain];
@@ -249,9 +262,21 @@ NSString *toolbarTooltips[] = {
 	[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
 	[self clearMessage];
 	[moveListController bind: @"contentArray" toObject: g withKeyPath: @"moves" options: 
-	[NSDictionary dictionaryWithObjectsAndKeys:
-	[NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
-	[NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
+	 [NSDictionary dictionaryWithObjectsAndKeys:
+	 [NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
+	 [NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
+	[g addObserver: self forKeyPath: @"moves" options: 0 context: nil];
+}
+
+- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
+{
+	if (object == serverConnection)
+		[serverOutput scrollRowToVisible: [serverConnection lengthOutput] - 1];
+	else {
+		printf("%d\n", [activeGame numMoves]);
+		[movesTable scrollRowToVisible: [activeGame numMoves] - 1];
+		[movesTable deselectAll: self];
+	}
 }
 
 - (Game *) activeGame
@@ -589,11 +614,6 @@ NSString *toolbarTooltips[] = {
 - (enum Color) sideShownOnBottom
 {
 	return [activeGame sideShownOnBottom];
-}
-
-- (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
-{
-	[serverOutput scrollRowToVisible: [serverConnection lengthOutput] - 1];
 }
 
 @end

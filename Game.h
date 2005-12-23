@@ -50,5 +50,7 @@
 - (NSString *) whiteNameRating;
 - (NSString *) blackNameRating;
 - (void) setStartPosition: (ChessMove *) move;
+- (ChessMove *) storedMoveNumber: (int) num;
+- (int) numMoves;
 
 @end

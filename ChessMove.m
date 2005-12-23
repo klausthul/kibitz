@@ -137,4 +137,9 @@
 	return (sideToMove == BLACK) ? WHITE : BLACK; 
 }
 
+- (NSString *) movePrint
+{
+	return (movePrint != nil) ? movePrint : @"";
+}
+
 @end

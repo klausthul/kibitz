@@ -12,7 +12,7 @@
 	IBOutlet NSTableView *tableView, *serverOutput;
 	IBOutlet ChessView *chessView;
 	IBOutlet NSTextField *upperClock, *lowerClock, *upperName, *lowerName, *result, *resultReason, *gameType, *messageField;
-	IBOutlet NSTableView *seekTable;
+	IBOutlet NSTableView *seekTable, *movesTable;
 	IBOutlet NSPopUpButton *gameSelector;
 	IBOutlet NSSplitView *verticalSplit, *horizontalSplit;
 	IBOutlet NSView *playView, *chatView, *movesView, *upperView;

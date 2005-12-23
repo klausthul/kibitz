@@ -262,4 +262,23 @@
 	return startPosition;
 }
 
+- (ChessMove *) storedMoveNumber: (int) num
+{
+	if ((num < 0) || (num >= [moves count]))
+		return nil;
+	else {
+		MoveStore *ms = [moves objectAtIndex: num];
+		ChessMove *m = [ms blackMove];
+		if (m != nil)
+			return m;
+		else
+			return [ms whiteMove];
+	}
+}
+
+- (int) numMoves
+{
+	return [moves count];
+}
+
 @end

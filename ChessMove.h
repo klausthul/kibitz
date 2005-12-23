@@ -31,5 +31,6 @@
 - (enum Color) sideToMove;
 - (int) moveNumber;
 - (enum Color) moveColor;
+- (NSString *) movePrint;
 
 @end
