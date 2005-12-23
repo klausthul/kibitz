@@ -6,12 +6,15 @@
 
 @implementation ChessView
 
-- (id)initWithFrame:(NSRect)frameRect
+- (id) initWithFrame: (NSRect) frameRect
 {
-	return (self = [super initWithFrame:frameRect]);
+	if ((self = [super initWithFrame:frameRect]) != nil) {
+		[self registerForDraggedTypes: [NSArray arrayWithObject: NSStringPboardType]];
+	}
+	return self;
 }
 
-- (void)drawRect:(NSRect)rect
+- (void) drawRect: (NSRect) rect
 {
 	NSRect bounds = [self bounds];
 	NSRect cur_field;
@@ -21,7 +24,7 @@
 		{ board_size, board_size }
 	};
 	
-	float field_size = board_size / 8;
+	fieldSize = board_size / 8;
 	int i, j, n, c, p;
 	NSRect imagerect;
 	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
@@ -31,8 +34,8 @@
 	[[NSColor whiteColor] set];
 	[NSBezierPath fillRect: board];	
 	[[NSColor brownColor] set];
-	cur_field.size.width = field_size;
-	cur_field.size.height = field_size;
+	cur_field.size.width = fieldSize;
+	cur_field.size.height = fieldSize;
 	cur_field.origin.y = board.origin.y;
 	n = 0;
 	c = 1;
@@ -48,12 +51,12 @@
 			if (p != 0) {
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
 			}
-			cur_field.origin.x += field_size;
+			cur_field.origin.x += fieldSize;
 			n++;
 			c = 1 - c;
 		}
 		c = 1 - c;
-		cur_field.origin.y += field_size;
+		cur_field.origin.y += fieldSize;
 	}
 }
 
@@ -71,10 +74,10 @@
 	}
 }
 
-- (struct ChessField) getField: (NSEvent *) theEvent
+- (struct ChessField) getFieldFromLocation: (NSPoint) location
 {
 	struct ChessField f;
-	NSPoint p = [self convertPoint:[theEvent locationInWindow] fromView: nil];
+	NSPoint p = [self convertPoint: location fromView: nil];
 	NSRect bounds = [self bounds];
 	f.line = ceilf(p.x / bounds.size.width * 8);
 	f.row = ceilf(p.y / bounds.size.height * 8);
@@ -85,23 +88,57 @@
 	return f;	
 }
 
-- (void) mouseDown: (NSEvent *) theEvent
+- (struct ChessField) getField: (NSEvent *) theEvent
 {
-	fromMouse = [self getField: theEvent];
+	return [self getFieldFromLocation: [theEvent locationInWindow]];
 }
 
-- (void) mouseUp: (NSEvent *) theEvent
+- (unsigned int) draggingSourceOperationMaskForLocal: (BOOL) isLocal
 {
-	toMouse = [self getField: theEvent];
+	if (isLocal == NO)
+		return NSDragOperationNone;
+	else
+		return NSDragOperationMove;
+}
+
+- (void) mouseDown: (NSEvent *) event
+{
+	fromMouse = [self getField: event];
+	NSPasteboard *pb = [NSPasteboard pasteboardWithName: NSDragPboard];
+	NSPoint p = [self convertPoint: [event locationInWindow] fromView: nil];
+	NSImage *img = [[pieces[[showBoard pieceOnField: fromMouse]] copy] autorelease];
+	[img setScalesWhenResized: YES];
+	[img setSize: NSMakeSize(fieldSize, fieldSize)];
+	p.y -= fieldSize / 2;
+	p.x -= fieldSize / 2;
+	[pb declareTypes: [NSArray arrayWithObject: NSStringPboardType] owner: self];
+	[pb setString: @"move" forType: NSStringPboardType];
+	[self dragImage: img at: p offset: NSMakeSize(0, 0) event: event pasteboard: pb source: self slideBack: YES];
+}
+
+- (unsigned int) draggingEntered: (id <NSDraggingInfo>) sender
+{
+	return NSDragOperationMove;
+}
+
+- (BOOL) prepareForDragOperation: (id <NSDraggingInfo>) sender
+{
+	return YES;
+}
+
+- (BOOL) performDragOperation: (id <NSDraggingInfo>) sender
+{
+	NSPasteboard *pb = [sender draggingPasteboard];
+	toMouse = [self getFieldFromLocation: [sender draggingLocation]];
 	switch ([showBoard validateMoveFrom: fromMouse to: toMouse]) {
-	  case INVALID:
-		break;
+	  default:
+		return NO;
 	  case VALID:
 		[gameWindowController userMoveFrom: fromMouse to: toMouse promotion: 0];
-		break;
+		return YES;
 	  case REQUIRES_PROMOTION:
 		[NSApp beginSheet: promotionDialog modalForWindow: [gameWindowController window] modalDelegate: self didEndSelector: NULL contextInfo: NULL];
-		break;
+		return YES;
 	}
 }
 
