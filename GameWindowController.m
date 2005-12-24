@@ -251,7 +251,6 @@ NSString *toolbarTooltips[] = {
 
 - (void) setActiveGame: (Game *) g
 {
-	printf("Set active game\n");
 	if (activeGame) {
 		[moveListController unbind: @"contentArray"];
 		[activeGame removeObserver: self forKeyPath: @"moves"];
@@ -273,7 +272,6 @@ NSString *toolbarTooltips[] = {
 	if (object == serverConnection)
 		[serverOutput scrollRowToVisible: [serverConnection lengthOutput] - 1];
 	else {
-		printf("%d\n", [activeGame numMoves]);
 		[movesTable scrollRowToVisible: [activeGame numMoves] - 1];
 		[movesTable deselectAll: self];
 	}

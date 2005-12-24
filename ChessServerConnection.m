@@ -16,7 +16,6 @@
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason
 {
-	NSLog(@"Game end\n");
 	Game *g = [activeGames objectForKey: game]; 
 	if (g != nil) {
 		[g setResult: result reason: reason];
@@ -34,6 +33,15 @@
    
 	while (gwc = [enumerator nextObject])
 		[gwc showMessage: why];
+}
+
+- (void) passedPiecesGame: (NSNumber *) game white: (NSString *) white black: (NSString *) black
+{
+	Game *g = [activeGames objectForKey: game];
+	if (g != nil) {
+		[g passedPiecesWhite: white black: black];
+		[self updateGame: g];
+	}
 }
 
 - (void) processServerOutput
@@ -69,7 +77,6 @@
 	} else if (strncmp(lineBuf,"<g1>", 4) == 0) {
 		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
 		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 1] intValue]];
-		printf("%d: %s\n", [n intValue], lineBuf);
 		Game *g;
 		if ((g = [activeGames objectForKey: n]) == nil) {
 			if ((g = [infoGames objectForKey: n]) == nil) {
@@ -182,7 +189,8 @@
 		{ "^(It is not your move\\.)$", @selector(serverIllegalMove:), "0" },
 		{ "^(The clock is paused, use \"unpause\" to resume\\.)$", @selector(serverIllegalMove:), "0" },
 		{ "^(You are not playing or examining a game\\.)$", @selector(serverIllegalMove:), "0" },
-		{ 0, 0, 0 }
+		{"^<b1> game ([0-9]+) white \\[([PBNRQKpbnrqk]*)\\] black \\[([PBNRQKpbnrqk]*)\\]", @selector(passedPiecesGame:white:black:), "1I23" },
+		{ 0, 0, 0 } 
 	};
 /*	
 	[LOGIN_PATTERN] = "^\\*\\*\\*\\* Starting FICS session as ("+USERNAME_REGEX+")("+TITLES_REGEX+")? \\*\\*\\*\\*",
@@ -328,20 +336,30 @@
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotionPiece
 {
 	unsigned char move[10];
+	const char *pieces = " pnbrqk  PNBRQK ";
 	
-	move[0] = from.line + 'a' - 1;
-	move[1] = from.row + '1' - 1;
-	move[2] = '-';
-	move[3] = to.line  + 'a' - 1;
-	move[4] = to.row + '1' - 1;
-	if ((promotionPiece < 2) || (promotionPiece > 5)) {
-		move[5] = '\n';
-		move[6] = 0;
+	if (from.line == -1) {
+		move[0] = pieces[from.row];
+		move[1] = '@';
+		move[2] = to.line  + 'a' - 1;
+		move[3] = to.row + '1' - 1;
+		move[4] = '\n';		
+		move[5] = 0;
 	} else {
-		move[5] = '=';
-		move[6] = "  NBRQ"[promotionPiece];
-		move[7] = '\n';
-		move[8] = 0;
+		move[0] = from.line + 'a' - 1;
+		move[1] = from.row + '1' - 1;
+		move[2] = '-';
+		move[3] = to.line  + 'a' - 1;
+		move[4] = to.row + '1' - 1;
+		if ((promotionPiece < 2) || (promotionPiece > 5)) {
+			move[5] = '\n';
+			move[6] = 0;
+		} else {
+			move[5] = '=';
+			move[6] = "  NBRQ"[promotionPiece];
+			move[7] = '\n';
+			move[8] = 0;
+		}
 	}
 	[serverOS write: move maxLength: strlen((char *) move)];
 } 
@@ -353,8 +371,6 @@
 
 - (void) sendSeek: (Seek *) s
 {
-	NSLog([self description]);
-	NSLog([s seekDescriptionLine]);
 	[self sendToServer: [s seekCommand]];
 }
 

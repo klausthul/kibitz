@@ -96,14 +96,26 @@
 
 - (int) pieceOnField: (struct ChessField) field
 {
-	return fields[field.row * 8 + field.line - 9];
+	if (field.line == -1)
+		return (passedPieces[field.row] >= 1) ? field.row : 0;
+	else
+		return fields[field.row * 8 + field.line - 9];
 }
 
 - (enum ValidationResult) validateMoveFrom: (struct ChessField) from to: (struct ChessField) to
 {
-	if (((to.row == 1) || (to.row == 8)) && GETPIECE([self pieceOnField:from]) == PAWN)
-		return REQUIRES_PROMOTION;
-	return VALID;
+	if (from.line == -1) {
+		if ((from.row < 0) || (from.row > 15)
+		 || (passedPieces[from.row] <= 0)
+		 || (to.row < 1) || (to.row > 8) || (to.line < 1) || (to.line > 8))
+			return INVALID;
+		else
+			return VALID;
+	} else {
+		if (((to.row == 1) || (to.row == 8)) && GETPIECE([self pieceOnField:from]) == PAWN)
+			return REQUIRES_PROMOTION;
+		return VALID;
+	}
 }
 
 - (int) whiteCurrentTime
@@ -140,6 +152,37 @@
 - (NSString *) movePrint
 {
 	return (movePrint != nil) ? movePrint : @"";
+}
+
+- (int) passedPieces: (int) piece
+{
+	return passedPieces[piece];
+}
+
+- (void) passedPiecesWhite: (NSString *) white black: (NSString *) black
+{
+	int i, j, l;
+	char *pieceNames = "\0PNBRQK\0";
+	white = [white uppercaseString];
+	black = [black uppercaseString];
+	l = [white length];
+	for (i = 0; i < 8; i++) {
+		passedPieces[i] = 0;
+		char c = pieceNames[i];
+		if (c != 0)
+			for (j = 0; j < l; j++)
+				if (c == [white characterAtIndex: j])
+					passedPieces[i]++;
+	}
+	l = [black length];
+	for (i = 8; i < 16; i++) {
+		passedPieces[i] = 0;
+		char c = pieceNames[i - 8];
+		if (c != 0)
+			for (j = 0; j < l; j++)
+				if (c == [black characterAtIndex: j])
+					passedPieces[i]++;
+	}
 }
 
 @end

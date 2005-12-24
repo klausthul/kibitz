@@ -281,4 +281,9 @@
 	return [moves count];
 }
 
+- (void) passedPiecesWhite: (NSString *) white black: (NSString *) black
+{
+	[lastMove passedPiecesWhite: white black: black];
+}
+
 @end

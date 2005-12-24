@@ -52,5 +52,6 @@
 - (void) setStartPosition: (ChessMove *) move;
 - (ChessMove *) storedMoveNumber: (int) num;
 - (int) numMoves;
+- (void) passedPiecesWhite: (NSString *) white black: (NSString *) black;
 
 @end

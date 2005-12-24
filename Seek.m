@@ -28,10 +28,8 @@ NSString *StyleNames[] = {
 		}
 		key_length = cp - key;
 		value = ++cp;
-		if (!(*cp)) {
-			NSLog(@"Input ends after =\n");
+		if (!(*cp)) 
 			goto error;
-		}
 		while (*cp && !isspace(*cp))
 			cp++;
 		value_length = cp - value;
@@ -110,7 +108,6 @@ NSString *StyleNames[] = {
 		}
 		continue;
 	  unknown_key:;
-		NSLog(@"Unknown key in seek string\n");
 		continue;
 	}
 	return s;

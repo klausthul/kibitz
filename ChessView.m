@@ -11,6 +11,7 @@
 	if ((self = [super initWithFrame:frameRect]) != nil) {
 		[self registerForDraggedTypes: [NSArray arrayWithObject: NSStringPboardType]];
 	}
+	extendedView = YES;
 	return self;
 }
 
@@ -19,12 +20,19 @@
 	NSRect bounds = [self bounds];
 	NSRect cur_field;
 	float board_size = MIN(bounds.size.width, bounds.size.height);
-	NSRect board = {
-		{ 0, bounds.size.height - board_size },
-		{ board_size, board_size }
-	};
+	NSRect board;
+	fieldSize = board_size / ((extendedView) ? 9 : 8);	
+	 if (!extendedView)
+		board = (NSRect) {
+			{ 0, bounds.size.height - board_size },
+			{ board_size, board_size }
+		};
+	else
+		board = (NSRect) {
+			{ 0, bounds.size.height - board_size + fieldSize},
+			{ fieldSize * 8, fieldSize * 8 }
+		};
 	
-	fieldSize = board_size / 8;
 	int i, j, n, c, p;
 	NSRect imagerect;
 	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
@@ -58,6 +66,24 @@
 		c = 1 - c;
 		cur_field.origin.y += fieldSize;
 	}
+	if (extendedView) {
+		cur_field.origin.x = 0;
+		cur_field.origin.y = 0;
+		for (i = 0; i < 8; i++) {
+			int p = i + ((flip) ? 8 : 0);
+			if (pieces[p] != nil && ([showBoard passedPieces: p] > 0))
+				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
+			cur_field.origin.x += fieldSize;
+		}
+		cur_field.origin.y = fieldSize;
+		cur_field.origin.x = 8 * fieldSize;
+		for (i = 0; i < 8; i++) {
+			int p = i + ((flip) ? 0 : 8);
+			if (pieces[p] != nil && ([showBoard passedPieces: p] > 0))
+				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
+			cur_field.origin.y += fieldSize;
+		}
+	}
 }
 
 - (void) awakeFromNib 
@@ -76,12 +102,28 @@
 
 - (struct ChessField) getFieldFromLocation: (NSPoint) location
 {
+	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
 	struct ChessField f;
 	NSPoint p = [self convertPoint: location fromView: nil];
 	NSRect bounds = [self bounds];
-	f.line = ceilf(p.x / bounds.size.width * 8);
-	f.row = ceilf(p.y / bounds.size.height * 8);
-	if ([gameWindowController sideShownOnBottom] == BLACK) {
+	if (extendedView) {
+		f.line = ceilf(p.x / bounds.size.width * 9);
+		f.row = ceilf(p.y / bounds.size.height * 9) - 1;
+		if (f.line == 9) {
+			f.row = f.row + ((flip) ? -1 : 7);
+			f.line = -1;
+			return f;
+		}
+		if (f.row == 0) {
+			f.row = f.line + ((flip) ? 7 : -1);
+			f.line = -1;
+			return f;
+		}
+	} else {
+		f.line = ceilf(p.x / bounds.size.width * 8);
+		f.row = ceilf(p.y / bounds.size.height * 8);
+	}
+	if (flip) {
 		f.line = 9 - f.line;
 		f.row = 9 - f.row;
 	}
@@ -107,13 +149,15 @@
 	NSPasteboard *pb = [NSPasteboard pasteboardWithName: NSDragPboard];
 	NSPoint p = [self convertPoint: [event locationInWindow] fromView: nil];
 	NSImage *img = [[pieces[[showBoard pieceOnField: fromMouse]] copy] autorelease];
-	[img setScalesWhenResized: YES];
-	[img setSize: NSMakeSize(fieldSize, fieldSize)];
-	p.y -= fieldSize / 2;
-	p.x -= fieldSize / 2;
-	[pb declareTypes: [NSArray arrayWithObject: NSStringPboardType] owner: self];
-	[pb setString: @"move" forType: NSStringPboardType];
-	[self dragImage: img at: p offset: NSMakeSize(0, 0) event: event pasteboard: pb source: self slideBack: YES];
+	if (img != nil) {
+		[img setScalesWhenResized: YES];
+		[img setSize: NSMakeSize(fieldSize, fieldSize)];
+		p.y -= fieldSize / 2;
+		p.x -= fieldSize / 2;
+		[pb declareTypes: [NSArray arrayWithObject: NSStringPboardType] owner: self];
+		[pb setString: @"move" forType: NSStringPboardType];
+		[self dragImage: img at: p offset: NSMakeSize(0, 0) event: event pasteboard: pb source: self slideBack: YES];
+	}
 }
 
 - (unsigned int) draggingEntered: (id <NSDraggingInfo>) sender
@@ -128,7 +172,6 @@
 
 - (BOOL) performDragOperation: (id <NSDraggingInfo>) sender
 {
-	NSPasteboard *pb = [sender draggingPasteboard];
 	toMouse = [self getFieldFromLocation: [sender draggingLocation]];
 	switch ([showBoard validateMoveFrom: fromMouse to: toMouse]) {
 	  default:

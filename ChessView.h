@@ -12,6 +12,7 @@
 	NSImage *pieces[16];
 	struct ChessField fromMouse, toMouse;
 	float fieldSize;
+	BOOL extendedView;
 }
 
 - (id) initWithFrame: (NSRect) frameRect;
