@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		CE120FFF0983B3E7001EB123 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = CED2637409838F2E005367EC /* index.html */; };
+		CE12100E0983B4DA001EB123 /* gpl.html in Resources */ = {isa = PBXBuildFile; fileRef = CE12100D0983B4DA001EB123 /* gpl.html */; };
 		CE2091500939AFED008697DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		CE2091520939B008008697DE /* wr.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33C01091E36EF005B773B /* wr.tiff */; };
 		CE2091530939B009008697DE /* wq.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CED33C00091E36EF005B773B /* wq.tiff */; };
@@ -96,6 +98,7 @@
 		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* kibitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kibitz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE12100D0983B4DA001EB123 /* gpl.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = gpl.html; path = "kibitz Help/gpl.html"; sourceTree = SOURCE_ROOT; };
 		CE2950ED09554DB0006C8D90 /* SoundNewGame.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundNewGame.aiff; path = sounds/SoundNewGame.aiff; sourceTree = "<group>"; };
 		CE29519E095566BA006C8D90 /* SoundMoveOther.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundMoveOther.aiff; path = sounds/SoundMoveOther.aiff; sourceTree = "<group>"; };
 		CE29519F095566BA006C8D90 /* SoundMoveSelf.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundMoveSelf.aiff; path = sounds/SoundMoveSelf.aiff; sourceTree = "<group>"; };
@@ -108,7 +111,7 @@
 		CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ServerSelector.nib; sourceTree = "<group>"; };
 		CED260F009833A6E005367EC /* application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = application.icns; sourceTree = "<group>"; };
 		CED2634109836079005367EC /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		CED2637409838F2E005367EC /* index.html */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; path = index.html; sourceTree = "<group>"; };
+		CED2637409838F2E005367EC /* index.html */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = index.html; path = "kibitz Help/index.html"; sourceTree = SOURCE_ROOT; };
 		CED2639E09839318005367EC /* kibitz Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "kibitz Help"; sourceTree = "<group>"; };
 		CED33BF4091E36E0005B773B /* bb.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bb.tiff; path = pieces/bb.tiff; sourceTree = "<group>"; };
 		CED33BF7091E36EF005B773B /* bk.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bk.tiff; path = pieces/bk.tiff; sourceTree = "<group>"; };
@@ -318,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				CED2637409838F2E005367EC /* index.html */,
+				CE12100D0983B4DA001EB123 /* gpl.html */,
 			);
 			path = "kibitz Help";
 			sourceTree = SOURCE_ROOT;
@@ -407,6 +411,8 @@
 				CED260F109833A6E005367EC /* application.icns in Resources */,
 				CED2634209836079005367EC /* Credits.rtf in Resources */,
 				CED263A409839318005367EC /* kibitz Help in Resources */,
+				CE120FFF0983B3E7001EB123 /* index.html in Resources */,
+				CE12100E0983B4DA001EB123 /* gpl.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
