@@ -3,19 +3,22 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class SeekGraph;
+@class AppController;
+@class ChatWindowController;
+@class ChessMove;
+@class ChessServer;
+@class ChessServerConnection;
 @class ChessServerList;
 @class ChessServerListControl;
-@class ChessMove;
-@class Game;
 @class ChessView;
-@class AppController;
-@class ChessServer;
-@class Seek;
-@class ChessServerConnection;
+@class Game;
 @class GameWindowController;
+@class PatternMatching;
+@class PlayView;
+@class Seek;
 @class Sound;
 @class MoveStore;
+@class OutputLine;
 
 extern Sound *gSounds;
 

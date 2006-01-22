@@ -6,8 +6,7 @@
 #import "ChessServerConnection.h"
 #import "SeekControl.h"
 
-@interface AppController : NSObject
-{
+@interface AppController : NSObject {
 	SeekControl *seekControl;
 	ChessServerListControl *chessServerListControl;
 	NSMutableArray *serverConnections;
