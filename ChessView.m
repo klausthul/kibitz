@@ -1,5 +1,18 @@
-// icsinterface
-// $Id$
+/*
+	$Id$
+
+	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
+	This file is part of kibitz.
+
+	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
 
 #import "ChessView.h"
 #import "ChessMove.h"
@@ -19,7 +32,7 @@
 {
 	NSRect bounds = [self bounds];
 	NSRect cur_field;
-	float board_size = MIN(bounds.size.width, bounds.size.height);
+	float board_size = fminf(bounds.size.width, bounds.size.height);
 	NSRect board;
 	fieldSize = board_size / ((extendedView) ? 9 : 8);	
 	 if (!extendedView)
@@ -70,7 +83,7 @@
 		cur_field.origin.x = 0;
 		cur_field.origin.y = 0;
 		for (i = 0; i < 8; i++) {
-			int p = i + ((flip) ? 8 : 0);
+			p = i + ((flip) ? 8 : 0);
 			if (pieces[p] != nil && ([showBoard passedPieces: p] > 0))
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
 			cur_field.origin.x += fieldSize;
@@ -78,7 +91,7 @@
 		cur_field.origin.y = fieldSize;
 		cur_field.origin.x = 8 * fieldSize;
 		for (i = 0; i < 8; i++) {
-			int p = i + ((flip) ? 0 : 8);
+			p = i + ((flip) ? 0 : 8);
 			if (pieces[p] != nil && ([showBoard passedPieces: p] > 0))
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
 			cur_field.origin.y += fieldSize;

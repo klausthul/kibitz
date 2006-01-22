@@ -1,5 +1,18 @@
-// icsinterface
-// $Id$
+/*
+	$Id$
+
+	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
+	This file is part of kibitz.
+
+	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
 
 #import "ChessServerConnection.h"
 #import "Game.h"
@@ -31,7 +44,7 @@
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
    
-	while (gwc = [enumerator nextObject])
+	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc showMessage: why];
 }
 
@@ -52,7 +65,7 @@
 		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 16] intValue]];
 		Game *g = [activeGames objectForKey: n];
 		if (g == nil) {
-			if (g = [infoGames objectForKey: n]) {
+			if ((g = [infoGames objectForKey: n]) != nil) {
 				[[g retain] autorelease];
 				[infoGames removeObjectForKey: n];
 				[g updateWithStyle12: a];
@@ -63,7 +76,7 @@
 			[self setGameLists];
 			NSEnumerator *enumerator = [serverWindows objectEnumerator];
 			GameWindowController *gwc;
-			while (gwc = [enumerator nextObject])
+			while ((gwc = [enumerator nextObject]) != nil)
 				[gwc setActiveGame: g];
 			[gSounds newGame: [g gameRelationship]];
 			[g newMove: [ChessMove moveFromStyle12: a]];
@@ -97,13 +110,13 @@
 		NSEnumerator *enumerator = [sr objectEnumerator];
 		NSString *s;
 		
-		while (s = [enumerator nextObject]) {
+		while ((s = [enumerator nextObject]) != nil) {
 			int num = [s intValue];
 			[self removeSeekFromServer: num];
 		}
 	} else if (strncmp(lineBuf,"<sc>", 4) == 0) {
 		[self removeAllSeeks];
-	} else if (invoc = [patternMatcher parseLine: lineBuf toTarget: self]) {
+	} else if ((invoc = [patternMatcher parseLine: lineBuf toTarget: self]) != nil) {
 		[invoc invoke];
 	} else {
 		NSString *s = [NSString stringWithUTF8String:(char *) lineBuf];
@@ -115,13 +128,13 @@
 - (void) stream: (NSStream *) theStream handleEvent:(NSStreamEvent)event
 {
 	char c;
-	int i;
+	unsigned int i;
 	
 	switch(event) {
 	  case NSStreamEventHasBytesAvailable: {
 		unsigned char buf[2048];
 		unsigned int len = 0;
-		while (len = [(NSInputStream *) theStream read:buf maxLength: 2048]) {
+		while ((len = [(NSInputStream *) theStream read:buf maxLength: 2048]) > 0) {
 			for (i = 0; i < len; i++) {
 				switch (c = buf[i]) {
 				  case 10: 
@@ -147,7 +160,7 @@
 				if (sendInit) {
 					const char *s;
 					sendInit = NO;
-					if (s = [[currentServer initCommands] UTF8String]) {
+					if ((s = [[currentServer initCommands] UTF8String]) != nil) {
 						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
 						[serverOS write:(unsigned const char *) "\n" maxLength:1];
 					}
@@ -178,6 +191,8 @@
 	  case NSStreamEventErrorOccurred:
 		[errorHandler handleStreamError: [theStream streamError]];
 //		[self release];
+		break;
+	  default:
 		break;
 	}
 }
@@ -310,7 +325,7 @@
 	return [seeks count];
 }
 
-- (id) dataForSeekTable: (NSString *) x row:(int)rowIndex;
+- (id) dataForSeekTable: (NSString *) x row:(int)rowIndex
 {
 	NSNumber *key = [[seeks allKeys] objectAtIndex: rowIndex];
 	if ([x compare: @"#"] == 0) {
@@ -394,7 +409,7 @@
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
    
-	while (gwc = [enumerator nextObject])
+	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc seekTableNeedsDisplay];
 }
 
@@ -403,7 +418,7 @@
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
    
-	while (gwc = [enumerator nextObject])
+	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc setGameList: activeGames];
 }
 
@@ -412,7 +427,7 @@
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
    
-	while (gwc = [enumerator nextObject])
+	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc updateGame: g];
 }
 
@@ -424,7 +439,7 @@
 	[gwc setGameList: activeGames];
 	NSEnumerator *enumerator = [activeGames objectEnumerator];
 	Game *g, *g2 = nil;  
-	while (g = [enumerator nextObject]) {
+	while ((g = [enumerator nextObject]) != nil) {
 		[gwc updateGame: g];
 		g2 = g;
 	}

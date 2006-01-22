@@ -1,5 +1,18 @@
-// icsinterface
-// $Id$
+/*
+	$Id$
+
+	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
+	This file is part of kibitz.
+
+	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
 
 #import "GameWindowController.h"
 #import "ChatWindowController.h"
@@ -176,7 +189,7 @@ NSString *toolbarTooltips[] = {
 		return 0;
 }
 
-- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn: (NSTableColumn *) aTableColumn row: (int) rowIndex;
+- (id) tableView:(NSTableView *)aTableView objectValueForTableColumn: (NSTableColumn *) aTableColumn row: (int) rowIndex
 {
 	if (aTableView == seekTable)
 		return [serverConnection dataForSeekTable: [aTableColumn identifier] row: rowIndex];
@@ -389,17 +402,17 @@ NSString *toolbarTooltips[] = {
 
 }
 
-- (IBAction) logout: (id) sender;
+- (IBAction) logout: (id) sender
 {
 	NSLog(@"logout");
 }
 
-- (IBAction) reconnect: (id) sender;
+- (IBAction) reconnect: (id) sender
 {
 	NSLog(@"reconnect");
 }
 
-- (IBAction) exportGame: (id) sender;
+- (IBAction) exportGame: (id) sender
 {
 	NSLog(@"exportGame");
 }
@@ -452,7 +465,7 @@ NSString *toolbarTooltips[] = {
 			float delta = oldSize.width - senderFrame.size.width;
 			if (delta < 0) {
 				int x;
-				x = MIN(playFrame.size.height - [playInnerView maxHeightForWidth], -delta);
+				x = fminf(playFrame.size.height - [playInnerView maxHeightForWidth], -delta);
 				delta += x;
 				playFrame.size.width += x;
 				movesFrame.size.width -= x;
@@ -461,8 +474,8 @@ NSString *toolbarTooltips[] = {
 			float room_right = movesFrame.size.width - 210;		
 			float total_room = room_left + room_right;
 			if (total_room >= 1)
-				playFrame.size.width = ceilf(MIN(playFrame.size.width - room_left / total_room * delta, 
-				 MAX([playInnerView maxWidthForHeight], playFrame.size.width)));
+				playFrame.size.width = ceilf(fminf(playFrame.size.width - room_left / total_room * delta, 
+				 fmaxf([playInnerView maxWidthForHeight], playFrame.size.width)));
 			else
 				playFrame.size.width = ceilf(playFrame.size.width - delta * 0.5);
 			movesFrame.size.width = senderFrame.size.width - dividerThickness - playFrame.size.width;
@@ -482,7 +495,7 @@ NSString *toolbarTooltips[] = {
 			float delta = oldSize.height - senderFrame.size.height;
 			if (delta < 0) {
 				int x;
-				x = MIN(playFrame.size.width - [playInnerView maxWidthForHeight], -delta);
+				x = fminf(playFrame.size.width - [playInnerView maxWidthForHeight], -delta);
 				delta += x;
 				upperFrame.size.height += x;
 				chatFrame.size.height -= x;
@@ -491,8 +504,8 @@ NSString *toolbarTooltips[] = {
 			float room_lower = chatFrame.size.height - 150;
 			float total_room = room_upper + room_lower;
 			if (total_room >= 1)
-				upperFrame.size.height = ceilf(MIN(upperFrame.size.height - room_upper / total_room * delta, 
-				 MAX([playInnerView maxHeightForWidth]  - dividerThickness, upperFrame.size.height)));
+				upperFrame.size.height = ceilf(fminf(upperFrame.size.height - room_upper / total_room * delta, 
+				 fmaxf([playInnerView maxHeightForWidth]  - dividerThickness, upperFrame.size.height)));
 			else
 				upperFrame.size.height = ceilf(upperFrame.size.height - delta * 0.5);
 			chatFrame.size.height = senderFrame.size.height - dividerThickness - upperFrame.size.height;

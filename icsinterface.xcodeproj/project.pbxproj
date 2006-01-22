@@ -36,6 +36,9 @@
 		CE2951E30955B024006C8D90 /* Seek.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE2951E20955B024006C8D90 /* Seek.nib */; };
 		CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE309DC3095A2F5200F756BB /* MoveStore.m */; };
 		CE69B2F6094BD9E500F4E6D9 /* GameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60D609399D0000AC6D87 /* GameWindow.nib */; };
+		CED260F109833A6E005367EC /* application.icns in Resources */ = {isa = PBXBuildFile; fileRef = CED260F009833A6E005367EC /* application.icns */; };
+		CED2634209836079005367EC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CED2634109836079005367EC /* Credits.rtf */; };
+		CED263A409839318005367EC /* kibitz Help in Resources */ = {isa = PBXBuildFile; fileRef = CED2639E09839318005367EC /* kibitz Help */; };
 		CED82AD80955BFC60073F9CD /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A6E0955BFC50073F9CD /* AppController.m */; };
 		CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A840955BFC60073F9CD /* ChessMove.m */; };
 		CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A870955BFC60073F9CD /* ChessServer.m */; };
@@ -45,7 +48,6 @@
 		CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8F0955BFC60073F9CD /* ChessView.m */; };
 		CED82AF00955BFC60073F9CD /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A970955BFC60073F9CD /* Game.m */; };
 		CED82AF20955BFC60073F9CD /* GameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A9A0955BFC60073F9CD /* GameWindowController.m */; };
-		CED82AF90955BFC60073F9CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82AA90955BFC60073F9CD /* main.m */; };
 		CED82AFA0955BFC60073F9CD /* PatternMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82AAB0955BFC60073F9CD /* PatternMatching.m */; };
 		CED82B070955BFC60073F9CD /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82ABA0955BFC60073F9CD /* PlayView.m */; };
 		CED82B080955BFC60073F9CD /* Seek.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82ABC0955BFC60073F9CD /* Seek.m */; };
@@ -93,7 +95,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* icsinterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icsinterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* kibitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kibitz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2950ED09554DB0006C8D90 /* SoundNewGame.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundNewGame.aiff; path = sounds/SoundNewGame.aiff; sourceTree = "<group>"; };
 		CE29519E095566BA006C8D90 /* SoundMoveOther.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundMoveOther.aiff; path = sounds/SoundMoveOther.aiff; sourceTree = "<group>"; };
 		CE29519F095566BA006C8D90 /* SoundMoveSelf.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundMoveSelf.aiff; path = sounds/SoundMoveSelf.aiff; sourceTree = "<group>"; };
@@ -104,6 +106,10 @@
 		CE309DC3095A2F5200F756BB /* MoveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveStore.m; sourceTree = "<group>"; };
 		CE7D60D609399D0000AC6D87 /* GameWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = GameWindow.nib; sourceTree = "<group>"; };
 		CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ServerSelector.nib; sourceTree = "<group>"; };
+		CED260F009833A6E005367EC /* application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = application.icns; sourceTree = "<group>"; };
+		CED2634109836079005367EC /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		CED2637409838F2E005367EC /* index.html */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; path = index.html; sourceTree = "<group>"; };
+		CED2639E09839318005367EC /* kibitz Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "kibitz Help"; sourceTree = "<group>"; };
 		CED33BF4091E36E0005B773B /* bb.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bb.tiff; path = pieces/bb.tiff; sourceTree = "<group>"; };
 		CED33BF7091E36EF005B773B /* bk.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bk.tiff; path = pieces/bk.tiff; sourceTree = "<group>"; };
 		CED33BF8091E36EF005B773B /* bn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bn.tiff; path = pieces/bn.tiff; sourceTree = "<group>"; };
@@ -135,7 +141,6 @@
 		CED82A990955BFC60073F9CD /* GameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = GameWindowController.h; sourceTree = "<group>"; };
 		CED82A9A0955BFC60073F9CD /* GameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GameWindowController.m; sourceTree = "<group>"; };
 		CED82A9C0955BFC60073F9CD /* global.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
-		CED82AA90955BFC60073F9CD /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CED82AAA0955BFC60073F9CD /* PatternMatching.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PatternMatching.h; sourceTree = "<group>"; };
 		CED82AAB0955BFC60073F9CD /* PatternMatching.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PatternMatching.m; sourceTree = "<group>"; };
 		CED82AB90955BFC60073F9CD /* PlayView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PlayView.h; sourceTree = "<group>"; };
@@ -189,7 +194,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* icsinterface.app */,
+				8D1107320486CEB800E47090 /* kibitz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +202,8 @@
 		29B97314FDCFA39411CA2CEA /* icsinterface */ = {
 			isa = PBXGroup;
 			children = (
+				CED2639E09839318005367EC /* kibitz Help */,
+				CED2634109836079005367EC /* Credits.rtf */,
 				CE2952740955B945006C8D90 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -219,6 +226,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CED2637309838F2E005367EC /* kibitz Help */,
+				CED260EF09833A6E005367EC /* icons */,
 				CE2951CB09559866006C8D90 /* SoundGameEnd.aiff */,
 				CE2951CC09559866006C8D90 /* SoundMessage.aiff */,
 				CE29519E095566BA006C8D90 /* SoundMoveOther.aiff */,
@@ -279,7 +288,6 @@
 				CED82A970955BFC60073F9CD /* Game.m */,
 				CED82A990955BFC60073F9CD /* GameWindowController.h */,
 				CED82A9A0955BFC60073F9CD /* GameWindowController.m */,
-				CED82AA90955BFC60073F9CD /* main.m */,
 				CED82AAA0955BFC60073F9CD /* PatternMatching.h */,
 				CED82AAB0955BFC60073F9CD /* PatternMatching.m */,
 				CED82AB90955BFC60073F9CD /* PlayView.h */,
@@ -298,12 +306,28 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		CED260EF09833A6E005367EC /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				CED260F009833A6E005367EC /* application.icns */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		CED2637309838F2E005367EC /* kibitz Help */ = {
+			isa = PBXGroup;
+			children = (
+				CED2637409838F2E005367EC /* index.html */,
+			);
+			path = "kibitz Help";
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* icsinterface */ = {
+		8D1107260486CEB800E47090 /* kibitz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEA0CBD509015E9A00BF913A /* Build configuration list for PBXNativeTarget "icsinterface" */;
+			buildConfigurationList = CEA0CBD509015E9A00BF913A /* Build configuration list for PBXNativeTarget "kibitz" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -324,10 +348,10 @@
 			};
 			dependencies = (
 			);
-			name = icsinterface;
+			name = kibitz;
 			productInstallPath = "$(HOME)/Applications";
 			productName = icsinterface;
-			productReference = 8D1107320486CEB800E47090 /* icsinterface.app */;
+			productReference = 8D1107320486CEB800E47090 /* kibitz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +370,7 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* icsinterface */;
 			projectDirPath = "";
 			targets = (
-				8D1107260486CEB800E47090 /* icsinterface */,
+				8D1107260486CEB800E47090 /* kibitz */,
 			);
 		};
 /* End PBXProject section */
@@ -380,6 +404,9 @@
 				CE2951CE09559866006C8D90 /* SoundMessage.aiff in Resources */,
 				CE2951E30955B024006C8D90 /* Seek.nib in Resources */,
 				CED8329409579A130073F9CD /* ChatWindow.nib in Resources */,
+				CED260F109833A6E005367EC /* application.icns in Resources */,
+				CED2634209836079005367EC /* Credits.rtf in Resources */,
+				CED263A409839318005367EC /* kibitz Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +427,6 @@
 				CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */,
 				CED82AF00955BFC60073F9CD /* Game.m in Sources */,
 				CED82AF20955BFC60073F9CD /* GameWindowController.m in Sources */,
-				CED82AF90955BFC60073F9CD /* main.m in Sources */,
 				CED82AFA0955BFC60073F9CD /* PatternMatching.m in Sources */,
 				CED82B070955BFC60073F9CD /* PlayView.m in Sources */,
 				CED82B080955BFC60073F9CD /* Seek.m in Sources */,
@@ -437,107 +463,183 @@
 		CEA0CBD609015E9A00BF913A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = ppc;
 				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = icsinterface_Prefix.pch;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = NO;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = NO;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_STYLE = DYNAMIC;
 				PREBINDING = NO;
-				PRODUCT_NAME = icsinterface;
+				PRODUCT_NAME = kibitz;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
-		CEA0CBD709015E9A00BF913A /* Release */ = {
+		CEA0CBD709015E9A00BF913A /* Release universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
 				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = icsinterface_Prefix.pch;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = NO;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = NO;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_STYLE = DYNAMIC;
 				PREBINDING = NO;
-				PRODUCT_NAME = icsinterface;
+				PRODUCT_NAME = kibitz;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
-			name = Release;
-		};
-		CEA0CBD809015E9A00BF913A /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = icsinterface_Prefix.pch;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_STYLE = DYNAMIC;
-				PRODUCT_NAME = icsinterface;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Default;
+			name = "Release universal";
 		};
 		CEA0CBDA09015E9A00BF913A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Debug;
 		};
-		CEA0CBDB09015E9A00BF913A /* Release */ = {
+		CEA0CBDB09015E9A00BF913A /* Release universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Release;
+			name = "Release universal";
 		};
-		CEA0CBDC09015E9A00BF913A /* Default */ = {
+		CED2610509833E02005367EC /* Debug universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_FAST_OBJC_DISPATCH = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = icsinterface_Prefix.pch;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = NO;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = NO;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_STYLE = DYNAMIC;
+				PREBINDING = NO;
+				PRODUCT_NAME = kibitz;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
 			};
-			name = Default;
+			name = "Debug universal";
+		};
+		CED2610609833E02005367EC /* Debug universal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = "Debug universal";
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEA0CBD509015E9A00BF913A /* Build configuration list for PBXNativeTarget "icsinterface" */ = {
+		CEA0CBD509015E9A00BF913A /* Build configuration list for PBXNativeTarget "kibitz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEA0CBD609015E9A00BF913A /* Debug */,
-				CEA0CBD709015E9A00BF913A /* Release */,
-				CEA0CBD809015E9A00BF913A /* Default */,
+				CED2610509833E02005367EC /* Debug universal */,
+				CEA0CBD709015E9A00BF913A /* Release universal */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = "Debug universal";
 		};
 		CEA0CBD909015E9A00BF913A /* Build configuration list for PBXProject "icsinterface" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEA0CBDA09015E9A00BF913A /* Debug */,
-				CEA0CBDB09015E9A00BF913A /* Release */,
-				CEA0CBDC09015E9A00BF913A /* Default */,
+				CED2610609833E02005367EC /* Debug universal */,
+				CEA0CBDB09015E9A00BF913A /* Release universal */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = "Debug universal";
 		};
 /* End XCConfigurationList section */
 	};

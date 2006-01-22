@@ -1,5 +1,19 @@
-// icsinterface
-// $Id$
+/*
+	$Id$
+
+	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
+	This file is part of kibitz.
+
+	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
 
 #import <ctype.h>
 #import "Game.h"
@@ -181,7 +195,7 @@
 	sideShownOnBottom = color;
 }
 
-- (void) flipSideShownOnBottom;
+- (void) flipSideShownOnBottom
 {
 	sideShownOnBottom = (sideShownOnBottom == BLACK) ? WHITE : BLACK;
 }
@@ -198,16 +212,17 @@
 
 - (void) setDefaultBoardOrientation
 {
-	enum Color toMove = WHITE;
 	switch (gameRelationship) {
-	  case -1:
-		toMove = BLACK;
-	  case 1:
-		if ([self sideToMove] == BLACK)
-			toMove = BLACK - toMove; 
-	    break;
+	  case PLAYING_OPONENT_MOVE:
+		[self setSideShownOnBottom: BLACK - [self sideToMove]];
+		break;
+	  case PLAYING_MYMOVE:
+		[self setSideShownOnBottom: [self sideToMove]];
+		break;
+	  default:
+		[self setSideShownOnBottom: WHITE];
+		break;
 	}
-    [self setSideShownOnBottom: WHITE];
 }
 
 - (enum Color) sideToMove
@@ -262,9 +277,9 @@
 	return startPosition;
 }
 
-- (ChessMove *) storedMoveNumber: (int) num
+- (ChessMove *) storedMoveNumber: (unsigned int) num
 {
-	if ((num < 0) || (num >= [moves count]))
+	if (num >= [moves count])
 		return nil;
 	else {
 		MoveStore *ms = [moves objectAtIndex: num];
