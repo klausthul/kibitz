@@ -84,16 +84,24 @@
 		cur_field.origin.y = 0;
 		for (i = 0; i < 8; i++) {
 			p = i + ((flip) ? 8 : 0);
-			if (pieces[p] != nil && ([showBoard passedPieces: p] > 0))
+			int np = [showBoard passedPieces: p];
+			if (pieces[p] != nil && (np > 0)) {
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
+				if (np > 1)
+					[[NSString stringWithFormat: @"%d", np] drawAtPoint: cur_field.origin withAttributes: nil];
+			}
 			cur_field.origin.x += fieldSize;
 		}
 		cur_field.origin.y = fieldSize;
 		cur_field.origin.x = 8 * fieldSize;
 		for (i = 0; i < 8; i++) {
 			p = i + ((flip) ? 0 : 8);
-			if (pieces[p] != nil && ([showBoard passedPieces: p] > 0))
+			int np = [showBoard passedPieces: p];
+			if (pieces[p] != nil && (np > 0)) {
 				[pieces[p] drawInRect:cur_field fromRect:imagerect operation:NSCompositeSourceOver fraction:1];
+				if (np > 1)
+					[[NSString stringWithFormat: @"%d", np] drawAtPoint: cur_field.origin withAttributes: nil];
+			}
 			cur_field.origin.y += fieldSize;
 		}
 	}

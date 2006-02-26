@@ -267,7 +267,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 5}, {244, 725}}</string>
+							<string>{{0, 635}, {244, 725}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -297,8 +297,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -316,7 +314,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE5CBAF409B187E800B21E8C</string>
+										<string>CE5CBB0D09B1C08500B21E8C</string>
 										<key>history</key>
 										<array>
 											<string>CE8488F9099E586A00D87926</string>
@@ -367,6 +365,8 @@
 							<string>326pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -384,7 +384,7 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE5CBAF909B187E800B21E8C</string>
+										<string>CE5CBB0E09B1C08500B21E8C</string>
 										<key>history</key>
 										<array>
 											<string>CE8488F9099E586A00D87926</string>
@@ -396,7 +396,7 @@
 											<string>CE5CBAD809B1875300B21E8C</string>
 											<string>CE5CBAD909B1875300B21E8C</string>
 											<string>CE5CBAF509B187E800B21E8C</string>
-											<string>CE5CBAF609B187E800B21E8C</string>
+											<string>CE5CBB0509B1BEDC00B21E8C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -607,8 +607,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CE3AC19D0901FF4300DD3768</string>
 		<string>/Users/kthul/kibitz/icsinterface.xcodeproj</string>
+		<string>CE3AC19D0901FF4300DD3768</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
@@ -628,12 +628,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>ChessView.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -700,7 +702,7 @@
 			<key>WindowToolGUID</key>
 			<string>CE3AC19D0901FF4300DD3768</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
