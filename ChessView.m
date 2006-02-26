@@ -24,7 +24,7 @@
 	if ((self = [super initWithFrame:frameRect]) != nil) {
 		[self registerForDraggedTypes: [NSArray arrayWithObject: NSStringPboardType]];
 	}
-	extendedView = YES;
+	extendedView = NO;
 	return self;
 }
 
@@ -202,6 +202,7 @@
 {
 	[showBoard release];
 	showBoard = [board retain];
+	extendedView = [showBoard hasPassedPieces];
 	[self setNeedsDisplay: TRUE];
 }
 

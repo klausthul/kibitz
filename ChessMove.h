@@ -28,6 +28,7 @@
 	NSString *timeUsed;
 	enum GameRelationship gameRelationship;
 	int passedPieces[16];
+	bool hasPassedPieces;
 }
 
 + (ChessMove *) moveFromStyle12: (NSArray *) data;
@@ -47,6 +48,7 @@
 - (enum Color) moveColor;
 - (NSString *) movePrint;
 - (int) passedPieces: (int) piece;
+- (bool) hasPassedPieces;
 - (void) passedPiecesWhite: (NSString *) white black: (NSString *) black;
 
 @end

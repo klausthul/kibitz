@@ -179,13 +179,16 @@
 	white = [white uppercaseString];
 	black = [black uppercaseString];
 	l = [white length];
+	hasPassedPieces = 0;
 	for (i = 0; i < 8; i++) {
 		passedPieces[i] = 0;
 		char c = pieceNames[i];
 		if (c != 0)
 			for (j = 0; j < l; j++)
-				if (c == [white characterAtIndex: j])
+				if (c == [white characterAtIndex: j]) {
 					passedPieces[i]++;
+					hasPassedPieces = YES;
+				}
 	}
 	l = [black length];
 	for (i = 8; i < 16; i++) {
@@ -193,9 +196,15 @@
 		char c = pieceNames[i - 8];
 		if (c != 0)
 			for (j = 0; j < l; j++)
-				if (c == [black characterAtIndex: j])
+				if (c == [black characterAtIndex: j]) {
 					passedPieces[i]++;
+					hasPassedPieces = YES;
+				}
 	}
+}
+
+- (bool) hasPassedPieces {
+	return hasPassedPieces;
 }
 
 @end
