@@ -43,6 +43,11 @@
 	return self;
 }
 
+- (void) awakeFromNib
+{
+	[self showChessServerSelectorWindow];
+}
+
 - (void) dealloc
 {
 	[chessServerListControl release];
@@ -50,11 +55,16 @@
 	[super dealloc];
 }
 
-- (IBAction) selectServer: (id) sender
+- (void) showChessServerSelectorWindow
 {
 	if (chessServerListControl == nil)
 		chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];
-	[chessServerListControl show: sender];
+	[chessServerListControl show: self];
+}
+
+- (IBAction) selectServer: (id) sender
+{
+	[self showChessServerSelectorWindow];
 }
 
 - (IBAction) newSeek: (id) sender
@@ -66,9 +76,8 @@
 
 - (void) connectChessServer: (ChessServer *) cs
 {	
-	ChessServerConnection *csc = [[ChessServerConnection alloc] initWithChessServer: cs]; 
+	ChessServerConnection *csc = [[[ChessServerConnection alloc] initWithChessServer: cs appController: self] autorelease]; 
 	if (csc != nil) {
-		[csc setErrorHandler: chessServerListControl];
 		[chessServerListControl close];
 		[self willChangeValueForKey: @"serverConnections"];
 		[serverConnections addObject: csc];
@@ -77,9 +86,31 @@
 	}
 }
 
+- (void) closeServerConnection: (ChessServerConnection *) csc
+{	
+	NSLog(@"Close Server Connection");
+	if (csc != nil) {
+		[self willChangeValueForKey: @"serverConnections"];
+		[serverConnections removeObject: csc];
+		[self didChangeValueForKey: @"serverConnections"];
+		if ([serverConnections count] == 0)
+			[self showChessServerSelectorWindow]; 
+	}
+}
+
 - (NSArray *) serverConnections
 {
 	return serverConnections;
+}
+
+- (NSApplicationTerminateReply) applicationShouldTerminate: (NSApplication *) sender
+{
+	if (([serverConnections count] == 0)
+	 || (NSRunAlertPanel(@"Confirm quit", @"You are currently connected to a chess server. Quit anyway?", @"Yes", @"No", nil)
+	     == NSAlertDefaultReturn))
+		return NSTerminateNow;
+	else
+		return NSTerminateCancel;
 }
 
 @end

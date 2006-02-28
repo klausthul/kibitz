@@ -88,5 +88,8 @@
 - (NSSize) windowWillResize:(NSWindow *) sender toSize: (NSSize) proposedFrameSize;
 - (enum Color) sideShownOnBottom;
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context;
+- (BOOL) windowShouldClose: (id)sender;
+- (void) logoutWarningDidEnd: (NSWindow *) sheet returnCode: (int) returnCode contextInfo: (void *) contextInfo;
+- (void) windowWillClose: (NSNotification *) aNotification;
 
 @end

@@ -30,6 +30,7 @@
 	bool rated;
 	int partnerGame;
 	NSMutableArray *moves;
+	BOOL isEmpty;
 }
 
 - (void) setPlayerNamesWhite: (NSString *) white black: (NSString *) black;
@@ -66,5 +67,6 @@
 - (ChessMove *) storedMoveNumber: (unsigned int) num;
 - (int) numMoves;
 - (void) passedPiecesWhite: (NSString *) white black: (NSString *) black;
+- (BOOL) isEmpty;
 
 @end

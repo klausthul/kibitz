@@ -134,6 +134,7 @@
 	  case NSStreamEventHasBytesAvailable: {
 		unsigned char buf[2048];
 		unsigned int len = 0;
+		everConnected = YES;
 		while ((len = [(NSInputStream *) theStream read:buf maxLength: 2048]) > 0) {
 			for (i = 0; i < len; i++) {
 				switch (c = buf[i]) {
@@ -188,16 +189,78 @@
 		}
 		break;
 	  }
-	  case NSStreamEventErrorOccurred:
-		[errorHandler handleStreamError: [theStream streamError]];
-//		[self release];
+	  case NSStreamEventErrorOccurred: {
+		NSError *theError = [theStream streamError];
+		NSRunAlertPanel(@"Error with server connection", 
+		 [NSString stringWithFormat:@"Error %i: %@", [theError code], [theError localizedDescription]],
+		 @"OK", nil, nil);
+		[theStream close];
+		[theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+		[theStream release];
+		if (theStream == serverIS)
+			serverIS = nil;
+		if (theStream == serverOS)
+			serverOS = nil;			
+		break;
+	  }
+	  case NSStreamEventEndEncountered:
+		NSLog(@"NSStreamEventEndEncountered");
+		[theStream close];
+		[theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+		[theStream release];
+		if (theStream == serverIS)
+			serverIS = nil;
+		if (theStream == serverOS)
+			serverOS = nil;			
 		break;
 	  default:
 		break;
 	}
+	if ((serverIS == nil) || (serverOS == nil)) {
+		NSLog(@"Connection lost\n");
+		if (serverIS != nil) {
+			NSLog(@"Closing server IS\n");
+			[serverIS close];
+			[serverIS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+			[serverIS release];
+			serverIS = nil;
+		}
+		if (serverOS != nil) {
+			NSLog(@"Closing server OS\n");
+			[serverOS close];
+			[serverOS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+			[serverOS release];
+			serverOS = nil;
+		}
+		if (everConnected) {
+			if (NSRunAlertPanel(@"Connection to server lost", @"Do you want to try to reconnect?",
+			 @"Yes", @"No", nil) == NSAlertDefaultReturn) {
+				NSHost *host = [NSHost hostWithName: [currentServer serverAddress]];
+				[NSStream getStreamsToHost:host port:[[currentServer serverPort] intValue] inputStream: &serverIS 
+				 outputStream: &serverOS];
+				[serverIS retain];
+				[serverOS retain];
+				[serverIS setDelegate: self];
+				[serverOS setDelegate: self];
+				[serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+				[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+				[serverIS open];
+				[serverOS open];
+				sendNamePassword = YES;
+				sendInit = YES;
+				[activeGames removeAllObjects];
+				[seeks removeAllObjects];
+			} else
+				[appController closeServerConnection: self];
+		} else {
+			[chatWindows removeAllObjects];
+			[serverWindows removeAllObjects];
+			[appController closeServerConnection: self];		
+		}
+	}
 }
 
-- (ChessServerConnection *) initWithChessServer: (ChessServer *) server {
+- (ChessServerConnection *) initWithChessServer: (ChessServer *) server appController: ac {
 	struct ServerPattern serverPatterns[] = {
 		{ "^\\{Game ([0-9]+) \\((" USERNAME_REGEX ") vs\\. (" USERNAME_REGEX ")\\) ([^\\}]+)\\} (.*)", @selector(serverGameEnd:result:reason:), "1I54" },
 		{ "^Illegal move \\((.*)\\)\\.(.*)", @selector(serverIllegalMove:), "0" },
@@ -240,7 +303,8 @@
 */
 
 	if ((self = [super init]) != nil) {
-		[self retain];
+		everConnected = NO;
+		appController = [ac retain];
 		currentServer = [server retain];
 		NSHost *host = [NSHost hostWithName: [server serverAddress]];
 		[NSStream getStreamsToHost:host port:[[server serverPort] intValue] inputStream: &serverIS outputStream: &serverOS];
@@ -254,12 +318,12 @@
 		[serverOS open];
 		sendNamePassword = YES;
 		sendInit = YES;
-		[self release];
 		patternMatcher = [[PatternMatching alloc] initWithPatterns: serverPatterns];
 		activeGames = [[NSMutableDictionary alloc] init];
 		infoGames = [[NSMutableDictionary alloc] init];
 		seeks = [[NSMutableDictionary dictionaryWithCapacity:500] retain];
 		serverWindows = [[NSMutableArray arrayWithCapacity: 20] retain];
+		chatWindows = [[NSMutableArray arrayWithCapacity: 20] retain];
 		lastChar = 0;
 		outputLines = [[NSMutableArray arrayWithCapacity: 1000] retain];
 		GameWindowController *gwc = [[[GameWindowController alloc] initWithServerConnection: self] autorelease];
@@ -271,26 +335,31 @@
 
 - (void) dealloc
 {
-	[serverIS close];
-	[serverOS close];
-	[serverIS release];
-	[serverOS release];
+	NSLog(@"Deallocating ChessServerConnecion\n");
+	if (serverIS != nil) {
+		NSLog(@"Closing server IS\n");
+		[serverIS close];
+		[serverIS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+		[serverIS release];
+		serverIS = nil;
+	}
+	if (serverOS != nil) {
+		NSLog(@"Closing server OS\n");
+		[serverOS close];
+		[serverOS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+		[serverOS release];
+		serverOS = nil;
+	}
+	[appController release];
 	[seeks release];
 	[currentServer release];
-	[errorHandler release];
 	[patternMatcher release];
 	[serverWindows release];
+	[chatWindows release];
 	[outputLines release];
 	[activeGames release];
 	[infoGames release];
 	[super dealloc];
-}
-
-- (void) setErrorHandler: (id) eh
-{
-	[errorHandler release];
-	errorHandler = eh;
-	[eh retain];
 }
 
 - (void) write: (unsigned char *) data maxLength: (int) i
@@ -447,6 +516,13 @@
 		[gwc setActiveGame: g2];
 }
 
+- (void) newChatWindow
+{
+	ChatWindowController *cwc = [[[ChatWindowController alloc] initWithServerConnection: self] autorelease];
+	[chatWindows addObject: cwc];
+	[cwc showWindow: self];
+}
+
 - (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i
 {
 	[self willChangeValueForKey: @"outputLines"];
@@ -483,6 +559,33 @@
 - (int) lengthOutput
 {
 	return [outputLines count];
+}
+
+- (void) chatWindowClosed: (ChatWindowController *) cwc
+{
+	NSLog(@"ChatWindowClosed\n");
+	[chatWindows removeObject: cwc];
+	if (([serverWindows count] == 0) && ([chatWindows count] == 0))
+		[appController closeServerConnection: self];
+}
+
+- (void) gameWindowClosed: (GameWindowController *) gwc;
+{
+	NSLog(@"GameWindowClosed\n");
+	[[self retain] autorelease];
+	[serverWindows removeObject: gwc];
+	if ([self isConnected] && ([serverWindows count] == 0) && ([chatWindows count] == 0))
+		[appController closeServerConnection: self];
+}
+
+- (BOOL) lastWindow
+{
+	return ([serverWindows count] + [chatWindows count] == 1);
+}
+
+- (BOOL) isConnected
+{
+	return (serverIS != nil) && (serverOS != nil);
 }
 
 @end

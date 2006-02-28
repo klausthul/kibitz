@@ -18,7 +18,7 @@
 #import "ChessServerConnection.h"
 #import "ChessServerList.h"
 
-@interface ChessServerListControl : NSWindowController <ChessServerErrorHandler> {
+@interface ChessServerListControl : NSWindowController {
 	ChessServerList *chessServerList;
 	AppController *appController;
 	NSMutableString *emptyString;

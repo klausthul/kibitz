@@ -27,10 +27,14 @@
 
 + (void) initialize;
 - (AppController *) init;
+- (void) awakeFromNib;
 - (void) dealloc;
+- (void) showChessServerSelectorWindow;
 - (IBAction) selectServer: (id) sender;
 - (IBAction) newSeek: (id) sender;
 - (void) connectChessServer: (ChessServer *) cs;
+- (void) closeServerConnection: (ChessServerConnection *) csc;
 - (NSArray *) serverConnections;
+- (NSApplicationTerminateReply) applicationShouldTerminate: (NSApplication *) sender;
 
 @end

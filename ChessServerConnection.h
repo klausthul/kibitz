@@ -22,8 +22,8 @@
 #import "PatternMatching.h"
 
 @interface ChessServerConnection : NSObject {
-	id <ChessServerErrorHandler> errorHandler;
-	NSMutableArray *serverWindows;
+	AppController *appController;
+	NSMutableArray *serverWindows, *chatWindows;
 	NSInputStream *serverIS;
 	NSOutputStream *serverOS;
 	char lineBuf[4096];
@@ -36,15 +36,15 @@
 	PatternMatching *patternMatcher;
 	NSMutableArray *outputLines;
 	bool lastLinePartial;
+	bool everConnected;
 }
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason;
 - (void) serverIllegalMove: (NSString *) why;
 - (void) processServerOutput;
 - (void) stream:(NSStream *)stream handleEvent:(NSStreamEvent)event;
-- (ChessServerConnection *) initWithChessServer: (ChessServer *) server;
+- (ChessServerConnection *) initWithChessServer: (ChessServer *) server appController: ac;
 - (void) dealloc;
-- (void) setErrorHandler: (id) eh;
 - (void) write: (unsigned char *) data maxLength: (int) i;
 - (void) newSeekFromServer: (int) num description: (const char *) seekInfo;
 - (void) removeSeekFromServer: (int) num;
@@ -61,8 +61,13 @@
 - (void) setGameLists;
 - (void) updateGame: (Game *) g;
 - (void) newPlayWindow;
+- (void) newChatWindow;
 - (void) addOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i;
 + (NSString *) findTag: (NSString *) tag in: (NSArray *) array;
 - (int) lengthOutput;
+- (void) chatWindowClosed: (ChatWindowController *) cwc;
+- (void) gameWindowClosed: (GameWindowController *) gwc;
+- (BOOL) lastWindow;
+- (BOOL) isConnected;
 
 @end

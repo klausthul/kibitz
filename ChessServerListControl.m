@@ -138,22 +138,6 @@
 	[[self window] makeKeyAndOrderFront: sender];
 }
 
-- (void) handleStreamError: (NSError *) theError
-{
-	NSAlert *theAlert = [[NSAlert alloc] init]; 
-
-	[self showWindow: nil];
-	[theAlert setMessageText:@"Error reading stream!"];
-	[theAlert setInformativeText:[NSString stringWithFormat:@"Error %i: %@", [theError code], [theError localizedDescription]]];
-	[theAlert addButtonWithTitle:@"OK"];
-    [theAlert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:)
-	 contextInfo:nil];
-}
-
-- (void)alertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-}
-
 @end
 
 

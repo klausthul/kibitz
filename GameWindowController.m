@@ -104,8 +104,8 @@ NSString *toolbarTooltips[] = {
 - (id) initWithServerConnection: (ChessServerConnection *) sc
 {
 	if ((self = [super initWithWindowNibName: @"GameWindow"]) != nil) {
-		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES] 
-		 retain];
+		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target: self
+		 selector:@selector(updateClock:) userInfo:nil repeats:YES] retain];
 		serverConnection = [sc retain];
 		[sc addObserver: self forKeyPath: @"outputLines" options: 0 context: nil];
 		[self updateWindowTitle];
@@ -116,7 +116,7 @@ NSString *toolbarTooltips[] = {
 - (void) updateWindowTitle
 {
 	NSString *title;
-	if (activeGame != nil)
+	if ((activeGame != nil) && ![activeGame isEmpty])
 		title = [NSString stringWithFormat: @"%@ - %@", [serverConnection description], [activeGame gameInfoString]];
 	else
 		title = [NSString stringWithFormat: @"%@", [serverConnection description]];
@@ -171,10 +171,11 @@ NSString *toolbarTooltips[] = {
 
 - (void) dealloc
 {
-	[serverConnection removeObserver: self forKeyPath: @"outputLines"];
+	NSLog(@"GameWindowController dealloc\n");
 	[timer release];
+	[self setActiveGame: nil];
+	[serverConnection removeObserver: self forKeyPath: @"outputLines"];
 	[serverConnection release];
-	[activeGame release];
 	[gameList release];
 	[toolbar release];
 	[toolbarItems release];
@@ -264,20 +265,22 @@ NSString *toolbarTooltips[] = {
 
 - (void) setActiveGame: (Game *) g
 {
-	if (activeGame) {
+	if (activeGame != nil) {
 		[moveListController unbind: @"contentArray"];
 		[activeGame removeObserver: self forKeyPath: @"moves"];
 		[activeGame release];
 	}
-	activeGame = [g retain];
-	[self updateGame: activeGame];
-	[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
-	[self clearMessage];
-	[moveListController bind: @"contentArray" toObject: g withKeyPath: @"moves" options: 
-	 [NSDictionary dictionaryWithObjectsAndKeys:
-	 [NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
-	 [NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
-	[g addObserver: self forKeyPath: @"moves" options: 0 context: nil];
+	if ((activeGame = g) != nil) {
+		[g retain];
+		[self updateGame: activeGame];
+		[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
+		[self clearMessage];
+		[moveListController bind: @"contentArray" toObject: g withKeyPath: @"moves" options: 
+		[NSDictionary dictionaryWithObjectsAndKeys:
+		[NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
+		[NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
+		[g addObserver: self forKeyPath: @"moves" options: 0 context: nil];
+	}
 }
 
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
@@ -424,7 +427,7 @@ NSString *toolbarTooltips[] = {
 
 - (IBAction) newChatWindow: (id) sender
 {
-	[[[ChatWindowController alloc] initWithServerConnection: serverConnection] showWindow: sender];
+	[serverConnection newChatWindow];
 }
 
 - (BOOL) splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview
@@ -625,6 +628,28 @@ NSString *toolbarTooltips[] = {
 - (enum Color) sideShownOnBottom
 {
 	return [activeGame sideShownOnBottom];
+}
+
+- (BOOL) windowShouldClose: (id)sender
+{
+	if ([serverConnection lastWindow] && [serverConnection isConnected]) {
+		NSBeginAlertSheet(@"Logout?", @"Yes", @"Cancel", nil, [self window], self, @selector(logoutWarningDidEnd:returnCode:contextInfo:), 
+		nil, nil, @"Do you want to log out from server?");
+		return NO;
+	} else
+		return YES;
+}
+
+- (void) logoutWarningDidEnd: (NSWindow *) sheet returnCode: (int) returnCode contextInfo: (void *) contextInfo
+{
+	if (returnCode == NSAlertDefaultReturn)
+		[[self window] close];	
+}
+
+- (void) windowWillClose: (NSNotification *) aNotification
+{
+	[timer invalidate];
+	[serverConnection gameWindowClosed: self];
 }
 
 @end

@@ -159,6 +159,7 @@
 		[self setPlayerNamesWhite: @"White" black: @"Black"];
 		[self newMove: [ChessMove initialPosition]];
 		initialTime = -1;
+		isEmpty = YES;
 	}
 	return self;
 }
@@ -299,6 +300,11 @@
 - (void) passedPiecesWhite: (NSString *) white black: (NSString *) black
 {
 	[lastMove passedPiecesWhite: white black: black];
+}
+
+- (BOOL) isEmpty
+{
+	return isEmpty;
 }
 
 @end

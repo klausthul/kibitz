@@ -24,12 +24,16 @@
 	if ((self = [super initWithWindowNibName: @"ChatWindow"]) != nil) {
 		serverConnection = [sc retain];
 		[sc addObserver: self forKeyPath: @"outputLines" options: 0 context: nil];
+		NSString *title;
+		title = [NSString stringWithFormat: @"%@ - Chat", [serverConnection description]];
+		[[self window] setTitle: title];
 	}
 	return self;
 }
 
 - (void) dealloc
 {
+	NSLog(@"ChatWindowController dealloc\n");
 	[serverConnection removeObserver: self forKeyPath: @"outputLines"];
 	[serverConnection release];
 	[super dealloc];
@@ -42,7 +46,7 @@
 
 - (IBAction) newChatWindow: (id) sender
 {
-	[[[ChatWindowController alloc] initWithServerConnection: serverConnection] showWindow: sender];
+	[serverConnection newChatWindow];
 }
 
 - (IBAction) commandEntered: (id) sender
@@ -53,6 +57,27 @@
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
 {
 	[serverOutput scrollRowToVisible: [serverConnection lengthOutput] - 1];
+}
+
+- (BOOL) windowShouldClose: (id)sender
+{
+	if ([serverConnection lastWindow] && [serverConnection isConnected]) {
+		NSBeginAlertSheet(@"Logout?", @"Yes", @"Cancel", nil, [self window], self, @selector(logoutWarningDidEnd:returnCode:contextInfo:), 
+		nil, nil, @"Do you want to log out from server?");
+		return NO;
+	} else
+		return YES;
+}
+
+- (void) logoutWarningDidEnd: (NSWindow *) sheet returnCode: (int) returnCode contextInfo: (void *) contextInfo
+{
+	if (returnCode == NSAlertDefaultReturn)
+		[[self window] close];	
+}
+
+- (void) windowWillClose: (NSNotification *) aNotification
+{
+	[serverConnection chatWindowClosed: self];
 }
 
 @end

@@ -96,10 +96,6 @@ enum OutputLineType {
 	OTHER, LINE_PARTIAL, LINE_USER_INPUT
 };
 
-@protocol ChessServerErrorHandler <NSObject>
-- (void) handleStreamError: (NSError *) theError;
-@end
-
 #define STRBEGINS(x, y) (strncmp((x), (y), strlen(y)) == 0)
 
 inline NSString *nil2Empty(NSString *x);
