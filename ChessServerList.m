@@ -54,7 +54,7 @@
 }
 
 - (void) addNewServerName: (NSString *) name Address: (NSString *) address port: (int) port userName: (NSString *) userName userPassword: (NSString *) userPassword 
- initCommands: (NSString *) initCommands {
+ initCommands: (NSString *) initCommands useTimeseal: (BOOL) useTimeseal {
 	ChessServer *s = [self addNewServer];
 	[s setServerName: name];
 	[s setServerAddress: address];
@@ -62,6 +62,7 @@
 	[s setUserName: userName];
 	[s setUserPassword: userPassword];
 	[s setInitCommands: initCommands];
+	[s setUsetimeseal: useTimeseal];
 }
 
 - (id) initWithCoder: (NSCoder *) coder

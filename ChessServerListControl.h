@@ -25,6 +25,7 @@
 	IBOutlet NSTableView *serverList;
 	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;
 	IBOutlet NSTextView *serverInitialization;
+	IBOutlet NSButton *useTimeseal;
 }
 
 - (IBAction) userAddNewServer: (id) sender;

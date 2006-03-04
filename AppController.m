@@ -25,7 +25,7 @@
 	ChessServerList *defaultServers = [[[ChessServerList alloc] init] autorelease];
 	NSData *data;
 	[defaultServers addNewServerName: @"Free Internet Chess Server (FICS)" Address: @"69.36.243.188" port: 5000 userName: nil userPassword: nil 
-	 initCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n"];
+	 initCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n" useTimeseal: YES];
 	data = [NSKeyedArchiver archivedDataWithRootObject:defaultServers];
 	[defaultValues setObject:data forKey:@"ICSChessServers"];
 	NSArray *defaultSeeks = [NSArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
@@ -88,7 +88,6 @@
 
 - (void) closeServerConnection: (ChessServerConnection *) csc
 {	
-	NSLog(@"Close Server Connection");
 	if (csc != nil) {
 		[self willChangeValueForKey: @"serverConnections"];
 		[serverConnections removeObject: csc];

@@ -33,7 +33,6 @@
 
 - (void) dealloc
 {
-	NSLog(@"ChatWindowController dealloc\n");
 	[serverConnection removeObserver: self forKeyPath: @"outputLines"];
 	[serverConnection release];
 	[super dealloc];

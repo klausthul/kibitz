@@ -24,6 +24,7 @@
 	NSString *userName;
 	NSString *userPassword;
 	NSString *initCommands;
+	BOOL useTimeseal;
 }
 
 - (void) setServerName: (NSString *) n;
@@ -33,11 +34,15 @@
 - (void) setUserName: (NSString *) s;
 - (void) setUserPassword: (NSString *) s;
 - (void) setInitCommands: (NSString *) s;
+- (void) setUsetimeseal: (bool) ts;
 - (NSString *) serverAddress;
 - (NSNumber *) serverPort;
 - (NSString *) userName;
 - (NSString *) userPassword;
 - (NSString *) initCommands;
+- (BOOL) useTimeseal;
+- (id) initWithCoder: (NSCoder *) coder;
+- (void) encodeWithCoder: (NSCoder *) coder;
 
 @end
 

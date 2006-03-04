@@ -204,7 +204,6 @@
 		break;
 	  }
 	  case NSStreamEventEndEncountered:
-		NSLog(@"NSStreamEventEndEncountered");
 		[theStream close];
 		[theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
 		[theStream release];
@@ -217,16 +216,13 @@
 		break;
 	}
 	if ((serverIS == nil) || (serverOS == nil)) {
-		NSLog(@"Connection lost\n");
 		if (serverIS != nil) {
-			NSLog(@"Closing server IS\n");
 			[serverIS close];
 			[serverIS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
 			[serverIS release];
 			serverIS = nil;
 		}
 		if (serverOS != nil) {
-			NSLog(@"Closing server OS\n");
 			[serverOS close];
 			[serverOS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
 			[serverOS release];
@@ -253,8 +249,13 @@
 			} else
 				[appController closeServerConnection: self];
 		} else {
-			[chatWindows removeAllObjects];
-			[serverWindows removeAllObjects];
+			NSWindowController *wc;
+			NSEnumerator *e = [chatWindows objectEnumerator];			
+			while ((wc = [e nextObject]) != nil)
+				[wc close];
+			e = [serverWindows objectEnumerator];			
+			while ((wc = [e nextObject]) != nil)
+				[wc close];				
 			[appController closeServerConnection: self];		
 		}
 	}
@@ -335,16 +336,13 @@
 
 - (void) dealloc
 {
-	NSLog(@"Deallocating ChessServerConnecion\n");
 	if (serverIS != nil) {
-		NSLog(@"Closing server IS\n");
 		[serverIS close];
 		[serverIS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
 		[serverIS release];
 		serverIS = nil;
 	}
 	if (serverOS != nil) {
-		NSLog(@"Closing server OS\n");
 		[serverOS close];
 		[serverOS removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
 		[serverOS release];
@@ -563,7 +561,6 @@
 
 - (void) chatWindowClosed: (ChatWindowController *) cwc
 {
-	NSLog(@"ChatWindowClosed\n");
 	[chatWindows removeObject: cwc];
 	if (([serverWindows count] == 0) && ([chatWindows count] == 0))
 		[appController closeServerConnection: self];
@@ -571,7 +568,6 @@
 
 - (void) gameWindowClosed: (GameWindowController *) gwc;
 {
-	NSLog(@"GameWindowClosed\n");
 	[[self retain] autorelease];
 	[serverWindows removeObject: gwc];
 	if ([self isConnected] && ([serverWindows count] == 0) && ([chatWindows count] == 0))

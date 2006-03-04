@@ -59,6 +59,11 @@
 	initCommands = [s retain];
 }
 
+- (void) setUsetimeseal: (bool) ts
+{
+	useTimeseal = ts;
+}
+
 - (NSString *) serverAddress
 {
 	return [[serverAddress retain] autorelease];
@@ -84,6 +89,11 @@
 	return [[initCommands retain] autorelease];
 }
 
+- (BOOL) useTimeseal
+{
+	return useTimeseal;
+}
+
 - (id) initWithCoder: (NSCoder *) coder
 {
 	if ((self = [super init]) != nil) {
@@ -93,6 +103,7 @@
 		[self setUserName: [coder decodeObjectForKey: @"userName"]];
 		[self setUserPassword: [coder decodeObjectForKey: @"userPassword"]];
 		[self setInitCommands: [coder decodeObjectForKey: @"initCommands"]];
+		[self setUsetimeseal: [coder decodeBoolForKey: @"useTimeseal"]];
 	}
 	return self;
 }
@@ -105,6 +116,7 @@
 	[coder encodeObject: userName forKey: @"userName"];
 	[coder encodeObject: userPassword forKey: @"userPassword"];
 	[coder encodeObject: initCommands forKey: @"initCommands"];
+	[coder encodeBool: useTimeseal forKey: @"useTimeseal"];
 }
 
 @end

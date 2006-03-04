@@ -58,6 +58,7 @@
 		[serverUserName unbind:@"value"];
 		[serverPassword unbind:@"value"];
 		[serverPort unbind:@"value"];
+		[useTimeseal unbind: @"value"];
 		[serverInitialization bind: @"value" toObject: self withKeyPath:@"emptyString" options:nil];
 		[serverName setEnabled: NO];
 		[serverAddress setEnabled: NO];
@@ -65,6 +66,7 @@
 		[serverPassword setEnabled: NO];
 		[serverPort setEnabled: NO];
 		[serverInitialization setEditable: NO];
+		[useTimeseal setEnabled: NO];		
 		[serverName setStringValue: @""];
 		[serverAddress setStringValue: @""];
 		[serverUserName setStringValue: @""];
@@ -78,12 +80,14 @@
 		[serverPassword bind:@"value" toObject:s withKeyPath:@"userPassword" options:nil];
 		[serverPort bind:@"value" toObject:s withKeyPath:@"serverPort" options:nil];
 		[serverInitialization bind:@"value" toObject:s withKeyPath:@"initCommands" options:nil];
+		[useTimeseal bind:@"value" toObject:s withKeyPath: @"useTimeseal" options: nil];
 		[serverName setEnabled: YES];
 		[serverAddress setEnabled: YES];
 		[serverUserName setEnabled: YES];
 		[serverPassword setEnabled: YES];
 		[serverPort setEnabled: YES];
 		[serverInitialization setEditable: YES];
+		[useTimeseal setEnabled: YES];		
 	}
 }
 

@@ -171,7 +171,6 @@ NSString *toolbarTooltips[] = {
 
 - (void) dealloc
 {
-	NSLog(@"GameWindowController dealloc\n");
 	[timer release];
 	[self setActiveGame: nil];
 	[serverConnection removeObserver: self forKeyPath: @"outputLines"];

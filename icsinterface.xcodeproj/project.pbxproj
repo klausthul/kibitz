@@ -38,6 +38,7 @@
 		CE2951E30955B024006C8D90 /* Seek.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE2951E20955B024006C8D90 /* Seek.nib */; };
 		CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE309DC3095A2F5200F756BB /* MoveStore.m */; };
 		CE69B2F6094BD9E500F4E6D9 /* GameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60D609399D0000AC6D87 /* GameWindow.nib */; };
+		CE79E5B309B9574D00B3C9F3 /* timeseal.MacOSX-PPC in Resources */ = {isa = PBXBuildFile; fileRef = CE79E5B209B9574D00B3C9F3 /* timeseal.MacOSX-PPC */; };
 		CED260F109833A6E005367EC /* application.icns in Resources */ = {isa = PBXBuildFile; fileRef = CED260F009833A6E005367EC /* application.icns */; };
 		CED2634209836079005367EC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CED2634109836079005367EC /* Credits.rtf */; };
 		CED263A409839318005367EC /* kibitz Help in Resources */ = {isa = PBXBuildFile; fileRef = CED2639E09839318005367EC /* kibitz Help */; };
@@ -107,6 +108,7 @@
 		CE2951E20955B024006C8D90 /* Seek.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Seek.nib; sourceTree = "<group>"; };
 		CE309DC2095A2F5200F756BB /* MoveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveStore.h; sourceTree = "<group>"; };
 		CE309DC3095A2F5200F756BB /* MoveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveStore.m; sourceTree = "<group>"; };
+		CE79E5B209B9574D00B3C9F3 /* timeseal.MacOSX-PPC */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "timeseal.MacOSX-PPC"; sourceTree = "<group>"; };
 		CE7D60D609399D0000AC6D87 /* GameWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = GameWindow.nib; sourceTree = "<group>"; };
 		CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ServerSelector.nib; sourceTree = "<group>"; };
 		CED260F009833A6E005367EC /* application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = application.icns; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE79E5B209B9574D00B3C9F3 /* timeseal.MacOSX-PPC */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -413,6 +416,7 @@
 				CED263A409839318005367EC /* kibitz Help in Resources */,
 				CE120FFF0983B3E7001EB123 /* index.html in Resources */,
 				CE12100E0983B4DA001EB123 /* gpl.html in Resources */,
+				CE79E5B309B9574D00B3C9F3 /* timeseal.MacOSX-PPC in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

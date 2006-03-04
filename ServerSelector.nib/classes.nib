@@ -1,5 +1,6 @@
 {
     IBClasses = (
+        {CLASS = ChessServerConnection; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
             ACTIONS = {
                 buttonCancel = id; 
@@ -19,6 +20,7 @@
                 serverPassword = NSTextField; 
                 serverPort = NSTextField; 
                 serverUserName = NSTextField; 
+                useTimeseal = NSButton; 
             }; 
             SUPERCLASS = NSWindowController; 
         }, 
