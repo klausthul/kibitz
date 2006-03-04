@@ -125,6 +125,40 @@
 	}
 }
 
+- (void) connectChessServer
+{
+	if ([currentServer useTimeseal]) {
+		if (timeseal != nil) {
+			[timeseal terminate];
+			[timeseal release];
+		}
+		timeseal = [[NSTask alloc] init];
+		NSMutableArray *args = [NSMutableArray array];
+		[args addObject: [currentServer serverAddress]];
+		[args addObject: [NSString stringWithFormat: @"%@", [currentServer serverPort]]];
+		[args addObject: @"-p"];
+		[args addObject: @"5501"];
+		[timeseal setLaunchPath: [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/timeseal.MacOSX-PPC"]];
+		[timeseal setArguments:args];
+		[timeseal launch];
+		NSHost *host = [NSHost hostWithName: @"localhost"];
+		[NSStream getStreamsToHost:host port: 5501 inputStream: &serverIS outputStream: &serverOS];
+	} else {
+		NSHost *host = [NSHost hostWithName: [currentServer serverAddress]];
+		[NSStream getStreamsToHost:host port:[[currentServer serverPort] intValue] inputStream: &serverIS outputStream: &serverOS];
+	}
+	[serverIS retain];
+	[serverOS retain];
+	[serverIS setDelegate: self];
+	[serverOS setDelegate: self];
+	[serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+	[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+	[serverIS open];
+	[serverOS open];
+	sendNamePassword = YES;
+	sendInit = YES;
+}
+
 - (void) stream: (NSStream *) theStream handleEvent:(NSStreamEvent)event
 {
 	char c;
@@ -231,21 +265,9 @@
 		if (everConnected) {
 			if (NSRunAlertPanel(@"Connection to server lost", @"Do you want to try to reconnect?",
 			 @"Yes", @"No", nil) == NSAlertDefaultReturn) {
-				NSHost *host = [NSHost hostWithName: [currentServer serverAddress]];
-				[NSStream getStreamsToHost:host port:[[currentServer serverPort] intValue] inputStream: &serverIS 
-				 outputStream: &serverOS];
-				[serverIS retain];
-				[serverOS retain];
-				[serverIS setDelegate: self];
-				[serverOS setDelegate: self];
-				[serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-				[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-				[serverIS open];
-				[serverOS open];
-				sendNamePassword = YES;
-				sendInit = YES;
 				[activeGames removeAllObjects];
 				[seeks removeAllObjects];
+				[self connectChessServer];
 			} else
 				[appController closeServerConnection: self];
 		} else {
@@ -307,18 +329,7 @@
 		everConnected = NO;
 		appController = [ac retain];
 		currentServer = [server retain];
-		NSHost *host = [NSHost hostWithName: [server serverAddress]];
-		[NSStream getStreamsToHost:host port:[[server serverPort] intValue] inputStream: &serverIS outputStream: &serverOS];
-		[serverIS retain];
-		[serverOS retain];
-		[serverIS setDelegate: self];
-		[serverOS setDelegate: self];
-		[serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-		[serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-		[serverIS open];
-		[serverOS open];
-		sendNamePassword = YES;
-		sendInit = YES;
+		[self connectChessServer];
 		patternMatcher = [[PatternMatching alloc] initWithPatterns: serverPatterns];
 		activeGames = [[NSMutableDictionary alloc] init];
 		infoGames = [[NSMutableDictionary alloc] init];
@@ -357,6 +368,10 @@
 	[outputLines release];
 	[activeGames release];
 	[infoGames release];
+	if (timeseal != nil) {
+		[timeseal terminate];
+		[timeseal release];
+	}
 	[super dealloc];
 }
 

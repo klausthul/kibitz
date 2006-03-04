@@ -37,6 +37,7 @@
 	NSMutableArray *outputLines;
 	bool lastLinePartial;
 	bool everConnected;
+	NSTask *timeseal;
 }
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason;

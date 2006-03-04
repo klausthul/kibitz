@@ -231,6 +231,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE79E5B209B9574D00B3C9F3 /* timeseal.MacOSX-PPC */,
 				CED2637309838F2E005367EC /* kibitz Help */,
 				CED260EF09833A6E005367EC /* icons */,
 				CE2951CB09559866006C8D90 /* SoundGameEnd.aiff */,
@@ -264,7 +265,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE79E5B209B9574D00B3C9F3 /* timeseal.MacOSX-PPC */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
