@@ -74,6 +74,12 @@
 	[seekControl show: sender];
 }
 
+- (void) newSeekForServer: (ChessServerConnection *) csc
+{
+	[self newSeek: self];
+	[seekControl  setSelectedConnection: csc];
+}
+
 - (void) connectChessServer: (ChessServer *) cs
 {	
 	ChessServerConnection *csc = [[[ChessServerConnection alloc] initWithChessServer: cs appController: self] autorelease]; 

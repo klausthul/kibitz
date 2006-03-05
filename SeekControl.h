@@ -29,5 +29,6 @@
 - (IBAction) save: (id) sender;
 - (void) show: (id) sender;
 - (AppController *) appController;
+- (void) setSelectedConnection: (ChessServerConnection *) csc;
 
 @end

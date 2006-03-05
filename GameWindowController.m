@@ -651,4 +651,10 @@ NSString *toolbarTooltips[] = {
 	[serverConnection gameWindowClosed: self];
 }
 
+- (IBAction) newSeek: (id) sender
+{
+	NSLog(@"GameWindowController New Seek\n");
+	[serverConnection newSeek];
+}
+
 @end

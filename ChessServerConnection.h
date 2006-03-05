@@ -70,5 +70,6 @@
 - (void) gameWindowClosed: (GameWindowController *) gwc;
 - (BOOL) lastWindow;
 - (BOOL) isConnected;
+- (void) newSeek;
 
 @end

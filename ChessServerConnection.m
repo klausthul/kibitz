@@ -599,4 +599,10 @@
 	return (serverIS != nil) && (serverOS != nil);
 }
 
+- (void) newSeek
+{
+	NSLog(@"ChessServerConnection: newSeek");
+	[appController newSeekForServer: self];
+}
+
 @end

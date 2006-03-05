@@ -32,6 +32,7 @@
 - (void) showChessServerSelectorWindow;
 - (IBAction) selectServer: (id) sender;
 - (IBAction) newSeek: (id) sender;
+- (void) newSeekForServer: (ChessServerConnection *) csc;
 - (void) connectChessServer: (ChessServer *) cs;
 - (void) closeServerConnection: (ChessServerConnection *) csc;
 - (NSArray *) serverConnections;

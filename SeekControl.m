@@ -44,9 +44,9 @@
 {
 	NSArray *selectedSeeks = [seekArrayController selectedObjects];
 	int i, m = [selectedSeeks count];
-//	ChessServerConnection *selectedConnection = [[serverArrayController selectedObjects] objectAtIndex: 0];
 	for (i = 0; i < m; i++)
 		[selectedConnection sendSeek: [selectedSeeks objectAtIndex: i]];
+	[[self window] close];
 }
 
 - (IBAction) cancel: (id) sender
@@ -69,6 +69,11 @@
 - (AppController *) appController
 {
 	return appController;
+}
+
+- (void) setSelectedConnection: (ChessServerConnection *) csc
+{
+	selectedConnection = csc;
 }
 
 @end

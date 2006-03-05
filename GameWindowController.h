@@ -91,5 +91,6 @@
 - (BOOL) windowShouldClose: (id)sender;
 - (void) logoutWarningDidEnd: (NSWindow *) sheet returnCode: (int) returnCode contextInfo: (void *) contextInfo;
 - (void) windowWillClose: (NSNotification *) aNotification;
+- (IBAction) newSeek: (id) sender;
 
 @end
