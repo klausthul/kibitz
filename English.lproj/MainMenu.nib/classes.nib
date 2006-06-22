@@ -1,7 +1,7 @@
 {
     IBClasses = (
         {
-            ACTIONS = {newSeek = id; selectServer = id; }; 
+            ACTIONS = {newSeek = id; selectServer = id; showPreferenceController = id; }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
             SUPERCLASS = NSObject; 

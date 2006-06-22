@@ -22,6 +22,7 @@
 @interface AppController : NSObject {
 	SeekControl *seekControl;
 	ChessServerListControl *chessServerListControl;
+	PreferenceController *preferenceController;
 	NSMutableArray *serverConnections;
 }
 
@@ -37,5 +38,6 @@
 - (void) closeServerConnection: (ChessServerConnection *) csc;
 - (NSArray *) serverConnections;
 - (NSApplicationTerminateReply) applicationShouldTerminate: (NSApplication *) sender;
+- (IBAction) showPreferenceController: (id) sender;
 
 @end

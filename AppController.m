@@ -52,6 +52,7 @@
 {
 	[chessServerListControl release];
 	[serverConnections release];
+	[preferenceController release];
 	[super dealloc];
 }
 
@@ -116,6 +117,12 @@
 		return NSTerminateNow;
 	else
 		return NSTerminateCancel;
+}
+
+- (IBAction) showPreferenceController: (id) sender {
+	if (preferenceController == nil)
+		preferenceController = [[PreferenceController alloc] init];
+	[preferenceController showWindow: self];
 }
 
 @end

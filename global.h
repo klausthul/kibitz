@@ -32,6 +32,7 @@
 @class Sound;
 @class MoveStore;
 @class OutputLine;
+@class PreferenceController;
 
 extern Sound *gSounds;
 
