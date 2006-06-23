@@ -25,6 +25,7 @@
 {
 	if ((self = [super init]) != nil) {
 		moves = [[NSMutableArray arrayWithCapacity: 100] retain];
+		playSound = [[[NSUserDefaults standardUserDefaults] objectForKey: @"soundDefault"] intValue] != 0;
 	}
 	return self; 
 }
@@ -110,6 +111,8 @@
 {
 	if ((self = [self init]) != nil) {
 		[self updateWithStyle12: data];
+		int sps = [[[NSUserDefaults standardUserDefaults] objectForKey: @"soundDefault"] intValue];
+		playSound = (sps == 2) || ((sps == 1) && ([self gameRelationship] == PLAYING_MYMOVE || [self gameRelationship] == PLAYING_OPONENT_MOVE));
 	}
 	return self;
 }
@@ -118,6 +121,8 @@
 {
 	if ((self = [self init]) != nil) {
 		[self updateWithGameInfo: data];
+		int sps = [[[NSUserDefaults standardUserDefaults] objectForKey: @"soundDefault"] intValue];
+		playSound = (sps == 2) || ((sps == 1) && ([self gameRelationship] == PLAYING_MYMOVE || [self gameRelationship] == PLAYING_OPONENT_MOVE));
 	}
 	return self;
 }
@@ -305,6 +310,16 @@
 - (BOOL) isEmpty
 {
 	return isEmpty;
+}
+
+- (BOOL) playSound 
+{
+	return playSound;
+}
+
+- (void) setPlaySound: (bool) ps
+{
+	playSound = ps;
 }
 
 @end

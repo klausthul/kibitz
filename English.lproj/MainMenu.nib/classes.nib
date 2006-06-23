@@ -71,6 +71,7 @@
                 resign = id; 
                 takeback = id; 
                 takeback2 = id; 
+                togglePlaySound = id; 
                 toggleSeekDrawer = id; 
             }; 
             CLASS = FirstResponder; 

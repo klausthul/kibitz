@@ -657,4 +657,9 @@ NSString *toolbarTooltips[] = {
 	[serverConnection newSeek];
 }
 
+- (IBAction) togglePlaySound: (id) sender
+{
+	[activeGame setPlaySound: ![activeGame playSound]];
+}
+
 @end

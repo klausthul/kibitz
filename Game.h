@@ -28,6 +28,7 @@
 	enum Color sideShownOnBottom;
 	enum GameRelationship gameRelationship;
 	bool rated;
+	bool playSound;
 	int partnerGame;
 	NSMutableArray *moves;
 	BOOL isEmpty;
@@ -68,5 +69,7 @@
 - (int) numMoves;
 - (void) passedPiecesWhite: (NSString *) white black: (NSString *) black;
 - (BOOL) isEmpty;
+- (BOOL) playSound;
+- (void) setPlaySound: (bool) ps;
 
 @end

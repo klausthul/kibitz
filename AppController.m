@@ -31,6 +31,7 @@
 	NSArray *defaultSeeks = [NSArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
 	data = [NSKeyedArchiver archivedDataWithRootObject: defaultSeeks];
 	[defaultValues setObject: data forKey:@"Seeks"];
+	[defaultValues setValue: [NSNumber numberWithInt: 1] forKey: @"soundDefault"];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	gSounds = [[Sound alloc] init];
 }

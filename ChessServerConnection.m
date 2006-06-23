@@ -35,7 +35,8 @@
 		[activeGames removeObjectForKey: game];
 		[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]]; 
 		[self setGameLists];
-		[gSounds gameEnd: [g gameRelationship]];
+		if ([g playSound])
+			[gSounds gameEnd: [g gameRelationship]];
 	}
 }
 
@@ -78,12 +79,14 @@
 			GameWindowController *gwc;
 			while ((gwc = [enumerator nextObject]) != nil)
 				[gwc setActiveGame: g];
-			[gSounds newGame: [g gameRelationship]];
+			if ([g playSound])
+				[gSounds newGame: [g gameRelationship]];
 			[g newMove: [ChessMove moveFromStyle12: a]];
 			[g setDefaultBoardOrientation];
 		} else {
 			ChessMove *m = [ChessMove moveFromStyle12: a];
-			[gSounds move: [m gameRelationship]];
+			if ([g playSound])
+				[gSounds move: [m gameRelationship]];
 			[g newMove: m];
 		}
 		[self updateGame: g];
