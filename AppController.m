@@ -16,6 +16,7 @@
 
 #import "AppController.h"
 #import "SeekControl.h"
+#import "PreferenceController.h"
 
 @implementation AppController
 
@@ -32,6 +33,8 @@
 	data = [NSKeyedArchiver archivedDataWithRootObject: defaultSeeks];
 	[defaultValues setObject: data forKey:@"Seeks"];
 	[defaultValues setValue: [NSNumber numberWithInt: 1] forKey: @"soundDefault"];
+	[defaultValues setValue: [NSNumber numberWithBool: NO] forKey: @"startupEstablishServerConnection"];
+	[defaultValues setValue: [NSNumber numberWithBool: NO] forKey: @"startupIssueSeekRequest"];	
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	gSounds = [[Sound alloc] init];
 }
@@ -122,7 +125,7 @@
 
 - (IBAction) showPreferenceController: (id) sender {
 	if (preferenceController == nil)
-		preferenceController = [[PreferenceController alloc] init];
+		preferenceController = [[PreferenceController alloc] initWithAppController: self];
 	[preferenceController showWindow: self];
 }
 

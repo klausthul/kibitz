@@ -15,9 +15,12 @@
 */
 
 #import <Cocoa/Cocoa.h>
-
+#import "global.h"
 
 @interface PreferenceController : NSWindowController {
+	AppController *appController;
 }
+
+- (PreferenceController *) initWithAppController: (AppController *) ac;
 
 @end

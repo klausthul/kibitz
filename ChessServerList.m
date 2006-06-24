@@ -34,13 +34,17 @@
 - (ChessServer *) addNewServer
 {
 	ChessServer *cs = [[ChessServer alloc] init];
+	[self willChangeValueForKey: @"servers"];
 	[servers addObject: cs];
+	[self didChangeValueForKey: @"servers"];
 	return [cs autorelease];
 }
 
 - (void) removeServerAtIndex: (int) i
 {
+	[self willChangeValueForKey: @"servers"];
 	[servers removeObjectAtIndex:i];
+	[self didChangeValueForKey: @"servers"];	
 }
 
 - (int) numServers

@@ -119,6 +119,11 @@
 	[coder encodeBool: useTimeseal forKey: @"useTimeseal"];
 }
 
+- (NSString *) description
+{
+	return [self serverName];
+}
+
 @end
 
 

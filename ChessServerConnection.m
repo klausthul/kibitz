@@ -466,7 +466,7 @@
 
 - (NSString *) description
 {
-	return [currentServer serverName];
+	return [currentServer description];
 }
 
 - (void) sendSeek: (Seek *) s
