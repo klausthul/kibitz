@@ -274,7 +274,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 795}, {244, 725}}</string>
+							<string>{{0, 907}, {244, 725}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -309,7 +309,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ChessServerListControl.m</string>
+								<string>AppController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -317,23 +317,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ChessServerListControl.m</string>
+										<string>AppController.m</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE492CF70A4D8AD000BD7014</string>
+										<string>CE492DAF0A4DA2AE00BD7014</string>
 										<key>history</key>
 										<array>
-											<string>CE492CD40A4D851A00BD7014</string>
-											<string>CE492CD50A4D851A00BD7014</string>
-											<string>CE492CE20A4D89D500BD7014</string>
-											<string>CE492CE30A4D89D500BD7014</string>
-											<string>CE492CE40A4D89D500BD7014</string>
-											<string>CE492CE50A4D89D500BD7014</string>
-											<string>CE492CE60A4D89D500BD7014</string>
-											<string>CE492CE70A4D89D500BD7014</string>
-											<string>CE492CE80A4D89D500BD7014</string>
-											<string>CE492CE90A4D89D500BD7014</string>
+											<string>CE492D510A4D9E1300BD7014</string>
+											<string>CE492D520A4D9E1300BD7014</string>
+											<string>CE492D530A4D9E1300BD7014</string>
+											<string>CE492D540A4D9E1300BD7014</string>
+											<string>CE492D570A4D9E1300BD7014</string>
+											<string>CE492D830A4D9F9500BD7014</string>
+											<string>CE492DA10A4DA1E800BD7014</string>
+											<string>CE492DA20A4DA1E800BD7014</string>
+											<string>CE492DAC0A4DA2AE00BD7014</string>
+											<string>CE492DAD0A4DA2AE00BD7014</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -342,33 +342,54 @@
 											<string>CE492C2A0A4D6F5B00BD7014</string>
 											<string>CE492C530A4D747700BD7014</string>
 											<string>CE492C550A4D747700BD7014</string>
-											<string>CE492C890A4D767600BD7014</string>
 											<string>CE492CAC0A4D810E00BD7014</string>
-											<string>CE492CAE0A4D810E00BD7014</string>
-											<string>CE492CB10A4D810E00BD7014</string>
 											<string>CE492CB40A4D810E00BD7014</string>
-											<string>CE492CBF0A4D834E00BD7014</string>
-											<string>CE492CC00A4D834E00BD7014</string>
-											<string>CE492CC10A4D834E00BD7014</string>
-											<string>CE492CC20A4D834E00BD7014</string>
-											<string>CE492CC30A4D834E00BD7014</string>
-											<string>CE492CC50A4D834E00BD7014</string>
-											<string>CE492CC60A4D834E00BD7014</string>
-											<string>CE492CC70A4D834E00BD7014</string>
-											<string>CE492CD00A4D839C00BD7014</string>
-											<string>CE492CD70A4D851A00BD7014</string>
-											<string>CE492CD80A4D851A00BD7014</string>
-											<string>CE492CD90A4D851A00BD7014</string>
-											<string>CE492CEA0A4D89D500BD7014</string>
-											<string>CE492CEB0A4D89D500BD7014</string>
-											<string>CE492CEC0A4D89D500BD7014</string>
-											<string>CE492CED0A4D89D500BD7014</string>
-											<string>CE492CEE0A4D89D500BD7014</string>
-											<string>CE492CEF0A4D89D500BD7014</string>
 											<string>CE492CF00A4D89D500BD7014</string>
-											<string>CE492CF10A4D89D500BD7014</string>
-											<string>CE492CF20A4D89D500BD7014</string>
-											<string>CE492CF30A4D89D500BD7014</string>
+											<string>CE492D0B0A4D900400BD7014</string>
+											<string>CE492D0C0A4D900400BD7014</string>
+											<string>CE492D120A4D900400BD7014</string>
+											<string>CE492D150A4D900400BD7014</string>
+											<string>CE492D160A4D900400BD7014</string>
+											<string>CE492D260A4D91D800BD7014</string>
+											<string>CE492D280A4D91D800BD7014</string>
+											<string>CE492D2A0A4D91D800BD7014</string>
+											<string>CE492D3E0A4D963400BD7014</string>
+											<string>CE492D3F0A4D963400BD7014</string>
+											<string>CE492D5A0A4D9E1300BD7014</string>
+											<string>CE492D5B0A4D9E1300BD7014</string>
+											<string>CE492D5D0A4D9E1300BD7014</string>
+											<string>CE492D5E0A4D9E1300BD7014</string>
+											<string>CE492D5F0A4D9E1300BD7014</string>
+											<string>CE492D600A4D9E1300BD7014</string>
+											<string>CE492D610A4D9E1300BD7014</string>
+											<string>CE492D620A4D9E1300BD7014</string>
+											<string>CE492D630A4D9E1300BD7014</string>
+											<string>CE492D640A4D9E1300BD7014</string>
+											<string>CE492D650A4D9E1300BD7014</string>
+											<string>CE492D660A4D9E1300BD7014</string>
+											<string>CE492D670A4D9E1300BD7014</string>
+											<string>CE492D680A4D9E1300BD7014</string>
+											<string>CE492D690A4D9E1300BD7014</string>
+											<string>CE492D6A0A4D9E1300BD7014</string>
+											<string>CE492D6B0A4D9E1300BD7014</string>
+											<string>CE492D6C0A4D9E1300BD7014</string>
+											<string>CE492D6D0A4D9E1300BD7014</string>
+											<string>CE492D6E0A4D9E1300BD7014</string>
+											<string>CE492D6F0A4D9E1300BD7014</string>
+											<string>CE492D700A4D9E1300BD7014</string>
+											<string>CE492D710A4D9E1300BD7014</string>
+											<string>CE492D720A4D9E1300BD7014</string>
+											<string>CE492D860A4D9F9500BD7014</string>
+											<string>CE492D870A4D9F9500BD7014</string>
+											<string>CE492D880A4D9F9500BD7014</string>
+											<string>CE492D9B0A4DA18E00BD7014</string>
+											<string>CE492D9C0A4DA18E00BD7014</string>
+											<string>CE492D9D0A4DA18E00BD7014</string>
+											<string>CE492DA40A4DA1E800BD7014</string>
+											<string>CE492DA50A4DA1E800BD7014</string>
+											<string>CE492DA60A4DA1E800BD7014</string>
+											<string>CE492DA70A4DA1E800BD7014</string>
+											<string>CE492DAE0A4DA2AE00BD7014</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -562,12 +583,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>CE492D2C0A4D91D800BD7014</string>
 		<string>CE492C930A4D769700BD7014</string>
 		<string>CE492C940A4D769700BD7014</string>
 		<string>CE3AC1580901EC4D00DD3768</string>
 		<string>CE3AC19D0901FF4300DD3768</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>CE492BFE0A4D6B8300BD7014</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>/Users/kthul/kibitz/trunk/icsinterface.xcodeproj</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
@@ -772,7 +795,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

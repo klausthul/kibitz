@@ -30,6 +30,7 @@
 - (void) show: (id) sender;
 - (IBAction) buttonSelect: (id) sender;
 - (IBAction) buttonCancel: (id) sender;
+- (ChessServer *) serverAtIndex: (int) num;
 
 @end
 

@@ -45,13 +45,19 @@
 	if ((self = [super init]) != nil) {
 		serverConnections = [[NSMutableArray arrayWithCapacity: 20] retain];
 		seekControl = [(SeekControl *) [SeekControl alloc] initWithAppController: self];
+		chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];
 	}
 	return self;
 }
 
 - (void) awakeFromNib
 {
-	[self showChessServerSelectorWindow];
+	ChessServer *cs;
+	if ([[[NSUserDefaults standardUserDefaults] objectForKey: @"startupEstablishServerConnection"] boolValue]
+	 && ((cs = [chessServerListControl serverAtIndex: [[[NSUserDefaults standardUserDefaults] objectForKey: @"serverForAutomaticStartup"] intValue]]) != nil))
+		[self connectChessServer: cs];
+	else
+		[self showChessServerSelectorWindow];
 }
 
 - (void) dealloc
@@ -65,8 +71,6 @@
 
 - (void) showChessServerSelectorWindow
 {
-	if (chessServerListControl == nil)
-		chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];
 	[chessServerListControl show: self];
 }
 

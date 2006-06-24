@@ -54,6 +54,8 @@
 
 - (ChessServer *) serverAtIndex: (int) i
 {
+	if ((i < 0) || (i >= [servers count]))
+		return nil;
 	return [[[servers objectAtIndex:i] retain] autorelease];
 }
 

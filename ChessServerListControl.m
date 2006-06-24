@@ -58,6 +58,11 @@
 	[self showWindow: sender];
 }
 
+- (ChessServer *) serverAtIndex: (int) num
+{
+	return [chessServerList serverAtIndex: num];
+}
+
 @end
 
 
