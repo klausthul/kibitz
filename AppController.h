@@ -15,7 +15,6 @@
 */
 
 #import "global.h"
-#import "ChessServerListControl.h"
 #import "ChessServerConnection.h"
 #import "SeekControl.h"
 

@@ -19,8 +19,8 @@
 			CE79E5F409B9983A00B3C9F3 /* ChessServerConnection.m:331 */,
 			CE79E80609BAA57700B3C9F3 /* ChessServerConnection.m:607 */,
 			CED8300A0956BB240073F9CD /* SeekControl.m:26 */,
-			CED8303E0956BF4D0073F9CD /* SeekControl.m:33 */,
-			CE6E618D0A4AEB080096D242 /* AppController.m:127 */,
+			CED8303E0956BF4D0073F9CD /* SeekControl.m:34 */,
+			CE6E618D0A4AEB080096D242 /* AppController.m:129 */,
 			CE9B13540A4C3D700039ED34 /* Game.m:113 */,
 			CE9B135F0A4C3DCE0039ED34 /* Game.m:123 */,
 			CE5A4903095920C200A1D998 /* ChessServerConnection.m:94 */,
@@ -105,7 +105,7 @@
 			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = 1;
-				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Errors_ColumnID;
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					215,
@@ -203,35 +203,210 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 172804268;
-			PBXWorkspaceStateSaveDate = 172804268;
+			PBXPerProjectTemplateStateSaveDate = 172844747;
+			PBXWorkspaceStateSaveDate = 172844747;
 		};
 		perUserProjectItems = {
-			CE12DB6E0A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB6E0A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB710A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB710A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB720A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB720A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB730A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB730A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB750A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB750A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB760A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB760A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB770A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB770A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB780A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB780A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB790A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB790A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB7A0A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB7A0A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB7B0A4CCE6900FB8E83 /* PBXTextBookmark */ = CE12DB7B0A4CCE6900FB8E83 /* PBXTextBookmark */;
-			CE12DB970A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB970A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DB980A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB980A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DB990A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB990A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DB9A0A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB9A0A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DB9C0A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB9C0A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DB9D0A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB9D0A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DB9E0A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB9E0A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DB9F0A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DB9F0A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DBA00A4CDF6E00FB8E83 /* PBXTextBookmark */ = CE12DBA00A4CDF6E00FB8E83 /* PBXTextBookmark */;
-			CE12DBA40A4CE28700FB8E83 /* PBXTextBookmark */ = CE12DBA40A4CE28700FB8E83 /* PBXTextBookmark */;
-			CE12DBA50A4CE28700FB8E83 /* PBXTextBookmark */ = CE12DBA50A4CE28700FB8E83 /* PBXTextBookmark */;
-			CE12DBA60A4CE28700FB8E83 /* PBXTextBookmark */ = CE12DBA60A4CE28700FB8E83 /* PBXTextBookmark */;
-			CE12DBA70A4CE28700FB8E83 /* PBXTextBookmark */ = CE12DBA70A4CE28700FB8E83 /* PBXTextBookmark */;
-			CE12DBA80A4CE28700FB8E83 /* PBXTextBookmark */ = CE12DBA80A4CE28700FB8E83 /* PBXTextBookmark */;
+			CE12DB6E0A4CCE6900FB8E83 = CE12DB6E0A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB710A4CCE6900FB8E83 = CE12DB710A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB720A4CCE6900FB8E83 = CE12DB720A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB730A4CCE6900FB8E83 = CE12DB730A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB750A4CCE6900FB8E83 = CE12DB750A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB760A4CCE6900FB8E83 = CE12DB760A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB770A4CCE6900FB8E83 = CE12DB770A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB780A4CCE6900FB8E83 = CE12DB780A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB790A4CCE6900FB8E83 = CE12DB790A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB7A0A4CCE6900FB8E83 = CE12DB7A0A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB7B0A4CCE6900FB8E83 = CE12DB7B0A4CCE6900FB8E83 /* PBXTextBookmark */;
+			CE12DB970A4CDF6E00FB8E83 = CE12DB970A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DB980A4CDF6E00FB8E83 = CE12DB980A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DB990A4CDF6E00FB8E83 = CE12DB990A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DB9A0A4CDF6E00FB8E83 = CE12DB9A0A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DB9C0A4CDF6E00FB8E83 = CE12DB9C0A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DB9D0A4CDF6E00FB8E83 = CE12DB9D0A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DB9E0A4CDF6E00FB8E83 = CE12DB9E0A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DB9F0A4CDF6E00FB8E83 = CE12DB9F0A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DBA00A4CDF6E00FB8E83 = CE12DBA00A4CDF6E00FB8E83 /* PBXTextBookmark */;
+			CE12DBA40A4CE28700FB8E83 = CE12DBA40A4CE28700FB8E83 /* PBXTextBookmark */;
+			CE12DBA50A4CE28700FB8E83 = CE12DBA50A4CE28700FB8E83 /* PBXTextBookmark */;
+			CE12DBA60A4CE28700FB8E83 = CE12DBA60A4CE28700FB8E83 /* PBXTextBookmark */;
+			CE12DBA70A4CE28700FB8E83 = CE12DBA70A4CE28700FB8E83 /* PBXTextBookmark */;
+			CE12DBA80A4CE28700FB8E83 = CE12DBA80A4CE28700FB8E83 /* PBXTextBookmark */;
+			CE492C030A4D6C4000BD7014 /* PBXTextBookmark */ = CE492C030A4D6C4000BD7014 /* PBXTextBookmark */;
+			CE492C040A4D6C4000BD7014 /* PBXTextBookmark */ = CE492C040A4D6C4000BD7014 /* PBXTextBookmark */;
+			CE492C050A4D6C4000BD7014 /* PBXTextBookmark */ = CE492C050A4D6C4000BD7014 /* PBXTextBookmark */;
+			CE492C060A4D6C4000BD7014 /* PBXTextBookmark */ = CE492C060A4D6C4000BD7014 /* PBXTextBookmark */;
+			CE492C090A4D6C6600BD7014 /* PBXTextBookmark */ = CE492C090A4D6C6600BD7014 /* PBXTextBookmark */;
+			CE492C160A4D6F5600BD7014 /* PBXTextBookmark */ = CE492C160A4D6F5600BD7014 /* PBXTextBookmark */;
+			CE492C170A4D6F5600BD7014 /* PBXTextBookmark */ = CE492C170A4D6F5600BD7014 /* PBXTextBookmark */;
+			CE492C1B0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C1B0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C1C0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C1C0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C1D0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C1D0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C1E0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C1E0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C1F0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C1F0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C200A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C200A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C210A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C210A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C220A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C220A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C230A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C230A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C240A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C240A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C250A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C250A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C260A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C260A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C270A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C270A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C280A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C280A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C290A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C290A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C2A0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C2A0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C2B0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C2B0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C2C0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C2C0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C2D0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C2D0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C2E0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C2E0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C2F0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C2F0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C300A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C300A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C310A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C310A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C320A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C320A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C330A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C330A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C340A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C340A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C350A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C350A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C360A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C360A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C370A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C370A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C380A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C380A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C390A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C390A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C3A0A4D6F5B00BD7014 /* PBXTextBookmark */ = CE492C3A0A4D6F5B00BD7014 /* PBXTextBookmark */;
+			CE492C480A4D747700BD7014 /* PBXTextBookmark */ = CE492C480A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C490A4D747700BD7014 /* PBXTextBookmark */ = CE492C490A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C4A0A4D747700BD7014 /* PBXTextBookmark */ = CE492C4A0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C4B0A4D747700BD7014 /* PBXTextBookmark */ = CE492C4B0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C4C0A4D747700BD7014 /* PBXTextBookmark */ = CE492C4C0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C4D0A4D747700BD7014 /* PBXTextBookmark */ = CE492C4D0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C4E0A4D747700BD7014 /* PBXTextBookmark */ = CE492C4E0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C4F0A4D747700BD7014 /* PBXTextBookmark */ = CE492C4F0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C500A4D747700BD7014 /* PBXTextBookmark */ = CE492C500A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C510A4D747700BD7014 /* PBXTextBookmark */ = CE492C510A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C520A4D747700BD7014 /* PBXTextBookmark */ = CE492C520A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C530A4D747700BD7014 /* PBXTextBookmark */ = CE492C530A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C540A4D747700BD7014 /* PBXTextBookmark */ = CE492C540A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C550A4D747700BD7014 /* PBXTextBookmark */ = CE492C550A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C560A4D747700BD7014 /* PBXTextBookmark */ = CE492C560A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C570A4D747700BD7014 /* PBXTextBookmark */ = CE492C570A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C580A4D747700BD7014 /* PBXTextBookmark */ = CE492C580A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C590A4D747700BD7014 /* PBXTextBookmark */ = CE492C590A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C5A0A4D747700BD7014 /* PBXTextBookmark */ = CE492C5A0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C5B0A4D747700BD7014 /* PBXTextBookmark */ = CE492C5B0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C5C0A4D747700BD7014 /* PBXTextBookmark */ = CE492C5C0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C5D0A4D747700BD7014 /* PBXTextBookmark */ = CE492C5D0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C5E0A4D747700BD7014 /* PBXTextBookmark */ = CE492C5E0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C5F0A4D747700BD7014 /* PBXTextBookmark */ = CE492C5F0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C600A4D747700BD7014 /* PBXTextBookmark */ = CE492C600A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C610A4D747700BD7014 /* PBXTextBookmark */ = CE492C610A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C620A4D747700BD7014 /* PBXTextBookmark */ = CE492C620A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C630A4D747700BD7014 /* PBXTextBookmark */ = CE492C630A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C640A4D747700BD7014 /* PBXTextBookmark */ = CE492C640A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C650A4D747700BD7014 /* PBXTextBookmark */ = CE492C650A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C660A4D747700BD7014 /* PBXTextBookmark */ = CE492C660A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C670A4D747700BD7014 /* PBXTextBookmark */ = CE492C670A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C680A4D747700BD7014 /* PBXTextBookmark */ = CE492C680A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C690A4D747700BD7014 /* PBXTextBookmark */ = CE492C690A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C6A0A4D747700BD7014 /* PBXTextBookmark */ = CE492C6A0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C6B0A4D747700BD7014 /* PBXTextBookmark */ = CE492C6B0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C6C0A4D747700BD7014 /* PBXTextBookmark */ = CE492C6C0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C6D0A4D747700BD7014 /* PBXTextBookmark */ = CE492C6D0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C6E0A4D747700BD7014 /* PBXTextBookmark */ = CE492C6E0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C6F0A4D747700BD7014 /* PBXTextBookmark */ = CE492C6F0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C700A4D747700BD7014 /* PBXTextBookmark */ = CE492C700A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C710A4D747700BD7014 /* PBXTextBookmark */ = CE492C710A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C720A4D747700BD7014 /* PBXTextBookmark */ = CE492C720A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C730A4D747700BD7014 /* PBXTextBookmark */ = CE492C730A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C740A4D747700BD7014 /* PBXTextBookmark */ = CE492C740A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C750A4D747700BD7014 /* PBXTextBookmark */ = CE492C750A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C760A4D747700BD7014 /* PBXTextBookmark */ = CE492C760A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C770A4D747700BD7014 /* PBXTextBookmark */ = CE492C770A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C780A4D747700BD7014 /* PBXTextBookmark */ = CE492C780A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C790A4D747700BD7014 /* PBXTextBookmark */ = CE492C790A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C7A0A4D747700BD7014 /* PBXTextBookmark */ = CE492C7A0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C7B0A4D747700BD7014 /* PBXTextBookmark */ = CE492C7B0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C7C0A4D747700BD7014 /* PBXTextBookmark */ = CE492C7C0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C7D0A4D747700BD7014 /* PBXTextBookmark */ = CE492C7D0A4D747700BD7014 /* PBXTextBookmark */;
+			CE492C820A4D767600BD7014 /* PBXTextBookmark */ = CE492C820A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C830A4D767600BD7014 /* PBXTextBookmark */ = CE492C830A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C840A4D767600BD7014 /* PBXTextBookmark */ = CE492C840A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C850A4D767600BD7014 /* PBXTextBookmark */ = CE492C850A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C860A4D767600BD7014 /* PBXTextBookmark */ = CE492C860A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C870A4D767600BD7014 /* PBXTextBookmark */ = CE492C870A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C880A4D767600BD7014 /* PBXTextBookmark */ = CE492C880A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C890A4D767600BD7014 /* PBXTextBookmark */ = CE492C890A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C8A0A4D767600BD7014 /* PBXTextBookmark */ = CE492C8A0A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C8B0A4D767600BD7014 /* PBXTextBookmark */ = CE492C8B0A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C8C0A4D767600BD7014 /* PBXTextBookmark */ = CE492C8C0A4D767600BD7014 /* PBXTextBookmark */;
+			CE492C900A4D769700BD7014 /* PBXTextBookmark */ = CE492C900A4D769700BD7014 /* PBXTextBookmark */;
+			CE492CA20A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA20A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CA30A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA30A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CA40A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA40A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CA50A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA50A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CA60A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA60A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CA70A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA70A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CA80A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA80A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CA90A4D810E00BD7014 /* PBXTextBookmark */ = CE492CA90A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CAA0A4D810E00BD7014 /* PBXTextBookmark */ = CE492CAA0A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CAB0A4D810E00BD7014 /* PBXTextBookmark */ = CE492CAB0A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CAC0A4D810E00BD7014 /* PBXTextBookmark */ = CE492CAC0A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CAD0A4D810E00BD7014 /* PBXTextBookmark */ = CE492CAD0A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CAE0A4D810E00BD7014 /* PBXTextBookmark */ = CE492CAE0A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CAF0A4D810E00BD7014 /* PBXTextBookmark */ = CE492CAF0A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CB00A4D810E00BD7014 /* PBXTextBookmark */ = CE492CB00A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CB10A4D810E00BD7014 /* PBXTextBookmark */ = CE492CB10A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CB20A4D810E00BD7014 /* PBXTextBookmark */ = CE492CB20A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CB30A4D810E00BD7014 /* PBXTextBookmark */ = CE492CB30A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CB40A4D810E00BD7014 /* PBXTextBookmark */ = CE492CB40A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CB50A4D810E00BD7014 /* PBXTextBookmark */ = CE492CB50A4D810E00BD7014 /* PBXTextBookmark */;
+			CE492CB90A4D834E00BD7014 /* PBXTextBookmark */ = CE492CB90A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CBA0A4D834E00BD7014 /* PBXTextBookmark */ = CE492CBA0A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CBB0A4D834E00BD7014 /* PBXTextBookmark */ = CE492CBB0A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CBC0A4D834E00BD7014 /* PBXTextBookmark */ = CE492CBC0A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CBD0A4D834E00BD7014 /* PBXTextBookmark */ = CE492CBD0A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CBE0A4D834E00BD7014 /* PBXTextBookmark */ = CE492CBE0A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CBF0A4D834E00BD7014 /* PBXTextBookmark */ = CE492CBF0A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC00A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC00A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC10A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC10A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC20A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC20A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC30A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC30A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC40A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC40A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC50A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC50A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC60A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC60A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC70A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC70A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC80A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC80A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CC90A4D834E00BD7014 /* PBXTextBookmark */ = CE492CC90A4D834E00BD7014 /* PBXTextBookmark */;
+			CE492CCE0A4D839C00BD7014 /* PBXTextBookmark */ = CE492CCE0A4D839C00BD7014 /* PBXTextBookmark */;
+			CE492CCF0A4D839C00BD7014 /* PBXTextBookmark */ = CE492CCF0A4D839C00BD7014 /* PBXTextBookmark */;
+			CE492CD00A4D839C00BD7014 /* PBXTextBookmark */ = CE492CD00A4D839C00BD7014 /* PBXTextBookmark */;
+			CE492CD10A4D839C00BD7014 /* PBXTextBookmark */ = CE492CD10A4D839C00BD7014 /* PBXTextBookmark */;
+			CE492CD20A4D839C00BD7014 /* PBXTextBookmark */ = CE492CD20A4D839C00BD7014 /* PBXTextBookmark */;
+			CE492CD40A4D851A00BD7014 /* PBXTextBookmark */ = CE492CD40A4D851A00BD7014 /* PBXTextBookmark */;
+			CE492CD50A4D851A00BD7014 /* PBXTextBookmark */ = CE492CD50A4D851A00BD7014 /* PBXTextBookmark */;
+			CE492CD60A4D851A00BD7014 /* PBXTextBookmark */ = CE492CD60A4D851A00BD7014 /* PBXTextBookmark */;
+			CE492CD70A4D851A00BD7014 /* PBXTextBookmark */ = CE492CD70A4D851A00BD7014 /* PBXTextBookmark */;
+			CE492CD80A4D851A00BD7014 /* PBXTextBookmark */ = CE492CD80A4D851A00BD7014 /* PBXTextBookmark */;
+			CE492CD90A4D851A00BD7014 /* PBXTextBookmark */ = CE492CD90A4D851A00BD7014 /* PBXTextBookmark */;
+			CE492CDA0A4D851A00BD7014 /* PBXTextBookmark */ = CE492CDA0A4D851A00BD7014 /* PBXTextBookmark */;
+			CE492CE20A4D89D500BD7014 /* PBXTextBookmark */ = CE492CE20A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CE30A4D89D500BD7014 /* PBXTextBookmark */ = CE492CE30A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CE40A4D89D500BD7014 /* PBXTextBookmark */ = CE492CE40A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CE50A4D89D500BD7014 /* PBXTextBookmark */ = CE492CE50A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CE60A4D89D500BD7014 /* PBXTextBookmark */ = CE492CE60A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CE70A4D89D500BD7014 /* PBXTextBookmark */ = CE492CE70A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CE80A4D89D500BD7014 /* PBXTextBookmark */ = CE492CE80A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CE90A4D89D500BD7014 /* PBXBookmark */ = CE492CE90A4D89D500BD7014 /* PBXBookmark */;
+			CE492CEA0A4D89D500BD7014 /* PBXTextBookmark */ = CE492CEA0A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CEB0A4D89D500BD7014 /* PBXTextBookmark */ = CE492CEB0A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CEC0A4D89D500BD7014 /* PBXTextBookmark */ = CE492CEC0A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CED0A4D89D500BD7014 /* PBXTextBookmark */ = CE492CED0A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CEE0A4D89D500BD7014 /* PBXTextBookmark */ = CE492CEE0A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CEF0A4D89D500BD7014 /* PBXTextBookmark */ = CE492CEF0A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CF00A4D89D500BD7014 /* PBXTextBookmark */ = CE492CF00A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CF10A4D89D500BD7014 /* PBXTextBookmark */ = CE492CF10A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CF20A4D89D500BD7014 /* PBXTextBookmark */ = CE492CF20A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CF30A4D89D500BD7014 /* PBXTextBookmark */ = CE492CF30A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CF40A4D89D500BD7014 /* PBXTextBookmark */ = CE492CF40A4D89D500BD7014 /* PBXTextBookmark */;
+			CE492CF60A4D8AC200BD7014 /* PBXTextBookmark */ = CE492CF60A4D8AC200BD7014 /* PBXTextBookmark */;
+			CE492CF70A4D8AD000BD7014 /* PBXTextBookmark */ = CE492CF70A4D8AD000BD7014 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CEA0CBDD09015E9A00BF913A /* Source Control */;
 		userBuildSettings = {
@@ -329,7 +504,7 @@
 		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
 		name = "ChessServerListControl.h: useTimeseal";
 		rLen = 0;
-		rLoc = 1263;
+		rLoc = 1079;
 		rType = 0;
 		vrLen = 427;
 		vrLoc = 837;
@@ -349,7 +524,7 @@
 		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
 		name = "AppController.h: 43";
 		rLen = 0;
-		rLoc = 1670;
+		rLoc = 1635;
 		rType = 0;
 		vrLen = 422;
 		vrLoc = 1249;
@@ -399,7 +574,7 @@
 		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
 		name = "ChessServerListControl.h: useTimeseal";
 		rLen = 0;
-		rLoc = 1263;
+		rLoc = 1079;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 0;
@@ -419,7 +594,7 @@
 		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
 		name = "AppController.h: 43";
 		rLen = 0;
-		rLoc = 1670;
+		rLoc = 1635;
 		rType = 0;
 		vrLen = 462;
 		vrLoc = 1209;
@@ -439,7 +614,7 @@
 		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
 		name = "AppController.m: newSeekForServer:";
 		rLen = 0;
-		rLoc = 3091;
+		rLoc = 3153;
 		rType = 0;
 		vrLen = 436;
 		vrLoc = 2847;
@@ -449,7 +624,7 @@
 		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
 		name = "ChessServerListControl.h: useTimeseal";
 		rLen = 0;
-		rLoc = 1263;
+		rLoc = 1079;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 0;
@@ -469,7 +644,7 @@
 		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
 		name = "AppController.h: 43";
 		rLen = 0;
-		rLoc = 1670;
+		rLoc = 1635;
 		rType = 0;
 		vrLen = 462;
 		vrLoc = 1209;
@@ -479,7 +654,7 @@
 		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
 		name = "AppController.m: 38";
 		rLen = 0;
-		rLoc = 2053;
+		rLoc = 2116;
 		rType = 0;
 		vrLen = 1620;
 		vrLoc = 608;
@@ -499,7 +674,7 @@
 		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
 		name = "AppController.m: 38";
 		rLen = 0;
-		rLoc = 2053;
+		rLoc = 2116;
 		rType = 0;
 		vrLen = 1620;
 		vrLoc = 608;
@@ -519,7 +694,7 @@
 		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
 		name = "AppController.h: 43";
 		rLen = 0;
-		rLoc = 1670;
+		rLoc = 1635;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 607;
@@ -544,17 +719,1757 @@
 		name = "Project Breakpoints";
 		objects = (
 			CED8300A0956BB240073F9CD /* SeekControl.m:26 */,
-			CED8303E0956BF4D0073F9CD /* SeekControl.m:33 */,
+			CED8303E0956BF4D0073F9CD /* SeekControl.m:34 */,
 			CED832E00957A0F00073F9CD /* ChatWindowController.m:24 */,
 			CE5A4903095920C200A1D998 /* ChessServerConnection.m:94 */,
 			CEBD6B4F09B4452B00450FCA /* ChessServerConnection.m:255 */,
 			CE79E5F409B9983A00B3C9F3 /* ChessServerConnection.m:331 */,
 			CE79E5F609B9984600B3C9F3 /* ChessServerConnection.m:170 */,
 			CE79E80609BAA57700B3C9F3 /* ChessServerConnection.m:607 */,
-			CE6E618D0A4AEB080096D242 /* AppController.m:127 */,
+			CE6E618D0A4AEB080096D242 /* AppController.m:129 */,
 			CE9B13540A4C3D700039ED34 /* Game.m:113 */,
 			CE9B135F0A4C3DCE0039ED34 /* Game.m:123 */,
 		);
+	};
+	CE492C030A4D6C4000BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1137;
+		vrLoc = 499;
+	};
+	CE492C040A4D6C4000BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: no '-addNewServerName:Address:port:userName:userPassword:initCommands:useTimeseal:' method found";
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		rLen = 1;
+		rLoc = 30;
+		rType = 1;
+	};
+	CE492C050A4D6C4000BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1137;
+		vrLoc = 499;
+	};
+	CE492C060A4D6C4000BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 20";
+		rLen = 0;
+		rLoc = 954;
+		rType = 0;
+		vrLen = 1615;
+		vrLoc = 0;
+	};
+	CE492C090A4D6C6600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 20";
+		rLen = 0;
+		rLoc = 954;
+		rType = 0;
+		vrLen = 1615;
+		vrLoc = 0;
+	};
+	CE492C160A4D6F5600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: assignment from distinct Objective-C type";
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		rLen = 1;
+		rLoc = 68;
+		rType = 1;
+	};
+	CE492C170A4D6F5600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 727;
+		vrLoc = 2280;
+	};
+	CE492C1B0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A870955BFC60073F9CD /* ChessServer.m */;
+		name = "ChessServer.m: 120";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 1134;
+		vrLoc = 1948;
+	};
+	CE492C1C0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 606;
+	};
+	CE492C1D0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1499;
+		vrLoc = 137;
+	};
+	CE492C1E0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8E0955BFC60073F9CD /* ChessView.h */;
+		name = "ChessView.h: 16";
+		rLen = 0;
+		rLoc = 804;
+		rType = 0;
+		vrLen = 1292;
+		vrLoc = 0;
+	};
+	CE492C1F0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: initWithAppController:";
+		rLen = 236;
+		rLoc = 913;
+		rType = 0;
+		vrLen = 1310;
+		vrLoc = 0;
+	};
+	CE492C200A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8B0955BFC60073F9CD /* ChessServerList.m */;
+		name = "ChessServerList.m: removeServerAtIndex:";
+		rLen = 0;
+		rLoc = 1476;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 1224;
+	};
+	CE492C210A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 1249;
+	};
+	CE492C220A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C230A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A880955BFC60073F9CD /* ChessServerConnection.h */;
+		name = "ChessServerConnection.h: outputLines";
+		rLen = 0;
+		rLoc = 1377;
+		rType = 0;
+		vrLen = 1399;
+		vrLoc = 854;
+	};
+	CE492C240A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 43";
+		rLen = 0;
+		rLoc = 1635;
+		rType = 0;
+		vrLen = 1399;
+		vrLoc = 272;
+	};
+	CE492C250A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 854;
+		vrLoc = 804;
+	};
+	CE492C260A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A870955BFC60073F9CD /* ChessServer.m */;
+		name = "ChessServer.m: 120";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 1969;
+	};
+	CE492C270A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 944;
+		vrLoc = 714;
+	};
+	CE492C280A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A870955BFC60073F9CD /* ChessServer.m */;
+		name = "ChessServer.m: 120";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 1134;
+		vrLoc = 1948;
+	};
+	CE492C290A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 606;
+	};
+	CE492C2A0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1499;
+		vrLoc = 137;
+	};
+	CE492C2B0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 57";
+		rLen = 0;
+		rLoc = 2474;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 2009;
+	};
+	CE492C2C0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8B0955BFC60073F9CD /* ChessServerList.m */;
+		name = "ChessServerList.m: 75";
+		rLen = 0;
+		rLoc = 2222;
+		rType = 0;
+		vrLen = 936;
+		vrLoc = 1458;
+	};
+	CE492C2D0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8E0955BFC60073F9CD /* ChessView.h */;
+		name = "ChessView.h: 16";
+		rLen = 0;
+		rLoc = 804;
+		rType = 0;
+		vrLen = 1292;
+		vrLoc = 0;
+	};
+	CE492C2E0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: initWithAppController:";
+		rLen = 236;
+		rLoc = 913;
+		rType = 0;
+		vrLen = 1310;
+		vrLoc = 0;
+	};
+	CE492C2F0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8B0955BFC60073F9CD /* ChessServerList.m */;
+		name = "ChessServerList.m: removeServerAtIndex:";
+		rLen = 0;
+		rLoc = 1476;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 1224;
+	};
+	CE492C300A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 57";
+		rLen = 0;
+		rLoc = 2474;
+		rType = 0;
+		vrLen = 719;
+		vrLoc = 2054;
+	};
+	CE492C310A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 132";
+		rLen = 0;
+		rLoc = 1768;
+		rType = 0;
+		vrLen = 1237;
+		vrLoc = 0;
+	};
+	CE492C320A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 30";
+		rLen = 0;
+		rLoc = 1081;
+		rType = 0;
+		vrLen = 1434;
+		vrLoc = 115;
+	};
+	CE492C330A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 37";
+		rLen = 0;
+		rLoc = 1373;
+		rType = 0;
+		vrLen = 954;
+		vrLoc = 818;
+	};
+	CE492C340A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: emptyString";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C350A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 37";
+		rLen = 0;
+		rLoc = 1373;
+		rType = 0;
+		vrLen = 954;
+		vrLoc = 818;
+	};
+	CE492C360A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: emptyString";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C370A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 1249;
+	};
+	CE492C380A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C390A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A880955BFC60073F9CD /* ChessServerConnection.h */;
+		name = "ChessServerConnection.h: outputLines";
+		rLen = 0;
+		rLoc = 1377;
+		rType = 0;
+		vrLen = 1399;
+		vrLoc = 854;
+	};
+	CE492C3A0A4D6F5B00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 755;
+		vrLoc = 2277;
+	};
+	CE492C480A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 605;
+	};
+	CE492C490A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 1509;
+		vrLoc = 836;
+	};
+	CE492C4A0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492C4B0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A960955BFC60073F9CD /* Game.h */;
+		name = "Game.h: 21";
+		rLen = 0;
+		rLoc = 882;
+		rType = 0;
+		vrLen = 1358;
+		vrLoc = 0;
+	};
+	CE492C4C0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 1220;
+		vrLoc = 0;
+	};
+	CE492C4D0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492C4E0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492C4F0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492C500A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 48";
+		rLen = 0;
+		rLoc = 1764;
+		rType = 0;
+		vrLen = 970;
+		vrLoc = 819;
+	};
+	CE492C510A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 755;
+		vrLoc = 2277;
+	};
+	CE492C520A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 605;
+	};
+	CE492C530A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492C540A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 1509;
+		vrLoc = 836;
+	};
+	CE492C550A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492C560A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C570A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492C580A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C590A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492C5A0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C5B0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492C5C0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C5D0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 819;
+	};
+	CE492C5E0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C5F0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 621;
+		vrLoc = 1221;
+	};
+	CE492C600A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C610A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 956;
+		vrLoc = 819;
+	};
+	CE492C620A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C630A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 819;
+	};
+	CE492C640A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C650A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 729;
+		vrLoc = 1112;
+	};
+	CE492C660A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C670A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 797;
+		vrLoc = 1044;
+	};
+	CE492C680A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C690A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 864;
+		vrLoc = 971;
+	};
+	CE492C6A0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C6B0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 817;
+	};
+	CE492C6C0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1079;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 0;
+	};
+	CE492C6D0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 58";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 593;
+		vrLoc = 1249;
+	};
+	CE492C6E0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 25";
+		rLen = 0;
+		rLoc = 1081;
+		rType = 0;
+		vrLen = 1275;
+		vrLoc = 0;
+	};
+	CE492C6F0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = self;
+		rLen = 15;
+		rLoc = 1691;
+		rType = 0;
+		vrLen = 956;
+		vrLoc = 819;
+	};
+	CE492C700A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: 24";
+		rLen = 0;
+		rLoc = 1043;
+		rType = 0;
+		vrLen = 1296;
+		vrLoc = 0;
+	};
+	CE492C710A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A960955BFC60073F9CD /* Game.h */;
+		name = "Game.h: 21";
+		rLen = 0;
+		rLoc = 882;
+		rType = 0;
+		vrLen = 1358;
+		vrLoc = 0;
+	};
+	CE492C720A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 1220;
+		vrLoc = 0;
+	};
+	CE492C730A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492C740A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492C750A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = self;
+		rLen = 15;
+		rLoc = 1691;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 819;
+	};
+	CE492C760A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492C770A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = self;
+		rLen = 15;
+		rLoc = 1691;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 819;
+	};
+	CE492C780A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492C790A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 48";
+		rLen = 0;
+		rLoc = 1706;
+		rType = 0;
+		vrLen = 966;
+		vrLoc = 819;
+	};
+	CE492C7A0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492C7B0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 48";
+		rLen = 0;
+		rLoc = 1764;
+		rType = 0;
+		vrLen = 970;
+		vrLoc = 819;
+	};
+	CE492C7C0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492C7D0A4D747700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 50";
+		rLen = 0;
+		rLoc = 1770;
+		rType = 0;
+		vrLen = 1010;
+		vrLoc = 819;
+	};
+	CE492C820A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492C830A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: initWithAppController:";
+		rLen = 236;
+		rLoc = 913;
+		rType = 0;
+		vrLen = 878;
+		vrLoc = 912;
+	};
+	CE492C840A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9A0955BFC60073F9CD /* GameWindowController.m */;
+		name = "GameWindowController.m: 662";
+		rLen = 0;
+		rLoc = 17919;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 17057;
+	};
+	CE492C850A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492C860A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 35";
+		rLen = 0;
+		rLoc = 1346;
+		rType = 0;
+		vrLen = 648;
+		vrLoc = 1249;
+	};
+	CE492C870A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 35";
+		rLen = 0;
+		rLoc = 1346;
+		rType = 0;
+		vrLen = 648;
+		vrLoc = 1249;
+	};
+	CE492C880A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492C890A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: initWithAppController:";
+		rLen = 236;
+		rLoc = 913;
+		rType = 0;
+		vrLen = 878;
+		vrLoc = 912;
+	};
+	CE492C8A0A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A9A0955BFC60073F9CD /* GameWindowController.m */;
+		name = "GameWindowController.m: 662";
+		rLen = 0;
+		rLoc = 17919;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 17057;
+	};
+	CE492C8B0A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492C8C0A4D767600BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 53";
+		rLen = 0;
+		rLoc = 1814;
+		rType = 0;
+		vrLen = 685;
+		vrLoc = 1221;
+	};
+	CE492C900A4D769700BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 53";
+		rLen = 0;
+		rLoc = 1814;
+		rType = 0;
+		vrLen = 685;
+		vrLoc = 1221;
+	};
+	CE492CA20A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 53";
+		rLen = 0;
+		rLoc = 1814;
+		rType = 0;
+		vrLen = 794;
+		vrLoc = 1112;
+	};
+	CE492CA30A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492CA40A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 1446;
+		vrLoc = 6297;
+	};
+	CE492CA50A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE6E614C0A4AE4DF0096D242 /* PreferenceController.h */;
+		name = "PreferenceController.h: 18";
+		rLen = 0;
+		rLoc = 848;
+		rType = 0;
+		vrLen = 1017;
+		vrLoc = 0;
+	};
+	CE492CA60A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: initWithAppController:";
+		rLen = 236;
+		rLoc = 913;
+		rType = 0;
+		vrLen = 785;
+		vrLoc = 912;
+	};
+	CE492CA70A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492CA80A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492CA90A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 1509;
+		vrLoc = 836;
+	};
+	CE492CAA0A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 53";
+		rLen = 0;
+		rLoc = 1814;
+		rType = 0;
+		vrLen = 794;
+		vrLoc = 1112;
+	};
+	CE492CAB0A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492CAC0A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492CAD0A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492CAE0A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 1446;
+		vrLoc = 6297;
+	};
+	CE492CAF0A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492CB00A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE6E614C0A4AE4DF0096D242 /* PreferenceController.h */;
+		name = "PreferenceController.h: 18";
+		rLen = 0;
+		rLoc = 848;
+		rType = 0;
+		vrLen = 1017;
+		vrLoc = 0;
+	};
+	CE492CB10A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: initWithAppController:";
+		rLen = 236;
+		rLoc = 913;
+		rType = 0;
+		vrLen = 785;
+		vrLoc = 912;
+	};
+	CE492CB20A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "IBOutlet NSArrayController *seekArrayController;";
+		rLen = 74;
+		rLoc = 905;
+		rType = 0;
+		vrLen = 1313;
+		vrLoc = 0;
+	};
+	CE492CB30A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 1509;
+		vrLoc = 836;
+	};
+	CE492CB40A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492CB50A4D810E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 62";
+		rLen = 0;
+		rLoc = 2569;
+		rType = 0;
+		vrLen = 1097;
+		vrLoc = 1740;
+	};
+	CE492CB90A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 62";
+		rLen = 0;
+		rLoc = 2569;
+		rType = 0;
+		vrLen = 1097;
+		vrLoc = 1740;
+	};
+	CE492CBA0A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 994;
+		vrLoc = 597;
+	};
+	CE492CBB0A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 700;
+		vrLoc = 1148;
+	};
+	CE492CBC0A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: selectedConnection";
+		rLen = 0;
+		rLoc = 978;
+		rType = 0;
+		vrLen = 1337;
+		vrLoc = 0;
+	};
+	CE492CBD0A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 42";
+		rLen = 0;
+		rLoc = 1516;
+		rType = 0;
+		vrLen = 1363;
+		vrLoc = 0;
+	};
+	CE492CBE0A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "AppController.m: 62";
+		rLen = 0;
+		rLoc = 2569;
+		rType = 0;
+		vrLen = 1097;
+		vrLoc = 1740;
+	};
+	CE492CBF0A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 1002;
+		vrLoc = 860;
+	};
+	CE492CC00A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 688;
+		vrLoc = 1713;
+	};
+	CE492CC10A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 994;
+		vrLoc = 597;
+	};
+	CE492CC20A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 672;
+		vrLoc = 1729;
+	};
+	CE492CC30A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: initWithAppController:";
+		rLen = 236;
+		rLoc = 913;
+		rType = 0;
+		vrLen = 785;
+		vrLoc = 912;
+	};
+	CE492CC40A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: selectedConnection";
+		rLen = 0;
+		rLoc = 978;
+		rType = 0;
+		vrLen = 1337;
+		vrLoc = 0;
+	};
+	CE492CC50A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 27";
+		rLen = 0;
+		rLoc = 1130;
+		rType = 0;
+		vrLen = 1023;
+		vrLoc = 373;
+	};
+	CE492CC60A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 700;
+		vrLoc = 1148;
+	};
+	CE492CC70A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 42";
+		rLen = 0;
+		rLoc = 1516;
+		rType = 0;
+		vrLen = 1363;
+		vrLoc = 0;
+	};
+	CE492CC80A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: selectedConnection";
+		rLen = 0;
+		rLoc = 978;
+		rType = 0;
+		vrLen = 1337;
+		vrLoc = 0;
+	};
+	CE492CC90A4D834E00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 42";
+		rLen = 0;
+		rLoc = 1516;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 1148;
+	};
+	CE492CCE0A4D839C00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: seeks";
+		rLen = 0;
+		rLoc = 978;
+		rType = 0;
+		vrLen = 1337;
+		vrLoc = 0;
+	};
+	CE492CCF0A4D839C00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 42";
+		rLen = 0;
+		rLoc = 1516;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 1148;
+	};
+	CE492CD00A4D839C00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 42";
+		rLen = 0;
+		rLoc = 1516;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 1148;
+	};
+	CE492CD10A4D839C00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82B630955C0FA0073F9CD /* SeekControl.h */;
+		name = "SeekControl.h: seeks";
+		rLen = 0;
+		rLoc = 978;
+		rType = 0;
+		vrLen = 1337;
+		vrLoc = 0;
+	};
+	CE492CD20A4D839C00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 36";
+		rLen = 0;
+		rLoc = 1405;
+		rType = 0;
+		vrLen = 899;
+		vrLoc = 807;
+	};
+	CE492CD40A4D851A00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8B0955BFC60073F9CD /* ChessServerList.m */;
+		name = "[self willChangeValueForKey: @\"servers\"];";
+		rLen = 42;
+		rLoc = 1155;
+		rType = 0;
+		vrLen = 933;
+		vrLoc = 1015;
+	};
+	CE492CD50A4D851A00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 687;
+		vrLoc = 1161;
+	};
+	CE492CD60A4D851A00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 37";
+		rLen = 0;
+		rLoc = 1452;
+		rType = 0;
+		vrLen = 893;
+		vrLoc = 849;
+	};
+	CE492CD70A4D851A00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 37";
+		rLen = 0;
+		rLoc = 1452;
+		rType = 0;
+		vrLen = 893;
+		vrLoc = 849;
+	};
+	CE492CD80A4D851A00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8B0955BFC60073F9CD /* ChessServerList.m */;
+		name = "[self willChangeValueForKey: @\"servers\"];";
+		rLen = 42;
+		rLoc = 1155;
+		rType = 0;
+		vrLen = 933;
+		vrLoc = 1015;
+	};
+	CE492CD90A4D851A00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABC0955BFC60073F9CD /* Seek.m */;
+		name = "Seek.m: 299";
+		rLen = 0;
+		rLoc = 6810;
+		rType = 0;
+		vrLen = 687;
+		vrLoc = 1161;
+	};
+	CE492CDA0A4D851A00BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 849;
+	};
+	CE492CE20A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 849;
+	};
+	CE492CE30A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 605;
+	};
+	CE492CE40A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A870955BFC60073F9CD /* ChessServer.m */;
+		name = "ChessServer.m: 120";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 1108;
+		vrLoc = 0;
+	};
+	CE492CE50A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 937;
+		vrLoc = 931;
+	};
+	CE492CE60A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492CE70A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492CE80A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492CE90A4D89D500BD7014 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+	};
+	CE492CEA0A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82AC00955BFC60073F9CD /* SeekControl.m */;
+		name = "SeekControl.m: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 849;
+	};
+	CE492CEB0A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 1118;
+		vrLoc = 366;
+	};
+	CE492CEC0A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A860955BFC60073F9CD /* ChessServer.h */;
+		name = "ChessServer.h: description";
+		rLen = 0;
+		rLoc = 1649;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 605;
+	};
+	CE492CED0A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A870955BFC60073F9CD /* ChessServer.m */;
+		name = "ChessServer.m: 120";
+		rLen = 0;
+		rLoc = 3012;
+		rType = 0;
+		vrLen = 1108;
+		vrLoc = 0;
+	};
+	CE492CEE0A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82ABB0955BFC60073F9CD /* Seek.h */;
+		name = "Seek.h: 17";
+		rLen = 0;
+		rLoc = 808;
+		rType = 0;
+		vrLen = 937;
+		vrLoc = 931;
+	};
+	CE492CEF0A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492CF00A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6D0955BFC50073F9CD /* AppController.h */;
+		name = "AppController.h: 17";
+		rLen = 0;
+		rLoc = 828;
+		rType = 0;
+		vrLen = 1459;
+		vrLoc = 0;
+	};
+	CE492CF10A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492CF20A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8A0955BFC60073F9CD /* ChessServerList.h */;
+		name = "ChessServerList.h: 31";
+		rLen = 0;
+		rLoc = 1318;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 0;
+	};
+	CE492CF30A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */;
+		name = "ChessServerListControl.h: serverListArrayController";
+		rLen = 0;
+		rLoc = 1062;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 0;
+	};
+	CE492CF40A4D89D500BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 53";
+		rLen = 0;
+		rLoc = 1812;
+		rType = 0;
+		vrLen = 657;
+		vrLoc = 1249;
+	};
+	CE492CF60A4D8AC200BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A6E0955BFC50073F9CD /* AppController.m */;
+		name = "chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];";
+		rLen = 89;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 644;
+		vrLoc = 2362;
+	};
+	CE492CF70A4D8AD000BD7014 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */;
+		name = "ChessServerListControl.m: 53";
+		rLen = 0;
+		rLoc = 1812;
+		rType = 0;
+		vrLen = 657;
+		vrLoc = 1249;
 	};
 	CE5A4903095920C200A1D998 /* ChessServerConnection.m:94 */ = {
 		isa = PBXFileBreakpoint;
@@ -568,14 +2483,14 @@
 		hitCount = 1;
 		lineNumber = 94;
 		location = kibitz;
-		modificationTime = 172768671.73734;
+		modificationTime = 172848782.223373;
 		state = 1;
 	};
 	CE6E614C0A4AE4DF0096D242 /* PreferenceController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1393, 458}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 515}}";
 			sepNavSelRange = "{848, 0}";
-			sepNavVisRect = "{{0, 0}, {1393, 458}}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
 		};
 	};
 	CE6E614D0A4AE4DF0096D242 /* PreferenceController.m */ = {
@@ -585,7 +2500,7 @@
 			sepNavVisRect = "{{0, 171}, {1127, 309}}";
 		};
 	};
-	CE6E618D0A4AEB080096D242 /* AppController.m:127 */ = {
+	CE6E618D0A4AEB080096D242 /* AppController.m:129 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -595,9 +2510,9 @@
 		fileReference = CED82A6E0955BFC50073F9CD /* AppController.m */;
 		functionName = "-showPreferenceController:";
 		hitCount = 1;
-		lineNumber = 127;
+		lineNumber = 129;
 		location = kibitz;
-		modificationTime = 172768632.527538;
+		modificationTime = 172848782.223356;
 		state = 1;
 	};
 	CE79E5F409B9983A00B3C9F3 /* ChessServerConnection.m:331 */ = {
@@ -612,7 +2527,7 @@
 		hitCount = 1;
 		lineNumber = 331;
 		location = kibitz;
-		modificationTime = 172768632.527485;
+		modificationTime = 172848782.22333;
 		state = 1;
 	};
 	CE79E5F609B9984600B3C9F3 /* ChessServerConnection.m:170 */ = {
@@ -627,7 +2542,7 @@
 		hitCount = 1;
 		lineNumber = 170;
 		location = kibitz;
-		modificationTime = 172768643.640446;
+		modificationTime = 172848782.223384;
 		state = 1;
 	};
 	CE79E80609BAA57700B3C9F3 /* ChessServerConnection.m:607 */ = {
@@ -642,7 +2557,7 @@
 		hitCount = 1;
 		lineNumber = 607;
 		location = kibitz;
-		modificationTime = 172768632.52749;
+		modificationTime = 172848782.223338;
 		state = 1;
 	};
 	CE9B13540A4C3D700039ED34 /* Game.m:113 */ = {
@@ -657,7 +2572,7 @@
 		hitCount = 1;
 		lineNumber = 113;
 		location = kibitz;
-		modificationTime = 172768632.527544;
+		modificationTime = 172848782.223361;
 		state = 1;
 	};
 	CE9B135F0A4C3DCE0039ED34 /* Game.m:123 */ = {
@@ -672,7 +2587,7 @@
 		hitCount = 1;
 		lineNumber = 123;
 		location = kibitz;
-		modificationTime = 172768728.791868;
+		modificationTime = 172848782.223367;
 		state = 1;
 	};
 	CEA0CBC809015E7A00BF913A /* kibitz */ = {
@@ -732,7 +2647,7 @@
 		hitCount = 1;
 		lineNumber = 255;
 		location = kibitz;
-		modificationTime = 172768647.64837;
+		modificationTime = 172848782.223378;
 		state = 1;
 	};
 	CED2634109836079005367EC /* Credits.rtf */ = {
@@ -753,17 +2668,17 @@
 	};
 	CED82A6D0955BFC50073F9CD /* AppController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 704}}";
-			sepNavSelRange = "{1670, 0}";
-			sepNavVisRect = "{{0, 189}, {1127, 515}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 602}}";
+			sepNavSelRange = "{828, 0}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
 			sepNavWindowFrame = "{{15, 53}, {1257, 820}}";
 		};
 	};
 	CED82A6E0955BFC50073F9CD /* AppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 2128}}";
-			sepNavSelRange = "{2053, 0}";
-			sepNavVisRect = "{{0, 206}, {1127, 515}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1876}}";
+			sepNavSelRange = "{2569, 0}";
+			sepNavVisRect = "{{0, 498}, {1133, 515}}";
 			sepNavWindowFrame = "{{15, 53}, {1257, 820}}";
 		};
 	};
@@ -783,66 +2698,66 @@
 	};
 	CED82A860955BFC60073F9CD /* ChessServer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 816}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 714}}";
 			sepNavSelRange = "{1649, 0}";
-			sepNavVisRect = "{{0, 631}, {1127, 169}}";
+			sepNavVisRect = "{{0, 163}, {1133, 515}}";
 		};
 	};
 	CED82A870955BFC60073F9CD /* ChessServer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 2096}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1834}}";
 			sepNavSelRange = "{3012, 0}";
-			sepNavVisRect = "{{0, 1716}, {1127, 169}}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
 		};
 	};
 	CED82A880955BFC60073F9CD /* ChessServerConnection.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 1216}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1064}}";
 			sepNavSelRange = "{1377, 0}";
-			sepNavVisRect = "{{0, 532}, {1127, 169}}";
+			sepNavVisRect = "{{0, 254}, {1133, 515}}";
 			sepNavWindowFrame = "{{38, 128}, {867, 724}}";
 		};
 	};
 	CED82A890955BFC60073F9CD /* ChessServerConnection.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1251.67, 9792}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 8568}}";
 			sepNavSelRange = "{16502, 0}";
-			sepNavVisRect = "{{0, 7310}, {1127, 309}}";
+			sepNavVisRect = "{{0, 6314}, {1133, 515}}";
 		};
 	};
 	CED82A8A0955BFC60073F9CD /* ChessServerList.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 544}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 515}}";
 			sepNavSelRange = "{1318, 0}";
-			sepNavVisRect = "{{0, 229}, {1127, 169}}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
 		};
 	};
 	CED82A8B0955BFC60073F9CD /* ChessServerList.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1393, 1312}}";
-			sepNavSelRange = "{2222, 0}";
-			sepNavVisRect = "{{0, 803}, {1393, 458}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1204}}";
+			sepNavSelRange = "{1155, 42}";
+			sepNavVisRect = "{{0, 378}, {1133, 515}}";
 		};
 	};
 	CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 688}}";
-			sepNavSelRange = "{1263, 0}";
-			sepNavVisRect = "{{0, 0}, {1127, 169}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 515}}";
+			sepNavSelRange = "{1062, 0}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
 		};
 	};
 	CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 2368}}";
-			sepNavSelRange = "{4577, 0}";
-			sepNavVisRect = "{{0, 131}, {1127, 309}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1399, 896}}";
+			sepNavSelRange = "{1812, 0}";
+			sepNavVisRect = "{{0, 580}, {1399, 316}}";
 		};
 	};
 	CED82A8E0955BFC60073F9CD /* ChessView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1115, 592}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 518}}";
 			sepNavSelRange = "{804, 0}";
-			sepNavVisRect = "{{0, 195}, {1115, 294}}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
 		};
 	};
 	CED82A8F0955BFC60073F9CD /* ChessView.m */ = {
@@ -857,7 +2772,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 1064}}";
 			sepNavSelRange = "{882, 0}";
-			sepNavVisRect = "{{0, 260}, {1133, 169}}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
 		};
 	};
 	CED82A970955BFC60073F9CD /* Game.m */ = {
@@ -878,7 +2793,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1133, 9324}}";
 			sepNavSelRange = "{17919, 0}";
-			sepNavVisRect = "{{0, 8997}, {1133, 299}}";
+			sepNavVisRect = "{{0, 8809}, {1133, 515}}";
 		};
 	};
 	CED82A9C0955BFC60073F9CD /* global.h */ = {
@@ -919,31 +2834,32 @@
 	};
 	CED82ABB0955BFC60073F9CD /* Seek.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1018, 960}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 840}}";
 			sepNavSelRange = "{808, 0}";
-			sepNavVisRect = "{{0, 0}, {1018, 263}}";
+			sepNavVisRect = "{{0, 325}, {1133, 515}}";
 			sepNavWindowFrame = "{{15, 53}, {1257, 820}}";
 		};
 	};
 	CED82ABC0955BFC60073F9CD /* Seek.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 5248}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 4592}}";
 			sepNavSelRange = "{6810, 0}";
-			sepNavVisRect = "{{0, 4642}, {1127, 237}}";
+			sepNavVisRect = "{{0, 493}, {1133, 515}}";
 		};
 	};
 	CED82AC00955BFC60073F9CD /* SeekControl.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 1280}}";
-			sepNavSelRange = "{913, 168}";
-			sepNavVisRect = "{{0, 208}, {1127, 309}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 1190}}";
+			sepNavSelRange = "{1421, 0}";
+			sepNavVisRect = "{{0, 254}, {1133, 515}}";
 		};
 	};
 	CED82B630955C0FA0073F9CD /* SeekControl.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1127, 560}}";
-			sepNavSelRange = "{874, 30}";
-			sepNavVisRect = "{{0, 124}, {1127, 309}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1133, 515}}";
+			sepNavSelRange = "{978, 0}";
+			sepNavVisRect = "{{0, 0}, {1133, 515}}";
+			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
 		};
 	};
 	CED82B810955C2D60073F9CD /* Sound.h */ = {
@@ -972,10 +2888,10 @@
 		hitCount = 1;
 		lineNumber = 26;
 		location = kibitz;
-		modificationTime = 172768632.527513;
+		modificationTime = 172848782.223344;
 		state = 1;
 	};
-	CED8303E0956BF4D0073F9CD /* SeekControl.m:33 */ = {
+	CED8303E0956BF4D0073F9CD /* SeekControl.m:34 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -985,9 +2901,9 @@
 		fileReference = CED82AC00955BFC60073F9CD /* SeekControl.m */;
 		functionName = "-awakeFromNib";
 		hitCount = 1;
-		lineNumber = 33;
+		lineNumber = 34;
 		location = kibitz;
-		modificationTime = 172768632.527521;
+		modificationTime = 172848782.22335;
 		state = 1;
 	};
 	CED831BD09578FEE0073F9CD /* ChatWindowController.h */ = {
@@ -1030,7 +2946,7 @@
 		hitCount = 1;
 		lineNumber = 24;
 		location = kibitz;
-		modificationTime = 172768632.527455;
+		modificationTime = 172848782.223283;
 		state = 1;
 	};
 }

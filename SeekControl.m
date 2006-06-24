@@ -23,7 +23,8 @@
 - (SeekControl *) initWithAppController: (AppController *) ac 
 {
 	if ((self = [super initWithWindowNibName: @"Seek"]) != nil) {
-		appController = ac;
+		appController = [ac retain];
+		seeks = [[NSMutableArray arrayWithCapacity: 10] retain];
 	}
 	return self;
 }
@@ -32,11 +33,15 @@
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSArray *df = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"Seeks"]];
-	[seekArrayController addObjects: df];
+	[self willChangeValueForKey: @"seeks"];
+	[seeks addObjectsFromArray: df];
+	[self didChangeValueForKey: @"seeks"];
 }
 
 - (void) dealloc
 {
+	[appController release];
+	[seeks release];
 	[super dealloc];
 }
 

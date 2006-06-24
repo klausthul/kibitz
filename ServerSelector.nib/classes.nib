@@ -1,27 +1,12 @@
 {
     IBClasses = (
         {CLASS = ChessServerConnection; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ChessServerList; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {
-                buttonCancel = id; 
-                buttonSelect = id; 
-                show = id; 
-                updateDefaults = id; 
-                userAddNewServer = id; 
-                userDeleteCurrentServer = id; 
-            }; 
+            ACTIONS = {buttonCancel = id; buttonSelect = id; show = id; updateDefaults = id; }; 
             CLASS = ChessServerListControl; 
             LANGUAGE = ObjC; 
-            OUTLETS = {
-                serverAddress = NSTextField; 
-                serverInitialization = NSTextView; 
-                serverList = NSTableView; 
-                serverName = NSTextField; 
-                serverPassword = NSTextField; 
-                serverPort = NSTextField; 
-                serverUserName = NSTextField; 
-                useTimeseal = NSButton; 
-            }; 
+            OUTLETS = {serverListArrayController = NSArrayController; }; 
             SUPERCLASS = NSWindowController; 
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }

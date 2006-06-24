@@ -17,6 +17,7 @@
 #import "AppController.h"
 #import "SeekControl.h"
 #import "PreferenceController.h"
+#import "ChessServerListControl.h"
 
 @implementation AppController
 
@@ -43,6 +44,7 @@
 {
 	if ((self = [super init]) != nil) {
 		serverConnections = [[NSMutableArray arrayWithCapacity: 20] retain];
+		seekControl = [(SeekControl *) [SeekControl alloc] initWithAppController: self];
 	}
 	return self;
 }
@@ -57,6 +59,7 @@
 	[chessServerListControl release];
 	[serverConnections release];
 	[preferenceController release];
+	[seekControl release];
 	[super dealloc];
 }
 
@@ -74,8 +77,6 @@
 
 - (IBAction) newSeek: (id) sender
 {
-	if (seekControl == nil)
-		seekControl = [(SeekControl *) [SeekControl alloc] initWithAppController: self];
 	[seekControl show: sender];
 }
 

@@ -19,6 +19,7 @@
 @interface SeekControl : NSWindowController {
 	AppController *appController;
 	IBOutlet NSArrayController *seekArrayController;
+	NSMutableArray *seeks;
 	ChessServerConnection *selectedConnection;
 }
 

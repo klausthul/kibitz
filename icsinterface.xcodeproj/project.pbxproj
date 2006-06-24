@@ -37,6 +37,7 @@
 		CE2951CE09559866006C8D90 /* SoundMessage.aiff in Resources */ = {isa = PBXBuildFile; fileRef = CE2951CC09559866006C8D90 /* SoundMessage.aiff */; };
 		CE2951E30955B024006C8D90 /* Seek.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE2951E20955B024006C8D90 /* Seek.nib */; };
 		CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE309DC3095A2F5200F756BB /* MoveStore.m */; };
+		CE492C0F0A4D6D8300BD7014 /* ChessServerListControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */; };
 		CE69B2F6094BD9E500F4E6D9 /* GameWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE7D60D609399D0000AC6D87 /* GameWindow.nib */; };
 		CE6E614E0A4AE4DF0096D242 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6E614D0A4AE4DF0096D242 /* PreferenceController.m */; };
 		CE6E615A0A4AE6540096D242 /* Preferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = CE6E61580A4AE6540096D242 /* Preferences.nib */; };
@@ -49,7 +50,6 @@
 		CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A870955BFC60073F9CD /* ChessServer.m */; };
 		CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */; };
 		CED82AEA0955BFC60073F9CD /* ChessServerList.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8B0955BFC60073F9CD /* ChessServerList.m */; };
-		CED82AEB0955BFC60073F9CD /* ChessServerListControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */; };
 		CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8F0955BFC60073F9CD /* ChessView.m */; };
 		CED82AF00955BFC60073F9CD /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A970955BFC60073F9CD /* Game.m */; };
 		CED82AF20955BFC60073F9CD /* GameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A9A0955BFC60073F9CD /* GameWindowController.m */; };
@@ -398,7 +398,6 @@
 				CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */,
 				CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */,
 				CED82AEA0955BFC60073F9CD /* ChessServerList.m in Sources */,
-				CED82AEB0955BFC60073F9CD /* ChessServerListControl.m in Sources */,
 				CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */,
 				CED82AF00955BFC60073F9CD /* Game.m in Sources */,
 				CED82AF20955BFC60073F9CD /* GameWindowController.m in Sources */,
@@ -411,6 +410,7 @@
 				CED83248095792870073F9CD /* OutputLine.m in Sources */,
 				CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */,
 				CE6E614E0A4AE4DF0096D242 /* PreferenceController.m in Sources */,
+				CE492C0F0A4D6D8300BD7014 /* ChessServerListControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,16 +21,9 @@
 @interface ChessServerListControl : NSWindowController {
 	ChessServerList *chessServerList;
 	AppController *appController;
-	NSMutableString *emptyString;
-	IBOutlet NSTableView *serverList;
-	IBOutlet NSTextField *serverName, *serverAddress, *serverUserName, *serverPassword, *serverPort;
-	IBOutlet NSTextView *serverInitialization;
-	IBOutlet NSButton *useTimeseal;
+	IBOutlet NSArrayController *serverListArrayController;
 }
 
-- (IBAction) userAddNewServer: (id) sender;
-- (IBAction) userDeleteCurrentServer: (id) sender;
-- (ChessServer *) currentServer;
 - (IBAction) updateDefaults: (id) sender;
 - (ChessServerListControl *) initWithAppController: (AppController *) ac;
 - (void) dealloc;
