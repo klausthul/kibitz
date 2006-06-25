@@ -71,5 +71,6 @@
 - (BOOL) lastWindow;
 - (BOOL) isConnected;
 - (void) newSeek;
+- (void) sendSeekToServer;
 
 @end

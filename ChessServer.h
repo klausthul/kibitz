@@ -25,6 +25,7 @@
 	NSString *userPassword;
 	NSString *initCommands;
 	BOOL useTimeseal, connectAtStartup, issueSeek;
+	Seek *seek;
 }
 
 - (void) setServerName: (NSString *) n;

@@ -175,10 +175,10 @@ NSString *StyleNames[] = {
 
 - (void) setWildStyle: (NSString *) style
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	[wildStyle release];
 	wildStyle = [style copy];
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (NSString *) wildStyle
@@ -191,7 +191,7 @@ NSString *StyleNames[] = {
 	return playStyle == STYLE_WILD;
 }
 
-- (NSString *) seekDescriptionLine
+- (NSString *) description
 {
 	NSString *style;
 	if (playStyle == STYLE_WILD)
@@ -207,67 +207,67 @@ NSString *StyleNames[] = {
 
 - (void) setTimeStart: (int) t
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	timeStart = t;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setTimeIncrement: (int) t
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	timeIncrement = t;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setRated: (bool) r
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	rated = r;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setWantsColor: (enum WantsColor) c
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	wantsColor = c;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setAutomatic: (bool) a
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	automatic = a;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setFormulaChecked: (bool) c
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	formulaChecked = c;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setRatingRangeLow: (int) r
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	ratingRangeLow = r;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setRatingRangeHigh: (int) r
 {
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	ratingRangeHigh = r;
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (void) setPlayStyle: (enum PlayStyle) s
 {
 	[self willChangeValueForKey: @"isWild"];
-	[self willChangeValueForKey: @"seekDescriptionLine"];
+	[self willChangeValueForKey: @"description"];
 	playStyle = s;
 	[self didChangeValueForKey: @"isWild"];
-	[self didChangeValueForKey: @"seekDescriptionLine"];
+	[self didChangeValueForKey: @"description"];
 }
 
 - (NSString *) seekCommand

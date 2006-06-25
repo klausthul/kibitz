@@ -608,4 +608,13 @@
 	[appController newSeekForServer: self];
 }
 
+- (void) sendSeekToServer
+{
+	NSArray *selectedSeeks = [[appController seekControl] getSelectedSeeks];
+	int i, m = [selectedSeeks count];
+	for (i = 0; i < m; i++)
+		[self sendSeek: [selectedSeeks objectAtIndex: i]];
+	[appController closeSeekWindow];
+}
+
 @end

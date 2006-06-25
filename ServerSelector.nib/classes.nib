@@ -3,7 +3,7 @@
         {CLASS = ChessServerConnection; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = ChessServerList; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {buttonCancel = id; buttonSelect = id; show = id; updateDefaults = id; }; 
+            ACTIONS = {buttonSelect = id; editSeeks = id; show = id; updateDefaults = id; }; 
             CLASS = ChessServerListControl; 
             LANGUAGE = ObjC; 
             OUTLETS = {serverListArrayController = NSArrayController; }; 

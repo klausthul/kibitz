@@ -22,9 +22,6 @@
 - (ChessServerListControl *) initWithAppController: (AppController *) ac 
 {
 	if ((self = [super initWithWindowNibName: @"ServerSelector"]) != nil) {
-		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-		chessServerList = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"ICSChessServers"]];
-		[chessServerList retain];
 		appController = [ac retain];
 	}
 	return self;
@@ -32,41 +29,28 @@
 
 - (void) dealloc
 {
-	[chessServerList release];
 	[appController release];
 	[super dealloc];
 }
 
-- (IBAction) updateDefaults: (id) sender
-{
-	NSData *serverData = [NSKeyedArchiver archivedDataWithRootObject:chessServerList];
-	[[NSUserDefaults standardUserDefaults] setObject:serverData forKey:@"ICSChessServers"];
-}
-
 - (IBAction) buttonSelect: (id) sender
 {
-	[appController connectChessServer: [chessServerList serverAtIndex: [serverListArrayController selectionIndex]]];
+	NSArray *s = [serverListArrayController selectedObjects];
+	NSEnumerator *e = [s objectEnumerator];
+	ChessServer *cs;
+	while ((cs = [e nextObject]) != nil)
+		[appController connectChessServer: cs];
 }
 
-- (IBAction) buttonCancel: (id) sender
+- (IBAction) editSeeks: (id) sender
 {
-	[[self window] close];
+	[appController newSeek: sender];
 }
+
 
 - (void) show: (id) sender
 {
 	[self showWindow: sender];
-}
-
-- (ChessServer *) serverAtIndex: (int) num
-{
-	return [chessServerList serverAtIndex: num];
-}
-
-- (void) startup
-{
-	if (![chessServerList startup: appController])
-		[self showWindow: self];
 }
 
 @end

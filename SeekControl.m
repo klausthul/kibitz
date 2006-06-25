@@ -24,12 +24,6 @@
 {
 	if ((self = [super initWithWindowNibName: @"Seek"]) != nil) {
 		appController = [ac retain];
-		seeks = [[NSMutableArray arrayWithCapacity: 10] retain];
-		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-		NSArray *df = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"Seeks"]];
-		[self willChangeValueForKey: @"seeks"];
-		[seeks addObjectsFromArray: df];
-		[self didChangeValueForKey: @"seeks"];
 	}
 	return self;
 }
@@ -37,28 +31,12 @@
 - (void) dealloc
 {
 	[appController release];
-	[seeks release];
 	[super dealloc];
 }
 
-- (IBAction) seek: (id) sender
+- (NSArray *) getSelectedSeeks
 {
-	NSArray *selectedSeeks = [seekArrayController selectedObjects];
-	int i, m = [selectedSeeks count];
-	for (i = 0; i < m; i++)
-		[selectedConnection sendSeek: [selectedSeeks objectAtIndex: i]];
-	[[self window] close];
-}
-
-- (IBAction) cancel: (id) sender
-{
-	[[self window] close];
-}
-
-- (IBAction) save: (id) sender
-{
-	NSData *data = [NSKeyedArchiver archivedDataWithRootObject: [seekArrayController content]];
-	[[NSUserDefaults standardUserDefaults] setObject:data forKey:@"Seeks"];
+	return [seekArrayController selectedObjects];
 }
 
 - (void) show: (id) sender

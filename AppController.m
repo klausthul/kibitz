@@ -24,18 +24,18 @@
 + (void) initialize
 { 
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
-	ChessServerList *defaultServers = [[[ChessServerList alloc] init] autorelease];
-	NSData *data;
-	[defaultServers addNewServerName: @"Free Internet Chess Server (FICS)" Address: @"69.36.243.188" port: 5000 userName: nil userPassword: nil 
-	 initCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n" useTimeseal: YES];
-	data = [NSKeyedArchiver archivedDataWithRootObject:defaultServers];
-	[defaultValues setObject:data forKey:@"ICSChessServers"];
-	NSArray *defaultSeeks = [NSArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
-	data = [NSKeyedArchiver archivedDataWithRootObject: defaultSeeks];
-	[defaultValues setObject: data forKey:@"Seeks"];
+	ChessServer *s = [[ChessServer alloc] init];
+	[s setServerName: @"Free Internet Chess Server (FICS)"];
+	[s setServerAddress: @"69.36.243.188"];
+	[s setServerPort: [NSNumber numberWithInt: 5000]];
+	[s setInitCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n"];
+	[s setUsetimeseal: YES];
+	NSMutableArray *defaultChessServers = [NSMutableArray arrayWithObject: s];
+	NSMutableArray *defaultSeeks = [NSMutableArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
+	NSDictionary *defaultSeeksAndServers = [NSDictionary dictionaryWithObjectsAndKeys: defaultChessServers, @"chessServers", defaultSeeks, @"seeks", nil, nil];
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject: defaultSeeksAndServers];
+	[defaultValues setObject:data forKey:@"seeksAndServers"];
 	[defaultValues setValue: [NSNumber numberWithInt: 1] forKey: @"soundDefault"];
-	[defaultValues setValue: [NSNumber numberWithBool: NO] forKey: @"startupEstablishServerConnection"];
-	[defaultValues setValue: [NSNumber numberWithBool: NO] forKey: @"startupIssueSeekRequest"];	
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	gSounds = [[Sound alloc] init];
 }
@@ -46,13 +46,34 @@
 		serverConnections = [[NSMutableArray arrayWithCapacity: 20] retain];
 		seekControl = [(SeekControl *) [SeekControl alloc] initWithAppController: self];
 		chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];
+		
+		NSData *d = nil;
+		NSDictionary *seeksAndServers = nil;
+		if ((d = [[NSUserDefaults standardUserDefaults] objectForKey: @"seeksAndServers"]) != nil)
+			if ((seeksAndServers = [NSKeyedUnarchiver unarchiveObjectWithData: d]) != nil) {
+				chessServers = [[seeksAndServers objectForKey: @"chessServers"] retain];
+				seeks = [[seeksAndServers objectForKey: @"seeks"] retain];
+			}
+		if (chessServers == nil)
+			chessServers = [[NSMutableArray arrayWithCapacity: 10] retain];
+		if (seeks == nil)
+			seeks = [[NSMutableArray arrayWithCapacity: 10] retain];
 	}
 	return self;
 }
 
 - (void) awakeFromNib
 {
-	[chessServerListControl startup];
+	NSEnumerator *e = [chessServers objectEnumerator];
+	ChessServer *cs;
+	bool autoConnect = FALSE;
+	while ((cs = [e nextObject]) != nil)
+		if ([cs connectAtStartup]) {
+			[self connectChessServer: cs];
+			autoConnect = TRUE;
+		}
+	if (!autoConnect)
+		[chessServerListControl showWindow: self];
 }
 
 - (void) dealloc
@@ -61,6 +82,7 @@
 	[serverConnections release];
 	[preferenceController release];
 	[seekControl release];
+	[chessServers release];
 	[super dealloc];
 }
 
@@ -117,9 +139,14 @@
 {
 	if (([serverConnections count] == 0)
 	 || (NSRunAlertPanel(@"Confirm quit", @"You are currently connected to a chess server. Quit anyway?", @"Yes", @"No", nil)
-	     == NSAlertDefaultReturn))
+	     == NSAlertDefaultReturn)) {
+		NSMutableDictionary *seeksAndServers = [NSMutableDictionary dictionaryWithCapacity: 2];
+		[seeksAndServers setObject: chessServers forKey: @"chessServers"];
+		[seeksAndServers setObject: seeks forKey: @"seeks"];
+		NSData *d = [NSKeyedArchiver archivedDataWithRootObject: seeksAndServers];
+		[[NSUserDefaults standardUserDefaults] setObject: d forKey: @"seeksAndServers"];
 		return NSTerminateNow;
-	else
+	} else
 		return NSTerminateCancel;
 }
 
@@ -127,6 +154,16 @@
 	if (preferenceController == nil)
 		preferenceController = [[PreferenceController alloc] initWithAppController: self];
 	[preferenceController showWindow: self];
+}
+
+- (SeekControl *) seekControl
+{
+	return seekControl;
+}
+
+- (void) closeSeekWindow
+{
+	[[seekControl window] close];
 }
 
 @end

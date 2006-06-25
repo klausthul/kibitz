@@ -41,7 +41,6 @@
 - (NSString *) typeOfPlay;
 - (void) setWildStyle: (NSString *) style;
 - (NSString *) wildStyle;
-- (NSString *) seekDescriptionLine;
 - (void) setTimeStart: (int) t;
 - (void) setTimeIncrement: (int) t;
 - (void) setRated: (bool) r;

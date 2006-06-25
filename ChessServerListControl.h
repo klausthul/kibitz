@@ -16,22 +16,17 @@
 
 #import "global.h"
 #import "ChessServerConnection.h"
-#import "ChessServerList.h"
 
 @interface ChessServerListControl : NSWindowController {
-	ChessServerList *chessServerList;
 	AppController *appController;
 	IBOutlet NSArrayController *serverListArrayController;
 }
 
-- (IBAction) updateDefaults: (id) sender;
 - (ChessServerListControl *) initWithAppController: (AppController *) ac;
 - (void) dealloc;
 - (void) show: (id) sender;
 - (IBAction) buttonSelect: (id) sender;
-- (IBAction) buttonCancel: (id) sender;
-- (ChessServer *) serverAtIndex: (int) num;
-- (void) startup;
+- (IBAction) editSeeks: (id) sender;
 
 @end
 

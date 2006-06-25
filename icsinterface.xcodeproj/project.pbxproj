@@ -49,7 +49,6 @@
 		CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A840955BFC60073F9CD /* ChessMove.m */; };
 		CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A870955BFC60073F9CD /* ChessServer.m */; };
 		CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */; };
-		CED82AEA0955BFC60073F9CD /* ChessServerList.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8B0955BFC60073F9CD /* ChessServerList.m */; };
 		CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8F0955BFC60073F9CD /* ChessView.m */; };
 		CED82AF00955BFC60073F9CD /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A970955BFC60073F9CD /* Game.m */; };
 		CED82AF20955BFC60073F9CD /* GameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A9A0955BFC60073F9CD /* GameWindowController.m */; };
@@ -81,6 +80,7 @@
 		CE2951CB09559866006C8D90 /* SoundGameEnd.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundGameEnd.aiff; path = sounds/SoundGameEnd.aiff; sourceTree = "<group>"; };
 		CE2951CC09559866006C8D90 /* SoundMessage.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundMessage.aiff; path = sounds/SoundMessage.aiff; sourceTree = "<group>"; };
 		CE2951E20955B024006C8D90 /* Seek.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Seek.nib; sourceTree = "<group>"; };
+		CE2A1E8A0A4EB6150027B234 /* ChessServerList.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessServerList.m; sourceTree = "<group>"; };
 		CE309DC2095A2F5200F756BB /* MoveStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveStore.h; sourceTree = "<group>"; };
 		CE309DC3095A2F5200F756BB /* MoveStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveStore.m; sourceTree = "<group>"; };
 		CE6E614C0A4AE4DF0096D242 /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 		CED82A880955BFC60073F9CD /* ChessServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServerConnection.h; sourceTree = "<group>"; };
 		CED82A890955BFC60073F9CD /* ChessServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessServerConnection.m; sourceTree = "<group>"; };
 		CED82A8A0955BFC60073F9CD /* ChessServerList.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServerList.h; sourceTree = "<group>"; };
-		CED82A8B0955BFC60073F9CD /* ChessServerList.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessServerList.m; sourceTree = "<group>"; };
 		CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServerListControl.h; sourceTree = "<group>"; };
 		CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessServerListControl.m; sourceTree = "<group>"; };
 		CED82A8E0955BFC60073F9CD /* ChessView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessView.h; sourceTree = "<group>"; };
@@ -261,10 +260,10 @@
 				CED82A840955BFC60073F9CD /* ChessMove.m */,
 				CED82A860955BFC60073F9CD /* ChessServer.h */,
 				CED82A870955BFC60073F9CD /* ChessServer.m */,
+				CE2A1E8A0A4EB6150027B234 /* ChessServerList.m */,
 				CED82A880955BFC60073F9CD /* ChessServerConnection.h */,
 				CED82A890955BFC60073F9CD /* ChessServerConnection.m */,
 				CED82A8A0955BFC60073F9CD /* ChessServerList.h */,
-				CED82A8B0955BFC60073F9CD /* ChessServerList.m */,
 				CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */,
 				CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */,
 				CED82A8E0955BFC60073F9CD /* ChessView.h */,
@@ -397,7 +396,6 @@
 				CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */,
 				CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */,
 				CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */,
-				CED82AEA0955BFC60073F9CD /* ChessServerList.m in Sources */,
 				CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */,
 				CED82AF00955BFC60073F9CD /* Game.m in Sources */,
 				CED82AF20955BFC60073F9CD /* GameWindowController.m in Sources */,

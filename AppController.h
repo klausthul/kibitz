@@ -23,6 +23,8 @@
 	ChessServerListControl *chessServerListControl;
 	PreferenceController *preferenceController;
 	NSMutableArray *serverConnections;
+	NSMutableArray *chessServers;
+	NSMutableArray *seeks;
 }
 
 + (void) initialize;
@@ -38,5 +40,7 @@
 - (NSArray *) serverConnections;
 - (NSApplicationTerminateReply) applicationShouldTerminate: (NSApplication *) sender;
 - (IBAction) showPreferenceController: (id) sender;
+- (SeekControl *) seekControl;
+- (void) closeSeekWindow;
 
 @end

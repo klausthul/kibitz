@@ -1,16 +1,75 @@
 {
     IBClasses = (
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {cancel = id; save = id; seek = id; show = id; }; 
-            CLASS = SeekControl; 
+            ACTIONS = {sendSeekToServer = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                abort = id; 
+                accept = id; 
+                adjurn = id; 
+                commandEntered = id; 
+                decline = id; 
+                draw = id; 
+                exportGame = id; 
+                flipBoard = id; 
+                hideDialog = id; 
+                hideMoves = id; 
+                logout = id; 
+                match = id; 
+                newChatWindow = id; 
+                newPlayWindow = id; 
+                newSeek = id; 
+                reconnect = id; 
+                resign = id; 
+                selectGame = id; 
+                sendSeekToServer = id; 
+                takeback = id; 
+                takeback2 = id; 
+                togglePlaySound = id; 
+                toggleSeekDrawer = id; 
+            }; 
+            CLASS = GameWindowController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
-                seekArrayController = NSArrayController; 
-                serverArrayController = NSArrayController; 
+                chatView = NSView; 
+                chessView = ChessView; 
+                gameSelector = NSPopUpButton; 
+                gameType = NSTextField; 
+                horizontalSplit = NSSplitView; 
+                lowerClock = NSTextField; 
+                lowerName = NSTextField; 
+                messageField = NSTextField; 
+                moveListController = NSArrayController; 
+                movesTable = NSTableView; 
+                movesView = NSView; 
+                playInnerView = PlayView; 
+                playView = NSView; 
+                result = NSTextField; 
+                resultReason = NSTextField; 
+                seekDrawer = NSDrawer; 
+                seekTable = NSTableView; 
+                serverInput = NSTextField; 
+                serverOutput = NSTableView; 
+                tableView = NSTableView; 
+                upperClock = NSTextField; 
+                upperName = NSTextField; 
+                upperView = NSView; 
+                verticalSplit = NSSplitView; 
             }; 
             SUPERCLASS = NSWindowController; 
-        }
+        }, 
+        {
+            ACTIONS = {seek = id; show = id; }; 
+            CLASS = SeekControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {seekArrayController = NSArrayController; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = Sound; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
     ); 
     IBVersion = 1; 
 }

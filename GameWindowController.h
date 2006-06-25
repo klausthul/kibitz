@@ -93,5 +93,6 @@
 - (void) windowWillClose: (NSNotification *) aNotification;
 - (IBAction) newSeek: (id) sender;
 - (IBAction) togglePlaySound: (id) sender;
+- (IBAction) sendSeekToServer: (id) sender;
 
 @end

@@ -662,4 +662,10 @@ NSString *toolbarTooltips[] = {
 	[activeGame setPlaySound: ![activeGame playSound]];
 }
 
+- (IBAction) sendSeekToServer: (id) sender
+{
+	NSLog(@"Send seek to Server");
+	[serverConnection sendSeekToServer];
+}
+
 @end
