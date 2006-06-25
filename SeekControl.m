@@ -25,17 +25,13 @@
 	if ((self = [super initWithWindowNibName: @"Seek"]) != nil) {
 		appController = [ac retain];
 		seeks = [[NSMutableArray arrayWithCapacity: 10] retain];
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		NSArray *df = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"Seeks"]];
+		[self willChangeValueForKey: @"seeks"];
+		[seeks addObjectsFromArray: df];
+		[self didChangeValueForKey: @"seeks"];
 	}
 	return self;
-}
-
-- (void) awakeFromNib
-{
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSArray *df = [NSKeyedUnarchiver unarchiveObjectWithData: [defaults objectForKey:@"Seeks"]];
-	[self willChangeValueForKey: @"seeks"];
-	[seeks addObjectsFromArray: df];
-	[self didChangeValueForKey: @"seeks"];
 }
 
 - (void) dealloc

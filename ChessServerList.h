@@ -29,6 +29,7 @@
 - (int) numServers;
 - (void) addNewServerName: (NSString *) name Address: (NSString *) address port: (int) port userName: (NSString *) userName userPassword: (NSString *) userPassword 
  initCommands: (NSString *) initCommands useTimeseal: (BOOL) useTimeseal;
-- (ChessServer *) serverAtIndex: (int) i;
+- (ChessServer *) serverAtIndex: (unsigned int) i;
+- (BOOL) startup: (AppController *) ac;
 
 @end

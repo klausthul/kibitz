@@ -63,6 +63,12 @@
 	return [chessServerList serverAtIndex: num];
 }
 
+- (void) startup
+{
+	if (![chessServerList startup: appController])
+		[self showWindow: self];
+}
+
 @end
 
 

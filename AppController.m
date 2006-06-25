@@ -52,12 +52,7 @@
 
 - (void) awakeFromNib
 {
-	ChessServer *cs;
-	if ([[[NSUserDefaults standardUserDefaults] objectForKey: @"startupEstablishServerConnection"] boolValue]
-	 && ((cs = [chessServerListControl serverAtIndex: [[[NSUserDefaults standardUserDefaults] objectForKey: @"serverForAutomaticStartup"] intValue]]) != nil))
-		[self connectChessServer: cs];
-	else
-		[self showChessServerSelectorWindow];
+	[chessServerListControl startup];
 }
 
 - (void) dealloc
@@ -94,7 +89,7 @@
 {	
 	ChessServerConnection *csc = [[[ChessServerConnection alloc] initWithChessServer: cs appController: self] autorelease]; 
 	if (csc != nil) {
-		[chessServerListControl close];
+//		[chessServerListControl close];
 		[self willChangeValueForKey: @"serverConnections"];
 		[serverConnections addObject: csc];
 		[self didChangeValueForKey: @"serverConnections"];

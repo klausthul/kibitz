@@ -31,6 +31,7 @@
 - (IBAction) buttonSelect: (id) sender;
 - (IBAction) buttonCancel: (id) sender;
 - (ChessServer *) serverAtIndex: (int) num;
+- (void) startup;
 
 @end
 

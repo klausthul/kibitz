@@ -64,6 +64,16 @@
 	useTimeseal = ts;
 }
 
+- (void) setConnectAtStartup: (bool) cas
+{
+	connectAtStartup = cas;
+}
+
+- (void) setIssueSeek: (bool) is
+{
+	issueSeek = is;
+}
+
 - (NSString *) serverAddress
 {
 	return [[serverAddress retain] autorelease];
@@ -94,6 +104,16 @@
 	return useTimeseal;
 }
 
+- (BOOL) connectAtStartup
+{
+	return connectAtStartup;
+}
+
+- (BOOL) issueSeek
+{
+	return issueSeek;
+}
+
 - (id) initWithCoder: (NSCoder *) coder
 {
 	if ((self = [super init]) != nil) {
@@ -104,6 +124,8 @@
 		[self setUserPassword: [coder decodeObjectForKey: @"userPassword"]];
 		[self setInitCommands: [coder decodeObjectForKey: @"initCommands"]];
 		[self setUsetimeseal: [coder decodeBoolForKey: @"useTimeseal"]];
+		[self setConnectAtStartup: [coder decodeBoolForKey: @"connectAtStartup"]];
+		[self setIssueSeek: [coder decodeBoolForKey: @"issueSeek"]];
 	}
 	return self;
 }
@@ -117,6 +139,8 @@
 	[coder encodeObject: userPassword forKey: @"userPassword"];
 	[coder encodeObject: initCommands forKey: @"initCommands"];
 	[coder encodeBool: useTimeseal forKey: @"useTimeseal"];
+	[coder encodeBool: connectAtStartup forKey: @"connectAtStartup"];
+	[coder encodeBool: issueSeek forKey: @"issueSeek"];
 }
 
 - (NSString *) description

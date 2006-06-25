@@ -15,6 +15,7 @@
 */
 
 #import "ChessServerList.h"
+#import "AppController.h"
 
 @implementation ChessServerList
 
@@ -52,9 +53,9 @@
 	return [servers count];
 }
 
-- (ChessServer *) serverAtIndex: (int) i
+- (ChessServer *) serverAtIndex: (unsigned int) i
 {
-	if ((i < 0) || (i >= [servers count]))
+	if (i >= [servers count])
 		return nil;
 	return [[[servers objectAtIndex:i] retain] autorelease];
 }
@@ -81,6 +82,20 @@
 - (void) encodeWithCoder: (NSCoder *) coder
 {
 	[coder encodeObject:servers forKey:@"Servers"];
+}
+
+- (BOOL) startup: (AppController *) ac
+{
+	NSEnumerator *e = [servers objectEnumerator];
+	ChessServer *cs;
+	BOOL didConnection = FALSE;
+	while ((cs = [e nextObject]) != nil) {
+		if ([cs connectAtStartup]) {
+			[ac connectChessServer: cs];
+			didConnection = TRUE;
+		}
+	}
+	return didConnection;
 }
 
 @end
