@@ -126,6 +126,8 @@ NSString *toolbarTooltips[] = {
 - (IBAction) commandEntered: (id) sender
 {
 	[serverConnection sendUserInputToServer: [serverInput stringValue]];
+	[serverInput setStringValue: @""];
+	[[self window] makeFirstResponder: serverInput];
 }
 
 - (IBAction) toggleSeekDrawer: (id) sender

@@ -51,6 +51,8 @@
 - (IBAction) commandEntered: (id) sender
 {
 	[serverConnection sendUserInputToServer: [serverInput stringValue]];
+	[serverInput setStringValue: @""];
+	[[self window] makeFirstResponder: serverInput];
 }
 
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
