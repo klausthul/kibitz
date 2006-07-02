@@ -56,6 +56,13 @@
                 verticalSplit = NSSplitView; 
             }; 
             SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {commandEntered = id; }; 
+            CLASS = ServerInputDelegate; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {serverInput = NSTextField; windowController = NSWindowController; }; 
+            SUPERCLASS = NSObject; 
         }
     ); 
     IBVersion = 1; 

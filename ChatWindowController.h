@@ -18,14 +18,12 @@
 
 @interface ChatWindowController : NSWindowController {
 	ChessServerConnection *serverConnection;
-	IBOutlet NSTextField *serverInput;
 	IBOutlet NSTableView *serverOutput;
 }
 
 - (ChatWindowController *) initWithServerConnection: (ChessServerConnection *) sc;
 - (IBAction) newPlayWindow: (id) sender;
 - (IBAction) newChatWindow: (id) sender;
-- (IBAction) commandEntered: (id) sender;
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context;
 - (BOOL) windowShouldClose: (id)sender;
 - (void) logoutWarningDidEnd: (NSWindow *) sheet returnCode: (int) returnCode contextInfo: (void *) contextInfo;

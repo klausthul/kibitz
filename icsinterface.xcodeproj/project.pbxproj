@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		CE0914780A578C370034F334 /* ServerInputDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0914770A578C370034F334 /* ServerInputDelegate.m */; };
 		CE120FFF0983B3E7001EB123 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = CED2637409838F2E005367EC /* index.html */; };
 		CE12100E0983B4DA001EB123 /* gpl.html in Resources */ = {isa = PBXBuildFile; fileRef = CE12100D0983B4DA001EB123 /* gpl.html */; };
 		CE2091500939AFED008697DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -73,6 +74,8 @@
 		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* kibitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kibitz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0914760A578C370034F334 /* ServerInputDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerInputDelegate.h; sourceTree = "<group>"; };
+		CE0914770A578C370034F334 /* ServerInputDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerInputDelegate.m; sourceTree = "<group>"; };
 		CE12100D0983B4DA001EB123 /* gpl.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = gpl.html; path = "kibitz Help/gpl.html"; sourceTree = SOURCE_ROOT; };
 		CE2950ED09554DB0006C8D90 /* SoundNewGame.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundNewGame.aiff; path = sounds/SoundNewGame.aiff; sourceTree = "<group>"; };
 		CE29519E095566BA006C8D90 /* SoundMoveOther.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = SoundMoveOther.aiff; path = sounds/SoundMoveOther.aiff; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				CED83247095792860073F9CD /* OutputLine.m */,
 				CE6E614C0A4AE4DF0096D242 /* PreferenceController.h */,
 				CE6E614D0A4AE4DF0096D242 /* PreferenceController.m */,
+				CE0914760A578C370034F334 /* ServerInputDelegate.h */,
+				CE0914770A578C370034F334 /* ServerInputDelegate.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */,
 				CE6E614E0A4AE4DF0096D242 /* PreferenceController.m in Sources */,
 				CE492C0F0A4D6D8300BD7014 /* ChessServerListControl.m in Sources */,
+				CE0914780A578C370034F334 /* ServerInputDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

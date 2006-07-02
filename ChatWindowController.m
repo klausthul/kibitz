@@ -48,13 +48,6 @@
 	[serverConnection newChatWindow];
 }
 
-- (IBAction) commandEntered: (id) sender
-{
-	[serverConnection sendUserInputToServer: [serverInput stringValue]];
-	[serverInput setStringValue: @""];
-	[[self window] makeFirstResponder: serverInput];
-}
-
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context
 {
 	[serverOutput scrollRowToVisible: [serverConnection lengthOutput] - 1];
@@ -79,6 +72,10 @@
 - (void) windowWillClose: (NSNotification *) aNotification
 {
 	[serverConnection chatWindowClosed: self];
+}
+
+- (void) commandEntered: (NSString *) command {
+	[serverConnection sendUserInputToServer: command];
 }
 
 @end
