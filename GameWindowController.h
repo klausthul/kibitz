@@ -38,6 +38,9 @@
 	NSToolbar *toolbar;
 	NSMutableDictionary *toolbarItems;
 	NSString *message;
+	NSMutableArray *commandHistory;
+	NSString *uncommittedEdit;
+	int positionInHistory;
 }
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc;
@@ -94,5 +97,6 @@
 - (IBAction) newSeek: (id) sender;
 - (IBAction) togglePlaySound: (id) sender;
 - (IBAction) sendSeekToServer: (id) sender;
+- (BOOL) control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command;
 
 @end
