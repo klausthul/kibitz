@@ -109,8 +109,6 @@ NSString *toolbarTooltips[] = {
 		serverConnection = [sc retain];
 		[sc addObserver: self forKeyPath: @"outputLines" options: 0 context: nil];
 		[self updateWindowTitle];
-		positionInHistory = -1;
-		commandHistory = [[NSMutableArray arrayWithCapacity: 1000] retain];
 	}
 	return self;
 }
@@ -123,16 +121,6 @@ NSString *toolbarTooltips[] = {
 	else
 		title = [NSString stringWithFormat: @"%@", [serverConnection description]];
 	[[self window] setTitle: title];
-}
-
-- (IBAction) commandEntered: (id) sender
-{
-	NSString *command = [serverInput stringValue];
-	[commandHistory addObject: command];
-	positionInHistory = -1;
-	[serverConnection sendUserInputToServer: command];
-	[serverInput setStringValue: @""];
-	[[self window] makeFirstResponder: serverInput];
 }
 
 - (IBAction) toggleSeekDrawer: (id) sender
@@ -185,8 +173,6 @@ NSString *toolbarTooltips[] = {
 	[gameList release];
 	[toolbar release];
 	[toolbarItems release];
-	[uncommittedEdit release];
-	[commandHistory release];
 	[super dealloc];
 }
 
@@ -677,35 +663,8 @@ NSString *toolbarTooltips[] = {
 	[serverConnection sendSeekToServer];
 }
 
-- (BOOL) control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
-{
-	if (command == @selector(moveUp:)) {
-		if ((positionInHistory != 0) && ([commandHistory count] > 0)) {
-			if (positionInHistory < 0) {
-				[uncommittedEdit release];
-				uncommittedEdit = [[serverInput stringValue] retain];
-				positionInHistory = [commandHistory count] - 1;
-			} else
-				positionInHistory--;
-			[serverInput setStringValue: [commandHistory objectAtIndex: positionInHistory]];
-		}
-		return TRUE;
-	} else if (command == @selector(moveDown:)) {
-		if (positionInHistory >= 0) {
-			if (positionInHistory >= (int) [commandHistory count] - 1) {
-				if (uncommittedEdit != nil) {
-					[serverInput setStringValue: uncommittedEdit];
-					[uncommittedEdit release];
-					uncommittedEdit = nil;
-				}
-				positionInHistory = -1;
-			} else {
-				[serverInput setStringValue: [commandHistory objectAtIndex: ++positionInHistory]];
-			}
-		}
-		return TRUE;
-	} else
-		return FALSE;
+- (void) commandEntered: (NSString *) command {
+	[serverConnection sendUserInputToServer: command];
 }
 
 @end

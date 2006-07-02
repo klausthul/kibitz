@@ -38,9 +38,6 @@
 	NSToolbar *toolbar;
 	NSMutableDictionary *toolbarItems;
 	NSString *message;
-	NSMutableArray *commandHistory;
-	NSString *uncommittedEdit;
-	int positionInHistory;
 }
 
 - (id) initWithServerConnection: (ChessServerConnection *) sc;
@@ -77,7 +74,6 @@
 - (IBAction) exportGame: (id) sender;
 - (IBAction) newPlayWindow: (id) sender;
 - (IBAction) newChatWindow: (id) sender;
-- (IBAction) commandEntered: (id) sender;
 - (BOOL)splitView: (NSSplitView *) sender canCollapseSubview: (NSView *) subview;
 - (float)splitView: (NSSplitView *) sender constrainMaxCoordinate: (float) proposedMax ofSubviewAt:(int)offset;
 - (float)splitView: (NSSplitView *) sender constrainMinCoordinate: (float) proposedMin ofSubviewAt:(int)offset;
@@ -97,6 +93,6 @@
 - (IBAction) newSeek: (id) sender;
 - (IBAction) togglePlaySound: (id) sender;
 - (IBAction) sendSeekToServer: (id) sender;
-- (BOOL) control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command;
+- (void) commandEntered: (NSString *) command;
 
 @end

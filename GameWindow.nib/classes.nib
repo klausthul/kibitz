@@ -101,7 +101,14 @@
             SUPERCLASS = NSWindowController; 
         }, 
         {CLASS = PlayView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
-        {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+        {CLASS = Seek; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {commandEntered = id; }; 
+            CLASS = ServerInputDelegate; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {serverInput = NSTextField; windowController = id; }; 
+            SUPERCLASS = NSObject; 
+        }
     ); 
     IBVersion = 1; 
 }
