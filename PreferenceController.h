@@ -21,6 +21,6 @@
 	AppController *appController;
 }
 
-- (PreferenceController *) initWithAppController: (AppController *) ac;
+- (PreferenceController *) initPreferenceControllerWithAppController: (AppController *) ac;
 
 @end

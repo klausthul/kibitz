@@ -20,7 +20,7 @@
 
 @implementation SeekControl
 
-- (SeekControl *) initWithAppController: (AppController *) ac 
+- (SeekControl *) initSeekControlWithAppController: (AppController *) ac 
 {
 	if ((self = [super initWithWindowNibName: @"Seek"]) != nil) {
 		appController = [ac retain];

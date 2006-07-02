@@ -90,7 +90,7 @@
 		CE6E61590A4AE6540096D242 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Preferences.nib; sourceTree = "<group>"; };
 		CE79E5B209B9574D00B3C9F3 /* timeseal.MacOSX-PPC */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "timeseal.MacOSX-PPC"; sourceTree = "<group>"; };
 		CE7D60D609399D0000AC6D87 /* GameWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = GameWindow.nib; sourceTree = "<group>"; };
-		CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ServerSelector.nib; sourceTree = "<group>"; };
+		CE7D60FB0939A15A00AC6D87 /* ServerSelector.nib */ = {isa = PBXFileReference; explicitFileType = wrapper.nib; path = ServerSelector.nib; sourceTree = "<group>"; };
 		CED260F009833A6E005367EC /* application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = application.icns; sourceTree = "<group>"; };
 		CED2634109836079005367EC /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		CED2637409838F2E005367EC /* index.html */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = index.html; path = "kibitz Help/index.html"; sourceTree = SOURCE_ROOT; };

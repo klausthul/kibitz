@@ -19,7 +19,7 @@
 
 @implementation ChessServerListControl
 
-- (ChessServerListControl *) initWithAppController: (AppController *) ac 
+- (ChessServerListControl *) initChessServerListControlWithAppController: (AppController *) ac 
 {
 	if ((self = [super initWithWindowNibName: @"ServerSelector"]) != nil) {
 		appController = [ac retain];

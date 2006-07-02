@@ -44,8 +44,8 @@
 {
 	if ((self = [super init]) != nil) {
 		serverConnections = [[NSMutableArray arrayWithCapacity: 20] retain];
-		seekControl = [(SeekControl *) [SeekControl alloc] initWithAppController: self];
-		chessServerListControl = [[ChessServerListControl alloc] initWithAppController: self];
+		seekControl = [[SeekControl alloc] initSeekControlWithAppController: self];
+		chessServerListControl = [[ChessServerListControl alloc] initChessServerListControlWithAppController: self];
 		
 		NSData *d = nil;
 		NSDictionary *seeksAndServers = nil;
@@ -152,7 +152,7 @@
 
 - (IBAction) showPreferenceController: (id) sender {
 	if (preferenceController == nil)
-		preferenceController = [[PreferenceController alloc] initWithAppController: self];
+		preferenceController = [[PreferenceController alloc] initPreferenceControllerWithAppController: self];
 	[preferenceController showWindow: self];
 }
 

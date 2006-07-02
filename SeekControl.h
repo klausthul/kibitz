@@ -22,7 +22,7 @@
 	ChessServerConnection *selectedConnection;
 }
 
-- (SeekControl *) initWithAppController: (AppController *) ac;
+- (SeekControl *) initSeekControlWithAppController: (AppController *) ac;
 - (void) dealloc;
 - (void) show: (id) sender;
 - (AppController *) appController;

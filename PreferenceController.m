@@ -19,7 +19,7 @@
 
 @implementation PreferenceController
 
-- (PreferenceController *) initWithAppController: (AppController *) ac 
+- (PreferenceController *) initPreferenceControllerWithAppController: (AppController *) ac 
 {
 	if ((self = [super initWithWindowNibName: @"Preferences"]) != nil) {
 		appController = ac;
