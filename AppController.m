@@ -166,4 +166,12 @@
 	[[seekControl window] close];
 }
 
+- (IBAction) switchAllSoundsOff: (id) sender
+{
+	NSEnumerator *e = [serverConnections objectEnumerator];
+	ChessServerConnection *csc;
+	while ((csc = [e nextObject]) != nil)
+		[csc switchAllSoundsOff];
+}
+
 @end

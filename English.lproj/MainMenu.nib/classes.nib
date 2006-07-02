@@ -1,9 +1,15 @@
 {
     IBClasses = (
         {
-            ACTIONS = {newSeek = id; selectServer = id; showPreferenceController = id; }; 
+            ACTIONS = {
+                newSeek = id; 
+                selectServer = id; 
+                showPreferenceController = id; 
+                switchAllSoundsOff = id; 
+            }; 
             CLASS = AppController; 
             LANGUAGE = ObjC; 
+            OUTLETS = {playSoundMenuItem = NSMenuItem; }; 
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = Board; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 

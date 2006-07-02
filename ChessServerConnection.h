@@ -72,5 +72,7 @@
 - (BOOL) isConnected;
 - (void) newSeek;
 - (void) sendSeekToServer;
+- (void) switchAllSoundsOff;
+- (AppController *) appController;
 
 @end

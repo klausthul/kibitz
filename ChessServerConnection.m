@@ -617,4 +617,17 @@
 	[appController closeSeekWindow];
 }
 
+- (void) switchAllSoundsOff
+{
+	NSEnumerator *e = [activeGames objectEnumerator];
+	Game *g;
+	while ((g = [e nextObject]) != nil)
+		[g setPlaySound: NO];
+}
+
+- (AppController *) appController
+{
+	return appController;
+}
+
 @end

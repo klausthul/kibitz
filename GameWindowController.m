@@ -657,6 +657,19 @@ NSString *toolbarTooltips[] = {
 	[activeGame setPlaySound: ![activeGame playSound]];
 }
 
+- (BOOL) validateMenuItem: (NSMenuItem *) menuItem
+{
+	if ([menuItem action] == @selector(togglePlaySound:)) {
+		if ((activeGame == nil) || [activeGame isEmpty] || ([activeGame result] != nil))
+			return NO;
+		else {
+			[menuItem setState: ([activeGame playSound] ? NSOnState : NSOffState)];
+			return YES;
+		}
+	} else
+		return YES;
+}
+
 - (IBAction) sendSeekToServer: (id) sender
 {
 	NSLog(@"Send seek to Server");
@@ -666,5 +679,5 @@ NSString *toolbarTooltips[] = {
 - (void) commandEntered: (NSString *) command {
 	[serverConnection sendUserInputToServer: command];
 }
-
+ 
 @end

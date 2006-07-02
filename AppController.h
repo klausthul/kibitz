@@ -19,6 +19,7 @@
 #import "SeekControl.h"
 
 @interface AppController : NSObject {
+	IBOutlet NSMenuItem *playSoundMenuItem;
 	SeekControl *seekControl;
 	ChessServerListControl *chessServerListControl;
 	PreferenceController *preferenceController;
@@ -42,5 +43,6 @@
 - (IBAction) showPreferenceController: (id) sender;
 - (SeekControl *) seekControl;
 - (void) closeSeekWindow;
+- (IBAction) switchAllSoundsOff: (id) sender;
 
 @end

@@ -94,5 +94,6 @@
 - (IBAction) togglePlaySound: (id) sender;
 - (IBAction) sendSeekToServer: (id) sender;
 - (void) commandEntered: (NSString *) command;
+- (BOOL) validateMenuItem: (NSMenuItem *) menuItem;
 
 @end
