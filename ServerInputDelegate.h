@@ -1,5 +1,5 @@
 /*
-	$Id: GameWindowController.h 111 2006-07-02 05:04:01Z kthul $
+	$Id$
 
 	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
 	This file is part of kibitz.
@@ -15,7 +15,6 @@
 */
 
 #import <Cocoa/Cocoa.h>
-
 
 @interface ServerInputDelegate : NSObject {
 	IBOutlet NSTextField *serverInput;

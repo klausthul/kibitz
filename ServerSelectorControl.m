@@ -1,5 +1,5 @@
 // icsinterface
-// $Id: ServerSelectorControl.m 58 2005-12-18 16:30:20Z kthul $
+// $Id$
 
 #import "ServerSelectorControl.h"
 

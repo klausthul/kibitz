@@ -1,5 +1,5 @@
 /*
-	$Id: OutputLine.h 91 2006-01-22 12:31:30Z kthul $
+	$Id$
 
 	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
 	This file is part of kibitz.

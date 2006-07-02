@@ -204,7 +204,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>CEBF1BA90A581154007875C4</string>
+						<string>CEBF1BFF0A581431007875C4</string>
 						<key>history</key>
 						<array>
 							<string>CEAF0D0B0A57E71D0037A603</string>
@@ -258,6 +258,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -312,7 +314,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {244, 737}}</string>
+							<string>{{0, 878}, {244, 737}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -359,38 +361,34 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CEBF1BA80A581154007875C4</string>
+										<string>CEBF1BFE0A581431007875C4</string>
 										<key>history</key>
 										<array>
-											<string>CEBF1B6D0A58005D007875C4</string>
-											<string>CEBF1B6E0A58005D007875C4</string>
-											<string>CEBF1B8E0A581106007875C4</string>
 											<string>CEBF1B8F0A581106007875C4</string>
 											<string>CEBF1B900A581106007875C4</string>
 											<string>CEBF1B910A581106007875C4</string>
 											<string>CEBF1B920A581106007875C4</string>
 											<string>CEBF1B9F0A58112D007875C4</string>
 											<string>CEBF1BA00A58112D007875C4</string>
-											<string>CEBF1BA10A58112D007875C4</string>
+											<string>CEBF1BF40A5811CC007875C4</string>
+											<string>CEBF1BF50A5811CC007875C4</string>
+											<string>CEBF1BF60A5811CC007875C4</string>
+											<string>CEBF1BF70A5811CC007875C4</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>CEAF0C780A57D6660037A603</string>
-											<string>CEAF0C7C0A57D6660037A603</string>
 											<string>CEBF1B390A57EC98007875C4</string>
-											<string>CEBF1B3A0A57EC98007875C4</string>
-											<string>CEBF1B3B0A57EC98007875C4</string>
-											<string>CEBF1B4C0A57FE09007875C4</string>
-											<string>CEBF1B700A58005D007875C4</string>
-											<string>CEBF1B710A58005D007875C4</string>
-											<string>CEBF1B720A58005D007875C4</string>
-											<string>CEBF1B940A581106007875C4</string>
 											<string>CEBF1B950A581106007875C4</string>
 											<string>CEBF1B960A581106007875C4</string>
 											<string>CEBF1B970A581106007875C4</string>
 											<string>CEBF1B980A581106007875C4</string>
 											<string>CEBF1BA20A58112D007875C4</string>
 											<string>CEBF1BA30A58112D007875C4</string>
+											<string>CEBF1BF80A5811CC007875C4</string>
+											<string>CEBF1BF90A5811CC007875C4</string>
+											<string>CEBF1BFA0A5811CC007875C4</string>
+											<string>CEBF1BFB0A5811CC007875C4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -412,8 +410,6 @@
 							<string>659pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -593,8 +589,8 @@
 		<string>CEBF1B1E0A57E993007875C4</string>
 		<string>CE0915070A57960F0034F334</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/kthul/kibitz/trunk/icsinterface.xcodeproj</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
+		<string>/Users/kthul/kibitz/trunk/icsinterface.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>2 82 1436 796 0 0 1440 878 </string>
