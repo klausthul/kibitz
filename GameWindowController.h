@@ -61,7 +61,7 @@
 - (IBAction) takeback2: (id) sender;
 - (IBAction) draw: (id) sender;
 - (IBAction) resign: (id) sender;
-- (IBAction) adjurn: (id) sender;
+- (IBAction) adjourn: (id) sender;
 - (IBAction) abort: (id) sender;
 - (IBAction) match: (id) sender;
 - (IBAction) accept: (id) sender;

@@ -22,7 +22,7 @@ enum ToolbarItems {
 	ToolbarTakeback2,
 	ToolbarDraw,
 	ToolbarResign,
-	ToolbarAdjurn,
+	ToolbarAdjourn,
 	ToolbarAbort,
 	ToolbarNewSeek,
 	ToolbarMatch,
@@ -42,7 +42,7 @@ NSString *toolbarIdentifiers[] = {
 	@"ToolbarTakeback2",
 	@"ToolbarDraw",
 	@"ToolbarResign",
-	@"ToolbarAdjurn",
+	@"ToolbarAdjourn",
 	@"ToolbarAbort",
 	@"ToolbarNewSeek",
 	@"ToolbarMatch",
@@ -63,7 +63,7 @@ NSString *toolbarLabels[] = {
 	@"Takeback 2",
 	@"Draw",
 	@"Resign",
-	@"Adjurn",
+	@"Adjourn",
 	@"Abort",
 	@"New Seek",
 	@"Match",
@@ -84,7 +84,7 @@ NSString *toolbarTooltips[] = {
 	@"Take back two (half) move",
 	@"Offer / accept / claim a draw",
 	@"Resign the game",
-	@"Adjurn the game",
+	@"Adjourn the game",
 	@"Abort the game",
 	@"Place a new seek request",
 	@"Match a player",
@@ -338,32 +338,32 @@ NSString *toolbarTooltips[] = {
 
 - (IBAction) takeback: (id) sender
 {
-	NSLog(@"bottonTakeback");
+	[serverConnection sendToServer: @"takeback 2"];
 }
 
 - (IBAction) takeback2: (id) sender
 {
-	NSLog(@"bottonTakeback2");
+	[serverConnection sendToServer: @"takeback"];
 }
 
 - (IBAction) draw: (id) sender
 {
-	NSLog(@"buttonDraw");
+	[serverConnection sendToServer: @"draw"];
 }
 
 - (IBAction) resign: (id) sender
 {
-	NSLog(@"buttonResign");
+	[serverConnection sendToServer: @"resign"];
 }
 
-- (IBAction) adjurn: (id) sender
+- (IBAction) adjourn: (id) sender
 {
-	NSLog(@"buttonAdjurn");
+	[serverConnection sendToServer: @"adjourn"];
 }
 
 - (IBAction) abort: (id) sender
 {
-	NSLog(@"buttonAbort");
+	[serverConnection sendToServer: @"abort"];
 }
 
 - (IBAction) match: (id) sender
@@ -373,12 +373,12 @@ NSString *toolbarTooltips[] = {
 
 - (IBAction) accept: (id) sender
 {
-	NSLog(@"accept");
+	[serverConnection sendToServer: @"accept"];
 }
 
 - (IBAction) decline: (id) sender
 {
-	NSLog(@"decline");
+	[serverConnection sendToServer: @"decline"];
 }
 
 - (IBAction) flipBoard: (id) sender
@@ -548,7 +548,7 @@ NSString *toolbarTooltips[] = {
 		@selector(takeback2:),
 		@selector(draw:),
 		@selector(resign:),
-		@selector(adjurn:),
+		@selector(adjourn:),
 		@selector(abort:),
 		@selector(newSeek:),
 		@selector(match:),

@@ -114,6 +114,17 @@
 	return issueSeek;
 }
 
+- (void) setSeek: (Seek *) s
+{
+	[seek release];
+	seek = [s retain];
+}
+
+- (Seek *) seek
+{
+	return seek;
+}
+
 - (id) initWithCoder: (NSCoder *) coder
 {
 	if ((self = [super init]) != nil) {
@@ -126,6 +137,7 @@
 		[self setUsetimeseal: [coder decodeBoolForKey: @"useTimeseal"]];
 		[self setConnectAtStartup: [coder decodeBoolForKey: @"connectAtStartup"]];
 		[self setIssueSeek: [coder decodeBoolForKey: @"issueSeek"]];
+		[self setSeek: [coder decodeObjectForKey: @"seek"]];
 	}
 	return self;
 }
@@ -141,6 +153,7 @@
 	[coder encodeBool: useTimeseal forKey: @"useTimeseal"];
 	[coder encodeBool: connectAtStartup forKey: @"connectAtStartup"];
 	[coder encodeBool: issueSeek forKey: @"issueSeek"];
+	[coder encodeObject: seek forKey: @"seek"];
 }
 
 - (NSString *) description

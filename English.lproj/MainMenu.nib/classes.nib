@@ -61,7 +61,7 @@
             ACTIONS = {
                 abort = id; 
                 accept = id; 
-                adjurn = id; 
+                adjourn = id; 
                 decline = id; 
                 draw = id; 
                 exportGame = id; 
@@ -89,7 +89,7 @@
             ACTIONS = {
                 abort = id; 
                 accept = id; 
-                adjurn = id; 
+                adjourn = id; 
                 decline = id; 
                 draw = id; 
                 exportGame = id; 
@@ -100,11 +100,14 @@
                 match = id; 
                 newChatWindow = id; 
                 newPlayWindow = id; 
+                newSeek = id; 
                 reconnect = id; 
                 resign = id; 
                 selectGame = id; 
+                sendSeekToServer = id; 
                 takeback = id; 
                 takeback2 = id; 
+                togglePlaySound = id; 
                 toggleSeekDrawer = id; 
             }; 
             CLASS = GameWindowController; 
@@ -118,6 +121,8 @@
                 lowerClock = NSTextField; 
                 lowerName = NSTextField; 
                 messageField = NSTextField; 
+                moveListController = NSArrayController; 
+                movesTable = NSTableView; 
                 movesView = NSView; 
                 playInnerView = PlayView; 
                 playView = NSView; 
@@ -126,7 +131,7 @@
                 seekDrawer = NSDrawer; 
                 seekTable = NSTableView; 
                 serverInput = NSTextField; 
-                serverOutput = NSTextView; 
+                serverOutput = NSTableView; 
                 tableView = NSTableView; 
                 upperClock = NSTextField; 
                 upperName = NSTextField; 

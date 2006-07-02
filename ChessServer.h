@@ -38,11 +38,13 @@
 - (void) setUsetimeseal: (bool) ts;
 - (void) setConnectAtStartup: (bool) cas;
 - (void) setIssueSeek: (bool) is;
+- (void) setSeek: (Seek *) s;
 - (NSString *) serverAddress;
 - (NSNumber *) serverPort;
 - (NSString *) userName;
 - (NSString *) userPassword;
 - (NSString *) initCommands;
+- (Seek *) seek;
 - (BOOL) useTimeseal;
 - (BOOL) connectAtStartup;
 - (BOOL) issueSeek;

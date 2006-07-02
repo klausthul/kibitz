@@ -204,6 +204,8 @@
 					}
 					lastChar = 0;
 					lineBuf[0] = 0;
+					if ([currentServer issueSeek]) 
+						[self sendSeek: [currentServer seek]];  
 				} 
 			} else if (strncmp(lineBuf,"login:", 6) == 0) {
 				if (currentServer != nil && sendNamePassword == YES) {
@@ -604,7 +606,6 @@
 
 - (void) newSeek
 {
-	NSLog(@"ChessServerConnection: newSeek");
 	[appController newSeekForServer: self];
 }
 
