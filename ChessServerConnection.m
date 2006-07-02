@@ -144,7 +144,7 @@
 		[timeseal setLaunchPath: [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/timeseal.MacOSX-PPC"]];
 		[timeseal setArguments:args];
 		[timeseal launch];
-		NSHost *host = [NSHost hostWithName: @"localhost"];
+		NSHost *host = [NSHost hostWithName: @"127.0.0.1"];
 		[NSStream getStreamsToHost:host port: 5501 inputStream: &serverIS outputStream: &serverOS];
 	} else {
 		NSHost *host = [NSHost hostWithName: [currentServer serverAddress]];
