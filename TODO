@@ -1,6 +1,6 @@
 BUGS
 
- o Timeseal does not work (POSIX error, cannot connect)
+ o Timeseal does sometimes not work (POSIX error, cannot connect)
  o Login is very slow, spinball of death
  o Turning off sound does not work
  
@@ -19,5 +19,15 @@ MISSING FEATURES
  o Hints about legal moves
  o Remove from figure during dragging
  o Automated check for updates
-    
+ o Icons for toolbar
+ o Better figures (vector images)
+ o Indicate half-move in move-list
+ 
+GENERAL
+ o Review similar programs
+ o Anounce on Chess-Servers / ask to add to FICS/ICS software list
+ o Better documentation of source
+ o Install mailing list
+ o Use web-based bug / feature tracking
+
 CHANGES

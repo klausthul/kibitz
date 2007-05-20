@@ -217,8 +217,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -257,13 +255,11 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
-								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
-									<integer>17</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -297,6 +293,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -314,10 +312,9 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>CE03C9390C006E2C009765D6</string>
+										<string>CE03C95E0C0074FA009765D6</string>
 										<key>history</key>
 										<array>
-											<string>CE240DD90A58152E000D0449</string>
 											<string>CE240DDA0A58152E000D0449</string>
 											<string>CE240DDB0A58152E000D0449</string>
 											<string>CE240DDC0A58152E000D0449</string>
@@ -326,11 +323,11 @@
 											<string>CE240DDF0A58152E000D0449</string>
 											<string>CE240DE00A58152E000D0449</string>
 											<string>CE03C9360C006E2C009765D6</string>
-											<string>CE03C9370C006E2C009765D6</string>
+											<string>CE03C94F0C0071F6009765D6</string>
+											<string>CE03C9510C0071F6009765D6</string>
 										</array>
 										<key>prevStack</key>
 										<array>
-											<string>CE240DE30A58152E000D0449</string>
 											<string>CE240DE40A58152E000D0449</string>
 											<string>CE240DE50A58152E000D0449</string>
 											<string>CE240DE60A58152E000D0449</string>
@@ -339,6 +336,8 @@
 											<string>CE240DE90A58152E000D0449</string>
 											<string>CE240DEA0A58152E000D0449</string>
 											<string>CE03C9380C006E2C009765D6</string>
+											<string>CE03C9520C0071F6009765D6</string>
+											<string>CE03C9530C0071F6009765D6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -535,8 +534,8 @@
 		<string>CE3AC19D0901FF4300DD3768</string>
 		<string>CE03C9430C006E2C009765D6</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/kthul/Documents/workspace/kibitz/trunk/icsinterface.xcodeproj</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
+		<string>/Users/kthul/Documents/workspace/kibitz/trunk/icsinterface.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>2 43 1438 835 0 0 1440 878 </string>
