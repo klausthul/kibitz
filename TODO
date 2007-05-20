@@ -1,0 +1,23 @@
+BUGS
+
+ o Timeseal does not work (POSIX error, cannot connect)
+ o Login is very slow, spinball of death
+ o Turning off sound does not work
+ 
+MISSING FEATURES
+
+ o Respond to seeks in seek drawer
+ o List of played games
+ o List of player on server
+ o Reload old moves when observing game
+ o Exporting games (autosaving all games?)
+ o Option to get rid of old game (delete / close game) 
+ o Seek graph
+ o Mode for off-line analysis
+ o Documentation / help system
+ o Integrate bug / crash reporting
+ o Hints about legal moves
+ o Remove from figure during dragging
+ o Automated check for updates
+    
+CHANGES
