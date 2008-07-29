@@ -16,6 +16,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+NSString *nil2Empty(NSString *);
+
 @class AppController;
 @class ChatWindowController;
 @class ChessMove;
@@ -99,4 +101,3 @@ enum OutputLineType {
 
 #define STRBEGINS(x, y) (strncmp((x), (y), strlen(y)) == 0)
 
-inline NSString *nil2Empty(NSString *x);

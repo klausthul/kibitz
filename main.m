@@ -18,7 +18,7 @@
 
 Sound *gSounds;
 
-inline NSString *nil2Empty(NSString *x)
+NSString *nil2Empty(NSString *x)
 {
 	if (x == nil)
 		return @"";

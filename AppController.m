@@ -18,6 +18,7 @@
 #import "SeekControl.h"
 #import "PreferenceController.h"
 #import "ChessServerListControl.h"
+#import "Sound.h"
 
 @implementation AppController
 
