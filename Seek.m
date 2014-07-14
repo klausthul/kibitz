@@ -22,110 +22,69 @@ NSString *StyleNames[] = {
 
 @implementation Seek
 
+/**
+ * Create seek object from FICS-style seek adversitement string
+ * Note, this is the "seekinfo" version documented at
+ * http://www.freechess.org/Help/HelpFiles/iv_seekinfo.html
+ *
+ * @param seekInfo Seek advertisement string
+ */
 + (Seek *) seekFromSeekInfo: (const char *) seekInfo
 {
-	const char *cp, *key, *value;
-	int key_length, value_length;
 	Seek *s = [[Seek alloc] init];
 	[s autorelease];
-	
-	for (cp = seekInfo; *cp;) {
-		if (!isalpha(*cp)) {
-			cp++;
-			continue;
-		}
-		key = cp;
-		while (*(++cp) != '=') {
-			if (!(*cp))
-				goto error;
-		}
-		key_length = cp - key;
-		value = ++cp;
-		if (!(*cp)) 
-			goto error;
-		while (*cp && !isspace(*cp))
-			cp++;
-		value_length = cp - value;
-		
-		if (key_length == 1) {
-			switch (*key) {
-			  case 'w':
-				s->nameFrom = [NSString stringWithCString:value length:value_length];
-				[s->nameFrom retain];
-				break;
-			  case 't':
-				s->timeStart = atoi(value);
-				break;
-			  case 'i':
-				s->timeIncrement = atoi(value);
-				break;				
-			  case 'r':
-				switch (*value) {
-				  case 'r':
-				    s->rated = YES;
-					break;
-				  case 'u':
-				    s->rated = NO;
-					break;
-				}
-				break;
-			  case 'c':
-				switch (tolower(*value)) {
-				  case '?':
-				    s->wantsColor = WANTS_BOTH;
-					break;
-				  case 'b':
-				    s->wantsColor = WANTS_BLACK;
-					break;
-				  case 'w':
-				    s->wantsColor = WANTS_WHITE;
-					break;
-				}
-				break;
-			  case 'a':
-				switch (*value) {
-				  case 't':
-				    s->automatic = YES;
-					break;
-				  case 'f':
-				    s->automatic = NO;
-					break;
-				}
-				break;
-			  case 'f':
-				switch (*value) {
-				  case 't':
-				    s->formulaChecked = YES;
-					break;
-				  case 'f':
-				    s->formulaChecked = NO;
-					break;
-				}
-				break;
-			  default:
-				goto unknown_key;
-			}
-		} else if (key_length == 2) {
-			if (strncmp(key, "ti", 2) == 0) {
-				s->title = (*value - '0')*16 + (*(value + 1) - '0');
-			} else if (strncmp(key, "rt", 2) == 0) {
-				s->ratingValue = atoi(value);
-			} else if (strncmp(key, "tp", 2) == 0) {
-				s->typeOfPlay = [NSString stringWithCString:value length:value_length];
-				[s->typeOfPlay retain];
-			} else if (strncmp(key, "rr", 2) == 0) {
-// !!!! for later !!!
-			} else
-				goto unknown_key;
-
-		}
-		continue;
-	  unknown_key:;
-		continue;
+    
+    NSString *seekInfoNS = [NSString stringWithUTF8String:seekInfo];
+    NSArray *parts = [seekInfoNS componentsSeparatedByString:@" "];
+    for (NSString *part in parts) {
+        NSArray *keyVal = [part componentsSeparatedByString:@"="];
+        if (keyVal.count != 2) {
+            continue;
+        }
+        NSString *key = keyVal[0];
+        NSString *value = keyVal[1];
+        
+        if ([key isEqualToString:@"w"]) {
+            s->nameFrom = value;
+            [s->nameFrom retain];
+        } else if ([key isEqualToString:@"t"]) {
+            s->timeStart = [value intValue];
+        } else if ([key isEqualToString:@"i"]) {
+            s->timeIncrement = [value intValue];
+        } else if ([key isEqualToString:@"t"]) {
+            if ([value isEqualToString:@"r"])
+                s->rated = YES;
+            else if ([value isEqualToString:@"u"])
+                s->rated = NO;
+        } else if ([key isEqualToString:@"c"]) {
+            if ([value isEqualToString:@"?"])
+                s->wantsColor = WANTS_BOTH;
+            else if ([value isEqualToString:@"W"])
+                s->wantsColor = WANTS_WHITE;
+            else if ([value isEqualToString:@"B"])
+                s->wantsColor = WANTS_BLACK;
+        } else if ([key isEqualToString:@"a"]) {
+            if ([value isEqualToString:@"t"])
+                s->automatic = YES;
+            else if ([value isEqualToString:@"f"])
+                s->automatic = NO;
+        } else if ([key isEqualToString:@"f"]) {
+            if ([value isEqualToString:@"t"])
+                s->formulaChecked = YES;
+            else if ([value isEqualToString:@"f"])
+                s->formulaChecked = NO;
+        } else if ([key isEqualToString:@"ti"]) {
+            s->title = strtol([value UTF8String], NULL, 16);
+        } else if ([key isEqualToString:@"rt"]) {
+            s->ratingValue = [value intValue];
+        } else if ([key isEqualToString:@"tp"]) {
+            s->typeOfPlay = value;
+            [s->typeOfPlay retain];
+        } else if ([key isEqualToString:@"rr"]) {
+            // TODO: implement Ratings range
+        }
 	}
 	return s;
-  error:;
-	return nil;
 }
 
 - (Seek *) init

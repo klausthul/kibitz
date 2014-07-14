@@ -29,6 +29,8 @@
 	[s setServerName: @"Free Internet Chess Server (FICS)"];
 	[s setServerAddress: @"69.36.243.188"];
 	[s setServerPort: [NSNumber numberWithInt: 5000]];
+    
+    // See http://www.freechess.org/Help/HelpFiles/iset.html
 	[s setInitCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n"];
 	[s setUsetimeseal: YES];
 	NSMutableArray *defaultChessServers = [NSMutableArray arrayWithObject: s];

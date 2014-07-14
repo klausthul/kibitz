@@ -18,7 +18,7 @@
 #import "ChessServerConnection.h"
 #import "PlayView.h"
 
-@interface GameWindowController : NSWindowController {
+@interface GameWindowController : NSWindowController <NSToolbarDelegate> {
 	ChessServerConnection *serverConnection;
 	IBOutlet NSTextField *serverInput;
 	IBOutlet NSDrawer *seekDrawer;

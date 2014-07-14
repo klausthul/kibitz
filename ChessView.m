@@ -156,7 +156,7 @@
 	return [self getFieldFromLocation: [theEvent locationInWindow]];
 }
 
-- (unsigned int) draggingSourceOperationMaskForLocal: (BOOL) isLocal
+- (unsigned long) draggingSourceOperationMaskForLocal: (BOOL) isLocal
 {
 	if (isLocal == NO)
 		return NSDragOperationNone;
@@ -181,7 +181,7 @@
 	}
 }
 
-- (unsigned int) draggingEntered: (id <NSDraggingInfo>) sender
+- (unsigned long) draggingEntered: (id <NSDraggingInfo>) sender
 {
 	return NSDragOperationMove;
 }

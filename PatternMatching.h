@@ -31,7 +31,7 @@ struct ServerPattern {
 	const char *arguments[MAX_PATTERNS];
 }
 
-- (PatternMatching *) initWithPatterns: (struct ServerPattern *) pattern;
+- (PatternMatching *) initWithPatterns: (const struct ServerPattern *) pattern;
 - (NSInvocation *) parseLine: (const char *) line toTarget: (id) object;
 
 @end

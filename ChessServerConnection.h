@@ -21,7 +21,7 @@
 #import "GameWindowController.h"
 #import "PatternMatching.h"
 
-@interface ChessServerConnection : NSObject {
+@interface ChessServerConnection : NSObject <NSStreamDelegate> {
 	AppController *appController;
 	NSMutableArray *serverWindows, *chatWindows;
 	NSInputStream *serverIS;
@@ -42,7 +42,7 @@
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason;
 - (void) serverIllegalMove: (NSString *) why;
-- (void) processServerOutput;
+- (void) processServerOutputLine: (NSString *)line;
 - (void) stream:(NSStream *)stream handleEvent:(NSStreamEvent)event;
 - (ChessServerConnection *) initWithChessServer: (ChessServer *) server appController: ac;
 - (void) dealloc;

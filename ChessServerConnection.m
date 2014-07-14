@@ -1,18 +1,18 @@
 /*
-	$Id$
-
-	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of Kibitz.
-
-	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
-	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
-
-	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
-	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+ $Id$
+ 
+ Copyright 2006 Klaus Thul (klaus.thul@mac.com)
+ This file is part of Kibitz.
+ 
+ Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+ 
+ Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the
+ Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
 
 #import "ChessServerConnection.h"
 #import "Game.h"
@@ -30,11 +30,11 @@
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason
 {
-	Game *g = [activeGames objectForKey: game]; 
+	Game *g = [activeGames objectForKey: game];
 	if (g != nil) {
 		[g setResult: result reason: reason];
 		[activeGames removeObjectForKey: game];
-		[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]]; 
+		[activeGames setObject: g forKey: [NSNumber numberWithInt: --storedGameCounter]];
 		[self setGameLists];
 		if ([g playSound])
 			[gSounds gameEnd: [g gameRelationship]];
@@ -45,7 +45,7 @@
 {
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
-   
+    
 	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc showMessage: why];
 }
@@ -59,11 +59,15 @@
 	}
 }
 
-- (void) processServerOutput
+- (void) processServerOutputLine: (NSString *)line
 {
 	NSInvocation *invoc;
-	if (strncmp(lineBuf,"<12>", 4) == 0) {
-		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
+    const char *lineCStr = [line cStringUsingEncoding:NSISOLatin1StringEncoding];
+    
+    // Process special side-channel output from FICS
+    // See http://www.freechess.org/Help/HelpFiles/iv_seekinfo.html
+	if (strncmp(lineCStr,"<12>", 4) == 0) {
+		NSArray *a = [[line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
 		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 16] intValue]];
 		Game *g = [activeGames objectForKey: n];
 		if (g == nil) {
@@ -91,8 +95,8 @@
 			[g newMove: m];
 		}
 		[self updateGame: g];
-	} else if (strncmp(lineBuf,"<g1>", 4) == 0) {
-		NSArray *a = [[[NSString stringWithCString: lineBuf] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
+	} else if (strncmp(lineCStr,"<g1>", 4) == 0) {
+		NSArray *a = [[line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
 		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 1] intValue]];
 		Game *g;
 		if ((g = [activeGames objectForKey: n]) == nil) {
@@ -105,12 +109,12 @@
 			[g updateWithGameInfo: a];
 			[self setGameLists];
 		}
-	} else if (strncmp(lineBuf,"<s>", 3) == 0) {
+	} else if (strncmp(lineCStr,"<s>", 3) == 0) {
 		int num = 0;
-		sscanf(lineBuf + 3, " %d", &num);
-		[self newSeekFromServer: num description: lineBuf + 4];
-	} else if (strncmp(lineBuf,"<sr>", 4) == 0) {
-		NSArray *sr = [[[NSString stringWithCString:lineBuf + 4] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
+		sscanf(lineCStr + 3, " %d", &num);
+		[self newSeekFromServer: num description: lineCStr + 4];
+	} else if (strncmp(lineCStr,"<sr>", 4) == 0) {
+		NSArray *sr = [[[line substringFromIndex:4] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
 		NSEnumerator *enumerator = [sr objectEnumerator];
 		NSString *s;
 		
@@ -118,14 +122,14 @@
 			int num = [s intValue];
 			[self removeSeekFromServer: num];
 		}
-	} else if (strncmp(lineBuf,"<sc>", 4) == 0) {
+	} else if (strncmp(lineCStr,"<sc>", 4) == 0) {
 		[self removeAllSeeks];
-	} else if ((invoc = [patternMatcher parseLine: lineBuf toTarget: self]) != nil) {
+	} else if ((invoc = [patternMatcher parseLine: lineCStr toTarget: self]) != nil) {
 		[invoc invoke];
 	} else {
-		NSString *s = [NSString stringWithUTF8String:(char *) lineBuf];
+		NSString *s = [NSString stringWithUTF8String:(char *) lineCStr];
 		if (s != nil)
-			[self addOutputLine: [NSString stringWithUTF8String:(char *) lineBuf] type: OTHER info: 0];
+			[self addOutputLine: [NSString stringWithUTF8String:(char *) lineCStr] type: OTHER info: 0];
 	}
 }
 
@@ -169,91 +173,96 @@
 	unsigned int i;
 	
 	switch(event) {
-	  case NSStreamEventHasBytesAvailable: {
-		unsigned char buf[2048];
-		unsigned int len = 0;
-		everConnected = YES;
-		while ((len = [(NSInputStream *) theStream read:buf maxLength: 2048]) > 0) {
-			for (i = 0; i < len; i++) {
-				switch (c = buf[i]) {
-				  case 10: 
-					lineBuf[lastChar] = 0;
-					if (lastChar > 0)
-						[self processServerOutput];
-					lastChar = 0;
-					break;
-				  case 13:
-					break;
-				  default:
-					lineBuf[lastChar++] = c;
-					break;
-				}
-			}
-			if (len < 2048) {
-				lineBuf[lastChar] = 0;
-				break;
-			}
-		}
-		if (lastChar > 0) {
-			if (strncmp(lineBuf,"fics%", 5) == 0) {
-				if (sendInit) {
-					const char *s;
-					sendInit = NO;
-					if ((s = [[currentServer initCommands] UTF8String]) != nil) {
-						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
-						[serverOS write:(unsigned const char *) "\n" maxLength:1];
-					}
-					lastChar = 0;
-					lineBuf[0] = 0;
-					if ([currentServer issueSeek]) 
-						[self sendSeek: [currentServer seek]];  
-				} 
-			} else if (strncmp(lineBuf,"login:", 6) == 0) {
-				if (currentServer != nil && sendNamePassword == YES) {
-					const char *s;
-					sendNamePassword = NO;
-					if ([currentServer userName] && [currentServer userPassword]) {
-						s = [[currentServer userName] UTF8String];
-						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
-						[serverOS write:(unsigned const char *) "\n" maxLength:1];
-						s = [[currentServer userPassword] UTF8String];
-						[serverOS write:(unsigned const char *) s maxLength:strlen(s)];
-						[serverOS write:(unsigned const char *) "\n" maxLength:1];
-						lastChar = 0;
-						lineBuf[0] = 0;	
-					}
-				}			
-			}
-			if (lastChar > 0)
-				[self addOutputLine: [NSString stringWithUTF8String:(char *) lineBuf] type: LINE_PARTIAL info: 0];
-		}
-		break;
-	  }
-	  case NSStreamEventErrorOccurred: {
-		NSError *theError = [theStream streamError];
-		NSRunAlertPanel(@"Error with server connection", 
-		 [NSString stringWithFormat:@"Error %i: %@", [theError code], [theError localizedDescription]],
-		 @"OK", nil, nil);
-		[theStream close];
-		[theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
-		[theStream release];
-		if (theStream == serverIS)
-			serverIS = nil;
-		if (theStream == serverOS)
-			serverOS = nil;			
-		break;
-	  }
-	  case NSStreamEventEndEncountered:
-		[theStream close];
-		[theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
-		[theStream release];
-		if (theStream == serverIS)
-			serverIS = nil;
-		if (theStream == serverOS)
-			serverOS = nil;			
-		break;
-	  default:
-		break;
+        case NSStreamEventHasBytesAvailable: {
+            unsigned char buf[2048];
+            unsigned int len = 0;
+            everConnected = YES;
+            while ((len = [(NSInputStream *) theStream read:buf maxLength: 2048]) > 0) {
+                for (i = 0; i < len; i++) {
+                    switch (c = buf[i]) {
+                        case 10:
+                            lineBuf[lastChar] = 0;
+                            NSString *str = [NSString stringWithUTF8String:lineBuf];
+                            if (str)
+                                [self processServerOutputLine:str];
+                            lastChar = 0;
+                            break;
+                        case 13:
+                            break;
+                        default:
+                            lineBuf[lastChar++] = c;
+                            break;
+                    }
+                }
+                if (len < 2048) {
+                    lineBuf[lastChar] = 0;
+                    break;
+                }
+            }
+            if (lastChar > 0) {
+                if (strncmp(lineBuf,"fics%", 5) == 0) {
+                    if (sendInit) {
+                        const char *s;
+                        sendInit = NO;
+                        if ((s = [[currentServer initCommands] UTF8String]) != nil) {
+                            [serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+                            [serverOS write:(unsigned const char *) "\n" maxLength:1];
+                        }
+                        lastChar = 0;
+                        lineBuf[0] = 0;
+                        if ([currentServer issueSeek])
+                            [self sendSeek: [currentServer seek]];
+                    }
+                } else if (strncmp(lineBuf,"login:", 6) == 0) {
+                    if (currentServer != nil && sendNamePassword == YES) {
+                        const char *s;
+                        sendNamePassword = NO;
+                        if ([currentServer userName] && [currentServer userPassword]) {
+                            s = [[currentServer userName] UTF8String];
+                            [serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+                            [serverOS write:(unsigned const char *) "\n" maxLength:1];
+                            s = [[currentServer userPassword] UTF8String];
+                            [serverOS write:(unsigned const char *) s maxLength:strlen(s)];
+                            [serverOS write:(unsigned const char *) "\n" maxLength:1];
+                            lastChar = 0;
+                            lineBuf[0] = 0;
+                        }
+                    }
+                }
+                if (lastChar > 0)
+                    [self addOutputLine: [NSString stringWithUTF8String:(char *) lineBuf] type: LINE_PARTIAL info: 0];
+            }
+            break;
+        }
+        case NSStreamEventErrorOccurred: {
+            NSError *theError = [theStream streamError];
+            NSRunAlertPanel(@"Error with server connection",
+                            @"Error %li: %@",
+                            @"OK",
+                            nil,
+                            nil,
+                            (long)[theError code],
+                            [theError localizedDescription]);
+            [theStream close];
+            [theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+            [theStream release];
+            if (theStream == serverIS)
+                serverIS = nil;
+            if (theStream == serverOS)
+                serverOS = nil;
+            break;
+        }
+        case NSStreamEventEndEncountered:
+            [theStream close];
+            [theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
+            [theStream release];
+            if (theStream == serverIS)
+                serverIS = nil;
+            if (theStream == serverOS)
+                serverOS = nil;
+            break;
+        default:
+            break;
 	}
 	if ((serverIS == nil) || (serverOS == nil)) {
 		if (serverIS != nil) {
@@ -270,7 +279,7 @@
 		}
 		if (everConnected) {
 			if (NSRunAlertPanel(@"Connection to server lost", @"Do you want to try to reconnect?",
-			 @"Yes", @"No", nil) == NSAlertDefaultReturn) {
+                                @"Yes", @"No", nil) == NSAlertDefaultReturn) {
 				[activeGames removeAllObjects];
 				[seeks removeAllObjects];
 				[self connectChessServer];
@@ -278,13 +287,13 @@
 				[appController closeServerConnection: self];
 		} else {
 			NSWindowController *wc;
-			NSEnumerator *e = [chatWindows objectEnumerator];			
+			NSEnumerator *e = [chatWindows objectEnumerator];
 			while ((wc = [e nextObject]) != nil)
 				[wc close];
-			e = [serverWindows objectEnumerator];			
+			e = [serverWindows objectEnumerator];
 			while ((wc = [e nextObject]) != nil)
-				[wc close];				
-			[appController closeServerConnection: self];		
+				[wc close];
+			[appController closeServerConnection: self];
 		}
 	}
 }
@@ -297,40 +306,40 @@
 		{ "^(The clock is paused, use \"unpause\" to resume\\.)$", @selector(serverIllegalMove:), "0" },
 		{ "^(You are not playing or examining a game\\.)$", @selector(serverIllegalMove:), "0" },
 		{"^<b1> game ([0-9]+) white \\[([PBNRQKpbnrqk]*)\\] black \\[([PBNRQKpbnrqk]*)\\]", @selector(passedPiecesGame:white:black:), "1I23" },
-		{ 0, 0, 0 } 
+		{ 0, 0, 0 }
 	};
-/*	
-	[LOGIN_PATTERN] = "^\\*\\*\\*\\* Starting FICS session as ("+USERNAME_REGEX+")("+TITLES_REGEX+")? \\*\\*\\*\\*",
-	[WRONG_PASSWORD_PATTERN] = "^\\*\\*\\*\\* Invalid password! \\*\\*\\*\\*",
-	[PERSONAL_TELL_PATTERN] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? tells you: (.*)",
-	[SAY_PATTERN] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?(\\[(\\d+)\\])? says: (.*)"),
-	[PTELL_PATTERN] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? \\(your partner\\) tells you: (.*)",
-	[CHANNEL_TELL_REGEX] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?\\((\\d+)\\): (.*)"
-	[KIBITZ_REGEX] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?\\( {,3}([\\-0-9]+)\\)\\[(\\d+)\\] Kibitzes: (.*)"
-	WHISPER_REGEX "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?\\( {,3}([\\-0-9]+)\\)\\[(\\d+)\\] whispers: (.*)"
-	QTELL_REGEX = new Pattern("^:(.*)")
-	SHOUT_REGEX "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? shouts: (.*)"
-	ISHOUT_REGEX "^--> ("+USERNAME_REGEX+")("+TITLES_REGEX+")? ?(.*)"
-	TSHOUT_REGEX "^:("+USERNAME_REGEX+")("+TITLES_REGEX+")? t-shouts: (.*)"
-	CSHOUT_REGEX "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? c-shouts: (.*)"
-	ANNOUNCEMENT_REGEX "^    \\*\\*ANNOUNCEMENT\\*\\* from ("+USERNAME_REGEX+"): (.*)"
-	STOPPED_OBSERVING_REGEX "^Removing game (\\d+) from observation list\\.$"
-	STOPPED_EXAMINING_REGEX "^You are no longer examining game (\\d+)\\.$"
-	ENTERING_SETUP "^Entering setup mode.$"
-	LEAVING_SETUP "Game is validated - entering examine mode."
-	OFFER_PARSER "^(\\d+) w=("+USERNAME_REGEX+") t=(\\S+) p=(.*)"
-	OFFER_REGEX = new Pattern("^<p([tf])> (.*)")
-	PLAYER_OFFERED_DRAW_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") offers a draw\\.$"
-	PLAYER_OFFERED_ABORT_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") requests to abort the game\\.$"
-	PLAYER_OFFERED_ADJOURN_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") requests to adjourn the game\\.$"
-	PLAYER_OFFERED_TAKEBACK_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") requests to take back (\\d+) half move\\(s\\)\\.$"
-	PLAYER_DECLINED_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") declines the (\\w+) request\\.$"
-	PLAYER_WITHDREW_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") withdraws the (\\w+) request\\.$"
-	PLAYER_COUNTER_TAKEBACK_OFFER_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") proposes a different number \\((\\d+)\\) of half-move\\(s\\) to take back\\.$"
-	AT_BOARD_REGEX = "^You are now at ("+USERNAME_REGEX+")'s board \\(game (\\d+)\\)\\.$"
-	PRIMARY_GAME_CHANGED_REGEX = "^Your primary game is now game (\\d+)\\.$"
-*/
-
+    /*
+     [LOGIN_PATTERN] = "^\\*\\*\\*\\* Starting FICS session as ("+USERNAME_REGEX+")("+TITLES_REGEX+")? \\*\\*\\*\\*",
+     [WRONG_PASSWORD_PATTERN] = "^\\*\\*\\*\\* Invalid password! \\*\\*\\*\\*",
+     [PERSONAL_TELL_PATTERN] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? tells you: (.*)",
+     [SAY_PATTERN] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?(\\[(\\d+)\\])? says: (.*)"),
+     [PTELL_PATTERN] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? \\(your partner\\) tells you: (.*)",
+     [CHANNEL_TELL_REGEX] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?\\((\\d+)\\): (.*)"
+     [KIBITZ_REGEX] = "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?\\( {,3}([\\-0-9]+)\\)\\[(\\d+)\\] Kibitzes: (.*)"
+     WHISPER_REGEX "^("+USERNAME_REGEX+")("+TITLES_REGEX+")?\\( {,3}([\\-0-9]+)\\)\\[(\\d+)\\] whispers: (.*)"
+     QTELL_REGEX = new Pattern("^:(.*)")
+     SHOUT_REGEX "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? shouts: (.*)"
+     ISHOUT_REGEX "^--> ("+USERNAME_REGEX+")("+TITLES_REGEX+")? ?(.*)"
+     TSHOUT_REGEX "^:("+USERNAME_REGEX+")("+TITLES_REGEX+")? t-shouts: (.*)"
+     CSHOUT_REGEX "^("+USERNAME_REGEX+")("+TITLES_REGEX+")? c-shouts: (.*)"
+     ANNOUNCEMENT_REGEX "^    \\*\\*ANNOUNCEMENT\\*\\* from ("+USERNAME_REGEX+"): (.*)"
+     STOPPED_OBSERVING_REGEX "^Removing game (\\d+) from observation list\\.$"
+     STOPPED_EXAMINING_REGEX "^You are no longer examining game (\\d+)\\.$"
+     ENTERING_SETUP "^Entering setup mode.$"
+     LEAVING_SETUP "Game is validated - entering examine mode."
+     OFFER_PARSER "^(\\d+) w=("+USERNAME_REGEX+") t=(\\S+) p=(.*)"
+     OFFER_REGEX = new Pattern("^<p([tf])> (.*)")
+     PLAYER_OFFERED_DRAW_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") offers a draw\\.$"
+     PLAYER_OFFERED_ABORT_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") requests to abort the game\\.$"
+     PLAYER_OFFERED_ADJOURN_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") requests to adjourn the game\\.$"
+     PLAYER_OFFERED_TAKEBACK_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") requests to take back (\\d+) half move\\(s\\)\\.$"
+     PLAYER_DECLINED_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") declines the (\\w+) request\\.$"
+     PLAYER_WITHDREW_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") withdraws the (\\w+) request\\.$"
+     PLAYER_COUNTER_TAKEBACK_OFFER_REGEX "^Game (\\d+): ("+USERNAME_REGEX+") proposes a different number \\((\\d+)\\) of half-move\\(s\\) to take back\\.$"
+     AT_BOARD_REGEX = "^You are now at ("+USERNAME_REGEX+")'s board \\(game (\\d+)\\)\\.$"
+     PRIMARY_GAME_CHANGED_REGEX = "^Your primary game is now game (\\d+)\\.$"
+     */
+    
 	if ((self = [super init]) != nil) {
 		everConnected = NO;
 		appController = [ac retain];
@@ -405,7 +414,7 @@
 - (void) removeAllSeeks
 {
 	[seeks removeAllObjects];
-	[self redisplaySeekTables];	
+	[self redisplaySeekTables];
 }
 
 - (int) numSeeks
@@ -446,7 +455,7 @@
 		move[1] = '@';
 		move[2] = to.line  + 'a' - 1;
 		move[3] = to.row + '1' - 1;
-		move[4] = '\n';		
+		move[4] = '\n';
 		move[5] = 0;
 	} else {
 		move[0] = from.line + 'a' - 1;
@@ -465,7 +474,7 @@
 		}
 	}
 	[serverOS write: move maxLength: strlen((char *) move)];
-} 
+}
 
 - (NSString *) description
 {
@@ -481,7 +490,7 @@
 {
 	const char *cs = [s UTF8String];
 	[serverOS write: (unsigned char *) cs maxLength: strlen(cs)];
-	[serverOS write: (unsigned char *) "\n" maxLength: 1];	
+	[serverOS write: (unsigned char *) "\n" maxLength: 1];
 }
 
 - (void) sendUserInputToServer: (NSString *) s
@@ -496,7 +505,7 @@
 {
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
-   
+    
 	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc seekTableNeedsDisplay];
 }
@@ -505,7 +514,7 @@
 {
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
-   
+    
 	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc setGameList: activeGames];
 }
@@ -514,7 +523,7 @@
 {
 	NSEnumerator *enumerator = [serverWindows objectEnumerator];
 	GameWindowController *gwc;
-   
+    
 	while ((gwc = [enumerator nextObject]) != nil)
 		[gwc updateGame: g];
 }
@@ -526,7 +535,7 @@
 	[gwc showWindow: self];
 	[gwc setGameList: activeGames];
 	NSEnumerator *enumerator = [activeGames objectEnumerator];
-	Game *g, *g2 = nil;  
+	Game *g, *g2 = nil;
 	while ((g = [enumerator nextObject]) != nil) {
 		[gwc updateGame: g];
 		g2 = g;

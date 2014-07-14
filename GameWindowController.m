@@ -312,28 +312,16 @@ NSString *toolbarTooltips[] = {
 	}
 }
 
-+ (NSString *) stringWithClock: (int) seconds
++ (NSString *) stringWithClock: (int)seconds
 {
-	int minutes, hours;
-	char string[10];
-	
-	if (seconds < 0) {
+    int hours, minutes;
+    
+    if (seconds < 0)
 		return @"-:--:--";
-	} else {
-		minutes = seconds / 60;
-		seconds -= minutes * 60;
-		hours = minutes / 60;
-		minutes -= hours * 60;
-		string[0] = hours % 10 + '0';
-		string[1] = ':';
-		string[2] = minutes / 10 + '0';
-		string[3] = minutes % 10 + '0';
-		string[4] = ':';
-		string[5] = seconds / 10 + '0';
-		string[6] = seconds % 10 + '0';
-		string[7] = 0;
-		return [NSString stringWithCString: string];
-	}
+    hours = seconds / 3600;
+    minutes = (seconds / 60) % 60;
+    seconds = seconds % 60;
+    return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
 }
 
 - (IBAction) takeback: (id) sender
