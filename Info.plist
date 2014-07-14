@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>kibitz</string>
+	<string>Kibitz</string>
 	<key>CFBundleHelpBookFolder</key>
-	<string>kibitz Help</string>
+	<string>Kibitz Help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>kibitz Help</string>
+	<string>Kibitz Help</string>
 	<key>CFBundleIconFile</key>
 	<string>application</string>
 	<key>CFBundleIdentifier</key>
-	<string>free.klausthul.kibitz</string>
+	<string>free.klausthul.Kibitz</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

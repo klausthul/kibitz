@@ -44,7 +44,7 @@
 		CE79E5B309B9574D00B3C9F3 /* timeseal.MacOSX-PPC in Resources */ = {isa = PBXBuildFile; fileRef = CE79E5B209B9574D00B3C9F3 /* timeseal.MacOSX-PPC */; };
 		CED260F109833A6E005367EC /* application.icns in Resources */ = {isa = PBXBuildFile; fileRef = CED260F009833A6E005367EC /* application.icns */; };
 		CED2634209836079005367EC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CED2634109836079005367EC /* LICENSE */; };
-		CED263A409839318005367EC /* kibitz Help in Resources */ = {isa = PBXBuildFile; fileRef = CED2639E09839318005367EC /* kibitz Help */; };
+		CED263A409839318005367EC /* Kibitz Help in Resources */ = {isa = PBXBuildFile; fileRef = CED2639E09839318005367EC /* Kibitz Help */; };
 		CED82AD80955BFC60073F9CD /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A6E0955BFC50073F9CD /* AppController.m */; };
 		CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A840955BFC60073F9CD /* ChessMove.m */; };
 		CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A870955BFC60073F9CD /* ChessServer.m */; };
@@ -72,7 +72,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* kibitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kibitz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Kibitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kibitz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0914760A578C370034F334 /* ServerInputDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerInputDelegate.h; sourceTree = "<group>"; };
 		CE0914770A578C370034F334 /* ServerInputDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerInputDelegate.m; sourceTree = "<group>"; };
 		CE12100D0983B4DA001EB123 /* gpl.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = gpl.html; path = "kibitz Help/gpl.html"; sourceTree = SOURCE_ROOT; };
@@ -93,7 +93,7 @@
 		CED260F009833A6E005367EC /* application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = application.icns; sourceTree = "<group>"; };
 		CED2634109836079005367EC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CED2637409838F2E005367EC /* index.html */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = index.html; path = "kibitz Help/index.html"; sourceTree = SOURCE_ROOT; };
-		CED2639E09839318005367EC /* kibitz Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "kibitz Help"; sourceTree = "<group>"; };
+		CED2639E09839318005367EC /* Kibitz Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Kibitz Help"; sourceTree = "<group>"; };
 		CED33BF4091E36E0005B773B /* bb.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bb.tiff; path = pieces/bb.tiff; sourceTree = "<group>"; };
 		CED33BF7091E36EF005B773B /* bk.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bk.tiff; path = pieces/bk.tiff; sourceTree = "<group>"; };
 		CED33BF8091E36EF005B773B /* bn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = bn.tiff; path = pieces/bn.tiff; sourceTree = "<group>"; };
@@ -106,12 +106,12 @@
 		CED33BFF091E36EF005B773B /* wp.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = wp.tiff; path = pieces/wp.tiff; sourceTree = "<group>"; };
 		CED33C00091E36EF005B773B /* wq.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = wq.tiff; path = pieces/wq.tiff; sourceTree = "<group>"; };
 		CED33C01091E36EF005B773B /* wr.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = wr.tiff; path = pieces/wr.tiff; sourceTree = "<group>"; };
-		CED82A6D0955BFC50073F9CD /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
-		CED82A6E0955BFC50073F9CD /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		CED82A830955BFC60073F9CD /* ChessMove.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessMove.h; sourceTree = "<group>"; };
-		CED82A840955BFC60073F9CD /* ChessMove.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessMove.m; sourceTree = "<group>"; };
-		CED82A860955BFC60073F9CD /* ChessServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServer.h; sourceTree = "<group>"; };
-		CED82A870955BFC60073F9CD /* ChessServer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessServer.m; sourceTree = "<group>"; };
+		CED82A6D0955BFC50073F9CD /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CED82A6E0955BFC50073F9CD /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		CED82A830955BFC60073F9CD /* ChessMove.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ChessMove.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CED82A840955BFC60073F9CD /* ChessMove.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChessMove.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		CED82A860955BFC60073F9CD /* ChessServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ChessServer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CED82A870955BFC60073F9CD /* ChessServer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChessServer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CED82A880955BFC60073F9CD /* ChessServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServerConnection.h; sourceTree = "<group>"; };
 		CED82A890955BFC60073F9CD /* ChessServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessServerConnection.m; sourceTree = "<group>"; };
 		CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServerListControl.h; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 		CED82B630955C0FA0073F9CD /* SeekControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeekControl.h; sourceTree = "<group>"; };
 		CED82B810955C2D60073F9CD /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 		CED82B820955C2D60073F9CD /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
-		CED831BD09578FEE0073F9CD /* ChatWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatWindowController.h; sourceTree = "<group>"; };
-		CED831BE09578FEE0073F9CD /* ChatWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatWindowController.m; sourceTree = "<group>"; };
+		CED831BD09578FEE0073F9CD /* ChatWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ChatWindowController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CED831BE09578FEE0073F9CD /* ChatWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChatWindowController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CED83246095792860073F9CD /* OutputLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputLine.h; sourceTree = "<group>"; };
 		CED83247095792860073F9CD /* OutputLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputLine.m; sourceTree = "<group>"; };
 		CED8329309579A130073F9CD /* ChatWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ChatWindow.nib; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* kibitz.app */,
+				8D1107320486CEB800E47090 /* Kibitz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 		29B97314FDCFA39411CA2CEA /* icsinterface */ = {
 			isa = PBXGroup;
 			children = (
-				CED2639E09839318005367EC /* kibitz Help */,
+				CED2639E09839318005367EC /* Kibitz Help */,
 				CED2634109836079005367EC /* LICENSE */,
 				CE2952740955B945006C8D90 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -327,7 +327,7 @@
 			name = kibitz;
 			productInstallPath = "$(HOME)/Applications";
 			productName = icsinterface;
-			productReference = 8D1107320486CEB800E47090 /* kibitz.app */;
+			productReference = 8D1107320486CEB800E47090 /* Kibitz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -384,7 +384,7 @@
 				CED8329409579A130073F9CD /* ChatWindow.nib in Resources */,
 				CED260F109833A6E005367EC /* application.icns in Resources */,
 				CED2634209836079005367EC /* LICENSE in Resources */,
-				CED263A409839318005367EC /* kibitz Help in Resources */,
+				CED263A409839318005367EC /* Kibitz Help in Resources */,
 				CE120FFF0983B3E7001EB123 /* index.html in Resources */,
 				CE12100E0983B4DA001EB123 /* gpl.html in Resources */,
 				CE79E5B309B9574D00B3C9F3 /* timeseal.MacOSX-PPC in Resources */,
@@ -485,7 +485,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_STYLE = DYNAMIC;
 				PREBINDING = NO;
-				PRODUCT_NAME = kibitz;
+				PRODUCT_NAME = Kibitz;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -533,7 +533,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_STYLE = DYNAMIC;
 				PREBINDING = NO;
-				PRODUCT_NAME = kibitz;
+				PRODUCT_NAME = Kibitz;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
