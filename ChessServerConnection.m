@@ -14,6 +14,66 @@
  Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+// See details about FICS output at:
+//
+// SEEK FORMAT
+// iset seekinfo 1
+// iset seekremove 1
+// set seek 0
+// http://www.freechess.org/Help/HelpFiles/iv_seekinfo.html
+// <sc> [CLEAR ALL SEEKS]
+// <s> 31 w=DJEZ ti=00 rt=1308E t=0 i=3 r=u tp=lightning c=? rr=0-9999 a=t f=f
+// <sr> 121
+// FORMAT: <s> index w=name_from ti=titles rt=rating t=time i=increment
+//         r=rated('r')/unrated('u') tp=type c=color
+//         rr=rating_range(lower-upper) a=automatic?('t'/'f')
+//         f=formula_checked('t'/f')
+//
+// ALL GAMES ON SERVER
+// set gin 1
+// http://www.freechess.org/Help/HelpFiles/v_gin.html
+// {Game 276 (sundancekidxx vs. bowi) Creating rated blitz match.}
+// {Game 171 (goindigo vs. Funambulo) goindigo resigns} 0-1
+// {Game 14 (shineyday vs. hamaru) Game aborted on move 1} *
+//
+// NEW GAME INFO
+// iset gameinfo 1
+// http://www.freechess.org/Help/HelpFiles/iv_gameinfo.html
+// <g1> 1 p=0 t=blitz r=1 u=1,1 it=5,5 i=8,8 pt=0 rt=1586E,2100  ts=1,0
+// FORMAT: See webpage
+//
+// GAME MOVES
+// style 12
+// http://www.freechess.org/Help/HelpFiles/style.html
+// http://www.freechess.org/Help/HelpFiles/style12.html
+// <12> r----r-- pp-bqpkp --p-p-p- ---B---- -------- -----N-- PPPQ-PPP ---RR-K- B -1 0 0 0 0 0 8 eurus SIMRANGaUTAM 0 3 0 31 29 119 150 17 B/b3-d5 (0:01) Bxd5 0 1 164
+// FORMAT: See webpage
+// OPTIONAL: http://www.freechess.org/Help/HelpFiles/iv_compressmove.html
+//
+// USER INFO
+// ivariables fulldecent
+// variables fulldecent
+// finger Hipparchus
+// stat [get player ranking]
+//
+// OTHER STUFF
+// set height 200 [avoid pagination]
+// observe /S [adds the highest rated Suicide game to your observation list]
+// follow /b [top blitz games]
+// showlist [or `=`] gets lists of players
+// `help timeseal` and other docs namedrop other Mac clients
+// who [find players]
+// allobservers [find popular games]
+// Games types [from help games]
+// b: blitz      l: lightning   u: untimed      e: examined game
+// s: standard   w: wild        x: atomic       z: crazyhouse
+// B: Bughouse   L: losers      S: Suicide      u: untimed
+// n: nonstandard game, such as different time controls
+// inchannel 4 // player lists
+// totals [number of logged in users]
+// tell relayinfo show [upcoming events, server time is Pacific time]
+
+
 #import "ChessServerConnection.h"
 #import "Game.h"
 #import "GameWindowController.h"
