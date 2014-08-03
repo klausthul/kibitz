@@ -69,7 +69,7 @@
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icsinterface_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Kibitz_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kibitz_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Kibitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kibitz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0914760A578C370034F334 /* ServerInputDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerInputDelegate.h; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* icsinterface_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* Kibitz_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				CED82A9C0955BFC60073F9CD /* global.h */,
 			);
@@ -320,7 +320,7 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = CEA0CBD909015E9A00BF913A /* Build configuration list for PBXProject "icsinterface" */;
+			buildConfigurationList = CEA0CBD909015E9A00BF913A /* Build configuration list for PBXProject "Kibitz" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -444,7 +444,7 @@
 				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = icsinterface_Prefix.pch;
+				GCC_PREFIX_HEADER = Kibitz_Prefix.pch;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -492,7 +492,7 @@
 				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = icsinterface_Prefix.pch;
+				GCC_PREFIX_HEADER = Kibitz_Prefix.pch;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -540,7 +540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Debug universal";
 		};
-		CEA0CBD909015E9A00BF913A /* Build configuration list for PBXProject "icsinterface" */ = {
+		CEA0CBD909015E9A00BF913A /* Build configuration list for PBXProject "Kibitz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CED2610609833E02005367EC /* Debug universal */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:icsinterface.xcodeproj">
+      location = "self:Kibitz.xcodeproj">
    </FileRef>
 </Workspace>
