@@ -20,6 +20,7 @@
 // iset seekinfo 1
 // iset seekremove 1
 // set seek 0
+// iset pendinfo 1
 // http://www.freechess.org/Help/HelpFiles/iv_seekinfo.html
 // <sc> [CLEAR ALL SEEKS]
 // <s> 31 w=DJEZ ti=00 rt=1308E t=0 i=3 r=u tp=lightning c=? rr=0-9999 a=t f=f
@@ -55,6 +56,7 @@
 // variables fulldecent
 // finger Hipparchus
 // stat [get player ranking]
+// history
 //
 // OTHER STUFF
 // set height 200 [avoid pagination]
@@ -62,7 +64,7 @@
 // follow /b [top blitz games]
 // showlist [or `=`] gets lists of players
 // `help timeseal` and other docs namedrop other Mac clients
-// who [find players]
+// who [find players] [list all users logged in]
 // allobservers [find popular games]
 // Games types [from help games]
 // b: blitz      l: lightning   u: untimed      e: examined game
@@ -72,7 +74,19 @@
 // inchannel 4 // player lists
 // totals [number of logged in users]
 // tell relayinfo show [upcoming events, server time is Pacific time]
-
+// games [list of all games]
+// http://www.chessclub.com/activities/events.html
+// http://www.freechess.org/Events/Relay/
+// http://www.freechess.org/Events/
+// http://www.freechess.org/Events/Scheduled/index.html
+// http://www.tim-mann.org/ics.html
+// ustat [average users connected] [see also http://www.freechess.org/Help/HelpFiles/iv_graph.html]
+// http://www.freechess.org/Help/HelpFiles/manual_usage.html
+// see moves in a game: moves and smoves for stored games
+//
+// INTERESTING GAMES THAT ARE RELAYED
+// https://en.wikipedia.org/wiki/World_Chess_Championship
+// http://www.chessworldcup2013.com/
 
 #import "ChessServerConnection.h"
 #import "Game.h"
