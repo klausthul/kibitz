@@ -1,57 +1,24 @@
-/*
-	$Id$
+//
+//  ChessServer.h
+//  Kibitz
+//
+//  Copyright 2014 William Entriken, licensed under the MIT license:
+//  http://opensource.org/licenses/MIT
+//
+//  Based on Kibitz / ChessServer 2006 Klaus Thul
+//
 
-	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of Kibitz.
+#import "Seek.h"
 
-	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
-	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
-
-	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
-	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
-#import "global.h"
-#import "AppController.h"
-
-@interface ChessServer : NSObject <NSCoding> {
-	NSString *serverName;
-	NSString *serverAddress;
-	NSNumber *serverPort;
-	NSString *userName;
-	NSString *userPassword;
-	NSString *initCommands;
-	BOOL useTimeseal, connectAtStartup, issueSeek;
-	Seek *seek;
-}
-
-- (void) setServerName: (NSString *) n;
-- (NSString *) serverName;
-- (void) setServerAddress: (NSString *) s;
-- (void) setServerPort: (NSNumber *) i;
-- (void) setUserName: (NSString *) s;
-- (void) setUserPassword: (NSString *) s;
-- (void) setInitCommands: (NSString *) s;
-- (void) setUsetimeseal: (bool) ts;
-- (void) setConnectAtStartup: (bool) cas;
-- (void) setIssueSeek: (bool) is;
-- (void) setSeek: (Seek *) s;
-- (NSString *) serverAddress;
-- (NSNumber *) serverPort;
-- (NSString *) userName;
-- (NSString *) userPassword;
-- (NSString *) initCommands;
-- (Seek *) seek;
-- (BOOL) useTimeseal;
-- (BOOL) connectAtStartup;
-- (BOOL) issueSeek;
-- (id) initWithCoder: (NSCoder *) coder;
-- (void) encodeWithCoder: (NSCoder *) coder;
-- (NSString *) description;
-
+@interface ChessServer : NSObject <NSCoding>
+@property (strong, nonatomic) NSString *serverName;
+@property (strong, nonatomic) NSString *serverAddress;
+@property (strong, nonatomic) NSNumber *serverPort;
+@property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSString *userPassword;
+@property (strong, nonatomic) NSString *initCommands;
+@property BOOL useTimeseal;
+@property BOOL connectAtStartup;
+@property BOOL issueSeek;
+@property (strong, nonatomic) Seek *seek;
 @end
-
-

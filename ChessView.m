@@ -201,7 +201,7 @@
 		[gameWindowController userMoveFrom: fromMouse to: toMouse promotion: 0];
 		return YES;
 	  case REQUIRES_PROMOTION:
-		[NSApp beginSheet: promotionDialog modalForWindow: [gameWindowController window] modalDelegate: self didEndSelector: NULL contextInfo: NULL];
+		[NSApp beginSheet: promotionDialog modalForWindow:self.window modalDelegate: self didEndSelector: NULL contextInfo: NULL];
 		return YES;
 	}
 }

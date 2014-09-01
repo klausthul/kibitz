@@ -32,7 +32,7 @@
     
     // See http://www.freechess.org/Help/HelpFiles/iset.html
 	[s setInitCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n"];
-	[s setUsetimeseal: YES];
+	[s setUseTimeseal: YES];
 	NSMutableArray *defaultChessServers = [NSMutableArray arrayWithObject: s];
 	NSMutableArray *defaultSeeks = [NSMutableArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
 	NSDictionary *defaultSeeksAndServers = [NSDictionary dictionaryWithObjectsAndKeys: defaultChessServers, @"chessServers", defaultSeeks, @"seeks", nil, nil];

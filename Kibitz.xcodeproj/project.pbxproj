@@ -164,6 +164,7 @@
 		29B97314FDCFA39411CA2CEA /* icsinterface */ = {
 			isa = PBXGroup;
 			children = (
+				D911591819B4066B000238F7 /* Model */,
 				CED2634109836079005367EC /* LICENSE */,
 				CED2637309838F2E005367EC /* Kibitz Help */,
 				CE2952740955B945006C8D90 /* Classes */,
@@ -237,26 +238,18 @@
 				CED82A6E0955BFC50073F9CD /* AppController.m */,
 				CED831BD09578FEE0073F9CD /* ChatWindowController.h */,
 				CED831BE09578FEE0073F9CD /* ChatWindowController.m */,
-				CED82A830955BFC60073F9CD /* ChessMove.h */,
-				CED82A840955BFC60073F9CD /* ChessMove.m */,
-				CED82A860955BFC60073F9CD /* ChessServer.h */,
-				CED82A870955BFC60073F9CD /* ChessServer.m */,
 				CED82A880955BFC60073F9CD /* ChessServerConnection.h */,
 				CED82A890955BFC60073F9CD /* ChessServerConnection.m */,
 				CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */,
 				CED82A8D0955BFC60073F9CD /* ChessServerListControl.m */,
 				CED82A8E0955BFC60073F9CD /* ChessView.h */,
 				CED82A8F0955BFC60073F9CD /* ChessView.m */,
-				CED82A960955BFC60073F9CD /* Game.h */,
-				CED82A970955BFC60073F9CD /* Game.m */,
 				CED82A990955BFC60073F9CD /* GameWindowController.h */,
 				CED82A9A0955BFC60073F9CD /* GameWindowController.m */,
 				CED82AAA0955BFC60073F9CD /* PatternMatching.h */,
 				CED82AAB0955BFC60073F9CD /* PatternMatching.m */,
 				CED82AB90955BFC60073F9CD /* PlayView.h */,
 				CED82ABA0955BFC60073F9CD /* PlayView.m */,
-				CED82ABB0955BFC60073F9CD /* Seek.h */,
-				CED82ABC0955BFC60073F9CD /* Seek.m */,
 				CED82AC00955BFC60073F9CD /* SeekControl.m */,
 				CED82B630955C0FA0073F9CD /* SeekControl.h */,
 				CED82B810955C2D60073F9CD /* Sound.h */,
@@ -290,6 +283,21 @@
 			name = "Kibitz Help";
 			path = "kibitz Help";
 			sourceTree = SOURCE_ROOT;
+		};
+		D911591819B4066B000238F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CED82ABB0955BFC60073F9CD /* Seek.h */,
+				CED82ABC0955BFC60073F9CD /* Seek.m */,
+				CED82A830955BFC60073F9CD /* ChessMove.h */,
+				CED82A840955BFC60073F9CD /* ChessMove.m */,
+				CED82A960955BFC60073F9CD /* Game.h */,
+				CED82A970955BFC60073F9CD /* Game.m */,
+				CED82A860955BFC60073F9CD /* ChessServer.h */,
+				CED82A870955BFC60073F9CD /* ChessServer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

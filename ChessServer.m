@@ -1,167 +1,52 @@
-/*
-	$Id$
-
-	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of Kibitz.
-
-	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
-	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
-
-	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
-	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+//
+//  ChessServer.h
+//  Kibitz
+//
+//  Copyright 2014 William Entriken, licensed under the MIT license:
+//  http://opensource.org/licenses/MIT
+//
+//  Based on Kibitz / ChessServer 2006 Klaus Thul
+//
 
 #import "ChessServer.h"
 
 @implementation ChessServer
 
-- (void) setServerName: (NSString *) n
+- (NSString *)description
 {
-	[serverName release];
-	serverName = [n retain];
+    return self.serverName;
 }
 
-- (NSString *) serverName
+- (id)initWithCoder:(NSCoder *)coder
 {
-	return serverName;
+    self = [super init];
+    if (self) {
+        self.serverName = [coder decodeObjectForKey:@"serverName"];
+        self.serverAddress = [coder decodeObjectForKey:@"serverAddress"];
+        self.serverPort = [coder decodeObjectForKey:@"serverPort"];
+        self.userName = [coder decodeObjectForKey:@"userName"];
+        self.userPassword = [coder decodeObjectForKey:@"userPassword"];
+        self.initCommands = [coder decodeObjectForKey:@"initCommands"];
+        self.useTimeseal = [coder decodeBoolForKey:@"useTimeseal"];
+        self.connectAtStartup = [coder decodeBoolForKey:@"connectAtStartup"];
+        self.issueSeek = [coder decodeBoolForKey:@"issueSeek"];
+        self.seek = [coder decodeObjectForKey:@"seek"];
+    }
+    return self;
 }
 
-- (void) setServerAddress: (NSString *) s
+- (void)encodeWithCoder:(NSCoder *)coder
 {
-	[serverAddress release];
-	serverAddress = [s retain];
-}
-
-- (void) setServerPort: (NSNumber *) i
-{
-	[serverPort release];
-	serverPort = [i retain];
-}
-
-- (void) setUserName: (NSString *) s
-{
-	[userName release];
-	userName = [s retain];
-}
-
-- (void) setUserPassword: (NSString *) s
-{
-	[userPassword release];
-	userPassword = [s retain];
-}
-
-- (void) setInitCommands: (NSString *) s
-{
-	[initCommands release];
-	initCommands = [s retain];
-}
-
-- (void) setUsetimeseal: (bool) ts
-{
-	useTimeseal = ts;
-}
-
-- (void) setConnectAtStartup: (bool) cas
-{
-	connectAtStartup = cas;
-}
-
-- (void) setIssueSeek: (bool) is
-{
-	issueSeek = is;
-}
-
-- (NSString *) serverAddress
-{
-	return [[serverAddress retain] autorelease];
-}
-
-- (NSNumber *) serverPort
-{
-	return [[serverPort retain] autorelease];
-}
-
-- (NSString *) userName
-{
-	return [[userName retain] autorelease];
-}
-
-- (NSString *) userPassword
-{
-	return [[userPassword retain] autorelease];
-}
-
-- (NSString *) initCommands
-{
-	return [[initCommands retain] autorelease];
-}
-
-- (BOOL) useTimeseal
-{
-	return useTimeseal;
-}
-
-- (BOOL) connectAtStartup
-{
-	return connectAtStartup;
-}
-
-- (BOOL) issueSeek
-{
-	return issueSeek;
-}
-
-- (void) setSeek: (Seek *) s
-{
-	[seek release];
-	seek = [s retain];
-}
-
-- (Seek *) seek
-{
-	return seek;
-}
-
-- (id) initWithCoder: (NSCoder *) coder
-{
-	if ((self = [super init]) != nil) {
-		[self setServerName: [coder decodeObjectForKey: @"serverName"]];
-		[self setServerAddress: [coder decodeObjectForKey: @"serverAddress"]];
-		[self setServerPort: [coder decodeObjectForKey: @"serverPort"]];
-		[self setUserName: [coder decodeObjectForKey: @"userName"]];
-		[self setUserPassword: [coder decodeObjectForKey: @"userPassword"]];
-		[self setInitCommands: [coder decodeObjectForKey: @"initCommands"]];
-		[self setUsetimeseal: [coder decodeBoolForKey: @"useTimeseal"]];
-		[self setConnectAtStartup: [coder decodeBoolForKey: @"connectAtStartup"]];
-		[self setIssueSeek: [coder decodeBoolForKey: @"issueSeek"]];
-		[self setSeek: [coder decodeObjectForKey: @"seek"]];
-	}
-	return self;
-}
-
-- (void) encodeWithCoder: (NSCoder *) coder
-{
-	[coder encodeObject: [self serverName] forKey: @"serverName"];
-	[coder encodeObject: serverAddress forKey: @"serverAddress"];
-	[coder encodeObject: serverPort forKey: @"serverPort"];
-	[coder encodeObject: userName forKey: @"userName"];
-	[coder encodeObject: userPassword forKey: @"userPassword"];
-	[coder encodeObject: initCommands forKey: @"initCommands"];
-	[coder encodeBool: useTimeseal forKey: @"useTimeseal"];
-	[coder encodeBool: connectAtStartup forKey: @"connectAtStartup"];
-	[coder encodeBool: issueSeek forKey: @"issueSeek"];
-	[coder encodeObject: seek forKey: @"seek"];
-}
-
-- (NSString *) description
-{
-	return [self serverName];
+	[coder encodeObject: self.serverName forKey: @"serverName"];
+	[coder encodeObject: self.serverAddress forKey: @"serverAddress"];
+	[coder encodeObject: self.serverPort forKey: @"serverPort"];
+	[coder encodeObject: self.userName forKey: @"userName"];
+	[coder encodeObject: self.userPassword forKey: @"userPassword"];
+	[coder encodeObject: self.initCommands forKey: @"initCommands"];
+	[coder encodeBool: self.useTimeseal forKey: @"useTimeseal"];
+	[coder encodeBool: self.connectAtStartup forKey: @"connectAtStartup"];
+	[coder encodeBool: self.issueSeek forKey: @"issueSeek"];
+	[coder encodeObject: self.seek forKey: @"seek"];
 }
 
 @end
-
-
-
