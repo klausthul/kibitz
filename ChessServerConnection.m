@@ -549,9 +549,9 @@
 	}
 }
 
-- (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to
+- (void) userMoveFrom:(struct ChessField)from to:(struct ChessField)to
 {
-	[self userMoveFrom: from to: to promotion: 0];
+	[self userMoveFrom:from to:to promotion:0];
 }
 
 - (void) userMoveFrom: (struct ChessField) from to: (struct ChessField) to promotion: (int) promotionPiece

@@ -25,14 +25,17 @@
 + (void) initialize
 { 
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
-	ChessServer *s = [[ChessServer alloc] init];
-	[s setServerName: @"Free Internet Chess Server (FICS)"];
-	[s setServerAddress: @"69.36.243.188"];
-	[s setServerPort: [NSNumber numberWithInt: 5000]];
     
     // See http://www.freechess.org/Help/HelpFiles/iset.html
-	[s setInitCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n"];
-	[s setUseTimeseal: YES];
+	ChessServer *s = [[ChessServer alloc] init];
+    s.serverName = @"Free Internet Chess Server (FICS)";
+    s.serverAddress = @"freechess.org";
+    s.serverPort = @(5000);
+    s.initCommands = @" ";
+    s.useTimeseal = YES;
+    s.userName = @"guest";
+    s.userPassword = @"guest";
+
 	NSMutableArray *defaultChessServers = [NSMutableArray arrayWithObject: s];
 	NSMutableArray *defaultSeeks = [NSMutableArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
 	NSDictionary *defaultSeeksAndServers = [NSDictionary dictionaryWithObjectsAndKeys: defaultChessServers, @"chessServers", defaultSeeks, @"seeks", nil, nil];
