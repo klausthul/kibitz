@@ -156,7 +156,7 @@
 	return [self getFieldFromLocation: theEvent.locationInWindow];
 }
 
-- (unsigned long) draggingSourceOperationMaskForLocal: (BOOL) isLocal
+- (enum NSDragOperation) draggingSourceOperationMaskForLocal: (BOOL) isLocal
 {
 	if (isLocal == NO)
 		return NSDragOperationNone;
@@ -171,7 +171,6 @@
 	NSPoint p = [self convertPoint: event.locationInWindow fromView: nil];
 	NSImage *img = [[pieces[[showBoard pieceOnField: fromMouse]] copy] autorelease];
 	if (img != nil) {
-		[img setScalesWhenResized: YES];
 		img.size = NSMakeSize(fieldSize, fieldSize);
 		p.y -= fieldSize / 2;
 		p.x -= fieldSize / 2;
@@ -181,7 +180,7 @@
 	}
 }
 
-- (unsigned long) draggingEntered: (id <NSDraggingInfo>) sender
+- (enum NSDragOperation) draggingEntered: (id <NSDraggingInfo>) sender
 {
 	return NSDragOperationMove;
 }
