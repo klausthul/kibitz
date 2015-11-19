@@ -311,7 +311,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
 						DevelopmentTeam = 8Q693ZG5RN;
@@ -464,6 +464,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = free.klausthul.Kibitz;
 				PRODUCT_NAME = Kibitz;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -473,7 +474,6 @@
 		CEA0CBDB09015E9A00BF913A /* Release universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = "";
 				SDKROOT = macosx;
 			};
 			name = "Release universal";
@@ -513,6 +513,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = free.klausthul.Kibitz;
 				PRODUCT_NAME = Kibitz;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -522,7 +523,8 @@
 		CED2610609833E02005367EC /* Debug universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = "";
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = "Debug universal";

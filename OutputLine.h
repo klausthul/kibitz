@@ -23,8 +23,8 @@
 }
 
 + (OutputLine *) newOutputLine: (NSString *) tx type: (enum OutputLineType) ty info: (int) i;
-- (NSString *) text;
-- (int) info;
-- (enum OutputLineType) type;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *text;
+@property (NS_NONATOMIC_IOSONLY, readonly) int info;
+@property (NS_NONATOMIC_IOSONLY, readonly) enum OutputLineType type;
 
 @end

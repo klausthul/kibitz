@@ -50,10 +50,10 @@
 			const char *ar;
 			NSMethodSignature *sign = [object methodSignatureForSelector: selectors[i]];
 			NSInvocation *invoc = [NSInvocation invocationWithMethodSignature: sign];
-			[invoc setTarget: object];
-			[invoc setSelector: selectors[i]];
+			invoc.target = object;
+			invoc.selector = selectors[i];
 			if ((ar = arguments[i])) {
-				NSString *s1 = [NSString stringWithUTF8String: line];
+				NSString *s1 = @(line);
 				for (arg = 2; *ar; ar++, arg++) {
 					int x = *ar - '0';
 					if (x < 0 || x >= 20 || matches[x].rm_so < 0)
@@ -62,7 +62,7 @@
 						id s2 = [s1 substringWithRange: (NSRange) { matches[x].rm_so, matches[x].rm_eo -  matches[x].rm_so }];
 						switch (*(ar + 1)) {
 						  case 'I':
-							s2 = [NSNumber numberWithInt: [s2 intValue]];
+							s2 = @([s2 intValue]);
 						    ar++;
 							break;
 						  default:

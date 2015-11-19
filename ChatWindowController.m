@@ -25,8 +25,8 @@
 		serverConnection = [sc retain];
 		[sc addObserver: self forKeyPath: @"outputLines" options: 0 context: nil];
 		NSString *title;
-		title = [NSString stringWithFormat: @"%@ - Chat", [serverConnection description]];
-		[[self window] setTitle: title];
+		title = [NSString stringWithFormat: @"%@ - Chat", serverConnection.description];
+		self.window.title = title;
 	}
 	return self;
 }
@@ -56,7 +56,7 @@
 - (BOOL) windowShouldClose: (id)sender
 {
 	if ([serverConnection lastWindow] && [serverConnection isConnected]) {
-		NSBeginAlertSheet(@"Logout?", @"Yes", @"Cancel", nil, [self window], self, @selector(logoutWarningDidEnd:returnCode:contextInfo:), 
+		NSBeginAlertSheet(@"Logout?", @"Yes", @"Cancel", nil, self.window, self, @selector(logoutWarningDidEnd:returnCode:contextInfo:), 
 		nil, nil, @"Do you want to log out from server?");
 		return NO;
 	} else
@@ -66,7 +66,7 @@
 - (void) logoutWarningDidEnd: (NSWindow *) sheet returnCode: (int) returnCode contextInfo: (void *) contextInfo
 {
 	if (returnCode == NSAlertDefaultReturn)
-		[[self window] close];	
+		[self.window close];	
 }
 
 - (void) windowWillClose: (NSNotification *) aNotification

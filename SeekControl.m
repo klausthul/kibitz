@@ -36,13 +36,13 @@
 
 - (NSArray *) getSelectedSeeks
 {
-	return [seekArrayController selectedObjects];
+	return seekArrayController.selectedObjects;
 }
 
 - (void) show: (id) sender
 {
 	[self showWindow: sender];
-	[[self window] makeKeyAndOrderFront: sender];
+	[self.window makeKeyAndOrderFront: sender];
 }
 
 - (AppController *) appController

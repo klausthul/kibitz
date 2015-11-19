@@ -19,10 +19,10 @@
 
 @implementation ChessView
 
-- (id) initWithFrame: (NSRect) frameRect
+- (instancetype) initWithFrame: (NSRect) frameRect
 {
 	if ((self = [super initWithFrame:frameRect]) != nil) {
-		[self registerForDraggedTypes: [NSArray arrayWithObject: NSStringPboardType]];
+		[self registerForDraggedTypes: @[NSStringPboardType]];
 	}
 	extendedView = NO;
 	return self;
@@ -30,7 +30,7 @@
 
 - (void) drawRect: (NSRect) rect
 {
-	NSRect bounds = [self bounds];
+	NSRect bounds = self.bounds;
 	NSRect cur_field;
 	float board_size = fminf(bounds.size.width, bounds.size.height);
 	NSRect board;
@@ -50,7 +50,7 @@
 	NSRect imagerect;
 	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
 	
-	imagerect.size = [pieces[1] size];
+	imagerect.size = pieces[1].size;
 	imagerect.origin = NSZeroPoint;
 	[[NSColor whiteColor] set];
 	[NSBezierPath fillRect: board];	
@@ -126,7 +126,7 @@
 	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
 	struct ChessField f;
 	NSPoint p = [self convertPoint: location fromView: nil];
-	NSRect bounds = [self bounds];
+	NSRect bounds = self.bounds;
 	if (extendedView) {
 		f.line = ceilf(p.x / bounds.size.width * 9);
 		f.row = ceilf(p.y / bounds.size.height * 9) - 1;
@@ -153,7 +153,7 @@
 
 - (struct ChessField) getField: (NSEvent *) theEvent
 {
-	return [self getFieldFromLocation: [theEvent locationInWindow]];
+	return [self getFieldFromLocation: theEvent.locationInWindow];
 }
 
 - (unsigned long) draggingSourceOperationMaskForLocal: (BOOL) isLocal
@@ -168,14 +168,14 @@
 {
 	fromMouse = [self getField: event];
 	NSPasteboard *pb = [NSPasteboard pasteboardWithName: NSDragPboard];
-	NSPoint p = [self convertPoint: [event locationInWindow] fromView: nil];
+	NSPoint p = [self convertPoint: event.locationInWindow fromView: nil];
 	NSImage *img = [[pieces[[showBoard pieceOnField: fromMouse]] copy] autorelease];
 	if (img != nil) {
 		[img setScalesWhenResized: YES];
-		[img setSize: NSMakeSize(fieldSize, fieldSize)];
+		img.size = NSMakeSize(fieldSize, fieldSize);
 		p.y -= fieldSize / 2;
 		p.x -= fieldSize / 2;
-		[pb declareTypes: [NSArray arrayWithObject: NSStringPboardType] owner: self];
+		[pb declareTypes: @[NSStringPboardType] owner: self];
 		[pb setString: @"move" forType: NSStringPboardType];
 		[self dragImage: img at: p offset: NSMakeSize(0, 0) event: event pasteboard: pb source: self slideBack: YES];
 	}

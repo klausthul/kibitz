@@ -28,7 +28,7 @@
 	BOOL extendedView;
 }
 
-- (id) initWithFrame: (NSRect) frameRect;
+- (instancetype) initWithFrame: (NSRect) frameRect;
 - (void) drawRect: (NSRect) rect;
 - (void) setShowBoard: (ChessMove *) board;
 - (IBAction) selectedPromotionPiece: (id) sender;

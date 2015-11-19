@@ -22,13 +22,10 @@
 	ChessMove *whiteMove, *blackMove;
 }
 
-- (MoveStore *) initWithMoveNum: (int) mn;
+- (MoveStore *) initWithMoveNum: (int) mn NS_DESIGNATED_INITIALIZER;
 - (void) dealloc;
-- (void) setWhiteMove: (ChessMove *) wm;
-- (ChessMove *) whiteMove;
-- (void) setBlackMove: (ChessMove *) bm;
-- (ChessMove *) blackMove;
-- (int) moveNum;
-- (void) setMoveNum: (int) mn;
+@property (NS_NONATOMIC_IOSONLY, strong) ChessMove *whiteMove;
+@property (NS_NONATOMIC_IOSONLY, strong) ChessMove *blackMove;
+@property (NS_NONATOMIC_IOSONLY) int moveNum;
 
 @end

@@ -129,31 +129,31 @@
 
 - (void) updateWithStyle12: (NSArray *) data
 {
-	[self setPlayerNamesWhite: [data objectAtIndex: 17] black: [data objectAtIndex: 18]];
-	[self setTimeInitial: [[data objectAtIndex: 20] intValue] increment: [[data objectAtIndex: 21] intValue]];
-	gameNumber = [[data objectAtIndex: 16] intValue];
-	gameRelationship = [[data objectAtIndex: 19] intValue];
+	[self setPlayerNamesWhite: data[17] black: data[18]];
+	[self setTimeInitial: [data[20] intValue] increment: [data[21] intValue]];
+	gameNumber = [data[16] intValue];
+	gameRelationship = [data[19] intValue];
 }
 
 - (void) updateWithGameInfo: (NSArray *) data
 {
 	NSString *s;
-	gameNumber = [[data objectAtIndex: 0] intValue];
+	gameNumber = [data[0] intValue];
 	if ((s = [ChessServerConnection findTag: @"t=" in: data]) != nil) {
 		[type release];
 		type = [s retain];
 	}
 	if ((s = [ChessServerConnection findTag: @"r=" in: data]) != nil)
-		rated = ([s intValue] == 1);
+		rated = (s.intValue == 1);
 	if ((s = [ChessServerConnection findTag: @"pt=" in: data]) != nil)
-		partnerGame = [s intValue];
+		partnerGame = s.intValue;
 	if ((s = [ChessServerConnection findTag: @"rt=" in: data]) != nil) {
 		NSArray *ra = [s componentsSeparatedByString: @","];
-		if ([ra count] >= 2) {
+		if (ra.count >= 2) {
 			[ratingWhite release];
-			ratingWhite = [[ra objectAtIndex: 0] retain];
+			ratingWhite = [ra[0] retain];
 			[ratingBlack release];		
-			ratingBlack = [[ra objectAtIndex: 1] retain];
+			ratingBlack = [ra[1] retain];
 		}
 	}
 }
@@ -285,10 +285,10 @@
 
 - (ChessMove *) storedMoveNumber: (unsigned int) num
 {
-	if (num >= [moves count])
+	if (num >= moves.count)
 		return nil;
 	else {
-		MoveStore *ms = [moves objectAtIndex: num];
+		MoveStore *ms = moves[num];
 		ChessMove *m = [ms blackMove];
 		if (m != nil)
 			return m;
@@ -299,7 +299,7 @@
 
 - (int) numMoves
 {
-	return [moves count];
+	return moves.count;
 }
 
 - (void) passedPiecesWhite: (NSString *) white black: (NSString *) black

@@ -35,38 +35,38 @@
 
 - (IBAction) commandEntered: (id) sender
 {
-	NSString *command = [serverInput stringValue];
+	NSString *command = serverInput.stringValue;
 	[commandHistory addObject: command];
 	positionInHistory = -1;
 	[windowController commandEntered: command];
-	[serverInput setStringValue: @""];
+	serverInput.stringValue = @"";
 	[[windowController window] makeFirstResponder: serverInput];
 }
 
 - (BOOL) control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
 {
 	if (command == @selector(moveUp:)) {
-		if ((positionInHistory != 0) && ([commandHistory count] > 0)) {
+		if ((positionInHistory != 0) && (commandHistory.count > 0)) {
 			if (positionInHistory < 0) {
 				[uncommittedEdit release];
-				uncommittedEdit = [[serverInput stringValue] retain];
-				positionInHistory = [commandHistory count] - 1;
+				uncommittedEdit = [serverInput.stringValue retain];
+				positionInHistory = commandHistory.count - 1;
 			} else
 				positionInHistory--;
-			[serverInput setStringValue: [commandHistory objectAtIndex: positionInHistory]];
+			serverInput.stringValue = commandHistory[positionInHistory];
 		}
 		return TRUE;
 	} else if (command == @selector(moveDown:)) {
 		if (positionInHistory >= 0) {
-			if (positionInHistory >= (int) [commandHistory count] - 1) {
+			if (positionInHistory >= (int) commandHistory.count - 1) {
 				if (uncommittedEdit != nil) {
-					[serverInput setStringValue: uncommittedEdit];
+					serverInput.stringValue = uncommittedEdit;
 					[uncommittedEdit release];
 					uncommittedEdit = nil;
 				}
 				positionInHistory = -1;
 			} else {
-				[serverInput setStringValue: [commandHistory objectAtIndex: ++positionInHistory]];
+				serverInput.stringValue = commandHistory[++positionInHistory];
 			}
 		}
 		return TRUE;

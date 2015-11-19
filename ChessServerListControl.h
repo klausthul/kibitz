@@ -22,7 +22,7 @@
 	IBOutlet NSArrayController *serverListArrayController;
 }
 
-- (ChessServerListControl *) initChessServerListControlWithAppController: (AppController *) ac;
+- (ChessServerListControl *) initChessServerListControlWithAppController: (AppController *) ac NS_DESIGNATED_INITIALIZER;
 - (void) dealloc;
 - (void) show: (id) sender;
 - (IBAction) buttonSelect: (id) sender;

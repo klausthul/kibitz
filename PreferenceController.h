@@ -21,6 +21,6 @@
 	AppController *appController;
 }
 
-- (PreferenceController *) initPreferenceControllerWithAppController: (AppController *) ac;
+- (PreferenceController *) initPreferenceControllerWithAppController: (AppController *) ac NS_DESIGNATED_INITIALIZER;
 
 @end

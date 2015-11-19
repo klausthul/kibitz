@@ -35,7 +35,7 @@
 
 - (IBAction) buttonSelect: (id) sender
 {
-	NSArray *s = [serverListArrayController selectedObjects];
+	NSArray *s = serverListArrayController.selectedObjects;
 	NSEnumerator *e = [s objectEnumerator];
 	ChessServer *cs;
 	while ((cs = [e nextObject]) != nil)

@@ -131,11 +131,11 @@
 
 - (void) serverGameEnd: (NSNumber *) game result: (NSString *) result reason: (NSString *) reason
 {
-	Game *g = [self.activeGames objectForKey: game];
+	Game *g = (self.activeGames)[game];
 	if (g != nil) {
 		[g setResult: result reason: reason];
 		[self.activeGames removeObjectForKey: game];
-		[self.activeGames setObject: g forKey: [NSNumber numberWithInt: --self.storedGameCounter]];
+		(self.activeGames)[@(--self.storedGameCounter)] = g;
 		[self setGameLists];
 		if ([g playSound])
 			[gSounds gameEnd: [g gameRelationship]];
@@ -153,7 +153,7 @@
 
 - (void) passedPiecesGame: (NSNumber *) game white: (NSString *) white black: (NSString *) black
 {
-	Game *g = [self.activeGames objectForKey: game];
+	Game *g = (self.activeGames)[game];
 	if (g != nil) {
 		[g passedPiecesWhite: white black: black];
 		[self updateGame: g];
@@ -169,17 +169,17 @@
     // See http://www.freechess.org/Help/HelpFiles/iv_seekinfo.html
 	if (strncmp(lineCStr,"<12>", 4) == 0) {
 		NSArray *a = [[line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
-		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 16] intValue]];
-		Game *g = [self.activeGames objectForKey: n];
+		NSNumber *n = @([a[16] intValue]);
+		Game *g = (self.activeGames)[n];
 		if (g == nil) {
-			if ((g = [self.infoGames objectForKey: n]) != nil) {
+			if ((g = (self.infoGames)[n]) != nil) {
 				[[g retain] autorelease];
 				[self.infoGames removeObjectForKey: n];
 				[g updateWithStyle12: a];
 			} else {
 				g = [[[Game alloc] initWithStyle12: a] autorelease];
 			}
-			[self.activeGames setObject: g forKey: n];
+			(self.activeGames)[n] = g;
 			[self setGameLists];
 			NSEnumerator *enumerator = [self.serverWindows objectEnumerator];
 			GameWindowController *gwc;
@@ -198,12 +198,12 @@
 		[self updateGame: g];
 	} else if (strncmp(lineCStr,"<g1>", 4) == 0) {
 		NSArray *a = [[line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString: @" "];
-		NSNumber *n = [NSNumber numberWithInt: [[a objectAtIndex: 1] intValue]];
+		NSNumber *n = @([a[1] intValue]);
 		Game *g;
-		if ((g = [self.activeGames objectForKey: n]) == nil) {
-			if ((g = [self.infoGames objectForKey: n]) == nil) {
+		if ((g = (self.activeGames)[n]) == nil) {
+			if ((g = (self.infoGames)[n]) == nil) {
 				g = [[Game alloc] initWithGameInfo: a];
-				[self.infoGames setObject: g forKey: n];
+				(self.infoGames)[n] = g;
 			} else
 				[g updateWithGameInfo: a];
 		} else {
@@ -220,7 +220,7 @@
 		NSString *s;
 		
 		while ((s = [enumerator nextObject]) != nil) {
-			int num = [s intValue];
+			int num = s.intValue;
 			[self removeSeekFromServer: num];
 		}
 	} else if (strncmp(lineCStr,"<sc>", 4) == 0) {
@@ -228,27 +228,27 @@
 	} else if ((invoc = [self.patternMatcher parseLine: lineCStr toTarget: self]) != nil) {
 		[invoc invoke];
 	} else {
-		NSString *s = [NSString stringWithUTF8String:(char *) lineCStr];
+		NSString *s = @((char *) lineCStr);
 		if (s != nil)
-			[self addOutputLine: [NSString stringWithUTF8String:(char *) lineCStr] type: OTHER info: 0];
+			[self addOutputLine: @((char *) lineCStr) type: OTHER info: 0];
 	}
 }
 
 - (void) connectChessServer
 {
-	if ([self.currentServer useTimeseal]) {
+	if ((self.currentServer).useTimeseal) {
 		if (self.timeseal != nil) {
 			[self.timeseal terminate];
 			[self.timeseal release];
 		}
 		self.timeseal = [[NSTask alloc] init];
 		NSMutableArray *args = [NSMutableArray array];
-		[args addObject: [self.currentServer serverAddress]];
-		[args addObject: [NSString stringWithFormat: @"%@", [self.currentServer serverPort]]];
+		[args addObject: (self.currentServer).serverAddress];
+		[args addObject: [NSString stringWithFormat: @"%@", (self.currentServer).serverPort]];
 		[args addObject: @"-p"];
 		[args addObject: @"5501"];
-		[self.timeseal setLaunchPath: [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/timeseal.MacOSX-PPC"]];
-		[self.timeseal setArguments:args];
+		(self.timeseal).launchPath = [NSString stringWithFormat:@"%@%@", [NSBundle mainBundle].resourcePath, @"/timeseal.MacOSX-PPC"];
+		(self.timeseal).arguments = args;
 		[self.timeseal launch];
 		NSHost *host = [NSHost hostWithName: @"127.0.0.1"];
         NSInputStream *is;
@@ -257,17 +257,17 @@
         self.serverIS = is;
         self.serverOS = os;
 	} else {
-		NSHost *host = [NSHost hostWithName: [self.currentServer serverAddress]];
+		NSHost *host = [NSHost hostWithName: (self.currentServer).serverAddress];
         NSInputStream *is;
         NSOutputStream *os;
-		[NSStream getStreamsToHost:host port:[[self.currentServer serverPort] intValue] inputStream:&is outputStream:&os];
+		[NSStream getStreamsToHost:host port:(self.currentServer).serverPort.intValue inputStream:&is outputStream:&os];
         self.serverIS = is;
         self.serverOS = os;
 	}
 	[self.serverIS retain];
 	[self.serverOS retain];
-	[self.serverIS setDelegate:self];
-	[self.serverOS setDelegate:self];
+	(self.serverIS).delegate = self;
+	(self.serverOS).delegate = self;
 	[self.serverIS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 	[self.serverOS scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 	[self.serverIS open];
@@ -291,7 +291,7 @@
                     switch (c = buf[i]) {
                         case 10:
                             lineBuf[self.lastChar] = 0;
-                            NSString *str = [NSString stringWithUTF8String:lineBuf];
+                            NSString *str = @(lineBuf);
                             if (str)
                                 [self processServerOutputLine:str];
                             self.lastChar = 0;
@@ -313,24 +313,24 @@
                     if (self.sendInit) {
                         const char *s;
                         self.sendInit = NO;
-                        if ((s = [[self.currentServer initCommands] UTF8String]) != nil) {
+                        if ((s = (self.currentServer).initCommands.UTF8String) != nil) {
                             [self.serverOS write:(unsigned const char *) s maxLength:strlen(s)];
                             [self.serverOS write:(unsigned const char *) "\n" maxLength:1];
                         }
                         self.lastChar = 0;
                         lineBuf[0] = 0;
-                        if ([self.currentServer issueSeek])
-                            [self sendSeek: [self.currentServer seek]];
+                        if ((self.currentServer).issueSeek)
+                            [self sendSeek: (self.currentServer).seek];
                     }
                 } else if (strncmp(lineBuf,"login:", 6) == 0) {
                     if (self.currentServer != nil && self.sendNamePassword == YES) {
                         const char *s;
                         self.sendNamePassword = NO;
-                        if ([self.currentServer userName] && [self.currentServer userPassword]) {
-                            s = [[self.currentServer userName] UTF8String];
+                        if ((self.currentServer).userName && (self.currentServer).userPassword) {
+                            s = (self.currentServer).userName.UTF8String;
                             [self.serverOS write:(unsigned const char *) s maxLength:strlen(s)];
                             [self.serverOS write:(unsigned const char *) "\n" maxLength:1];
-                            s = [[self.currentServer userPassword] UTF8String];
+                            s = (self.currentServer).userPassword.UTF8String;
                             [self.serverOS write:(unsigned const char *) s maxLength:strlen(s)];
                             [self.serverOS write:(unsigned const char *) "\n" maxLength:1];
                             self.lastChar = 0;
@@ -339,19 +339,19 @@
                     }
                 }
                 if (self.lastChar > 0)
-                    [self addOutputLine: [NSString stringWithUTF8String:(char *) lineBuf] type: LINE_PARTIAL info: 0];
+                    [self addOutputLine: @((char *) lineBuf) type: LINE_PARTIAL info: 0];
             }
             break;
         }
         case NSStreamEventErrorOccurred: {
-            NSError *theError = [theStream streamError];
+            NSError *theError = theStream.streamError;
             NSRunAlertPanel(@"Error with server connection",
                             @"Error %li: %@",
                             @"OK",
                             nil,
                             nil,
-                            (long)[theError code],
-                            [theError localizedDescription]);
+                            (long)theError.code,
+                            theError.localizedDescription);
             [theStream close];
             [theStream removeFromRunLoop: [NSRunLoop currentRunLoop] forMode: NSDefaultRunLoopMode];
             [theStream release];
@@ -508,7 +508,7 @@
 {
 	Seek *s = [Seek seekFromSeekInfo: seekInfo];
 	if (s != nil) {
-		[self.seeks setObject: s forKey: [NSNumber numberWithInt: num]];
+		(self.seeks)[@(num)] = s;
 		[self redisplaySeekTables];
 	} else
 		NSLog(@"Error in Seek request");
@@ -516,7 +516,7 @@
 
 - (void) removeSeekFromServer: (int) num
 {
-	[self.seeks removeObjectForKey: [NSNumber numberWithInt: num]];
+	[self.seeks removeObjectForKey: @(num)];
 	[self redisplaySeekTables];
 }
 
@@ -528,20 +528,20 @@
 
 - (int) numSeeks
 {
-	return [self.seeks count];
+	return (self.seeks).count;
 }
 
 - (id) dataForSeekTable: (NSString *) x row:(int)rowIndex
 {
-	NSNumber *key = [[self.seeks allKeys] objectAtIndex: rowIndex];
+	NSNumber *key = (self.seeks).allKeys[rowIndex];
 	if ([x compare: @"#"] == 0) {
 		return key;
 	} else {
-		Seek *s = [self.seeks objectForKey:key];
+		Seek *s = (self.seeks)[key];
 		if ([x compare: @"Name"] == 0) {
 			return [s nameFrom];
 		} else if ([x compare: @"Rating"] == 0) {
-			return [NSNumber numberWithInt: [s ratingValue]];
+			return @([s ratingValue]);
 		} else if ([x compare: @"Type"] == 0) {
 			return [s typeOfPlay];
 		} else
@@ -587,7 +587,7 @@
 
 - (NSString *) description
 {
-	return [self.currentServer description];
+	return (self.currentServer).description;
 }
 
 - (void) sendSeek: (Seek *) s
@@ -597,14 +597,14 @@
 
 - (void) sendToServer: (NSString *) s
 {
-	const char *cs = [s UTF8String];
+	const char *cs = s.UTF8String;
 	[self.serverOS write: (unsigned char *) cs maxLength: strlen(cs)];
 	[self.serverOS write: (unsigned char *) "\n" maxLength: 1];
 }
 
 - (void) sendUserInputToServer: (NSString *) s
 {
-	if ((s == nil) || ([s length] == 0))
+	if ((s == nil) || (s.length == 0))
 		return;
 	[self sendToServer: s];
 	[self addOutputLine: s type: LINE_USER_INPUT info: 0];
@@ -665,15 +665,15 @@
 	[self willChangeValueForKey: @"outputLines"];
 	if (self.lastLinePartial) {
 		if (ty == LINE_USER_INPUT) {
-			NSString *lt = [[self.outputLines lastObject] text];
-			i = [lt length];
+			NSString *lt = [(self.outputLines).lastObject text];
+			i = lt.length;
 			tx = [NSString stringWithFormat: @"%@%@", lt, tx];
 		}
-		[self.outputLines replaceObjectAtIndex: [self.outputLines count] - 1 withObject: [OutputLine newOutputLine: tx type: ty info: i]];
+		(self.outputLines)[(self.outputLines).count - 1] = [OutputLine newOutputLine: tx type: ty info: i];
 		self.lastLinePartial = NO;
 	} else {
-		if (([self.outputLines count] > 0) && [[[self.outputLines lastObject] text] compare: @"fics% "] == 0)
-			[self.outputLines replaceObjectAtIndex: [self.outputLines count] - 1 withObject: [OutputLine newOutputLine: tx type: ty info: i]];
+		if (((self.outputLines).count > 0) && [[(self.outputLines).lastObject text] compare: @"fics% "] == 0)
+			(self.outputLines)[(self.outputLines).count - 1] = [OutputLine newOutputLine: tx type: ty info: i];
 		else
 			[self.outputLines addObject: [OutputLine newOutputLine: tx type: ty info: i]];
 	}
@@ -688,20 +688,20 @@
 	NSString *s = s;
 	while ((s = [e nextObject]) != 0) {
 		if ([s hasPrefix: tag])
-			return [s substringFromIndex: [tag length]];
+			return [s substringFromIndex: tag.length];
 	}
 	return nil;
 }
 
 - (int) lengthOutput
 {
-	return [self.outputLines count];
+	return (self.outputLines).count;
 }
 
 - (void) chatWindowClosed: (ChatWindowController *) cwc
 {
 	[self.chatWindows removeObject: cwc];
-	if (([self.serverWindows count] == 0) && ([self.chatWindows count] == 0))
+	if (((self.serverWindows).count == 0) && ((self.chatWindows).count == 0))
 		[self.appController closeServerConnection: self];
 }
 
@@ -709,13 +709,13 @@
 {
 	[[self retain] autorelease];
 	[self.serverWindows removeObject: gwc];
-	if ([self isConnected] && ([self.serverWindows count] == 0) && ([self.chatWindows count] == 0))
+	if ([self isConnected] && ((self.serverWindows).count == 0) && ((self.chatWindows).count == 0))
 		[self.appController closeServerConnection: self];
 }
 
 - (BOOL) lastWindow
 {
-	return ([self.serverWindows count] + [self.chatWindows count] == 1);
+	return ((self.serverWindows).count + (self.chatWindows).count == 1);
 }
 
 - (BOOL) isConnected
@@ -731,9 +731,9 @@
 - (void) sendSeekToServer
 {
 	NSArray *selectedSeeks = [[self.appController seekControl] getSelectedSeeks];
-	int i, m = [selectedSeeks count];
+	int i, m = selectedSeeks.count;
 	for (i = 0; i < m; i++)
-		[self sendSeek: [selectedSeeks objectAtIndex: i]];
+		[self sendSeek: selectedSeeks[i]];
 	[self.appController closeSeekWindow];
 }
 

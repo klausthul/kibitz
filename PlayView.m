@@ -20,17 +20,17 @@
 
 - (void) resizeWithOldSuperviewSize: (NSSize) oldBoundsSize
 {
-	NSRect f2 = [[self superview] frame], f;
+	NSRect f2 = self.superview.frame, f;
 	f.size.height = fminf(f2.size.height, f2.size.width - 97);
 	f.size.width = f.size.height + 97;
 	f.origin.x = 0;
 	f.origin.y = f2.size.height - f.size.height;		
-	[self setFrame: f];
+	self.frame = f;
 }
 
 - (float) maxWidthForHeight
 {
-	return [self frame].size.height + 97;
+	return self.frame.size.height + 97;
 }
 
 - (float) maxWidthForHeight: (float) height
@@ -40,7 +40,7 @@
 
 - (float) maxHeightForWidth
 {
-	return [self frame].size.width - 97;
+	return self.frame.size.width - 97;
 }
 
 @end

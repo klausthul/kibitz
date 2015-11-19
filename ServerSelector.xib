@@ -12,7 +12,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <arrayController objectClassName="ChessServer" id="62" userLabel="ChessServerListController">
             <declaredKeys>
                 <string>serverName</string>
@@ -37,10 +37,10 @@
             <rect key="contentRect" x="29" y="168" width="474" height="608"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" autoresizesSubviews="NO" id="64">
-                <rect key="frame" x="1" y="1" width="474" height="608"/>
+                <rect key="frame" x="0.0" y="0.0" width="474" height="608"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <tabView autoresizesSubviews="NO" type="noTabsBezelBorder" id="65">
+                    <tabView type="noTabsBezelBorder" id="65">
                         <rect key="frame" x="13" y="56" width="445" height="545"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -49,14 +49,14 @@
                             <tabViewItem label="Server" identifier="1" id="66">
                                 <view key="view" autoresizesSubviews="NO" id="67">
                                     <rect key="frame" x="10" y="7" width="425" height="525"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <scrollView horizontalLineScroll="19" horizontalPageScroll="0.0" verticalLineScroll="19" verticalPageScroll="0.0" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="71">
                                             <rect key="frame" x="0.0" y="356" width="425" height="169"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" id="scc-gC-Ugh">
                                                 <rect key="frame" x="1" y="1" width="423" height="167"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" id="72">
                                                         <rect key="frame" x="0.0" y="0.0" width="423" height="167"/>
@@ -298,7 +298,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" id="mng-Yh-2f6">
                                                 <rect key="frame" x="1" y="1" width="307" height="83"/>
-                                                <autoresizingMask key="autoresizingMask"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView importsGraphics="NO" richText="NO" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" textReplacement="YES" smartInsertDelete="YES" id="86">
                                                         <rect key="frame" x="0.0" y="0.0" width="307" height="83"/>
@@ -306,10 +306,10 @@
                                                         <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <size key="minSize" width="307" height="83"/>
-                                                        <size key="maxSize" width="307" height="10000000"/>
+                                                        <size key="maxSize" width="309" height="10000000"/>
                                                         <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <size key="minSize" width="307" height="83"/>
-                                                        <size key="maxSize" width="307" height="10000000"/>
+                                                        <size key="maxSize" width="309" height="10000000"/>
                                                         <connections>
                                                             <binding destination="62" name="value" keyPath="selection.initCommands" id="200">
                                                                 <dictionary key="options">
@@ -376,7 +376,7 @@
                                             <animations/>
                                             <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="131" id="218">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="menu"/>
                                                 <menu key="menu" title="OtherViews" id="130">
                                                     <items>
                                                         <menuItem title="Item1" state="on" id="131"/>

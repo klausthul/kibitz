@@ -40,8 +40,8 @@
 	NSMutableArray *defaultSeeks = [NSMutableArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
 	NSDictionary *defaultSeeksAndServers = [NSDictionary dictionaryWithObjectsAndKeys: defaultChessServers, @"chessServers", defaultSeeks, @"seeks", nil, nil];
 	NSData *data = [NSKeyedArchiver archivedDataWithRootObject: defaultSeeksAndServers];
-	[defaultValues setObject:data forKey:@"seeksAndServers"];
-	[defaultValues setValue: [NSNumber numberWithInt: 1] forKey: @"soundDefault"];
+	defaultValues[@"seeksAndServers"] = data;
+	[defaultValues setValue: @1 forKey: @"soundDefault"];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	gSounds = [[Sound alloc] init];
 }
@@ -57,8 +57,8 @@
 		NSDictionary *seeksAndServers = nil;
 		if ((d = [[NSUserDefaults standardUserDefaults] objectForKey: @"seeksAndServers"]) != nil)
 			if ((seeksAndServers = [NSKeyedUnarchiver unarchiveObjectWithData: d]) != nil) {
-				chessServers = [[seeksAndServers objectForKey: @"chessServers"] retain];
-				seeks = [[seeksAndServers objectForKey: @"seeks"] retain];
+				chessServers = [seeksAndServers[@"chessServers"] retain];
+				seeks = [seeksAndServers[@"seeks"] retain];
 			}
 		if (chessServers == nil)
 			chessServers = [[NSMutableArray arrayWithCapacity: 10] retain];
@@ -74,7 +74,7 @@
 	ChessServer *cs;
 	bool autoConnect = FALSE;
 	while ((cs = [e nextObject]) != nil)
-		if ([cs connectAtStartup]) {
+		if (cs.connectAtStartup) {
 			[self connectChessServer: cs];
 			autoConnect = TRUE;
 		}
@@ -131,7 +131,7 @@
 		[self willChangeValueForKey: @"serverConnections"];
 		[serverConnections removeObject: csc];
 		[self didChangeValueForKey: @"serverConnections"];
-		if ([serverConnections count] == 0)
+		if (serverConnections.count == 0)
 			[self showChessServerSelectorWindow]; 
 	}
 }
@@ -143,12 +143,12 @@
 
 - (NSApplicationTerminateReply) applicationShouldTerminate: (NSApplication *) sender
 {
-	if (([serverConnections count] == 0)
+	if ((serverConnections.count == 0)
 	 || (NSRunAlertPanel(@"Confirm quit", @"You are currently connected to a chess server. Quit anyway?", @"Yes", @"No", nil)
 	     == NSAlertDefaultReturn)) {
 		NSMutableDictionary *seeksAndServers = [NSMutableDictionary dictionaryWithCapacity: 2];
-		[seeksAndServers setObject: chessServers forKey: @"chessServers"];
-		[seeksAndServers setObject: seeks forKey: @"seeks"];
+		seeksAndServers[@"chessServers"] = chessServers;
+		seeksAndServers[@"seeks"] = seeks;
 		NSData *d = [NSKeyedArchiver archivedDataWithRootObject: seeksAndServers];
 		[[NSUserDefaults standardUserDefaults] setObject: d forKey: @"seeksAndServers"];
 		return NSTerminateNow;
@@ -169,7 +169,7 @@
 
 - (void) closeSeekWindow
 {
-	[[seekControl window] close];
+	[seekControl.window close];
 }
 
 - (IBAction) switchAllSoundsOff: (id) sender

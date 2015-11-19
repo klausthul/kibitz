@@ -34,7 +34,7 @@ NSString *StyleNames[] = {
 	Seek *s = [[Seek alloc] init];
 	[s autorelease];
     
-    NSString *seekInfoNS = [NSString stringWithUTF8String:seekInfo];
+    NSString *seekInfoNS = @(seekInfo);
     NSArray *parts = [seekInfoNS componentsSeparatedByString:@" "];
     for (NSString *part in parts) {
         NSArray *keyVal = [part componentsSeparatedByString:@"="];
@@ -48,9 +48,9 @@ NSString *StyleNames[] = {
             s->nameFrom = value;
             [s->nameFrom retain];
         } else if ([key isEqualToString:@"t"]) {
-            s->timeStart = [value intValue];
+            s->timeStart = value.intValue;
         } else if ([key isEqualToString:@"i"]) {
-            s->timeIncrement = [value intValue];
+            s->timeIncrement = value.intValue;
         } else if ([key isEqualToString:@"t"]) {
             if ([value isEqualToString:@"r"])
                 s->rated = YES;
@@ -74,9 +74,9 @@ NSString *StyleNames[] = {
             else if ([value isEqualToString:@"f"])
                 s->formulaChecked = NO;
         } else if ([key isEqualToString:@"ti"]) {
-            s->title = strtol([value UTF8String], NULL, 16);
+            s->title = strtol(value.UTF8String, NULL, 16);
         } else if ([key isEqualToString:@"rt"]) {
-            s->ratingValue = [value intValue];
+            s->ratingValue = value.intValue;
         } else if ([key isEqualToString:@"tp"]) {
             s->typeOfPlay = value;
             [s->typeOfPlay retain];
@@ -252,7 +252,7 @@ NSString *StyleNames[] = {
 	 ratingRangeLow, ratingRangeHigh];
 }
 
-- (id) initWithCoder: (NSCoder *) coder
+- (instancetype) initWithCoder: (NSCoder *) coder
 {
 	if ((self = [super init]) != nil) {
 		[self setTimeStart: [coder decodeIntForKey: @"timeStart"]];

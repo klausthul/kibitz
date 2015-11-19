@@ -21,7 +21,7 @@
 	IBOutlet NSTableView *serverOutput;
 }
 
-- (ChatWindowController *) initWithServerConnection: (ChessServerConnection *) sc;
+- (ChatWindowController *) initWithServerConnection: (ChessServerConnection *) sc NS_DESIGNATED_INITIALIZER;
 - (IBAction) newPlayWindow: (id) sender;
 - (IBAction) newChatWindow: (id) sender;
 - (void) observeValueForKeyPath: (NSString *) keyPath ofObject: (id) object change: (NSDictionary *) change context: (void *) context;
