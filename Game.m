@@ -80,7 +80,7 @@
 		[self setStartPosition: move];
 	} else {
 		while ((ms = [e nextObject]) != nil)
-			if ([ms moveNum] == n)
+			if (ms.moveNum == n)
 				break;
 		[self willChangeValueForKey: @"moves"];
 		if (ms == nil) {
@@ -88,9 +88,9 @@
 			[moves addObject: ms];
 		}
 		if ([move moveColor] == WHITE)
-			[ms setWhiteMove: move];
+			ms.whiteMove = move;
 		else
-			[ms setBlackMove: move];
+			ms.blackMove = move;
 		[self didChangeValueForKey: @"moves"];
 	}
 }
@@ -289,11 +289,11 @@
 		return nil;
 	else {
 		MoveStore *ms = moves[num];
-		ChessMove *m = [ms blackMove];
+		ChessMove *m = ms.blackMove;
 		if (m != nil)
 			return m;
 		else
-			return [ms whiteMove];
+			return ms.whiteMove;
 	}
 }
 

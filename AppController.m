@@ -32,7 +32,7 @@
     s.serverAddress = @"freechess.org";
     s.serverPort = @(5000);
     s.initCommands = @" ";
-    s.useTimeseal = YES;
+    s.useTimeseal = NO;
     s.userName = @"guest";
     s.userPassword = @"guest";
 
