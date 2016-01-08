@@ -30,7 +30,7 @@
 	ChessServer *s = [[ChessServer alloc] init];
     s.serverName = @"Free Internet Chess Server (FICS)";
     s.serverAddress = @"freechess.org";
-    s.serverPort = @(5000);
+    s.serverPort = @(23); // another popular option is 5000
     s.initCommands = @" ";
     s.useTimeseal = NO;
     s.userName = @"guest";
