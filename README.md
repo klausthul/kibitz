@@ -9,7 +9,7 @@ Mac Chess Client for FICS.
 Status & Goals
 ======
 
-This software works great on Mac OS X Carbon and against older FICS chess servers. The code is now being actively updated to work with current FICS servers and OS X Cocoa.
+This software works great on Mac OS X 10.10+ and connects to the FICS chess server and compatible clones. Some features are missing and help is needed on this project.
 
 The main project goal is to release a production-capable native Mac FICS chess client. The code will be reusable and support iOS/TV targets as well.
 
