@@ -16,6 +16,7 @@
 #import "OutputLine.h"
 #import "ChessMove.h"
 #import "ChatWindowController.h"
+#import "Kibitz-Swift.h"
 
 #define USERNAME_REGEX "[A-z]{3,17}"
 #define TITLES_REGEX "\\([A-Z\\*\\(\\)]*\\)"
@@ -244,7 +245,7 @@
 		self.timeseal = [[NSTask alloc] init];
 		NSMutableArray *args = [NSMutableArray array];
 		[args addObject: (self.currentServer).serverAddress];
-		[args addObject: [NSString stringWithFormat: @"%@", (self.currentServer).serverPort]];
+		[args addObject: [NSString stringWithFormat: @"%ld", (long)self.currentServer.serverPort]];
 		[args addObject: @"-p"];
 		[args addObject: @"5501"];
 		(self.timeseal).launchPath = [NSString stringWithFormat:@"%@%@", [NSBundle mainBundle].resourcePath, @"/timeseal.MacOSX-PPC"];
@@ -260,7 +261,7 @@
 		NSHost *host = [NSHost hostWithName: (self.currentServer).serverAddress];
         NSInputStream *is;
         NSOutputStream *os;
-		[NSStream getStreamsToHost:host port:(self.currentServer).serverPort.intValue inputStream:&is outputStream:&os];
+		[NSStream getStreamsToHost:host port:(self.currentServer).serverPort inputStream:&is outputStream:&os];
         self.serverIS = is;
         self.serverOS = os;
 	}

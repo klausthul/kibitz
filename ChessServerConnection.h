@@ -11,7 +11,6 @@
 #import "global.h"
 #import "Game.h"
 #import "Seek.h"
-#import "ChessServer.h"
 
 
 

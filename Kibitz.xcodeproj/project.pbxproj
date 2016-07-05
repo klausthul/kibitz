@@ -39,7 +39,6 @@
 		CED2634209836079005367EC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CED2634109836079005367EC /* LICENSE */; };
 		CED82AD80955BFC60073F9CD /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A6E0955BFC50073F9CD /* AppController.m */; };
 		CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A840955BFC60073F9CD /* ChessMove.m */; };
-		CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A870955BFC60073F9CD /* ChessServer.m */; };
 		CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A890955BFC60073F9CD /* ChessServerConnection.m */; };
 		CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A8F0955BFC60073F9CD /* ChessView.m */; };
 		CED82AF00955BFC60073F9CD /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82A970955BFC60073F9CD /* Game.m */; };
@@ -51,6 +50,7 @@
 		CED82B830955C2D60073F9CD /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = CED82B820955C2D60073F9CD /* Sound.m */; };
 		CED831BF09578FEE0073F9CD /* ChatWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED831BE09578FEE0073F9CD /* ChatWindowController.m */; };
 		CED83248095792870073F9CD /* OutputLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CED83247095792860073F9CD /* OutputLine.m */; };
+		D9C3BD0A1D2B58E20058BA63 /* ChessServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C3BD091D2B58E20058BA63 /* ChessServer.swift */; };
 		D9CAA1941BFE1DA0001495DE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA1901BFE1DA0001495DE /* MainMenu.xib */; };
 		D9CAA1951BFE1DA0001495DE /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA1921BFE1DA0001495DE /* Preferences.xib */; };
 		D9CAA19A1BFE1DB0001495DE /* ChatWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CAA1961BFE1DB0001495DE /* ChatWindow.xib */; };
@@ -99,8 +99,6 @@
 		CED82A6E0955BFC50073F9CD /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CED82A830955BFC60073F9CD /* ChessMove.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ChessMove.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CED82A840955BFC60073F9CD /* ChessMove.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChessMove.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		CED82A860955BFC60073F9CD /* ChessServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ChessServer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		CED82A870955BFC60073F9CD /* ChessServer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChessServer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CED82A880955BFC60073F9CD /* ChessServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServerConnection.h; sourceTree = "<group>"; };
 		CED82A890955BFC60073F9CD /* ChessServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChessServerConnection.m; sourceTree = "<group>"; };
 		CED82A8C0955BFC60073F9CD /* ChessServerListControl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ChessServerListControl.h; sourceTree = "<group>"; };
@@ -126,6 +124,8 @@
 		CED831BE09578FEE0073F9CD /* ChatWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChatWindowController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CED83246095792860073F9CD /* OutputLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputLine.h; sourceTree = "<group>"; };
 		CED83247095792860073F9CD /* OutputLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputLine.m; sourceTree = "<group>"; };
+		D9C3BD081D2B58E20058BA63 /* Kibitz-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kibitz-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9C3BD091D2B58E20058BA63 /* ChessServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessServer.swift; sourceTree = "<group>"; };
 		D9CAA1911BFE1DA0001495DE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D9CAA1931BFE1DA0001495DE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		D9CAA1961BFE1DB0001495DE /* ChatWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatWindow.xib; sourceTree = "<group>"; };
@@ -160,6 +160,7 @@
 		29B97314FDCFA39411CA2CEA /* icsinterface */ = {
 			isa = PBXGroup;
 			children = (
+				D9C3BD081D2B58E20058BA63 /* Kibitz-Bridging-Header.h */,
 				D911591819B4066B000238F7 /* Model */,
 				CED2634109836079005367EC /* LICENSE */,
 				CE2952740955B945006C8D90 /* Classes */,
@@ -278,8 +279,7 @@
 				CED82A840955BFC60073F9CD /* ChessMove.m */,
 				CED82A960955BFC60073F9CD /* Game.h */,
 				CED82A970955BFC60073F9CD /* Game.m */,
-				CED82A860955BFC60073F9CD /* ChessServer.h */,
-				CED82A870955BFC60073F9CD /* ChessServer.m */,
+				D9C3BD091D2B58E20058BA63 /* ChessServer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,6 +311,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
@@ -380,7 +381,6 @@
 				CE2091500939AFED008697DE /* main.m in Sources */,
 				CED82AD80955BFC60073F9CD /* AppController.m in Sources */,
 				CED82AE60955BFC60073F9CD /* ChessMove.m in Sources */,
-				CED82AE80955BFC60073F9CD /* ChessServer.m in Sources */,
 				CED82AE90955BFC60073F9CD /* ChessServerConnection.m in Sources */,
 				CED82AEC0955BFC60073F9CD /* ChessView.m in Sources */,
 				CED82AF00955BFC60073F9CD /* Game.m in Sources */,
@@ -390,6 +390,7 @@
 				CED82B080955BFC60073F9CD /* Seek.m in Sources */,
 				CED82B0C0955BFC60073F9CD /* SeekControl.m in Sources */,
 				CED82B830955C2D60073F9CD /* Sound.m in Sources */,
+				D9C3BD0A1D2B58E20058BA63 /* ChessServer.swift in Sources */,
 				CED831BF09578FEE0073F9CD /* ChatWindowController.m in Sources */,
 				CED83248095792870073F9CD /* OutputLine.m in Sources */,
 				CE309DC4095A2F5200F756BB /* MoveStore.m in Sources */,
@@ -432,6 +433,7 @@
 		CEA0CBD709015E9A00BF913A /* Release universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -462,11 +464,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_STYLE = DYNAMIC;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = free.klausthul.Kibitz;
 				PRODUCT_NAME = Kibitz;
+				SWIFT_OBJC_BRIDGING_HEADER = "Kibitz-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -482,6 +486,7 @@
 		CED2610509833E02005367EC /* Debug universal */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -512,11 +517,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_STYLE = DYNAMIC;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = free.klausthul.Kibitz;
 				PRODUCT_NAME = Kibitz;
+				SWIFT_OBJC_BRIDGING_HEADER = "Kibitz-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};

@@ -19,6 +19,7 @@
 #import "PreferenceController.h"
 #import "ChessServerListControl.h"
 #import "Sound.h"
+#import "Kibitz-Swift.h"
 
 @implementation AppController
 
