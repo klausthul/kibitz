@@ -32,42 +32,42 @@ class ChessServer: NSObject, NSCoding {
     required convenience init(coder: NSCoder) {
         self.init()
         
-        if let serverName = coder.decodeObjectForKey("serverName") as? String {
+        if let serverName = coder.decodeObject(forKey: "serverName") as? String {
             self.serverName = serverName
         }
-        if let serverAddress = coder.decodeObjectForKey("serverAddress") as? String {
+        if let serverAddress = coder.decodeObject(forKey: "serverAddress") as? String {
             self.serverAddress = serverAddress
         }
-        if let serverPort = coder.decodeObjectForKey("serverPort") as? Int {
+        if let serverPort = coder.decodeObject(forKey: "serverPort") as? Int {
             self.serverPort = serverPort
         }
-        if let userName = coder.decodeObjectForKey("userName") as? String {
+        if let userName = coder.decodeObject(forKey: "userName") as? String {
             self.userName = userName
         }
-        if let userPassword = coder.decodeObjectForKey("userPassword") as? String {
+        if let userPassword = coder.decodeObject(forKey: "userPassword") as? String {
             self.userPassword = userPassword
         }
-        if let initCommands = coder.decodeObjectForKey("initCommands") as? String {
+        if let initCommands = coder.decodeObject(forKey: "initCommands") as? String {
             self.initCommands = initCommands
         }
-        self.useTimeseal = coder.decodeBoolForKey("useTimeseal")
-        self.connectAtStartup = coder.decodeBoolForKey("connectAtStartup")
-        self.issueSeek = coder.decodeBoolForKey("issueSeek")
-        if let seek = coder.decodeObjectForKey("seek") as? Seek {
+        self.useTimeseal = coder.decodeBool(forKey: "useTimeseal")
+        self.connectAtStartup = coder.decodeBool(forKey: "connectAtStartup")
+        self.issueSeek = coder.decodeBool(forKey: "issueSeek")
+        if let seek = coder.decodeObject(forKey: "seek") as? Seek {
             self.seek = seek
         }
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.serverName, forKey: "serverName")
-        aCoder.encodeObject(self.serverAddress, forKey: "serverAddress")
-        aCoder.encodeObject(self.serverPort, forKey: "serverPort")
-        aCoder.encodeObject(self.userName, forKey: "userName")
-        aCoder.encodeObject(self.userPassword, forKey: "userPassword")
-        aCoder.encodeObject(self.initCommands, forKey: "initCommands")
-        aCoder.encodeBool(self.useTimeseal, forKey: "useTimeseal")
-        aCoder.encodeBool(self.connectAtStartup, forKey: "connectAtStartup")
-        aCoder.encodeBool(self.issueSeek, forKey: "issueSeek")
-        aCoder.encodeObject(self.seek, forKey: "seek")
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.serverName, forKey: "serverName")
+        aCoder.encode(self.serverAddress, forKey: "serverAddress")
+        aCoder.encode(self.serverPort, forKey: "serverPort")
+        aCoder.encode(self.userName, forKey: "userName")
+        aCoder.encode(self.userPassword, forKey: "userPassword")
+        aCoder.encode(self.initCommands, forKey: "initCommands")
+        aCoder.encode(self.useTimeseal, forKey: "useTimeseal")
+        aCoder.encode(self.connectAtStartup, forKey: "connectAtStartup")
+        aCoder.encode(self.issueSeek, forKey: "issueSeek")
+        aCoder.encode(self.seek, forKey: "seek")
     }
 }
