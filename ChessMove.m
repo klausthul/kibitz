@@ -2,15 +2,15 @@
 	$Id$
 
 	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of kibitz.
+	This file is part of Kibitz.
 
-	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
 	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
-	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
 	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
@@ -24,11 +24,11 @@
 	NSString *pieces = @"-PNBRQK  pnbrqk";
 	ChessMove *cm;
 	if ((cm = [[ChessMove alloc] init]) != nil) {
-		cm->movePrint = [[data objectAtIndex: 29] retain];
-		cm->timeUsed = [[data objectAtIndex: 28] retain];
-		cm->gameRelationship = [[data objectAtIndex: 19] intValue];
+		cm->movePrint = [data[29] retain];
+		cm->timeUsed = [data[28] retain];
+		cm->gameRelationship = [data[19] intValue];
 		for (i = 0; i < 8; i++) {
-			NSString *s = [data objectAtIndex: i + 1];
+			NSString *s = data[i + 1];
 			for (j = 0; j < 8; j++) {
 				unichar c = [s characterAtIndex: j];
 				for (k = 0; k < 15; k++)
@@ -38,22 +38,22 @@
 					}
 			}
 		}
-		if ([[data objectAtIndex: 9] characterAtIndex:0] == 'B')
+		if ([data[9] characterAtIndex:0] == 'B')
 			cm->sideToMove = BLACK;
 		else
 			cm->sideToMove = WHITE;
 		cm->runningClock = (cm->sideToMove == WHITE) ? WHITE_CLOCK_RUNS : BLACK_CLOCK_RUNS;
-		cm->enPassantLine = [[data objectAtIndex: 10] intValue];
-		cm->castleRights = [[data objectAtIndex: 11] intValue] * WHITE_SHORT;
-		cm->castleRights += [[data objectAtIndex: 12] intValue] * WHITE_LONG;
-		cm->castleRights += [[data objectAtIndex: 13] intValue] * BLACK_SHORT;
-		cm->castleRights += [[data objectAtIndex: 14] intValue] * BLACK_LONG;
-		cm->moveCounter50Rule = [[data objectAtIndex: 15] intValue];
-		cm->whiteMaterial = [[data objectAtIndex: 22] intValue];
-		cm->blackMaterial = [[data objectAtIndex: 23] intValue];
-		cm->whiteRemainingTime = [[data objectAtIndex: 24] intValue];
-		cm->blackRemainingTime = [[data objectAtIndex: 25] intValue];
-		cm->nextMoveNumber = [[data objectAtIndex: 26] intValue];
+		cm->enPassantLine = [data[10] intValue];
+		cm->castleRights = [data[11] intValue] * WHITE_SHORT;
+		cm->castleRights += [data[12] intValue] * WHITE_LONG;
+		cm->castleRights += [data[13] intValue] * BLACK_SHORT;
+		cm->castleRights += [data[14] intValue] * BLACK_LONG;
+		cm->moveCounter50Rule = [data[15] intValue];
+		cm->whiteMaterial = [data[22] intValue];
+		cm->blackMaterial = [data[23] intValue];
+		cm->whiteRemainingTime = [data[24] intValue];
+		cm->blackRemainingTime = [data[25] intValue];
+		cm->nextMoveNumber = [data[26] intValue];
 		cm->lastTimeUpdate = time(NULL);	
 	}
 	return [cm autorelease];
@@ -176,9 +176,9 @@
 {
 	int i, j, l;
 	char *pieceNames = "\0PNBRQK\0";
-	white = [white uppercaseString];
-	black = [black uppercaseString];
-	l = [white length];
+	white = white.uppercaseString;
+	black = black.uppercaseString;
+	l = white.length;
 	hasPassedPieces = 0;
 	for (i = 0; i < 8; i++) {
 		passedPieces[i] = 0;
@@ -190,7 +190,7 @@
 					hasPassedPieces = YES;
 				}
 	}
-	l = [black length];
+	l = black.length;
 	for (i = 8; i < 16; i++) {
 		passedPieces[i] = 0;
 		char c = pieceNames[i - 8];

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ChatWindowController">
+            <connections>
+                <outlet property="serverInput" destination="24" id="35"/>
+                <outlet property="serverOutput" destination="21" id="36"/>
+                <outlet property="window" destination="5" id="12"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="113" y="74" width="554" height="630"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="554" height="630"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="20">
+                        <rect key="frame" x="20" y="50" width="514" height="560"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="n6i-1i-YxM">
+                            <rect key="frame" x="1" y="1" width="512" height="558"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" autosaveColumns="NO" id="21">
+                                    <rect key="frame" x="0.0" y="0.0" width="512" height="19"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                    <size key="intercellSpacing" width="3" height="2"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableColumns>
+                                        <tableColumn editable="NO" width="509" minWidth="40" maxWidth="1000" id="22">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="46">
+                                                <font key="font" size="13" name="Monaco"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                            <connections>
+                                                <binding destination="26" name="value" keyPath="arrangedObjects.text" id="33"/>
+                                            </connections>
+                                        </tableColumn>
+                                    </tableColumns>
+                                </tableView>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <animations/>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="47">
+                            <rect key="frame" x="1" y="543" width="512" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="48">
+                            <rect key="frame" x="497" y="1" width="16" height="558"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
+                        </scroller>
+                    </scrollView>
+                    <textField verticalHuggingPriority="750" id="24">
+                        <rect key="frame" x="20" y="20" width="514" height="22"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="45">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="commandEntered:" target="38" id="43"/>
+                            <outlet property="delegate" destination="38" id="42"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <animations/>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="19"/>
+                <outlet property="initialFirstResponder" destination="24" id="25"/>
+            </connections>
+        </window>
+        <arrayController objectClassName="OutputLine" editable="NO" selectsInsertedObjects="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" id="26" userLabel="ChatOutputController">
+            <declaredKeys>
+                <string>text</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="serverConnection.outputLines" id="29"/>
+            </connections>
+        </arrayController>
+        <customObject id="38" userLabel="ServerInputDelegate" customClass="ServerInputDelegate">
+            <connections>
+                <outlet property="serverInput" destination="24" id="40"/>
+                <outlet property="windowController" destination="-2" id="39"/>
+            </connections>
+        </customObject>
+    </objects>
+</document>

@@ -2,15 +2,15 @@
 	$Id$
 
 	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of kibitz.
+	This file is part of Kibitz.
 
-	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
 	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
-	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
 	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
@@ -19,10 +19,10 @@
 
 @implementation ChessView
 
-- (id) initWithFrame: (NSRect) frameRect
+- (instancetype) initWithFrame: (NSRect) frameRect
 {
 	if ((self = [super initWithFrame:frameRect]) != nil) {
-		[self registerForDraggedTypes: [NSArray arrayWithObject: NSStringPboardType]];
+		[self registerForDraggedTypes: @[NSStringPboardType]];
 	}
 	extendedView = NO;
 	return self;
@@ -30,7 +30,7 @@
 
 - (void) drawRect: (NSRect) rect
 {
-	NSRect bounds = [self bounds];
+	NSRect bounds = self.bounds;
 	NSRect cur_field;
 	float board_size = fminf(bounds.size.width, bounds.size.height);
 	NSRect board;
@@ -50,7 +50,7 @@
 	NSRect imagerect;
 	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
 	
-	imagerect.size = [pieces[1] size];
+	imagerect.size = pieces[1].size;
 	imagerect.origin = NSZeroPoint;
 	[[NSColor whiteColor] set];
 	[NSBezierPath fillRect: board];	
@@ -126,7 +126,7 @@
 	bool flip = ([gameWindowController sideShownOnBottom] == BLACK);
 	struct ChessField f;
 	NSPoint p = [self convertPoint: location fromView: nil];
-	NSRect bounds = [self bounds];
+	NSRect bounds = self.bounds;
 	if (extendedView) {
 		f.line = ceilf(p.x / bounds.size.width * 9);
 		f.row = ceilf(p.y / bounds.size.height * 9) - 1;
@@ -153,10 +153,10 @@
 
 - (struct ChessField) getField: (NSEvent *) theEvent
 {
-	return [self getFieldFromLocation: [theEvent locationInWindow]];
+	return [self getFieldFromLocation: theEvent.locationInWindow];
 }
 
-- (unsigned int) draggingSourceOperationMaskForLocal: (BOOL) isLocal
+- (enum NSDragOperation) draggingSourceOperationMaskForLocal: (BOOL) isLocal
 {
 	if (isLocal == NO)
 		return NSDragOperationNone;
@@ -168,20 +168,19 @@
 {
 	fromMouse = [self getField: event];
 	NSPasteboard *pb = [NSPasteboard pasteboardWithName: NSDragPboard];
-	NSPoint p = [self convertPoint: [event locationInWindow] fromView: nil];
+	NSPoint p = [self convertPoint: event.locationInWindow fromView: nil];
 	NSImage *img = [[pieces[[showBoard pieceOnField: fromMouse]] copy] autorelease];
 	if (img != nil) {
-		[img setScalesWhenResized: YES];
-		[img setSize: NSMakeSize(fieldSize, fieldSize)];
+		img.size = NSMakeSize(fieldSize, fieldSize);
 		p.y -= fieldSize / 2;
 		p.x -= fieldSize / 2;
-		[pb declareTypes: [NSArray arrayWithObject: NSStringPboardType] owner: self];
+		[pb declareTypes: @[NSStringPboardType] owner: self];
 		[pb setString: @"move" forType: NSStringPboardType];
 		[self dragImage: img at: p offset: NSMakeSize(0, 0) event: event pasteboard: pb source: self slideBack: YES];
 	}
 }
 
-- (unsigned int) draggingEntered: (id <NSDraggingInfo>) sender
+- (enum NSDragOperation) draggingEntered: (id <NSDraggingInfo>) sender
 {
 	return NSDragOperationMove;
 }
@@ -201,7 +200,7 @@
 		[gameWindowController userMoveFrom: fromMouse to: toMouse promotion: 0];
 		return YES;
 	  case REQUIRES_PROMOTION:
-		[NSApp beginSheet: promotionDialog modalForWindow: [gameWindowController window] modalDelegate: self didEndSelector: NULL contextInfo: NULL];
+		[NSApp beginSheet: promotionDialog modalForWindow:self.window modalDelegate: self didEndSelector: NULL contextInfo: NULL];
 		return YES;
 	}
 }

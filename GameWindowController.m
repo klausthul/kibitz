@@ -2,15 +2,15 @@
 	$Id$
 
 	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of kibitz.
+	This file is part of Kibitz.
 
-	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
 	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
-	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
 	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
@@ -101,7 +101,7 @@ NSString *toolbarTooltips[] = {
 
 @implementation GameWindowController
 
-- (id) initWithServerConnection: (ChessServerConnection *) sc
+- (instancetype) initWithServerConnection: (ChessServerConnection *) sc
 {
 	if ((self = [super initWithWindowNibName: @"GameWindow"]) != nil) {
 		timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target: self
@@ -117,10 +117,10 @@ NSString *toolbarTooltips[] = {
 {
 	NSString *title;
 	if ((activeGame != nil) && ![activeGame isEmpty])
-		title = [NSString stringWithFormat: @"%@ - %@", [serverConnection description], [activeGame gameInfoString]];
+		title = [NSString stringWithFormat: @"%@ - %@", serverConnection.description, [activeGame gameInfoString]];
 	else
-		title = [NSString stringWithFormat: @"%@", [serverConnection description]];
-	[[self window] setTitle: title];
+		title = [NSString stringWithFormat: @"%@", serverConnection.description];
+	self.window.title = title;
 }
 
 - (IBAction) toggleSeekDrawer: (id) sender
@@ -137,30 +137,30 @@ NSString *toolbarTooltips[] = {
 {
 	[self updateClocks];
 	if (activeGame == nil) {
-		[lowerName setStringValue: @""];
-		[upperName setStringValue: @""];
-		[result setStringValue: @""];
-		[resultReason setStringValue: @""];
-		[gameType setStringValue: @""];	
+		lowerName.stringValue = @"";
+		upperName.stringValue = @"";
+		result.stringValue = @"";
+		resultReason.stringValue = @"";
+		gameType.stringValue = @"";	
 	} else {
 		if ([activeGame sideShownOnBottom] == WHITE) {
-			[upperName setStringValue: nil2Empty([activeGame blackNameRating])];
-			[lowerName setStringValue: nil2Empty([activeGame whiteNameRating])];
+			upperName.stringValue = nil2Empty([activeGame blackNameRating]);
+			lowerName.stringValue = nil2Empty([activeGame whiteNameRating]);
 		} else {
-			[lowerName setStringValue: nil2Empty([activeGame blackNameRating])];
-			[upperName setStringValue: nil2Empty([activeGame whiteNameRating])];
+			lowerName.stringValue = nil2Empty([activeGame blackNameRating]);
+			upperName.stringValue = nil2Empty([activeGame whiteNameRating]);
 		}
-		[result setStringValue: nil2Empty([activeGame result])];
-		[resultReason setStringValue: nil2Empty([activeGame reason])];
+		result.stringValue = nil2Empty([activeGame result]);
+		resultReason.stringValue = nil2Empty([activeGame reason]);
 		if ([activeGame initialTime] >= 0) {
 			NSString *type = ([activeGame type]) ? [NSString stringWithFormat: @"%s %@", ([activeGame rated]) ? "rated" : "unrated", 
 			 [activeGame type]] : @"";
-			[gameType setStringValue: [NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n%@", 
-			 [activeGame initialTime], [activeGame incrementTime], type]];
+			gameType.stringValue = [NSString stringWithFormat: @"Initial time: %d min\nIncrement: %d sec\n%@", 
+			 [activeGame initialTime], [activeGame incrementTime], type];
 		} else
-			[gameType setStringValue: @""];
+			gameType.stringValue = @"";
 	}
-	[messageField setStringValue: nil2Empty(message)];
+	messageField.stringValue = nil2Empty(message);
 	[self updateWindowTitle];
 }
 
@@ -187,15 +187,15 @@ NSString *toolbarTooltips[] = {
 - (id) tableView:(NSTableView *)aTableView objectValueForTableColumn: (NSTableColumn *) aTableColumn row: (int) rowIndex
 {
 	if (aTableView == seekTable)
-		return [serverConnection dataForSeekTable: [aTableColumn identifier] row: rowIndex];
+		return [serverConnection dataForSeekTable: aTableColumn.identifier row: rowIndex];
 	else
 		return 0;
 }
 
 - (void) tableViewSelectionDidChange: (NSNotification *) notification
 {
-	if ([notification object] == movesTable) {
-		int r = [movesTable selectedRow];
+	if (notification.object == movesTable) {
+		int r = movesTable.selectedRow;
 		if (r != -1) {
 			ChessMove *m = [activeGame storedMoveNumber: r];
 			if (m != nil)
@@ -216,14 +216,14 @@ NSString *toolbarTooltips[] = {
 
 - (IBAction) selectGame: (id) sender
 {
-	[self setActiveGame: [[gameSelector selectedItem] representedObject]];
+	[self setActiveGame: gameSelector.selectedItem.representedObject];
 }
 
 - (void) setGameList: (NSDictionary *) gl
 {
 	NSEnumerator *enumerator;
 	NSNumber *num;
-	int c = [gl count];
+	int c = gl.count;
 	
 	[gameList release];
 	gameList = [gl retain];
@@ -235,9 +235,9 @@ NSString *toolbarTooltips[] = {
 		int i = 0, ag = -1;
 		enumerator = [gameList keyEnumerator];
 		while ((num = [enumerator nextObject])) {
-			Game *g = [gl objectForKey: num];
+			Game *g = gl[num];
 			[gameSelector addItemWithTitle: [g gameInfoString]];
-			[[gameSelector lastItem] setRepresentedObject: g];
+			gameSelector.lastItem.representedObject = g;
 			if (g == activeGame)
 				ag = i;
 			i++;
@@ -270,9 +270,8 @@ NSString *toolbarTooltips[] = {
 		[gameSelector selectItemAtIndex: [gameSelector indexOfItemWithRepresentedObject: g]];
 		[self clearMessage];
 		[moveListController bind: @"contentArray" toObject: g withKeyPath: @"moves" options: 
-		[NSDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithInt: 1], NSRaisesForNotApplicableKeysBindingOption,
-		[NSNumber numberWithInt: 1], NSValidatesImmediatelyBindingOption, nil]];
+		@{NSRaisesForNotApplicableKeysBindingOption: @1,
+		NSValidatesImmediatelyBindingOption: @1}];
 		[g addObserver: self forKeyPath: @"moves" options: 0 context: nil];
 	}
 }
@@ -301,39 +300,27 @@ NSString *toolbarTooltips[] = {
 - (void) updateClocks
 {
 	if (activeGame == nil) {
-		[upperClock setStringValue: @"-:--:--"];	
-		[lowerClock setStringValue: @"-:--:--"];	
+		upperClock.stringValue = @"-:--:--";	
+		lowerClock.stringValue = @"-:--:--";	
 	} else if ([activeGame sideShownOnBottom] == WHITE) {
-		[upperClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]]];	
-		[lowerClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]]];
+		upperClock.stringValue = [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]];	
+		lowerClock.stringValue = [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]];
 	} else {
-		[lowerClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]]];
-		[upperClock setStringValue: [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]]];
+		lowerClock.stringValue = [GameWindowController stringWithClock: [[activeGame currentBoardPosition] blackCurrentTime]];
+		upperClock.stringValue = [GameWindowController stringWithClock: [[activeGame currentBoardPosition] whiteCurrentTime]];
 	}
 }
 
-+ (NSString *) stringWithClock: (int) seconds
++ (NSString *) stringWithClock: (int)seconds
 {
-	int minutes, hours;
-	char string[10];
-	
-	if (seconds < 0) {
+    int hours, minutes;
+    
+    if (seconds < 0)
 		return @"-:--:--";
-	} else {
-		minutes = seconds / 60;
-		seconds -= minutes * 60;
-		hours = minutes / 60;
-		minutes -= hours * 60;
-		string[0] = hours % 10 + '0';
-		string[1] = ':';
-		string[2] = minutes / 10 + '0';
-		string[3] = minutes % 10 + '0';
-		string[4] = ':';
-		string[5] = seconds / 10 + '0';
-		string[6] = seconds % 10 + '0';
-		string[7] = 0;
-		return [NSString stringWithCString: string];
-	}
+    hours = seconds / 3600;
+    minutes = (seconds / 60) % 60;
+    seconds = seconds % 60;
+    return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
 }
 
 - (IBAction) takeback: (id) sender
@@ -451,11 +438,11 @@ NSString *toolbarTooltips[] = {
 
 - (void) splitView: (NSSplitView *) sender resizeSubviewsWithOldSize: (NSSize) oldSize
 {
-	NSRect senderFrame = [sender frame];
-	NSRect playFrame = [playView frame];
-	float dividerThickness = [sender dividerThickness];
+	NSRect senderFrame = sender.frame;
+	NSRect playFrame = playView.frame;
+	float dividerThickness = sender.dividerThickness;
 	if (sender == verticalSplit) {
-		NSRect movesFrame = [movesView frame];
+		NSRect movesFrame = movesView.frame;
 		if ([sender isSubviewCollapsed: movesView])
 			playFrame.size.width = senderFrame.size.width - dividerThickness;
 		else {
@@ -478,14 +465,14 @@ NSString *toolbarTooltips[] = {
 			movesFrame.size.width = senderFrame.size.width - dividerThickness - playFrame.size.width;
 			movesFrame.origin.x = playFrame.size.width + dividerThickness;
 			movesFrame.size.height = senderFrame.size.height;
-			[movesView setFrame: movesFrame];
+			movesView.frame = movesFrame;
 		}
 		playFrame.size.height = senderFrame.size.height;
 		[playView setFrameSize: playFrame.size];
 	}
 	else if (sender == horizontalSplit) {
-		NSRect chatFrame = [chatView frame];
-		NSRect upperFrame = [upperView frame];
+		NSRect chatFrame = chatView.frame;
+		NSRect upperFrame = upperView.frame;
 		if ([sender isSubviewCollapsed: chatView]) {
 			upperFrame.size.height = senderFrame.size.height - dividerThickness;
 		} else {
@@ -508,16 +495,16 @@ NSString *toolbarTooltips[] = {
 			chatFrame.size.height = senderFrame.size.height - dividerThickness - upperFrame.size.height;
 			chatFrame.size.width = senderFrame.size.width;
 			chatFrame.origin.y = upperFrame.size.height + dividerThickness;
-			[chatView setFrame: chatFrame];
+			chatView.frame = chatFrame;
 		}
 		upperFrame.size.width = senderFrame.size.width;
-		[upperView setFrame: upperFrame];
+		upperView.frame = upperFrame;
 	} 
 }
 
 - (float) splitView: (NSSplitView *) sender constrainSplitPosition: (float) proposedPosition ofSubviewAt: (int) offset
 {
-	NSSize wc = [[[self window] contentView] bounds].size;
+	NSSize wc = self.window.contentView.bounds.size;
 	if (sender == verticalSplit) {
 		if (wc.width < 683)
 			return 683 - 9;
@@ -531,10 +518,10 @@ NSString *toolbarTooltips[] = {
 - (void) awakeFromNib
 {
 	toolbar = [[NSToolbar alloc] initWithIdentifier: @"GameWindowToolbar"];
-	[toolbar setDelegate: self];
+	toolbar.delegate = self;
 	[toolbar setAllowsUserCustomization: YES];
 	[toolbar setAutosavesConfiguration: YES];
-	[[self window] setToolbar: toolbar]; 
+	self.window.toolbar = toolbar; 
 	[self setActiveGame: [[[Game alloc] initWithEmptyGame] autorelease]];
 }
 
@@ -565,12 +552,12 @@ NSString *toolbarTooltips[] = {
 	
 	for (i = 0; (s = toolbarIdentifiers[i]) != nil; i++) {
 		if ([itemIdentifier isEqual: s]) {
-			[toolbarItem setLabel: toolbarLabels[i]];
-			[toolbarItem setPaletteLabel:toolbarLabels[i]];
-			[toolbarItem setToolTip: toolbarTooltips[i]];
-			[toolbarItem setImage:[NSImage imageNamed:@"SaveDocumentItemImage"]];
-			[toolbarItem setTarget:self];
-			[toolbarItem setAction: toolbarSelectors[i]];		
+			toolbarItem.label = toolbarLabels[i];
+			toolbarItem.paletteLabel = toolbarLabels[i];
+			toolbarItem.toolTip = toolbarTooltips[i];
+			toolbarItem.image = [NSImage imageNamed:@"SaveDocumentItemImage"];
+			toolbarItem.target = self;
+			toolbarItem.action = toolbarSelectors[i];		
 			break;
 		}
 	}
@@ -590,8 +577,8 @@ NSString *toolbarTooltips[] = {
 
 - (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar
 {
-    return [NSArray arrayWithObjects: toolbarIdentifiers[ToolbarDraw], toolbarIdentifiers[ToolbarResign], 
-	 NSToolbarFlexibleSpaceItemIdentifier, toolbarIdentifiers[ToolbarSeekDrawer], nil];
+    return @[toolbarIdentifiers[ToolbarDraw], toolbarIdentifiers[ToolbarResign], 
+	 NSToolbarFlexibleSpaceItemIdentifier, toolbarIdentifiers[ToolbarSeekDrawer]];
 }
 
 - (void) showMessage: (NSString *) text
@@ -627,7 +614,7 @@ NSString *toolbarTooltips[] = {
 - (BOOL) windowShouldClose: (id)sender
 {
 	if ([serverConnection lastWindow] && [serverConnection isConnected]) {
-		NSBeginAlertSheet(@"Logout?", @"Yes", @"Cancel", nil, [self window], self, @selector(logoutWarningDidEnd:returnCode:contextInfo:), 
+		NSBeginAlertSheet(@"Logout?", @"Yes", @"Cancel", nil, self.window, self, @selector(logoutWarningDidEnd:returnCode:contextInfo:), 
 		nil, nil, @"Do you want to log out from server?");
 		return NO;
 	} else
@@ -637,7 +624,7 @@ NSString *toolbarTooltips[] = {
 - (void) logoutWarningDidEnd: (NSWindow *) sheet returnCode: (int) returnCode contextInfo: (void *) contextInfo
 {
 	if (returnCode == NSAlertDefaultReturn)
-		[[self window] close];	
+		[self.window close];	
 }
 
 - (void) windowWillClose: (NSNotification *) aNotification
@@ -659,11 +646,11 @@ NSString *toolbarTooltips[] = {
 
 - (BOOL) validateMenuItem: (NSMenuItem *) menuItem
 {
-	if ([menuItem action] == @selector(togglePlaySound:)) {
+	if (menuItem.action == @selector(togglePlaySound:)) {
 		if ((activeGame == nil) || [activeGame isEmpty] || ([activeGame result] != nil))
 			return NO;
 		else {
-			[menuItem setState: ([activeGame playSound] ? NSOnState : NSOffState)];
+			menuItem.state = ([activeGame playSound] ? NSOnState : NSOffState);
 			return YES;
 		}
 	} else

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>kibitz</string>
+	<string>Kibitz</string>
 	<key>CFBundleHelpBookFolder</key>
-	<string>kibitz Help</string>
+	<string>Kibitz Help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>kibitz Help</string>
+	<string>Kibitz Help</string>
 	<key>CFBundleIconFile</key>
 	<string>application</string>
 	<key>CFBundleIdentifier</key>
-	<string>free.klausthul.kibitz</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -21,7 +21,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.01</string>
+	<string>0.0.5</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.board-games</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

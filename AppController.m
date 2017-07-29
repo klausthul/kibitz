@@ -2,15 +2,15 @@
 	$Id$
 
 	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of kibitz.
+	This file is part of Kibitz.
 
-	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
 	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
-	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
 	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
@@ -19,24 +19,30 @@
 #import "PreferenceController.h"
 #import "ChessServerListControl.h"
 #import "Sound.h"
+#import "Kibitz-Swift.h"
 
 @implementation AppController
 
 + (void) initialize
 { 
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
+    
+    // See http://www.freechess.org/Help/HelpFiles/iset.html
 	ChessServer *s = [[ChessServer alloc] init];
-	[s setServerName: @"Free Internet Chess Server (FICS)"];
-	[s setServerAddress: @"69.36.243.188"];
-	[s setServerPort: [NSNumber numberWithInt: 5000]];
-	[s setInitCommands: @"iset seekremove 1\niset seekinfo 1\niset gameinfo 1\nset height 200\n"];
-	[s setUsetimeseal: YES];
+    s.serverName = @"Free Internet Chess Server (FICS)";
+    s.serverAddress = @"freechess.org";
+    s.serverPort = @(23); // another popular option is 5000
+    s.initCommands = @" ";
+    s.useTimeseal = NO;
+    s.userName = @"guest";
+    s.userPassword = @"guest";
+
 	NSMutableArray *defaultChessServers = [NSMutableArray arrayWithObject: s];
 	NSMutableArray *defaultSeeks = [NSMutableArray arrayWithObjects: [[[Seek alloc] init] autorelease], nil];
 	NSDictionary *defaultSeeksAndServers = [NSDictionary dictionaryWithObjectsAndKeys: defaultChessServers, @"chessServers", defaultSeeks, @"seeks", nil, nil];
 	NSData *data = [NSKeyedArchiver archivedDataWithRootObject: defaultSeeksAndServers];
-	[defaultValues setObject:data forKey:@"seeksAndServers"];
-	[defaultValues setValue: [NSNumber numberWithInt: 1] forKey: @"soundDefault"];
+	defaultValues[@"seeksAndServers"] = data;
+	[defaultValues setValue: @1 forKey: @"soundDefault"];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
 	gSounds = [[Sound alloc] init];
 }
@@ -52,8 +58,8 @@
 		NSDictionary *seeksAndServers = nil;
 		if ((d = [[NSUserDefaults standardUserDefaults] objectForKey: @"seeksAndServers"]) != nil)
 			if ((seeksAndServers = [NSKeyedUnarchiver unarchiveObjectWithData: d]) != nil) {
-				chessServers = [[seeksAndServers objectForKey: @"chessServers"] retain];
-				seeks = [[seeksAndServers objectForKey: @"seeks"] retain];
+				chessServers = [seeksAndServers[@"chessServers"] retain];
+				seeks = [seeksAndServers[@"seeks"] retain];
 			}
 		if (chessServers == nil)
 			chessServers = [[NSMutableArray arrayWithCapacity: 10] retain];
@@ -69,7 +75,7 @@
 	ChessServer *cs;
 	bool autoConnect = FALSE;
 	while ((cs = [e nextObject]) != nil)
-		if ([cs connectAtStartup]) {
+		if (cs.connectAtStartup) {
 			[self connectChessServer: cs];
 			autoConnect = TRUE;
 		}
@@ -126,7 +132,7 @@
 		[self willChangeValueForKey: @"serverConnections"];
 		[serverConnections removeObject: csc];
 		[self didChangeValueForKey: @"serverConnections"];
-		if ([serverConnections count] == 0)
+		if (serverConnections.count == 0)
 			[self showChessServerSelectorWindow]; 
 	}
 }
@@ -138,12 +144,12 @@
 
 - (NSApplicationTerminateReply) applicationShouldTerminate: (NSApplication *) sender
 {
-	if (([serverConnections count] == 0)
+	if ((serverConnections.count == 0)
 	 || (NSRunAlertPanel(@"Confirm quit", @"You are currently connected to a chess server. Quit anyway?", @"Yes", @"No", nil)
 	     == NSAlertDefaultReturn)) {
 		NSMutableDictionary *seeksAndServers = [NSMutableDictionary dictionaryWithCapacity: 2];
-		[seeksAndServers setObject: chessServers forKey: @"chessServers"];
-		[seeksAndServers setObject: seeks forKey: @"seeks"];
+		seeksAndServers[@"chessServers"] = chessServers;
+		seeksAndServers[@"seeks"] = seeks;
 		NSData *d = [NSKeyedArchiver archivedDataWithRootObject: seeksAndServers];
 		[[NSUserDefaults standardUserDefaults] setObject: d forKey: @"seeksAndServers"];
 		return NSTerminateNow;
@@ -164,7 +170,7 @@
 
 - (void) closeSeekWindow
 {
-	[[seekControl window] close];
+	[seekControl.window close];
 }
 
 - (IBAction) switchAllSoundsOff: (id) sender

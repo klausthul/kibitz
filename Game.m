@@ -2,15 +2,15 @@
 	$Id$
 
 	Copyright 2006 Klaus Thul (klaus.thul@mac.com)
-	This file is part of kibitz.
+	This file is part of Kibitz.
 
-	kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
+	Kibitz is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by 
 	the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
-	kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	Kibitz is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License along with kibitz; if not, write to the 
+	You should have received a copy of the GNU General Public License along with Kibitz; if not, write to the 
 	Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
@@ -80,7 +80,7 @@
 		[self setStartPosition: move];
 	} else {
 		while ((ms = [e nextObject]) != nil)
-			if ([ms moveNum] == n)
+			if (ms.moveNum == n)
 				break;
 		[self willChangeValueForKey: @"moves"];
 		if (ms == nil) {
@@ -88,9 +88,9 @@
 			[moves addObject: ms];
 		}
 		if ([move moveColor] == WHITE)
-			[ms setWhiteMove: move];
+			ms.whiteMove = move;
 		else
-			[ms setBlackMove: move];
+			ms.blackMove = move;
 		[self didChangeValueForKey: @"moves"];
 	}
 }
@@ -129,31 +129,31 @@
 
 - (void) updateWithStyle12: (NSArray *) data
 {
-	[self setPlayerNamesWhite: [data objectAtIndex: 17] black: [data objectAtIndex: 18]];
-	[self setTimeInitial: [[data objectAtIndex: 20] intValue] increment: [[data objectAtIndex: 21] intValue]];
-	gameNumber = [[data objectAtIndex: 16] intValue];
-	gameRelationship = [[data objectAtIndex: 19] intValue];
+	[self setPlayerNamesWhite: data[17] black: data[18]];
+	[self setTimeInitial: [data[20] intValue] increment: [data[21] intValue]];
+	gameNumber = [data[16] intValue];
+	gameRelationship = [data[19] intValue];
 }
 
 - (void) updateWithGameInfo: (NSArray *) data
 {
 	NSString *s;
-	gameNumber = [[data objectAtIndex: 0] intValue];
+	gameNumber = [data[0] intValue];
 	if ((s = [ChessServerConnection findTag: @"t=" in: data]) != nil) {
 		[type release];
 		type = [s retain];
 	}
 	if ((s = [ChessServerConnection findTag: @"r=" in: data]) != nil)
-		rated = ([s intValue] == 1);
+		rated = (s.intValue == 1);
 	if ((s = [ChessServerConnection findTag: @"pt=" in: data]) != nil)
-		partnerGame = [s intValue];
+		partnerGame = s.intValue;
 	if ((s = [ChessServerConnection findTag: @"rt=" in: data]) != nil) {
 		NSArray *ra = [s componentsSeparatedByString: @","];
-		if ([ra count] >= 2) {
+		if (ra.count >= 2) {
 			[ratingWhite release];
-			ratingWhite = [[ra objectAtIndex: 0] retain];
+			ratingWhite = [ra[0] retain];
 			[ratingBlack release];		
-			ratingBlack = [[ra objectAtIndex: 1] retain];
+			ratingBlack = [ra[1] retain];
 		}
 	}
 }
@@ -285,21 +285,21 @@
 
 - (ChessMove *) storedMoveNumber: (unsigned int) num
 {
-	if (num >= [moves count])
+	if (num >= moves.count)
 		return nil;
 	else {
-		MoveStore *ms = [moves objectAtIndex: num];
-		ChessMove *m = [ms blackMove];
+		MoveStore *ms = moves[num];
+		ChessMove *m = ms.blackMove;
 		if (m != nil)
 			return m;
 		else
-			return [ms whiteMove];
+			return ms.whiteMove;
 	}
 }
 
 - (int) numMoves
 {
-	return [moves count];
+	return moves.count;
 }
 
 - (void) passedPiecesWhite: (NSString *) white black: (NSString *) black
